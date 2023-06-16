@@ -9,17 +9,46 @@
       background-color: #F8F8F8;
       text-align: center;
       padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 500px;
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .important-info {
+      max-width: 500px;
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .important-info>ul {
+        text-align: left;
     }
 
     h1 {
       color: #695C45;
+      font-size: 24px;
+      margin-bottom: 20px;
     }
 
     label {
       display: block;
-      margin-top: 20px;
-      font-size: 20px;
+      margin-bottom: 10px;
+      font-size: 16px;
       color: #695C45;
+      text-align: left;
     }
 
     input {
@@ -28,6 +57,7 @@
       border-radius: 6px;
       width: 100%;
       box-sizing: border-box;
+      font-size: 16px;
     }
 
     button {
@@ -47,36 +77,179 @@
     button:hover {
       background-color: #E45650;
     }
+
+    .sidebar {
+  position: absolute;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: #F2F2F2;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+
+    .sidebar h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #695C45;
+      font-size: 18px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333333;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .menu-icon {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .menu-icon span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #333333;
+      margin-bottom: 5px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-icon.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-icon.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-icon.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .countdown {
+      margin-top: 20px;
+      color: #695C45;
+      font-size: 16px;
+      white-space: pre-wrap;
+    }
   </style>
 </head>
 <body>
-  <h1>作業完成度檢查</h1>
-  <label for="seat-number">請輸入您的座號：</label>
-  <input type="number" id="seat-number" min="1" required>
-  <button onclick="checkHomework()">檢查作業</button>
+  <div class="container">
+    <h1>國文作業繳交查詢</h1>
+    <label for="seat-number">請輸入您的座號：</label>
+    <input type="number" id="seat-number" min="1" required>
+    <button onclick="checkHomework()">查詢</button>
+
+    <div class="countdown" id="countdown"></div>
+  </div>
+  
+  <div class="important-info">
+    <h2>重要事項</h2>
+    <ul>
+      <li>6/19檢查語文練習及素養題本-論語</li>
+      <li>6/20考論語大卷</li>
+    </ul>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <h2>更多</h2>
+    <ul>
+      <li><a href="#">還沒做好</a></li>
+      <li><a href="#">還沒做好</a></li>
+      <li><a href="#">還沒做好</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-icon" id="menuIcon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
   <script>
+    const sidebar = document.getElementById('sidebar');
+    const menuIcon = document.getElementById('menuIcon');
+
+    menuIcon.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      menuIcon.classList.toggle('active');
+    });
+
     function checkHomework() {
       const seatNumber = document.getElementById('seat-number').value;
       let unfinishedHomework = [];
 
-      // 根據座號檢查未繳交的作業，這裡只是示例，你需要自行修改和添加作業檢查的邏輯
-      if (seatNumber == 38) {
-        unfinishedHomework.push('語文練習L2、7、9、8、11');
-        
-      } else if (seatNumber == 6 || seatNumber == 10 || seatNumber == 12 || seatNumber == 14 || seatNumber == 30) {
+      
+      if (seatNumber == 6 || seatNumber == 9 || seatNumber == 12 || seatNumber == 14 || seatNumber == 30) {
+        unfinishedHomework.push('尚未繳交的作業:\n');
         unfinishedHomework.push('語文練習L8');
+        
+      } else if (seatNumber == 38) {
+        unfinishedHomework.push('尚未繳交的作業:\n');
+        unfinishedHomework.push('語文練習L2、7、9、8、11');
        
+      } else if(seatNumber <1){
+        unfinishedHomework.push('你好小喔!');
+
+      } else if(seatNumber >19 && seatNumber <22){
+        unfinishedHomework.push('輸入正確的號碼啦~');
+
+      } else if(seatNumber >38){
+        unfinishedHomework.push('你幹嘛 ~ 唉呦~');
+
       } else {
         unfinishedHomework.push('無缺交');
       }
-
       if (unfinishedHomework.length > 0) {
-        alert('您尚未繳交的作業有：\n' + unfinishedHomework.join(', '));
+        alert('' + unfinishedHomework.join(''));
       } else {
-        alert('您已經完成了所有作業！');
+        alert('您所有的作業都已經繳交！');
+    }
+}
+    const countdownElement = document.getElementById('countdown');
+
+    function updateCountdown() {
+      const examDate = new Date('2023-06-28');
+      const currentDate = new Date();
+
+      const timeDifference = examDate - currentDate;
+      if (timeDifference > 0) {
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        countdownElement.textContent = `期末考倒數：\n${days} d ${hours} h ${minutes} m ${seconds} s`;
+      } else {
+        countdownElement.textContent = '段考已结束\n';
       }
     }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
