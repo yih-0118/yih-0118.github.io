@@ -14,38 +14,40 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      overflow: hidden; /* 添加此行 */
     }
 
     .container {
       max-width: 500px;
       background-color: #FFFFFF;
-      padding: 20px;
+      padding: 30px;
       border-radius: 6px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .important-info {
       max-width: 500px;
       background-color: #FFFFFF;
-      padding: 20px;
+      padding: 10%;
       border-radius: 6px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .important-info>ul {
         text-align: left;
+        font-size: 18px;
     }
 
     h1 {
-      color: #695C45;
-      font-size: 24px;
+      color: #564b39;
+      font-size: 27px;
       margin-bottom: 20px;
     }
 
     label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 9px;
       font-size: 16px;
       color: #695C45;
       text-align: left;
@@ -54,21 +56,21 @@
     input {
       padding: 6px;
       border: 1px solid #C0C0C0;
-      border-radius: 6px;
+      border-radius: 8px;
       width: 100%;
       box-sizing: border-box;
       font-size: 16px;
     }
 
     button {
-      margin-top: 20px;
+      margin-top: 15px;
       padding: 10px 20px;
       background-color: #8B7D6B;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 19px;
       transition: background-color 0.2s ease;
       width: 100%;
       box-sizing: border-box;
@@ -79,27 +81,27 @@
     }
 
     .sidebar {
-  position: absolute;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100vh;
-  background-color: #F2F2F2;
-  padding: 20px;
-  box-sizing: border-box;
-  transition: left 0.3s ease;
-}
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #F2F2F2;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: left 0.3s ease;
+    }
 
-.sidebar.active {
-  left: 0;
-}
+    .sidebar.active {
+    left: 0;
+    }
 
 
     .sidebar h2 {
       margin-top: 0;
       margin-bottom: 20px;
       color: #695C45;
-      font-size: 18px;
+      font-size: 23px;
     }
 
     .sidebar ul {
@@ -158,7 +160,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>國文作業繳交查詢</h1>
+    <h1><b>國文作業繳交查詢</b></h1>
     <label for="seat-number">請輸入您的座號：</label>
     <input type="number" id="seat-number" min="1" required>
     <button onclick="checkHomework()">查詢</button>
@@ -169,16 +171,15 @@
   <div class="important-info">
     <h2>重要事項</h2>
     <ul>
-      <li>6/19檢查語文練習及素養題本-論語</li>
-      <li>6/20考論語大卷</li>
+      <li>6/19檢查語文練習-論語(3)</li>
+      <li>6/19檢討素養題本-論語(3)</li>
+      <li>6/20考國文大卷-論語(3)</li>
     </ul>
   </div>
 
   <div class="sidebar" id="sidebar">
     <h2>更多</h2>
     <ul>
-      <li><a href="#">還沒做好</a></li>
-      <li><a href="#">還沒做好</a></li>
       <li><a href="#">還沒做好</a></li>
     </ul>
   </div>
@@ -203,7 +204,7 @@
       let unfinishedHomework = [];
 
       
-      if (seatNumber == 6 || seatNumber == 9 || seatNumber == 12 || seatNumber == 14 || seatNumber == 30) {
+      if (seatNumber == 6 || seatNumber == 10 || seatNumber == 12 || seatNumber == 14 || seatNumber == 30) {
         unfinishedHomework.push('尚未繳交的作業:\n');
         unfinishedHomework.push('語文練習L8');
         
