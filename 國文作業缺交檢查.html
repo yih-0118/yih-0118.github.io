@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>作業完成度檢查</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F8F8F8;
+      text-align: center;
+      padding: 10px;
+    }
+
+    h1 {
+      color: #695C45;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #695C45;
+    }
+
+    input {
+      padding: 6px;
+      border: 1px solid #C0C0C0;
+      border-radius: 6px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #8B7D6B;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button:hover {
+      background-color: #E45650;
+    }
+  </style>
+</head>
+<body>
+  <h1>作業完成度檢查</h1>
+  <label for="seat-number">請輸入您的座號：</label>
+  <input type="number" id="seat-number" min="1" required>
+  <button onclick="checkHomework()">檢查作業</button>
+
+  <script>
+    function checkHomework() {
+      const seatNumber = document.getElementById('seat-number').value;
+      let unfinishedHomework = [];
+
+      // 根據座號檢查未繳交的作業，這裡只是示例，你需要自行修改和添加作業檢查的邏輯
+      if (seatNumber == 38) {
+        unfinishedHomework.push('語文練習L2、7、9、8、11');
+        
+      } else if (seatNumber == 6 || seatNumber == 9 || seatNumber == 12 || seatNumber == 14 || seatNumber == 30) {
+        unfinishedHomework.push('語文練習L8');
+       
+      } else {
+        unfinishedHomework.push('無缺交');
+      }
+
+      if (unfinishedHomework.length > 0) {
+        alert('您尚未繳交的作業有：\n' + unfinishedHomework.join(', '));
+      } else {
+        alert('您已經完成了所有作業！');
+      }
+    }
+  </script>
+</body>
+</html>
