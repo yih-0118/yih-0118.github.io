@@ -212,8 +212,11 @@
         unfinishedHomework.push('尚未繳交的作業:\n');
         unfinishedHomework.push('語文練習L2、7、9、8、11');
        
-      } else if(seatNumber <1){
+      } else if(seatNumber <0){
         unfinishedHomework.push('你好小喔!');
+        
+      } else if(seatNumber ==0){
+        unfinishedHomework.push('你輸入啊!');
 
       } else if(seatNumber >19 && seatNumber <22){
         unfinishedHomework.push('輸入正確的號碼啦~');
