@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Projectile Motion Simulation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    #input-section {
+      width: 18%;
+      background-color: #eef2f3;
+      padding: 20px;
+      box-sizing: border-box;
+    }                      
+
+    #plot-section {
+      width: 82%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 38px;
+      text-align: center;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 20px;
+    }
+    select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 7px;
+    border: px solid #c0c0c0;
+    border-radius: 40px;
+    background-size: 25px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+    label.velocity-unit{
+        margin-left:3px;
+        text-align: center;
+        font-size: 25px;
+    }
+    input {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #c0c0c0;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 14px;
+      margin-left: auto;
+      padding:13px 80px;
+      background-color: #0d5ddfc5;
+      color: white;
+      border: none;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 35px;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #e45650;
+    }
+
+    #plot {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div id="input-section">
+    <h1>Projectile Motion</h1>
+    <div>
+      <label for="initial-velocity">Initial Velocity:   <select id="velocity-unit">
+        <option value="m/s"> m/s</option>
+        <option value="km/h"> km/h</option>
+        <option value="mph"> mph</option></label>
+      <input type="number" id="initial-velocity" step="0.1" min="0">
+    </div>
+    <div>
+      <label for="launch-angle">Launch Angle (deg):</label>
+      <input type="number" id="launch-angle" step="1" min="0" max="360">
+    </div>
+    <div>
+      <label for="mass">Object Mass (kg):</label>
+      <input type="number" id="mass" step="0.1" min="0">
+    </div>
+    <div>
+      <label for="air-density">Air Density (kg/m^3):</label>
+      <input type="number" id="air-density" step="0.001" min="0">
+    </div>
+    <div>
+      <label for="drag-coefficient">Drag Coefficient (Cd):</label>
+      <input type="number" id="drag-coefficient" step="0.01" min="0">
+    </div>
+    <div>
+      <label for="cross-sectional-area">Contact area (m^2):</label>
+      <input type="number" id="cross-sectional-area" step="0.01" min="0">
+    </div>
+    <div>
+      <label for="initial-position">Initial Position (x0):</label>
+      <input type="number" id="initial-position" step="0.1" min="0">
+    </div>
+    <div>
+      <label for="initial-height">Initial Height (y0):</label>
+      <input type="number" id="initial-height" step="0.1" min="0">
+    </div>
+    <div>
+      <label for="time-step">Time Step(s):</label>
+      <input type="number" id="time-step" step="0.0001" min="0">
+    </div>
+    <button id="plot-button">Print</button>
+  </div>
+  <div id="plot-section">
+    <div id="plot"></div>
+  </div>
+  <script>
+    document.getElementById('plot-button').addEventListener('click', function() {
+      const initialVelocity = document.getElementById('initial-velocity').value;
+      const velocityUnit = document.getElementById('velocity-unit').value;
+      var v0 = parseFloat(document.getElementById('initial-velocity').value);
+      var theta = parseFloat(document.getElementById('launch-angle').value);
+      var dt = parseFloat(document.getElementById('time-step').value);
+      var x0 = parseFloat(document.getElementById('initial-position').value);
+      var m = parseFloat(document.getElementById('mass').value);
+      var y = parseFloat(document.getElementById('initial-height').value);
+      var rho = parseFloat(document.getElementById('air-density').value);
+      var Cd = parseFloat(document.getElementById('drag-coefficient').value);
+      var A = parseFloat(document.getElementById('cross-sectional-area').value);
+
+      var g = 9.7807; 
+      var pi = 3.14159265359;
+
+      let velocityInMetersPerSecond;
+      if (velocityUnit === 'km/h') {
+        velocityInMetersPerSecond = v0 / 3.6;
+      } else if (velocityUnit === 'mph') {
+        velocityInMetersPerSecond = initialVelocity * 0.44704;
+      } else {
+        velocityInMetersPerSecond = initialVelocity;
+      }
+      
+      var vx0 = velocityInMetersPerSecond * Math.cos(theta * pi / 180.0);
+      var vy0 = velocityInMetersPerSecond * Math.sin(theta * pi / 180.0);
+      var t = 0.0, x = x0, max_height = 0.0;
+      var x_data = [], y_data = [];
+
+      while (y >= 0.0) {
+        x_data.push(x);
+        y_data.push(y);
+
+        var Fd = 0.5 * rho * Cd * A * (vx0 * vx0 + vy0 * vy0);
+        var Fx = -Fd * vx0 / Math.sqrt(vx0 * vx0 + vy0 * vy0);
+        var Fy = -Fd * vy0 / Math.sqrt(vx0 * vx0 + vy0 * vy0);
+
+        var vx = vx0 + (Fx / m) * dt;
+        var vy = vy0 - g * dt + (Fy / m) * dt;
+
+        x += vx0 * dt;
+        y += vy0 * dt;
+
+        vx0 = vx;
+        vy0 = vy;
+
+        if (y > max_height) {
+          max_height = y;
+        }
+
+        t += dt;
+      }
+
+      var trace = {
+        x: x_data,
+        y: y_data,
+        type: 'scatter',
+        mode: 'lines',
+        line: {
+          color: '#66B3FF',
+          width: 1.5
+        }
+      };
+
+      var layout = {
+        title: 'Projectile Motion',
+        xaxis: {
+          title: 'Horizontal Distance (m)'
+        },
+        yaxis: {
+          title: 'Vertical Distance (m)'
+        }
+      };
+
+      var data = [trace];
+      Plotly.newPlot('plot', data, layout);
+    });
+  </script>
+</body>
+</html>
