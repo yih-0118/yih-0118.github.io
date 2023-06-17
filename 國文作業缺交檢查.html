@@ -200,39 +200,46 @@
     });
 
     function checkHomework() {
-      const seatNumber = document.getElementById('seat-number').value;
-      let unfinishedHomework = [];
+  const seatNumber = document.getElementById('seat-number').value;
+  let unfinishedHomework = [];
 
-      
-      if (seatNumber == 6 || seatNumber == 10 || seatNumber == 12 || seatNumber == 14 || seatNumber == 30) {
-        unfinishedHomework.push('尚未繳交的作業:\n');
-        unfinishedHomework.push('語文練習L8');
-        
-      } else if (seatNumber == 38) {
-        unfinishedHomework.push('尚未繳交的作業:\n');
-        unfinishedHomework.push('語文練習L2、7、9、8、11');
-       
-      } else if(seatNumber <0){
-        unfinishedHomework.push('你好小喔!');
-        
-      } else if(seatNumber ==0){
-        unfinishedHomework.push('你輸入啊!');
+  if (seatNumber == 6 || seatNumber == 10 || seatNumber == 12 || seatNumber == 14 || seatNumber == 30) {
+    unfinishedHomework.push('尚未繳交的作業:\n');
+    unfinishedHomework.push('語文練習L8');
+  } else if (seatNumber == 38) {
+    unfinishedHomework.push('尚未繳交的作業:\n');
+    unfinishedHomework.push('語文練習L2、7、9、8、11');
+  } else if (seatNumber < 1) {
+    unfinishedHomework.push('你好小喔!');
+  } else if (seatNumber > 39) {
+    unfinishedHomework.push('你幹嘛 ~ 唉呦~');
+    showImage('https://www.google.com/imgres?imgurl=https%3A%2F%2Fpic.rmb.bdstatic.com%2F870b9ef34d7f153616816370f29300042656.gif&tbnid=3Qy2jQvC9PKVsM&vet=1&imgrefurl=https%3A%2F%2Fbaijiahao.baidu.com%2Fs%3Fid%3D1635190890861304104&docid=6BQWNltklb0x-M&w=300&h=222&itg=1&hl=zh-TW&source=sh%2Fx%2Fim%2F4', 5000);
+  } else {
+    unfinishedHomework.push('無缺交');
+  }
 
-      } else if(seatNumber >19 && seatNumber <22){
-        unfinishedHomework.push('輸入正確的號碼啦~');
-
-      } else if(seatNumber >38){
-        unfinishedHomework.push('你幹嘛 ~ 唉呦~');
-
-      } else {
-        unfinishedHomework.push('無缺交');
-      }
-      if (unfinishedHomework.length > 0) {
-        alert('' + unfinishedHomework.join(''));
-      } else {
-        alert('您所有的作業都已經繳交！');
-    }
+  if (unfinishedHomework.length > 0) {
+    alert('' + unfinishedHomework.join(''));
+  } else {
+    alert('您所有的作業都已經繳交！');
+  }
 }
+
+function showImage(imageUrl, duration) {
+  const image = document.createElement('img');
+  image.src = imageUrl;
+  image.style.position = 'fixed';
+  image.style.top = '50%';
+  image.style.left = '50%';
+  image.style.transform = 'translate(-50%, -50%)';
+  image.style.zIndex = '9999';
+  document.body.appendChild(image);
+
+  setTimeout(() => {
+    document.body.removeChild(image);
+  }, duration);
+}
+
     const countdownElement = document.getElementById('countdown');
 
     function updateCountdown() {
