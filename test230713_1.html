@@ -1,0 +1,3324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_653fb105af7e64bca0b54a49f5766cdc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_653fb105af7e64bca0b54a49f5766cdc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_653fb105af7e64bca0b54a49f5766cdc = L.map(
+                "map_653fb105af7e64bca0b54a49f5766cdc",
+                {
+                    center: [0, 0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8bc0e1d3fa525bd007e1d1d0a719c6af = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+            var marker_4451718ef266ad9a4637156a9c6d3489 = L.marker(
+                [25.04019115, 121.54075959863721],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_e2dedae5c5528852ccc72cb5607c7d19 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_89d1c30585093fb069fb2867eebb2d12 = $(`<div id="html_89d1c30585093fb069fb2867eebb2d12" style="width: 100.0%; height: 100.0%;">懷生國中</div>`)[0];
+                popup_e2dedae5c5528852ccc72cb5607c7d19.setContent(html_89d1c30585093fb069fb2867eebb2d12);
+            
+        
+
+        marker_4451718ef266ad9a4637156a9c6d3489.bindPopup(popup_e2dedae5c5528852ccc72cb5607c7d19)
+        ;
+
+        
+    
+    
+            var marker_ce8f94265e1d2892932a3b7a07590b97 = L.marker(
+                [25.0236606, 121.5387201234775],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_09f9b4d1253fc5d7d5e4ec92de9b56e1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d5047c5c4f7cb100d0c8c942e761195d = $(`<div id="html_d5047c5c4f7cb100d0c8c942e761195d" style="width: 100.0%; height: 100.0%;">龍門國中</div>`)[0];
+                popup_09f9b4d1253fc5d7d5e4ec92de9b56e1.setContent(html_d5047c5c4f7cb100d0c8c942e761195d);
+            
+        
+
+        marker_ce8f94265e1d2892932a3b7a07590b97.bindPopup(popup_09f9b4d1253fc5d7d5e4ec92de9b56e1)
+        ;
+
+        
+    
+    
+            var marker_c71c6dd12cf6f0e560a20f48997caa86 = L.marker(
+                [25.030910400000003, 121.53228862265905],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_850369784d4844b0b6e05af300e3739d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7be9e2c51360c4d8116ba705c6ceba29 = $(`<div id="html_7be9e2c51360c4d8116ba705c6ceba29" style="width: 100.0%; height: 100.0%;">金華國中</div>`)[0];
+                popup_850369784d4844b0b6e05af300e3739d.setContent(html_7be9e2c51360c4d8116ba705c6ceba29);
+            
+        
+
+        marker_c71c6dd12cf6f0e560a20f48997caa86.bindPopup(popup_850369784d4844b0b6e05af300e3739d)
+        ;
+
+        
+    
+    
+            var marker_3895e461ab5ad6922501037a4c7a133b = L.marker(
+                [23.009806750000003, 120.21155940638556],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_87111f961100cbde7c2f94d5a0b60b93 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_74b800855f13077e8c400877a149375b = $(`<div id="html_74b800855f13077e8c400877a149375b" style="width: 100.0%; height: 100.0%;">延平國中</div>`)[0];
+                popup_87111f961100cbde7c2f94d5a0b60b93.setContent(html_74b800855f13077e8c400877a149375b);
+            
+        
+
+        marker_3895e461ab5ad6922501037a4c7a133b.bindPopup(popup_87111f961100cbde7c2f94d5a0b60b93)
+        ;
+
+        
+    
+    
+            var marker_5b285c1c5cae099db097eb9e585d9a07 = L.marker(
+                [25.0303057, 121.54702565767396],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_507a4da5699b3273fa30d3d476f591fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_40ed32ff3799ae68f03dd0b3de842038 = $(`<div id="html_40ed32ff3799ae68f03dd0b3de842038" style="width: 100.0%; height: 100.0%;">大安國中</div>`)[0];
+                popup_507a4da5699b3273fa30d3d476f591fe.setContent(html_40ed32ff3799ae68f03dd0b3de842038);
+            
+        
+
+        marker_5b285c1c5cae099db097eb9e585d9a07.bindPopup(popup_507a4da5699b3273fa30d3d476f591fe)
+        ;
+
+        
+    
+    
+            var marker_c69fec7c9b855abf65cb5645f8e51d13 = L.marker(
+                [25.0366083, 121.55111944811199],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_7eaeaf7498a6866a7c7743a65dbc6004 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1b1d067ce6aa8bdcd8bf90cd887f5c2f = $(`<div id="html_1b1d067ce6aa8bdcd8bf90cd887f5c2f" style="width: 100.0%; height: 100.0%;">仁愛國中</div>`)[0];
+                popup_7eaeaf7498a6866a7c7743a65dbc6004.setContent(html_1b1d067ce6aa8bdcd8bf90cd887f5c2f);
+            
+        
+
+        marker_c69fec7c9b855abf65cb5645f8e51d13.bindPopup(popup_7eaeaf7498a6866a7c7743a65dbc6004)
+        ;
+
+        
+    
+    
+            var marker_3914a60e524037fe80cb0551f0376dee = L.marker(
+                [25.0104374, 121.53897314900559],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_2767426407e2c8b27eb7eed1ec02e5f2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fa5dafc471e07417cd2003560c6f2dfc = $(`<div id="html_fa5dafc471e07417cd2003560c6f2dfc" style="width: 100.0%; height: 100.0%;">民族國中</div>`)[0];
+                popup_2767426407e2c8b27eb7eed1ec02e5f2.setContent(html_fa5dafc471e07417cd2003560c6f2dfc);
+            
+        
+
+        marker_3914a60e524037fe80cb0551f0376dee.bindPopup(popup_2767426407e2c8b27eb7eed1ec02e5f2)
+        ;
+
+        
+    
+    
+            var marker_80053590501cb0842b36ff2dd18bbfe2 = L.marker(
+                [24.0411883, 120.43708736539399],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_798d7cbb57d71c4f96c62f5bd76f245d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_19c660c2fd31b69d0e80ed4f8776f414 = $(`<div id="html_19c660c2fd31b69d0e80ed4f8776f414" style="width: 100.0%; height: 100.0%;">復興國中</div>`)[0];
+                popup_798d7cbb57d71c4f96c62f5bd76f245d.setContent(html_19c660c2fd31b69d0e80ed4f8776f414);
+            
+        
+
+        marker_80053590501cb0842b36ff2dd18bbfe2.bindPopup(popup_798d7cbb57d71c4f96c62f5bd76f245d)
+        ;
+
+        
+    
+    
+            var marker_4cdd254be73773ce5cc4a9d1b133b224 = L.marker(
+                [40.26809345, 140.55669426045503],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_473fe682befe5d8d4f4c44861af30126 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ab8fa71f1bf8742da213a05c476e31a5 = $(`<div id="html_ab8fa71f1bf8742da213a05c476e31a5" style="width: 100.0%; height: 100.0%;">華興國中</div>`)[0];
+                popup_473fe682befe5d8d4f4c44861af30126.setContent(html_ab8fa71f1bf8742da213a05c476e31a5);
+            
+        
+
+        marker_4cdd254be73773ce5cc4a9d1b133b224.bindPopup(popup_473fe682befe5d8d4f4c44861af30126)
+        ;
+
+        
+    
+    
+            var marker_8a61115b8a2d748a1c20c2a55d8af840 = L.marker(
+                [34.6891413, 134.9021366],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_d5657fb0b05a5cea542f9e04dd621aeb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cd8a9167b2768fc6a77504ffc0454291 = $(`<div id="html_cd8a9167b2768fc6a77504ffc0454291" style="width: 100.0%; height: 100.0%;">陽明高中國中</div>`)[0];
+                popup_d5657fb0b05a5cea542f9e04dd621aeb.setContent(html_cd8a9167b2768fc6a77504ffc0454291);
+            
+        
+
+        marker_8a61115b8a2d748a1c20c2a55d8af840.bindPopup(popup_d5657fb0b05a5cea542f9e04dd621aeb)
+        ;
+
+        
+    
+    
+            var marker_c255c763f8229e3ca9febcc58effac19 = L.marker(
+                [35.04936495, 135.78079936127637],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_34bd2af1cb8ff08ee1b8e3cfcb6f6a53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0d19afa724f9014369294f86352927ef = $(`<div id="html_0d19afa724f9014369294f86352927ef" style="width: 100.0%; height: 100.0%;">衛理高中國中</div>`)[0];
+                popup_34bd2af1cb8ff08ee1b8e3cfcb6f6a53.setContent(html_0d19afa724f9014369294f86352927ef);
+            
+        
+
+        marker_c255c763f8229e3ca9febcc58effac19.bindPopup(popup_34bd2af1cb8ff08ee1b8e3cfcb6f6a53)
+        ;
+
+        
+    
+    
+            var marker_3db1d4c2fdeab8939ad9cbd8bcb04301 = L.marker(
+                [25.093607849999998, 121.52284383915155],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b5551f11cded1401a1b138779b3a16ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b0c73df14755818428e6bcf7aebcdf27 = $(`<div id="html_b0c73df14755818428e6bcf7aebcdf27" style="width: 100.0%; height: 100.0%;">士林國中</div>`)[0];
+                popup_b5551f11cded1401a1b138779b3a16ee.setContent(html_b0c73df14755818428e6bcf7aebcdf27);
+            
+        
+
+        marker_3db1d4c2fdeab8939ad9cbd8bcb04301.bindPopup(popup_b5551f11cded1401a1b138779b3a16ee)
+        ;
+
+        
+    
+    
+            var marker_d725e4639c4c74119e7cc896274f8d9b = L.marker(
+                [25.1105462, 121.53182998241935],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_4d250067e3ddae6431c8053f8580b292 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c8a6431a400a53327c7dd25755ce878 = $(`<div id="html_9c8a6431a400a53327c7dd25755ce878" style="width: 100.0%; height: 100.0%;">蘭雅國中</div>`)[0];
+                popup_4d250067e3ddae6431c8053f8580b292.setContent(html_9c8a6431a400a53327c7dd25755ce878);
+            
+        
+
+        marker_d725e4639c4c74119e7cc896274f8d9b.bindPopup(popup_4d250067e3ddae6431c8053f8580b292)
+        ;
+
+        
+    
+    
+            var marker_258f36aba1e313a6a316c779d019a613 = L.marker(
+                [25.0376206, 121.5139255],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_794fb6e9a043c91fb17395fc090c025b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c5a8dad08abeeeea891caf7f46bbbec9 = $(`<div id="html_c5a8dad08abeeeea891caf7f46bbbec9" style="width: 100.0%; height: 100.0%;">泰北國中</div>`)[0];
+                popup_794fb6e9a043c91fb17395fc090c025b.setContent(html_c5a8dad08abeeeea891caf7f46bbbec9);
+            
+        
+
+        marker_258f36aba1e313a6a316c779d019a613.bindPopup(popup_794fb6e9a043c91fb17395fc090c025b)
+        ;
+
+        
+    
+    
+            var marker_3d8f27ba0f9286b0baef6630a00a8124 = L.marker(
+                [25.0374078, 121.51572987498564],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b70d7a22f3e0c6b8e9babf4cb64b0777 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a8a09a67733fabac77cd0b7a1c19a00 = $(`<div id="html_4a8a09a67733fabac77cd0b7a1c19a00" style="width: 100.0%; height: 100.0%;">弘道國中</div>`)[0];
+                popup_b70d7a22f3e0c6b8e9babf4cb64b0777.setContent(html_4a8a09a67733fabac77cd0b7a1c19a00);
+            
+        
+
+        marker_3d8f27ba0f9286b0baef6630a00a8124.bindPopup(popup_b70d7a22f3e0c6b8e9babf4cb64b0777)
+        ;
+
+        
+    
+    
+            var marker_3766bf26f63bbcf27b1b6b81d78553fb = L.marker(
+                [25.0318745, 121.52175421292985],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_ab000491521b1071dc15fcaafd7666da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0a7e010327320ed91ed217ddf3a19ac7 = $(`<div id="html_0a7e010327320ed91ed217ddf3a19ac7" style="width: 100.0%; height: 100.0%;">中正國中</div>`)[0];
+                popup_ab000491521b1071dc15fcaafd7666da.setContent(html_0a7e010327320ed91ed217ddf3a19ac7);
+            
+        
+
+        marker_3766bf26f63bbcf27b1b6b81d78553fb.bindPopup(popup_ab000491521b1071dc15fcaafd7666da)
+        ;
+
+        
+    
+    
+            var marker_1a75485f9f226562cd5fff1a112fa06d = L.marker(
+                [25.03427515, 121.50895776290571],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_4761bcd1c8eb12d6d1658cc99a1dc621 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_897afc699478bf6a34af0993c1e942a0 = $(`<div id="html_897afc699478bf6a34af0993c1e942a0" style="width: 100.0%; height: 100.0%;">南門國中</div>`)[0];
+                popup_4761bcd1c8eb12d6d1658cc99a1dc621.setContent(html_897afc699478bf6a34af0993c1e942a0);
+            
+        
+
+        marker_1a75485f9f226562cd5fff1a112fa06d.bindPopup(popup_4761bcd1c8eb12d6d1658cc99a1dc621)
+        ;
+
+        
+    
+    
+            var marker_6364d81d890099dcb4138bd16a93af37 = L.marker(
+                [25.02499975, 121.51080468702878],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_0a03c7d6e74a617e49783000556c3490 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d35564356e957ec987fbd9e5fe2e2b63 = $(`<div id="html_d35564356e957ec987fbd9e5fe2e2b63" style="width: 100.0%; height: 100.0%;">古亭國中</div>`)[0];
+                popup_0a03c7d6e74a617e49783000556c3490.setContent(html_d35564356e957ec987fbd9e5fe2e2b63);
+            
+        
+
+        marker_6364d81d890099dcb4138bd16a93af37.bindPopup(popup_0a03c7d6e74a617e49783000556c3490)
+        ;
+
+        
+    
+    
+            var marker_a62c57c29392bec9c970516da942b5e3 = L.marker(
+                [25.018644600000002, 121.52569421232911],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_83d4dc3a6f31ce8924ab00c1b19c55ad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d6618c3245c90a404e27bf02b6e4b29e = $(`<div id="html_d6618c3245c90a404e27bf02b6e4b29e" style="width: 100.0%; height: 100.0%;">螢橋國中</div>`)[0];
+                popup_83d4dc3a6f31ce8924ab00c1b19c55ad.setContent(html_d6618c3245c90a404e27bf02b6e4b29e);
+            
+        
+
+        marker_a62c57c29392bec9c970516da942b5e3.bindPopup(popup_83d4dc3a6f31ce8924ab00c1b19c55ad)
+        ;
+
+        
+    
+    
+            var marker_da505e72201686f7af44b2b764bc06b4 = L.marker(
+                [25.14410065, 121.77131712526958],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_4bdf2298ed78d9fa90fadf0b374da276 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4348722842d57e8d243f08665edb73fb = $(`<div id="html_4348722842d57e8d243f08665edb73fb" style="width: 100.0%; height: 100.0%;">二信高中國中</div>`)[0];
+                popup_4bdf2298ed78d9fa90fadf0b374da276.setContent(html_4348722842d57e8d243f08665edb73fb);
+            
+        
+
+        marker_da505e72201686f7af44b2b764bc06b4.bindPopup(popup_4bdf2298ed78d9fa90fadf0b374da276)
+        ;
+
+        
+    
+    
+            var marker_6f93dc06fcb3f6243304749902690384 = L.marker(
+                [25.134361900000002, 121.50453249686288],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_99b895e690a1b1a9ba340078f8bc6d90 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_559913f39738be093c8b48e0f8246ade = $(`<div id="html_559913f39738be093c8b48e0f8246ade" style="width: 100.0%; height: 100.0%;">北投國中</div>`)[0];
+                popup_99b895e690a1b1a9ba340078f8bc6d90.setContent(html_559913f39738be093c8b48e0f8246ade);
+            
+        
+
+        marker_6f93dc06fcb3f6243304749902690384.bindPopup(popup_99b895e690a1b1a9ba340078f8bc6d90)
+        ;
+
+        
+    
+    
+            var marker_f972e8f8d1361726d63dea134e56b6ee = L.marker(
+                [25.10801305, 121.51913577199937],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_1a4b18b10e776cd58aa40450faf918ec = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a6b3893c75b9dbada1f4f76b6e57ca59 = $(`<div id="html_a6b3893c75b9dbada1f4f76b6e57ca59" style="width: 100.0%; height: 100.0%;">明德國中</div>`)[0];
+                popup_1a4b18b10e776cd58aa40450faf918ec.setContent(html_a6b3893c75b9dbada1f4f76b6e57ca59);
+            
+        
+
+        marker_f972e8f8d1361726d63dea134e56b6ee.bindPopup(popup_1a4b18b10e776cd58aa40450faf918ec)
+        ;
+
+        
+    
+    
+            var marker_99ba911b3abb54f665097f0e65edbd20 = L.marker(
+                [25.115771, 121.51346992455075],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_a9d8b9528143c430ef6f392fa96f9b6b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f31a50878db91ee65fe4a8cb77f889c0 = $(`<div id="html_f31a50878db91ee65fe4a8cb77f889c0" style="width: 100.0%; height: 100.0%;">石牌國中</div>`)[0];
+                popup_a9d8b9528143c430ef6f392fa96f9b6b.setContent(html_f31a50878db91ee65fe4a8cb77f889c0);
+            
+        
+
+        marker_99ba911b3abb54f665097f0e65edbd20.bindPopup(popup_a9d8b9528143c430ef6f392fa96f9b6b)
+        ;
+
+        
+    
+    
+            var marker_cc7f69a1b95470072ccccaa048a3f331 = L.marker(
+                [22.902455500000002, 121.08103236476137],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_cf5110f5c47797f10987a5cbceeeaf06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d255a4c6da8953d7ee07da18842ac966 = $(`<div id="html_d255a4c6da8953d7ee07da18842ac966" style="width: 100.0%; height: 100.0%;">桃源國中</div>`)[0];
+                popup_cf5110f5c47797f10987a5cbceeeaf06.setContent(html_d255a4c6da8953d7ee07da18842ac966);
+            
+        
+
+        marker_cc7f69a1b95470072ccccaa048a3f331.bindPopup(popup_cf5110f5c47797f10987a5cbceeeaf06)
+        ;
+
+        
+    
+    
+            var marker_be5b6593b371865e56f71123ec81e4cb = L.marker(
+                [25.11700605, 121.53823798862558],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_2504c8c16da960afe8cec3a8901c7f82 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0deb90e13c596a01e6d49d24f83d15d0 = $(`<div id="html_0deb90e13c596a01e6d49d24f83d15d0" style="width: 100.0%; height: 100.0%;">天母國中</div>`)[0];
+                popup_2504c8c16da960afe8cec3a8901c7f82.setContent(html_0deb90e13c596a01e6d49d24f83d15d0);
+            
+        
+
+        marker_be5b6593b371865e56f71123ec81e4cb.bindPopup(popup_2504c8c16da960afe8cec3a8901c7f82)
+        ;
+
+        
+    
+    
+            var marker_c8d0bdea08ef4acb8fe059d05e803ec7 = L.marker(
+                [25.138263600000002, 121.50678940026023],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_9eff5953519a6ca58beb5985f5cada77 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a34423396f11af053a431295af0295f8 = $(`<div id="html_a34423396f11af053a431295af0295f8" style="width: 100.0%; height: 100.0%;">新民國中</div>`)[0];
+                popup_9eff5953519a6ca58beb5985f5cada77.setContent(html_a34423396f11af053a431295af0295f8);
+            
+        
+
+        marker_c8d0bdea08ef4acb8fe059d05e803ec7.bindPopup(popup_9eff5953519a6ca58beb5985f5cada77)
+        ;
+
+        
+    
+    
+            var marker_55af95b0d1e7bf40f7f701b7e2bd6ff8 = L.marker(
+                [25.112295, 121.5217802],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_f7d53c44451b4ed449ccae6710e4b70f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3b7f279df3a6a10324243bad7a2c339 = $(`<div id="html_c3b7f279df3a6a10324243bad7a2c339" style="width: 100.0%; height: 100.0%;">奎山國中</div>`)[0];
+                popup_f7d53c44451b4ed449ccae6710e4b70f.setContent(html_c3b7f279df3a6a10324243bad7a2c339);
+            
+        
+
+        marker_55af95b0d1e7bf40f7f701b7e2bd6ff8.bindPopup(popup_f7d53c44451b4ed449ccae6710e4b70f)
+        ;
+
+        
+    
+    
+            var marker_a72eaba2ed9ba7ee2cb737fca040c0dc = L.marker(
+                [25.063485749999998, 121.51436124691111],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_4233473c2c7818042e3084c980cc8c68 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8c70ae2b455f485f6e6d04e1c7bf95bf = $(`<div id="html_8c70ae2b455f485f6e6d04e1c7bf95bf" style="width: 100.0%; height: 100.0%;">民權國中</div>`)[0];
+                popup_4233473c2c7818042e3084c980cc8c68.setContent(html_8c70ae2b455f485f6e6d04e1c7bf95bf);
+            
+        
+
+        marker_a72eaba2ed9ba7ee2cb737fca040c0dc.bindPopup(popup_4233473c2c7818042e3084c980cc8c68)
+        ;
+
+        
+    
+    
+            var marker_a702ede61eda468bf9e1de7e86063ffb = L.marker(
+                [25.07649985, 121.5181861417231],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b3263934ce73acb372fe18eb60ea19cf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5bd7ed6a902ae4fabaedf8b4f50f679f = $(`<div id="html_5bd7ed6a902ae4fabaedf8b4f50f679f" style="width: 100.0%; height: 100.0%;">重慶國中</div>`)[0];
+                popup_b3263934ce73acb372fe18eb60ea19cf.setContent(html_5bd7ed6a902ae4fabaedf8b4f50f679f);
+            
+        
+
+        marker_a702ede61eda468bf9e1de7e86063ffb.bindPopup(popup_b3263934ce73acb372fe18eb60ea19cf)
+        ;
+
+        
+    
+    
+            var marker_e4ca2734cd0a64f839a708c1d45a05b9 = L.marker(
+                [25.0515447, 121.50777823043603],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_3cafee3bf3e214f8467451917f6458f7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c4589f686149d9c6b4555b09e0567aa4 = $(`<div id="html_c4589f686149d9c6b4555b09e0567aa4" style="width: 100.0%; height: 100.0%;">忠孝國中</div>`)[0];
+                popup_3cafee3bf3e214f8467451917f6458f7.setContent(html_c4589f686149d9c6b4555b09e0567aa4);
+            
+        
+
+        marker_e4ca2734cd0a64f839a708c1d45a05b9.bindPopup(popup_3cafee3bf3e214f8467451917f6458f7)
+        ;
+
+        
+    
+    
+            var marker_67f28ad29b368bc374a10b82e47663c7 = L.marker(
+                [25.051252499999997, 121.51915999709621],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_f3e9f2eb9f361bece86dd73abd6b853e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1420d373f9258d6e46b01a95ac251e8b = $(`<div id="html_1420d373f9258d6e46b01a95ac251e8b" style="width: 100.0%; height: 100.0%;">建成國中</div>`)[0];
+                popup_f3e9f2eb9f361bece86dd73abd6b853e.setContent(html_1420d373f9258d6e46b01a95ac251e8b);
+            
+        
+
+        marker_67f28ad29b368bc374a10b82e47663c7.bindPopup(popup_f3e9f2eb9f361bece86dd73abd6b853e)
+        ;
+
+        
+    
+    
+            var marker_5ee9ebd12c9392858c1d02d5c9696851 = L.marker(
+                [25.06953, 121.51685662168228],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_db12594cccd48e645362fac5b7abd9e0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b1e100e611b44a42073a477cdcfda432 = $(`<div id="html_b1e100e611b44a42073a477cdcfda432" style="width: 100.0%; height: 100.0%;">蘭州國中</div>`)[0];
+                popup_db12594cccd48e645362fac5b7abd9e0.setContent(html_b1e100e611b44a42073a477cdcfda432);
+            
+        
+
+        marker_5ee9ebd12c9392858c1d02d5c9696851.bindPopup(popup_db12594cccd48e645362fac5b7abd9e0)
+        ;
+
+        
+    
+    
+            var marker_729da98ac68b395405851c26de7bffad = L.marker(
+                [35.04936495, 135.78079936127637],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_206c74b138d606d49fe0d7ab1550931d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3387b5b962f609858431778fa678bc4f = $(`<div id="html_3387b5b962f609858431778fa678bc4f" style="width: 100.0%; height: 100.0%;">靜修高中國中</div>`)[0];
+                popup_206c74b138d606d49fe0d7ab1550931d.setContent(html_3387b5b962f609858431778fa678bc4f);
+            
+        
+
+        marker_729da98ac68b395405851c26de7bffad.bindPopup(popup_206c74b138d606d49fe0d7ab1550931d)
+        ;
+
+        
+    
+    
+            var marker_37e82e1072b7368a3f4f22afc114b940 = L.marker(
+                [25.0353741, 121.50530418086562],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_3f35a627e0b9485b28dbdcd1f70235e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2654f93ba49b2cb9cd15bdf4cf49f718 = $(`<div id="html_2654f93ba49b2cb9cd15bdf4cf49f718" style="width: 100.0%; height: 100.0%;">龍山國中</div>`)[0];
+                popup_3f35a627e0b9485b28dbdcd1f70235e8.setContent(html_2654f93ba49b2cb9cd15bdf4cf49f718);
+            
+        
+
+        marker_37e82e1072b7368a3f4f22afc114b940.bindPopup(popup_3f35a627e0b9485b28dbdcd1f70235e8)
+        ;
+
+        
+    
+    
+            var marker_3502bfc38d873768366a24ec6c398c6a = L.marker(
+                [25.0279046, 121.49886177871193],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_7a2a9fe5e5e12e75acff620187353fcb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6465b163d03cab17bb16227fee8eca6e = $(`<div id="html_6465b163d03cab17bb16227fee8eca6e" style="width: 100.0%; height: 100.0%;">萬華國中</div>`)[0];
+                popup_7a2a9fe5e5e12e75acff620187353fcb.setContent(html_6465b163d03cab17bb16227fee8eca6e);
+            
+        
+
+        marker_3502bfc38d873768366a24ec6c398c6a.bindPopup(popup_7a2a9fe5e5e12e75acff620187353fcb)
+        ;
+
+        
+    
+    
+            var marker_c0458e50e46eb8ed97d68b27cbde7ec0 = L.marker(
+                [25.0275526, 121.49193265192238],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_89df91e31ee1ab4072758e3bfc76db50 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c14eaa5492bc662ec64301322ba25608 = $(`<div id="html_c14eaa5492bc662ec64301322ba25608" style="width: 100.0%; height: 100.0%;">雙園國中</div>`)[0];
+                popup_89df91e31ee1ab4072758e3bfc76db50.setContent(html_c14eaa5492bc662ec64301322ba25608);
+            
+        
+
+        marker_c0458e50e46eb8ed97d68b27cbde7ec0.bindPopup(popup_89df91e31ee1ab4072758e3bfc76db50)
+        ;
+
+        
+    
+    
+            var marker_4433d540399a0ceb9f74ba5e2d64dc38 = L.marker(
+                [24.09461, 120.67818],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_d67d971b3949f828ec1ab6d944756f0a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7cda8b9be5b788a38e42762d86a8d6c5 = $(`<div id="html_7cda8b9be5b788a38e42762d86a8d6c5" style="width: 100.0%; height: 100.0%;">大理高中國中</div>`)[0];
+                popup_d67d971b3949f828ec1ab6d944756f0a.setContent(html_7cda8b9be5b788a38e42762d86a8d6c5);
+            
+        
+
+        marker_4433d540399a0ceb9f74ba5e2d64dc38.bindPopup(popup_d67d971b3949f828ec1ab6d944756f0a)
+        ;
+
+        
+    
+    
+            var marker_f07daddd8e139313951c5de602565296 = L.marker(
+                [25.056815399999998, 121.55635087703021],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_be2ddcc0807693465aacce2b1faa0194 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_19f1df2bfdb1809c8768f3d0752dec72 = $(`<div id="html_19f1df2bfdb1809c8768f3d0752dec72" style="width: 100.0%; height: 100.0%;">介壽國中</div>`)[0];
+                popup_be2ddcc0807693465aacce2b1faa0194.setContent(html_19f1df2bfdb1809c8768f3d0752dec72);
+            
+        
+
+        marker_f07daddd8e139313951c5de602565296.bindPopup(popup_be2ddcc0807693465aacce2b1faa0194)
+        ;
+
+        
+    
+    
+            var marker_ecc38d96cbef0de771514b336b1658fa = L.marker(
+                [25.05090645, 121.54659411266283],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_4b67696c11d79623bd62723308f941c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_825080a2d7e822f347bb96e2c5a311e8 = $(`<div id="html_825080a2d7e822f347bb96e2c5a311e8" style="width: 100.0%; height: 100.0%;">敦化國中</div>`)[0];
+                popup_4b67696c11d79623bd62723308f941c5.setContent(html_825080a2d7e822f347bb96e2c5a311e8);
+            
+        
+
+        marker_ecc38d96cbef0de771514b336b1658fa.bindPopup(popup_4b67696c11d79623bd62723308f941c5)
+        ;
+
+        
+    
+    
+            var marker_8c0b38ba178cc0bb8988a7b8c09d9780 = L.marker(
+                [25.0606868, 121.5442019],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_ae3cbc13c9d1f827690489e12aa38c68 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_958bc7989a6c194dd7ebf0c91bbb6851 = $(`<div id="html_958bc7989a6c194dd7ebf0c91bbb6851" style="width: 100.0%; height: 100.0%;">中山國中</div>`)[0];
+                popup_ae3cbc13c9d1f827690489e12aa38c68.setContent(html_958bc7989a6c194dd7ebf0c91bbb6851);
+            
+        
+
+        marker_8c0b38ba178cc0bb8988a7b8c09d9780.bindPopup(popup_ae3cbc13c9d1f827690489e12aa38c68)
+        ;
+
+        
+    
+    
+            var marker_6ec904d1f58973a067df27fa12894c08 = L.marker(
+                [23.4644127, 120.43937624668149],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_e2c04ffe16b07bc9112144f1f3f8a969 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c9d30d108635dde9f67d208b6a4461ee = $(`<div id="html_c9d30d108635dde9f67d208b6a4461ee" style="width: 100.0%; height: 100.0%;">民生國中</div>`)[0];
+                popup_e2c04ffe16b07bc9112144f1f3f8a969.setContent(html_c9d30d108635dde9f67d208b6a4461ee);
+            
+        
+
+        marker_6ec904d1f58973a067df27fa12894c08.bindPopup(popup_e2c04ffe16b07bc9112144f1f3f8a969)
+        ;
+
+        
+    
+    
+            var marker_083a96a7ff41b3f019ece4b0941d56cc = L.marker(
+                [34.6731925, 135.8372122745633],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_dcdf5ab78cf91cc76f0d562a4f5b97b6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_766e2ff7e5f3d61406a1bd3937c37f66 = $(`<div id="html_766e2ff7e5f3d61406a1bd3937c37f66" style="width: 100.0%; height: 100.0%;">中崙高中國中</div>`)[0];
+                popup_dcdf5ab78cf91cc76f0d562a4f5b97b6.setContent(html_766e2ff7e5f3d61406a1bd3937c37f66);
+            
+        
+
+        marker_083a96a7ff41b3f019ece4b0941d56cc.bindPopup(popup_dcdf5ab78cf91cc76f0d562a4f5b97b6)
+        ;
+
+        
+    
+    
+            var marker_89f8f0b0d5170cae61cea572d875316a = L.marker(
+                [25.02906025, 121.56738521010215],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_3d4da4194fec99ab66ac3aba95dc91dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9bac424be3d962170dcc2e93f380f69c = $(`<div id="html_9bac424be3d962170dcc2e93f380f69c" style="width: 100.0%; height: 100.0%;">信義國中</div>`)[0];
+                popup_3d4da4194fec99ab66ac3aba95dc91dd.setContent(html_9bac424be3d962170dcc2e93f380f69c);
+            
+        
+
+        marker_89f8f0b0d5170cae61cea572d875316a.bindPopup(popup_3d4da4194fec99ab66ac3aba95dc91dd)
+        ;
+
+        
+    
+    
+            var marker_0668970510ddb6f0c96f803c25be01d7 = L.marker(
+                [25.0370063, 121.58606556997447],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_c64b93688c4a5978aa46817c0e6fdd3f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f336b1305b75a8e5c3f2016ff19d42e1 = $(`<div id="html_f336b1305b75a8e5c3f2016ff19d42e1" style="width: 100.0%; height: 100.0%;">瑠公國中</div>`)[0];
+                popup_c64b93688c4a5978aa46817c0e6fdd3f.setContent(html_f336b1305b75a8e5c3f2016ff19d42e1);
+            
+        
+
+        marker_0668970510ddb6f0c96f803c25be01d7.bindPopup(popup_c64b93688c4a5978aa46817c0e6fdd3f)
+        ;
+
+        
+    
+    
+            var marker_181816e4d5634d0737698b8150efc5b7 = L.marker(
+                [25.035464750000003, 121.57224514342028],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b2d0e51a0c60f779d896bafa9f9b5e27 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aeb941e5aa8e359fa8e75e398227e3a5 = $(`<div id="html_aeb941e5aa8e359fa8e75e398227e3a5" style="width: 100.0%; height: 100.0%;">興雅國中</div>`)[0];
+                popup_b2d0e51a0c60f779d896bafa9f9b5e27.setContent(html_aeb941e5aa8e359fa8e75e398227e3a5);
+            
+        
+
+        marker_181816e4d5634d0737698b8150efc5b7.bindPopup(popup_b2d0e51a0c60f779d896bafa9f9b5e27)
+        ;
+
+        
+    
+    
+            var marker_22b31d55e22f84a7964f65adb5a401b7 = L.marker(
+                [25.0482871, 121.57346748500711],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_79bf7786ce201f3c3eda3ab053789e93 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4eea9d3cb1dbe3f9404d231463ec0063 = $(`<div id="html_4eea9d3cb1dbe3f9404d231463ec0063" style="width: 100.0%; height: 100.0%;">永吉國中</div>`)[0];
+                popup_79bf7786ce201f3c3eda3ab053789e93.setContent(html_4eea9d3cb1dbe3f9404d231463ec0063);
+            
+        
+
+        marker_22b31d55e22f84a7964f65adb5a401b7.bindPopup(popup_79bf7786ce201f3c3eda3ab053789e93)
+        ;
+
+        
+    
+    
+            var marker_a1f5b3f734d48aaa62e76fa5d5881127 = L.marker(
+                [24.09343295, 120.69880786409604],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_dd0c8c17272d9d484987fbeb5a4eda8a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_db3c28502ad5a3d538ec6c4774330722 = $(`<div id="html_db3c28502ad5a3d538ec6c4774330722" style="width: 100.0%; height: 100.0%;">成功國中</div>`)[0];
+                popup_dd0c8c17272d9d484987fbeb5a4eda8a.setContent(html_db3c28502ad5a3d538ec6c4774330722);
+            
+        
+
+        marker_a1f5b3f734d48aaa62e76fa5d5881127.bindPopup(popup_dd0c8c17272d9d484987fbeb5a4eda8a)
+        ;
+
+        
+    
+    
+            var marker_45b9bd66dcc68bbc7eb19c9710c071ac = L.marker(
+                [24.993636700000003, 121.54303317082373],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_c79841352816d61048c9777934b4805e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_02b83cc057a1fc6a2ae3cb423042192e = $(`<div id="html_02b83cc057a1fc6a2ae3cb423042192e" style="width: 100.0%; height: 100.0%;">景美國中</div>`)[0];
+                popup_c79841352816d61048c9777934b4805e.setContent(html_02b83cc057a1fc6a2ae3cb423042192e);
+            
+        
+
+        marker_45b9bd66dcc68bbc7eb19c9710c071ac.bindPopup(popup_c79841352816d61048c9777934b4805e)
+        ;
+
+        
+    
+    
+            var marker_e2e9cb20f322b241d8b00bdac5824f8e = L.marker(
+                [24.9965289, 121.5437247287495],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b5d0333a3f433e61af9640c32acbfb45 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6b5ff0643042f725484e4a13dea3be96 = $(`<div id="html_6b5ff0643042f725484e4a13dea3be96" style="width: 100.0%; height: 100.0%;">景興國中</div>`)[0];
+                popup_b5d0333a3f433e61af9640c32acbfb45.setContent(html_6b5ff0643042f725484e4a13dea3be96);
+            
+        
+
+        marker_e2e9cb20f322b241d8b00bdac5824f8e.bindPopup(popup_b5d0333a3f433e61af9640c32acbfb45)
+        ;
+
+        
+    
+    
+            var marker_249a84324943a43d9a846a5425728abd = L.marker(
+                [24.9872527, 121.56709112643829],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_2b7876165365211463599ee2c26c0e78 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79e13907b06f01d10aa6b88d8b949b13 = $(`<div id="html_79e13907b06f01d10aa6b88d8b949b13" style="width: 100.0%; height: 100.0%;">木柵國中</div>`)[0];
+                popup_2b7876165365211463599ee2c26c0e78.setContent(html_79e13907b06f01d10aa6b88d8b949b13);
+            
+        
+
+        marker_249a84324943a43d9a846a5425728abd.bindPopup(popup_2b7876165365211463599ee2c26c0e78)
+        ;
+
+        
+    
+    
+            var marker_45c42096a3e6d48f15c8b81131e1c75a = L.marker(
+                [24.98397385, 121.5560296460433],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_85d3709eaef9140c9a26880fba389240 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5b75bf3378289d23c560a0b63fcfab22 = $(`<div id="html_5b75bf3378289d23c560a0b63fcfab22" style="width: 100.0%; height: 100.0%;">實踐國中</div>`)[0];
+                popup_85d3709eaef9140c9a26880fba389240.setContent(html_5b75bf3378289d23c560a0b63fcfab22);
+            
+        
+
+        marker_45c42096a3e6d48f15c8b81131e1c75a.bindPopup(popup_85d3709eaef9140c9a26880fba389240)
+        ;
+
+        
+    
+    
+            var marker_a64e7c36fb36f466032ec67cdbc5d613 = L.marker(
+                [23.3161636, 120.4033419896598],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b9c5089d3c361e74ac8634186a4bb199 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b34c9f4ddcda800fdbca8de9cd1272ba = $(`<div id="html_b34c9f4ddcda800fdbca8de9cd1272ba" style="width: 100.0%; height: 100.0%;">東山國中</div>`)[0];
+                popup_b9c5089d3c361e74ac8634186a4bb199.setContent(html_b34c9f4ddcda800fdbca8de9cd1272ba);
+            
+        
+
+        marker_a64e7c36fb36f466032ec67cdbc5d613.bindPopup(popup_b9c5089d3c361e74ac8634186a4bb199)
+        ;
+
+        
+    
+    
+            var marker_9d1ea59c1449042411ed93bcce5712b3 = L.marker(
+                [35.357355, 136.6129376],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_93e4466d700fa5e888c177e1af7bb7a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f2e1afdb14c77e2645a3ec4b41d4f9f4 = $(`<div id="html_f2e1afdb14c77e2645a3ec4b41d4f9f4" style="width: 100.0%; height: 100.0%;">靜心國中</div>`)[0];
+                popup_93e4466d700fa5e888c177e1af7bb7a8.setContent(html_f2e1afdb14c77e2645a3ec4b41d4f9f4);
+            
+        
+
+        marker_9d1ea59c1449042411ed93bcce5712b3.bindPopup(popup_93e4466d700fa5e888c177e1af7bb7a8)
+        ;
+
+        
+    
+    
+            var marker_b13cbc97ab63fba9c72806ef42481acb = L.marker(
+                [25.04978375, 121.53161983260834],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_45fa192f77720921e2eb712dfd20fdd2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ff69cea401ebb1bfb183b8d498cb3d57 = $(`<div id="html_ff69cea401ebb1bfb183b8d498cb3d57" style="width: 100.0%; height: 100.0%;">長安國中</div>`)[0];
+                popup_45fa192f77720921e2eb712dfd20fdd2.setContent(html_ff69cea401ebb1bfb183b8d498cb3d57);
+            
+        
+
+        marker_b13cbc97ab63fba9c72806ef42481acb.bindPopup(popup_45fa192f77720921e2eb712dfd20fdd2)
+        ;
+
+        
+    
+    
+            var marker_7f29cce489da9d49eab06c2509aca7bb = L.marker(
+                [25.06424965, 121.54315375605381],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_67979cf6459c827c1eb2aa14a05d3f2e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6cec336131653324275967ae89b13994 = $(`<div id="html_6cec336131653324275967ae89b13994" style="width: 100.0%; height: 100.0%;">五常國中</div>`)[0];
+                popup_67979cf6459c827c1eb2aa14a05d3f2e.setContent(html_6cec336131653324275967ae89b13994);
+            
+        
+
+        marker_7f29cce489da9d49eab06c2509aca7bb.bindPopup(popup_67979cf6459c827c1eb2aa14a05d3f2e)
+        ;
+
+        
+    
+    
+            var marker_30cce4f92098aedc2da12a0fff1bb74a = L.marker(
+                [25.0789092, 121.56098193392728],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_98e9a8ad300323a6be9899d6cf58c04d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e2b0f5a19480f962168a5503b25b92e3 = $(`<div id="html_e2b0f5a19480f962168a5503b25b92e3" style="width: 100.0%; height: 100.0%;">濱江國中</div>`)[0];
+                popup_98e9a8ad300323a6be9899d6cf58c04d.setContent(html_e2b0f5a19480f962168a5503b25b92e3);
+            
+        
+
+        marker_30cce4f92098aedc2da12a0fff1bb74a.bindPopup(popup_98e9a8ad300323a6be9899d6cf58c04d)
+        ;
+
+        
+    
+    
+            var marker_800456615eb2809c118f5077357cff6f = L.marker(
+                [22.97731325, 120.18598041323564],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_c6109b5fa7672e37ccfaa1a581dc69f8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_935273898f13de86a2810346a6423638 = $(`<div id="html_935273898f13de86a2810346a6423638" style="width: 100.0%; height: 100.0%;">新興國中</div>`)[0];
+                popup_c6109b5fa7672e37ccfaa1a581dc69f8.setContent(html_935273898f13de86a2810346a6423638);
+            
+        
+
+        marker_800456615eb2809c118f5077357cff6f.bindPopup(popup_c6109b5fa7672e37ccfaa1a581dc69f8)
+        ;
+
+        
+    
+    
+            var marker_883e705f4de655cdef000d21affc3399 = L.marker(
+                [25.07825345, 121.54182097864188],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_71a98b8461803bda40a12b33685debfd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d4bf4ac53c468fae152bbcb82afa57f7 = $(`<div id="html_d4bf4ac53c468fae152bbcb82afa57f7" style="width: 100.0%; height: 100.0%;">北安國中</div>`)[0];
+                popup_71a98b8461803bda40a12b33685debfd.setContent(html_d4bf4ac53c468fae152bbcb82afa57f7);
+            
+        
+
+        marker_883e705f4de655cdef000d21affc3399.bindPopup(popup_71a98b8461803bda40a12b33685debfd)
+        ;
+
+        
+    
+    
+            var marker_d3598b665767505eb62b4458e923967c = L.marker(
+                [24.74208675, 120.91156097922848],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_afa4cd23ad3da50a1f9b55537ddb9730 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c2efdbd4fb30d6ae0ed30ecdafe523a6 = $(`<div id="html_c2efdbd4fb30d6ae0ed30ecdafe523a6" style="width: 100.0%; height: 100.0%;">內湖國中</div>`)[0];
+                popup_afa4cd23ad3da50a1f9b55537ddb9730.setContent(html_c2efdbd4fb30d6ae0ed30ecdafe523a6);
+            
+        
+
+        marker_d3598b665767505eb62b4458e923967c.bindPopup(popup_afa4cd23ad3da50a1f9b55537ddb9730)
+        ;
+
+        
+    
+    
+            var marker_aa9bdebd6d6f2adbbc3da0aab2af5094 = L.marker(
+                [25.085191950000002, 121.5662195063206],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_587f2bd4f28d3645b3bbf01c467f3a5a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b52aa118ee9713f928a54c12853de7dc = $(`<div id="html_b52aa118ee9713f928a54c12853de7dc" style="width: 100.0%; height: 100.0%;">西湖國中</div>`)[0];
+                popup_587f2bd4f28d3645b3bbf01c467f3a5a.setContent(html_b52aa118ee9713f928a54c12853de7dc);
+            
+        
+
+        marker_aa9bdebd6d6f2adbbc3da0aab2af5094.bindPopup(popup_587f2bd4f28d3645b3bbf01c467f3a5a)
+        ;
+
+        
+    
+    
+            var marker_20c34302d3e1c37bc60f72e99172253b = L.marker(
+                [25.082088849999998, 121.57557026037398],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_fd244a529c2b670452de1e94e5bbb703 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9d194906f5395ffb649c3e8c536cd0e3 = $(`<div id="html_9d194906f5395ffb649c3e8c536cd0e3" style="width: 100.0%; height: 100.0%;">麗山國中</div>`)[0];
+                popup_fd244a529c2b670452de1e94e5bbb703.setContent(html_9d194906f5395ffb649c3e8c536cd0e3);
+            
+        
+
+        marker_20c34302d3e1c37bc60f72e99172253b.bindPopup(popup_fd244a529c2b670452de1e94e5bbb703)
+        ;
+
+        
+    
+    
+            var marker_91dea6858a2af30ba418e9227bac0f7e = L.marker(
+                [35.00292, 135.757914],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_7d7890faa92a5a66417cc3595fec1c22 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f74c69458b3591bcb5c9cd092fb851fa = $(`<div id="html_f74c69458b3591bcb5c9cd092fb851fa" style="width: 100.0%; height: 100.0%;">方濟高中國中</div>`)[0];
+                popup_7d7890faa92a5a66417cc3595fec1c22.setContent(html_f74c69458b3591bcb5c9cd092fb851fa);
+            
+        
+
+        marker_91dea6858a2af30ba418e9227bac0f7e.bindPopup(popup_7d7890faa92a5a66417cc3595fec1c22)
+        ;
+
+        
+    
+    
+            var marker_d2b4bff222e0db2134dcb34e6d1c8247 = L.marker(
+                [35.0304815, 135.76063700464476],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_74b66b34b2d5a21b7418ac321943a644 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e94121e21e6c84c7f1070a92834a1cf0 = $(`<div id="html_e94121e21e6c84c7f1070a92834a1cf0" style="width: 100.0%; height: 100.0%;">達人高中國中</div>`)[0];
+                popup_74b66b34b2d5a21b7418ac321943a644.setContent(html_e94121e21e6c84c7f1070a92834a1cf0);
+            
+        
+
+        marker_d2b4bff222e0db2134dcb34e6d1c8247.bindPopup(popup_74b66b34b2d5a21b7418ac321943a644)
+        ;
+
+        
+    
+    
+            var marker_17b0808d8d27137f44ee08e1d939192b = L.marker(
+                [25.0700676, 121.61028578826725],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_e5ee51f244a466e9596b60530921345a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_961dbf71da75d49e506fcefe999fe500 = $(`<div id="html_961dbf71da75d49e506fcefe999fe500" style="width: 100.0%; height: 100.0%;">明湖國中</div>`)[0];
+                popup_e5ee51f244a466e9596b60530921345a.setContent(html_961dbf71da75d49e506fcefe999fe500);
+            
+        
+
+        marker_17b0808d8d27137f44ee08e1d939192b.bindPopup(popup_e5ee51f244a466e9596b60530921345a)
+        ;
+
+        
+    
+    
+            var marker_39571df6fc1e3458c68635ba60a507f8 = L.marker(
+                [25.0449645, 121.5881163491833],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_30f0357ebe7b9afe970da215fa68950b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2b932bba75db07f26235e8c8f60a840a = $(`<div id="html_2b932bba75db07f26235e8c8f60a840a" style="width: 100.0%; height: 100.0%;">成德國中</div>`)[0];
+                popup_30f0357ebe7b9afe970da215fa68950b.setContent(html_2b932bba75db07f26235e8c8f60a840a);
+            
+        
+
+        marker_39571df6fc1e3458c68635ba60a507f8.bindPopup(popup_30f0357ebe7b9afe970da215fa68950b)
+        ;
+
+        
+    
+    
+            var marker_e57ed1618c191fd3cb6a14bc95ce2ba7 = L.marker(
+                [31.8508813, 117.1059109],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_6fe249b05aae292d338176e88bc88d47 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_54d249f8c6b64c93abfefef2ef5acbdc = $(`<div id="html_54d249f8c6b64c93abfefef2ef5acbdc" style="width: 100.0%; height: 100.0%;">南港高中國中</div>`)[0];
+                popup_6fe249b05aae292d338176e88bc88d47.setContent(html_54d249f8c6b64c93abfefef2ef5acbdc);
+            
+        
+
+        marker_e57ed1618c191fd3cb6a14bc95ce2ba7.bindPopup(popup_6fe249b05aae292d338176e88bc88d47)
+        ;
+
+        
+    
+    
+            var marker_43ba58106b1d4819b1f0cd6e96d4e3fb = L.marker(
+                [25.067423400000003, 121.37030879899146],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_effe52cfe65a1ad8a129351fd585b56f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1886bb174be775d6900ff4fb5507f83 = $(`<div id="html_f1886bb174be775d6900ff4fb5507f83" style="width: 100.0%; height: 100.0%;">崇林國中</div>`)[0];
+                popup_effe52cfe65a1ad8a129351fd585b56f.setContent(html_f1886bb174be775d6900ff4fb5507f83);
+            
+        
+
+        marker_43ba58106b1d4819b1f0cd6e96d4e3fb.bindPopup(popup_effe52cfe65a1ad8a129351fd585b56f)
+        ;
+
+        
+    
+    
+            var marker_d20ea4523a73eb313e0d3d07f82621b2 = L.marker(
+                [25.024971899999997, 121.45329911102827],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_f45ca048b9b1e29e5002574603206ff1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ae44a8077f148048c76121bbbcaa7075 = $(`<div id="html_ae44a8077f148048c76121bbbcaa7075" style="width: 100.0%; height: 100.0%;">板橋國中</div>`)[0];
+                popup_f45ca048b9b1e29e5002574603206ff1.setContent(html_ae44a8077f148048c76121bbbcaa7075);
+            
+        
+
+        marker_d20ea4523a73eb313e0d3d07f82621b2.bindPopup(popup_f45ca048b9b1e29e5002574603206ff1)
+        ;
+
+        
+    
+    
+            var marker_7829a2156ff99e354baad97c3e6a3f0d = L.marker(
+                [25.024606849999998, 121.45896570338664],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_681ff9ae1de4ff6b023358789c68bed6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a27737a111aa35ccae83689f8617e47e = $(`<div id="html_a27737a111aa35ccae83689f8617e47e" style="width: 100.0%; height: 100.0%;">新埔國中</div>`)[0];
+                popup_681ff9ae1de4ff6b023358789c68bed6.setContent(html_a27737a111aa35ccae83689f8617e47e);
+            
+        
+
+        marker_7829a2156ff99e354baad97c3e6a3f0d.bindPopup(popup_681ff9ae1de4ff6b023358789c68bed6)
+        ;
+
+        
+    
+    
+            var marker_efe89a5138d60ff501f1d18538984b47 = L.marker(
+                [34.3291261, 133.1731763],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_72854b6ff6d2a5639669b9b6dfbd199d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_164b041c65aabab830dea22b1b54ff0c = $(`<div id="html_164b041c65aabab830dea22b1b54ff0c" style="width: 100.0%; height: 100.0%;">海山國中</div>`)[0];
+                popup_72854b6ff6d2a5639669b9b6dfbd199d.setContent(html_164b041c65aabab830dea22b1b54ff0c);
+            
+        
+
+        marker_efe89a5138d60ff501f1d18538984b47.bindPopup(popup_72854b6ff6d2a5639669b9b6dfbd199d)
+        ;
+
+        
+    
+    
+            var marker_7461619a6f40293643efc0220f5ef8c4 = L.marker(
+                [24.99786225, 121.4319412889223],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_6384d208e1bbb37dbc6bf43c9f28a849 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f7d2d37d71ce871bbe8fb4d6ee899377 = $(`<div id="html_f7d2d37d71ce871bbe8fb4d6ee899377" style="width: 100.0%; height: 100.0%;">溪崑國中</div>`)[0];
+                popup_6384d208e1bbb37dbc6bf43c9f28a849.setContent(html_f7d2d37d71ce871bbe8fb4d6ee899377);
+            
+        
+
+        marker_7461619a6f40293643efc0220f5ef8c4.bindPopup(popup_6384d208e1bbb37dbc6bf43c9f28a849)
+        ;
+
+        
+    
+    
+            var marker_f4edc64c7d8b21ef943fef754554c128 = L.marker(
+                [25.0286376, 121.4673186512084],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_d1e05eea90fcd6b18cc16c671f5a1b39 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0bbe2ec8c4915f24fd4355fe16e32752 = $(`<div id="html_0bbe2ec8c4915f24fd4355fe16e32752" style="width: 100.0%; height: 100.0%;">江翠國中</div>`)[0];
+                popup_d1e05eea90fcd6b18cc16c671f5a1b39.setContent(html_0bbe2ec8c4915f24fd4355fe16e32752);
+            
+        
+
+        marker_f4edc64c7d8b21ef943fef754554c128.bindPopup(popup_d1e05eea90fcd6b18cc16c671f5a1b39)
+        ;
+
+        
+    
+    
+            var marker_2a251f6b8809b6f46e55ba161e7e9212 = L.marker(
+                [25.0606868, 121.5442019],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_027cd3f699229a071e8d1c601815216e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_23782b06d408c3115b715d0c1f37b46f = $(`<div id="html_23782b06d408c3115b715d0c1f37b46f" style="width: 100.0%; height: 100.0%;">中山國中</div>`)[0];
+                popup_027cd3f699229a071e8d1c601815216e.setContent(html_23782b06d408c3115b715d0c1f37b46f);
+            
+        
+
+        marker_2a251f6b8809b6f46e55ba161e7e9212.bindPopup(popup_027cd3f699229a071e8d1c601815216e)
+        ;
+
+        
+    
+    
+            var marker_6531c6e04de6af023228cdc02f84f4fe = L.marker(
+                [25.07649985, 121.5181861417231],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_fe741875af8ff5e11b18084756a2971a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bad3343baaa61c7c43b1a2b0dbabf642 = $(`<div id="html_bad3343baaa61c7c43b1a2b0dbabf642" style="width: 100.0%; height: 100.0%;">重慶國中</div>`)[0];
+                popup_fe741875af8ff5e11b18084756a2971a.setContent(html_bad3343baaa61c7c43b1a2b0dbabf642);
+            
+        
+
+        marker_6531c6e04de6af023228cdc02f84f4fe.bindPopup(popup_fe741875af8ff5e11b18084756a2971a)
+        ;
+
+        
+    
+    
+            var marker_51fe148d47a811b832a5ca13fbc88f94 = L.marker(
+                [25.01051635, 121.44827552999618],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_4b4c63dac3a7db9a87dc00bd02bf734a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a3492010bf245040d07b67a0b3f8b3fa = $(`<div id="html_a3492010bf245040d07b67a0b3f8b3fa" style="width: 100.0%; height: 100.0%;">大觀國中</div>`)[0];
+                popup_4b4c63dac3a7db9a87dc00bd02bf734a.setContent(html_a3492010bf245040d07b67a0b3f8b3fa);
+            
+        
+
+        marker_51fe148d47a811b832a5ca13fbc88f94.bindPopup(popup_4b4c63dac3a7db9a87dc00bd02bf734a)
+        ;
+
+        
+    
+    
+            var marker_130ca7fa22417b267c5f3a93f6993b16 = L.marker(
+                [25.0515447, 121.50777823043603],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_3d5c7a9f4752ba333e80fac8d547ec48 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0f15d273ed1669401b81444a434cb04a = $(`<div id="html_0f15d273ed1669401b81444a434cb04a" style="width: 100.0%; height: 100.0%;">忠孝國中</div>`)[0];
+                popup_3d5c7a9f4752ba333e80fac8d547ec48.setContent(html_0f15d273ed1669401b81444a434cb04a);
+            
+        
+
+        marker_130ca7fa22417b267c5f3a93f6993b16.bindPopup(popup_3d5c7a9f4752ba333e80fac8d547ec48)
+        ;
+
+        
+    
+    
+            var marker_8008aa4d82efd2b9a5a12225919ea6db = L.marker(
+                [25.09099405, 121.46122564309927],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_76fe7e90eeef8c472302f963fe2dbeaf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8eb11ec013ff1d0efdc12560f76b46dd = $(`<div id="html_8eb11ec013ff1d0efdc12560f76b46dd" style="width: 100.0%; height: 100.0%;">鷺江國中</div>`)[0];
+                popup_76fe7e90eeef8c472302f963fe2dbeaf.setContent(html_8eb11ec013ff1d0efdc12560f76b46dd);
+            
+        
+
+        marker_8008aa4d82efd2b9a5a12225919ea6db.bindPopup(popup_76fe7e90eeef8c472302f963fe2dbeaf)
+        ;
+
+        
+    
+    
+            var marker_534ad17cc0cb37f8c150754f6d6e22e3 = L.marker(
+                [33.8712439, 130.8638154],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_2426eca0dd8f5c3a3dd8d0a70c437da0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e30f24c089c7c0a8b2105007ce0ab332 = $(`<div id="html_e30f24c089c7c0a8b2105007ce0ab332" style="width: 100.0%; height: 100.0%;">三民高中國中</div>`)[0];
+                popup_2426eca0dd8f5c3a3dd8d0a70c437da0.setContent(html_e30f24c089c7c0a8b2105007ce0ab332);
+            
+        
+
+        marker_534ad17cc0cb37f8c150754f6d6e22e3.bindPopup(popup_2426eca0dd8f5c3a3dd8d0a70c437da0)
+        ;
+
+        
+    
+    
+            var marker_3093d18ac1733378b37cc5e803dbb1a5 = L.marker(
+                [25.0865729, 121.46567290426785],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_486443ad447bac590b9bcae3b310cac6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67e22335778e932c44c04a342373b752 = $(`<div id="html_67e22335778e932c44c04a342373b752" style="width: 100.0%; height: 100.0%;">蘆洲國中</div>`)[0];
+                popup_486443ad447bac590b9bcae3b310cac6.setContent(html_67e22335778e932c44c04a342373b752);
+            
+        
+
+        marker_3093d18ac1733378b37cc5e803dbb1a5.bindPopup(popup_486443ad447bac590b9bcae3b310cac6)
+        ;
+
+        
+    
+    
+            var marker_13252f6f3f43184b7713760265a0bf12 = L.marker(
+                [35.0074993, 135.760303],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_4cec80a607d016b076bfd413f02c85ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4293198e0401fe6df7701a8ac85909ac = $(`<div id="html_4293198e0401fe6df7701a8ac85909ac" style="width: 100.0%; height: 100.0%;">徐匯中學國中</div>`)[0];
+                popup_4cec80a607d016b076bfd413f02c85ee.setContent(html_4293198e0401fe6df7701a8ac85909ac);
+            
+        
+
+        marker_13252f6f3f43184b7713760265a0bf12.bindPopup(popup_4cec80a607d016b076bfd413f02c85ee)
+        ;
+
+        
+    
+    
+            var marker_0cab284de8011d834835bda9445288e3 = L.marker(
+                [25.07703335, 121.37712279193877],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_f9301541cfcba2b192fa6be1f0fc8082 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5b64c2a8994a27e8e2b18a5be2688e59 = $(`<div id="html_5b64c2a8994a27e8e2b18a5be2688e59" style="width: 100.0%; height: 100.0%;">林口國中</div>`)[0];
+                popup_f9301541cfcba2b192fa6be1f0fc8082.setContent(html_5b64c2a8994a27e8e2b18a5be2688e59);
+            
+        
+
+        marker_0cab284de8011d834835bda9445288e3.bindPopup(popup_f9301541cfcba2b192fa6be1f0fc8082)
+        ;
+
+        
+    
+    
+            var marker_afe5183a22ffe8abf05cfb070dd17534 = L.marker(
+                [25.0813129, 121.38440350138197],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_f21617a7b70e2f451589adca456506a5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bab5999de758b17bcabcb1f897bea784 = $(`<div id="html_bab5999de758b17bcabcb1f897bea784" style="width: 100.0%; height: 100.0%;">佳林國中</div>`)[0];
+                popup_f21617a7b70e2f451589adca456506a5.setContent(html_bab5999de758b17bcabcb1f897bea784);
+            
+        
+
+        marker_afe5183a22ffe8abf05cfb070dd17534.bindPopup(popup_f21617a7b70e2f451589adca456506a5)
+        ;
+
+        
+    
+    
+            var marker_ab542942a9a1c72b3788abd00e5acbeb = L.marker(
+                [34.6819449, 135.1772498],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_a38580c326f07c0c2635c6ab82a6de0a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e36ddad3141fab4d7e795e0bd1a72599 = $(`<div id="html_e36ddad3141fab4d7e795e0bd1a72599" style="width: 100.0%; height: 100.0%;">醒吾高中國中</div>`)[0];
+                popup_a38580c326f07c0c2635c6ab82a6de0a.setContent(html_e36ddad3141fab4d7e795e0bd1a72599);
+            
+        
+
+        marker_ab542942a9a1c72b3788abd00e5acbeb.bindPopup(popup_a38580c326f07c0c2635c6ab82a6de0a)
+        ;
+
+        
+    
+    
+            var marker_a3e035adf76c2d18c6758bbf337fd1ab = L.marker(
+                [25.0641941, 121.48886540400096],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_e8820f14eef7e3848bf7d5eda7a8aa5f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a3bdee4fecf81814a1ddd871d742ffb2 = $(`<div id="html_a3bdee4fecf81814a1ddd871d742ffb2" style="width: 100.0%; height: 100.0%;">明志國中</div>`)[0];
+                popup_e8820f14eef7e3848bf7d5eda7a8aa5f.setContent(html_a3bdee4fecf81814a1ddd871d742ffb2);
+            
+        
+
+        marker_a3e035adf76c2d18c6758bbf337fd1ab.bindPopup(popup_e8820f14eef7e3848bf7d5eda7a8aa5f)
+        ;
+
+        
+    
+    
+            var marker_6beffd584699fbf28e1a8af0190a0d30 = L.marker(
+                [25.0768103, 121.4863783],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b0b204598a94afc8c9103ff3e187970f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f75449caa6c690f8f1027a553783124a = $(`<div id="html_f75449caa6c690f8f1027a553783124a" style="width: 100.0%; height: 100.0%;">三和國中</div>`)[0];
+                popup_b0b204598a94afc8c9103ff3e187970f.setContent(html_f75449caa6c690f8f1027a553783124a);
+            
+        
+
+        marker_6beffd584699fbf28e1a8af0190a0d30.bindPopup(popup_b0b204598a94afc8c9103ff3e187970f)
+        ;
+
+        
+    
+    
+            var marker_5e45893af3a7a1030af0d6ebc0f11a1b = L.marker(
+                [25.0654858, 121.47973177582057],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_d86f76dd74fa2c24a8cbb68f44dd4305 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1c075f38296c68191e7c2bf8d478e2ef = $(`<div id="html_1c075f38296c68191e7c2bf8d478e2ef" style="width: 100.0%; height: 100.0%;">二重國中</div>`)[0];
+                popup_d86f76dd74fa2c24a8cbb68f44dd4305.setContent(html_1c075f38296c68191e7c2bf8d478e2ef);
+            
+        
+
+        marker_5e45893af3a7a1030af0d6ebc0f11a1b.bindPopup(popup_d86f76dd74fa2c24a8cbb68f44dd4305)
+        ;
+
+        
+    
+    
+            var marker_8b07f2a37c451cb5c1298284a660a620 = L.marker(
+                [25.0877242, 121.48843258794157],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_ea2d9dbc49536dc44e3708c274ed748e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1f56238b46b65ca263f58816842a2b4 = $(`<div id="html_a1f56238b46b65ca263f58816842a2b4" style="width: 100.0%; height: 100.0%;">碧華國中</div>`)[0];
+                popup_ea2d9dbc49536dc44e3708c274ed748e.setContent(html_a1f56238b46b65ca263f58816842a2b4);
+            
+        
+
+        marker_8b07f2a37c451cb5c1298284a660a620.bindPopup(popup_ea2d9dbc49536dc44e3708c274ed748e)
+        ;
+
+        
+    
+    
+            var marker_65d70270c31fa5f1eacd6c1420aeecfa = L.marker(
+                [24.1112222, 120.68736359827315],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_d81838b01be5a902b7f3a75d8dc5ee2a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0982dc183a7758199c9c9cc8e42c0549 = $(`<div id="html_0982dc183a7758199c9c9cc8e42c0549" style="width: 100.0%; height: 100.0%;">光榮國中</div>`)[0];
+                popup_d81838b01be5a902b7f3a75d8dc5ee2a.setContent(html_0982dc183a7758199c9c9cc8e42c0549);
+            
+        
+
+        marker_65d70270c31fa5f1eacd6c1420aeecfa.bindPopup(popup_d81838b01be5a902b7f3a75d8dc5ee2a)
+        ;
+
+        
+    
+    
+            var marker_5e196c64d687f842b28f4bd75b32f832 = L.marker(
+                [25.1311681, 121.54575260848215],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_867e9721015ff38b2e84d0015a645e39 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_646a7800f8edccb6aee804dd5972f96d = $(`<div id="html_646a7800f8edccb6aee804dd5972f96d" style="width: 100.0%; height: 100.0%;">格致國中</div>`)[0];
+                popup_867e9721015ff38b2e84d0015a645e39.setContent(html_646a7800f8edccb6aee804dd5972f96d);
+            
+        
+
+        marker_5e196c64d687f842b28f4bd75b32f832.bindPopup(popup_867e9721015ff38b2e84d0015a645e39)
+        ;
+
+        
+    
+    
+            var marker_8307f6d348079627877709612d5b4878 = L.marker(
+                [25.1788916, 121.4471921331848],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_ff641be5961b4bfd4fcf0a8e3cfe981a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9e893def9e00bf6d5c51b1d55d1048e0 = $(`<div id="html_9e893def9e00bf6d5c51b1d55d1048e0" style="width: 100.0%; height: 100.0%;">正德國中</div>`)[0];
+                popup_ff641be5961b4bfd4fcf0a8e3cfe981a.setContent(html_9e893def9e00bf6d5c51b1d55d1048e0);
+            
+        
+
+        marker_8307f6d348079627877709612d5b4878.bindPopup(popup_ff641be5961b4bfd4fcf0a8e3cfe981a)
+        ;
+
+        
+    
+    
+            var marker_b71010a9e0f8202ce131eb09fed1c319 = L.marker(
+                [29.08063045, 119.65431642696029],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_291d398a13937ce33cc6a1209459061f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c07fb2f7277034eba63c49289409c445 = $(`<div id="html_c07fb2f7277034eba63c49289409c445" style="width: 100.0%; height: 100.0%;">淡江高中國中</div>`)[0];
+                popup_291d398a13937ce33cc6a1209459061f.setContent(html_c07fb2f7277034eba63c49289409c445);
+            
+        
+
+        marker_b71010a9e0f8202ce131eb09fed1c319.bindPopup(popup_291d398a13937ce33cc6a1209459061f)
+        ;
+
+        
+    
+    
+            var marker_f7485854691a262138da32f5b667f503 = L.marker(
+                [25.174925549999998, 121.4377481165426],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b82be32c5f27df75c0fd3aeacac11b01 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f4bfc118eeebd0879bf4337d6fac6c1a = $(`<div id="html_f4bfc118eeebd0879bf4337d6fac6c1a" style="width: 100.0%; height: 100.0%;">淡水國中</div>`)[0];
+                popup_b82be32c5f27df75c0fd3aeacac11b01.setContent(html_f4bfc118eeebd0879bf4337d6fac6c1a);
+            
+        
+
+        marker_f7485854691a262138da32f5b667f503.bindPopup(popup_b82be32c5f27df75c0fd3aeacac11b01)
+        ;
+
+        
+    
+    
+            var marker_aa9aa4907e079451d37315f45f039228 = L.marker(
+                [25.13930955, 121.4011436414974],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_50a95452f1979be743f93668eddf4f65 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9ec28c076554928334c4eddd153dd632 = $(`<div id="html_9ec28c076554928334c4eddd153dd632" style="width: 100.0%; height: 100.0%;">八里國中</div>`)[0];
+                popup_50a95452f1979be743f93668eddf4f65.setContent(html_9ec28c076554928334c4eddd153dd632);
+            
+        
+
+        marker_aa9aa4907e079451d37315f45f039228.bindPopup(popup_50a95452f1979be743f93668eddf4f65)
+        ;
+
+        
+    
+    
+            var marker_f8717a463225105ad337f82f62f6c6ca = L.marker(
+                [24.984974700000002, 121.50882870305685],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_a481b62ca29350fb723f46df1f64f604 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56bbc05c39f9b8a52e473687a93dc519 = $(`<div id="html_56bbc05c39f9b8a52e473687a93dc519" style="width: 100.0%; height: 100.0%;">中和國中</div>`)[0];
+                popup_a481b62ca29350fb723f46df1f64f604.setContent(html_56bbc05c39f9b8a52e473687a93dc519);
+            
+        
+
+        marker_f8717a463225105ad337f82f62f6c6ca.bindPopup(popup_a481b62ca29350fb723f46df1f64f604)
+        ;
+
+        
+    
+    
+            var marker_a935244f15b2f4879e98422a9178cb4a = L.marker(
+                [25.00067055, 121.50426226189683],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_5b4ff9dc2c2abea1c4258c2363977605 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_49a854048547fc9d3f9403c604bb47a0 = $(`<div id="html_49a854048547fc9d3f9403c604bb47a0" style="width: 100.0%; height: 100.0%;">漳和國中</div>`)[0];
+                popup_5b4ff9dc2c2abea1c4258c2363977605.setContent(html_49a854048547fc9d3f9403c604bb47a0);
+            
+        
+
+        marker_a935244f15b2f4879e98422a9178cb4a.bindPopup(popup_5b4ff9dc2c2abea1c4258c2363977605)
+        ;
+
+        
+    
+    
+            var marker_cd384ce2b07240336804325b356ade77 = L.marker(
+                [24.968762050000002, 121.25976132434675],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_99410640f6db3bc6c5de3eeee18897a4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9159bab8096b807250edbeb2d7ce281 = $(`<div id="html_b9159bab8096b807250edbeb2d7ce281" style="width: 100.0%; height: 100.0%;">自強國中</div>`)[0];
+                popup_99410640f6db3bc6c5de3eeee18897a4.setContent(html_b9159bab8096b807250edbeb2d7ce281);
+            
+        
+
+        marker_cd384ce2b07240336804325b356ade77.bindPopup(popup_99410640f6db3bc6c5de3eeee18897a4)
+        ;
+
+        
+    
+    
+            var marker_d30876abe6318e977b29bd4b4bcebaf5 = L.marker(
+                [35.0705523, 135.74772339103885],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_439373757c7b71b052918a0e346ed2b4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_833d9bf75224a16c34392f1d55fa358e = $(`<div id="html_833d9bf75224a16c34392f1d55fa358e" style="width: 100.0%; height: 100.0%;">竹林國中</div>`)[0];
+                popup_439373757c7b71b052918a0e346ed2b4.setContent(html_833d9bf75224a16c34392f1d55fa358e);
+            
+        
+
+        marker_d30876abe6318e977b29bd4b4bcebaf5.bindPopup(popup_439373757c7b71b052918a0e346ed2b4)
+        ;
+
+        
+    
+    
+            var marker_2424b7f7cfdcd856a255fb140bef344a = L.marker(
+                [25.005930550000002, 121.52310221124077],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_2eec2be23d5c2ebec4e569b3fac463cd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8a8f079812ab6247f72cc158ccef88c5 = $(`<div id="html_8a8f079812ab6247f72cc158ccef88c5" style="width: 100.0%; height: 100.0%;">永和國中</div>`)[0];
+                popup_2eec2be23d5c2ebec4e569b3fac463cd.setContent(html_8a8f079812ab6247f72cc158ccef88c5);
+            
+        
+
+        marker_2424b7f7cfdcd856a255fb140bef344a.bindPopup(popup_2eec2be23d5c2ebec4e569b3fac463cd)
+        ;
+
+        
+    
+    
+            var marker_76b045998eca986056df1af9e14d34f7 = L.marker(
+                [25.00518265, 121.52139987601679],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_41f7afb81271dd9d127051af6fa2365c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3c36cb1d36f3457098bc961fc780b17b = $(`<div id="html_3c36cb1d36f3457098bc961fc780b17b" style="width: 100.0%; height: 100.0%;">福和國中</div>`)[0];
+                popup_41f7afb81271dd9d127051af6fa2365c.setContent(html_3c36cb1d36f3457098bc961fc780b17b);
+            
+        
+
+        marker_76b045998eca986056df1af9e14d34f7.bindPopup(popup_41f7afb81271dd9d127051af6fa2365c)
+        ;
+
+        
+    
+    
+            var marker_9c3d738f940a864d9c89c8a8eb54f971 = L.marker(
+                [25.065034150000002, 121.42559876259763],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_fb1f8a206ace61e3ed4c8cc96d3cf9dc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_150e950a6a8dec0b8e2dfd66ead23ec3 = $(`<div id="html_150e950a6a8dec0b8e2dfd66ead23ec3" style="width: 100.0%; height: 100.0%;">泰山國中</div>`)[0];
+                popup_fb1f8a206ace61e3ed4c8cc96d3cf9dc.setContent(html_150e950a6a8dec0b8e2dfd66ead23ec3);
+            
+        
+
+        marker_9c3d738f940a864d9c89c8a8eb54f971.bindPopup(popup_fb1f8a206ace61e3ed4c8cc96d3cf9dc)
+        ;
+
+        
+    
+    
+            var marker_6e6782faecade3b48ebd53e156a50ee8 = L.marker(
+                [25.051338100000002, 121.43073671308517],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_75fa430947324f015de1bf617a30b2b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d0ee3df20fcc18c39a7f2614a6a5ebc6 = $(`<div id="html_d0ee3df20fcc18c39a7f2614a6a5ebc6" style="width: 100.0%; height: 100.0%;">義學國中</div>`)[0];
+                popup_75fa430947324f015de1bf617a30b2b5.setContent(html_d0ee3df20fcc18c39a7f2614a6a5ebc6);
+            
+        
+
+        marker_6e6782faecade3b48ebd53e156a50ee8.bindPopup(popup_75fa430947324f015de1bf617a30b2b5)
+        ;
+
+        
+    
+    
+            var marker_e5866ba016dec7950419362c436933c8 = L.marker(
+                [24.1232569, 120.7186943617647],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_527a24ee24c0a34c7d71d17b1c4039c0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f5be103a50c6b6cf1465fea5d163b46d = $(`<div id="html_f5be103a50c6b6cf1465fea5d163b46d" style="width: 100.0%; height: 100.0%;">中平國中</div>`)[0];
+                popup_527a24ee24c0a34c7d71d17b1c4039c0.setContent(html_f5be103a50c6b6cf1465fea5d163b46d);
+            
+        
+
+        marker_e5866ba016dec7950419362c436933c8.bindPopup(popup_527a24ee24c0a34c7d71d17b1c4039c0)
+        ;
+
+        
+    
+    
+            var marker_39cec0f49c56fceb0f976a9953f08633 = L.marker(
+                [25.0350608, 121.45190635280056],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_a88fca4d085cdb8ab9b9c1a43c35d541 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_35b8914325060f787599b3398e00eaf4 = $(`<div id="html_35b8914325060f787599b3398e00eaf4" style="width: 100.0%; height: 100.0%;">新莊國中</div>`)[0];
+                popup_a88fca4d085cdb8ab9b9c1a43c35d541.setContent(html_35b8914325060f787599b3398e00eaf4);
+            
+        
+
+        marker_39cec0f49c56fceb0f976a9953f08633.bindPopup(popup_a88fca4d085cdb8ab9b9c1a43c35d541)
+        ;
+
+        
+    
+    
+            var marker_1f8c674118cf4f645babb3704977b751 = L.marker(
+                [34.5354639, 135.5173447],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_3fa2bf2c87e974a4016227495dcbcd31 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d05a50d693ea8efad8990578d5de773e = $(`<div id="html_d05a50d693ea8efad8990578d5de773e" style="width: 100.0%; height: 100.0%;">金陵國中</div>`)[0];
+                popup_3fa2bf2c87e974a4016227495dcbcd31.setContent(html_d05a50d693ea8efad8990578d5de773e);
+            
+        
+
+        marker_1f8c674118cf4f645babb3704977b751.bindPopup(popup_3fa2bf2c87e974a4016227495dcbcd31)
+        ;
+
+        
+    
+    
+            var marker_29068075165e070d8a6d8f656d4008b1 = L.marker(
+                [25.0418761, 121.44316100339191],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_897d9cf867df41b4b281f7c462f0f20e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_04d179476bd1920d90936970455dbf9f = $(`<div id="html_04d179476bd1920d90936970455dbf9f" style="width: 100.0%; height: 100.0%;">新泰國中</div>`)[0];
+                popup_897d9cf867df41b4b281f7c462f0f20e.setContent(html_04d179476bd1920d90936970455dbf9f);
+            
+        
+
+        marker_29068075165e070d8a6d8f656d4008b1.bindPopup(popup_897d9cf867df41b4b281f7c462f0f20e)
+        ;
+
+        
+    
+    
+            var marker_1e1b48d8eba52c8132d611ed16174f5e = L.marker(
+                [25.05552005, 121.45883311298945],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_8490c149346e09495974c997012173a6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_76e87bffb06b02cc4a5b18a792ec82d6 = $(`<div id="html_76e87bffb06b02cc4a5b18a792ec82d6" style="width: 100.0%; height: 100.0%;">頭前國中</div>`)[0];
+                popup_8490c149346e09495974c997012173a6.setContent(html_76e87bffb06b02cc4a5b18a792ec82d6);
+            
+        
+
+        marker_1e1b48d8eba52c8132d611ed16174f5e.bindPopup(popup_8490c149346e09495974c997012173a6)
+        ;
+
+        
+    
+    
+            var marker_3733bce9ab77e8a49952cea08cb558a5 = L.marker(
+                [25.025972600000003, 121.42290912654536],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_8b26928d45e49706d7ff1b050a8bd96f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c055d29d2c0ee6d835974a332e5ffbc6 = $(`<div id="html_c055d29d2c0ee6d835974a332e5ffbc6" style="width: 100.0%; height: 100.0%;">福營國中</div>`)[0];
+                popup_8b26928d45e49706d7ff1b050a8bd96f.setContent(html_c055d29d2c0ee6d835974a332e5ffbc6);
+            
+        
+
+        marker_3733bce9ab77e8a49952cea08cb558a5.bindPopup(popup_8b26928d45e49706d7ff1b050a8bd96f)
+        ;
+
+        
+    
+    
+            var marker_12dbf566153d6eb7c74258f6ee30a210 = L.marker(
+                [25.08275515, 121.43522963461538],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_01acfe77e75a70539aca5f21035d40c6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_34f2c618e6f9d538951f0f210b26b262 = $(`<div id="html_34f2c618e6f9d538951f0f210b26b262" style="width: 100.0%; height: 100.0%;">五股國中</div>`)[0];
+                popup_01acfe77e75a70539aca5f21035d40c6.setContent(html_34f2c618e6f9d538951f0f210b26b262);
+            
+        
+
+        marker_12dbf566153d6eb7c74258f6ee30a210.bindPopup(popup_01acfe77e75a70539aca5f21035d40c6)
+        ;
+
+        
+    
+    
+            var marker_98611659157ab3495a149cc93baf0f6e = L.marker(
+                [24.96663345, 121.54363672551989],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_382ec6485b198539b5152ae5abe73801 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_515496cb092ef0177cda6404e7336cf4 = $(`<div id="html_515496cb092ef0177cda6404e7336cf4" style="width: 100.0%; height: 100.0%;">五峰國中</div>`)[0];
+                popup_382ec6485b198539b5152ae5abe73801.setContent(html_515496cb092ef0177cda6404e7336cf4);
+            
+        
+
+        marker_98611659157ab3495a149cc93baf0f6e.bindPopup(popup_382ec6485b198539b5152ae5abe73801)
+        ;
+
+        
+    
+    
+            var marker_64868de40ac38cff98ea4a342df6d0d7 = L.marker(
+                [24.95615595, 121.53928818932826],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_d2d6c1c432f985244c5359191b5e51c0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e46013ade0f1cc2adbf92f673cb3e2d4 = $(`<div id="html_e46013ade0f1cc2adbf92f673cb3e2d4" style="width: 100.0%; height: 100.0%;">文山國中</div>`)[0];
+                popup_d2d6c1c432f985244c5359191b5e51c0.setContent(html_e46013ade0f1cc2adbf92f673cb3e2d4);
+            
+        
+
+        marker_64868de40ac38cff98ea4a342df6d0d7.bindPopup(popup_d2d6c1c432f985244c5359191b5e51c0)
+        ;
+
+        
+    
+    
+            var marker_7605a38ff5059e045ead2de24112e4c0 = L.marker(
+                [36.40505115, 136.45252603664153],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_6d725ebb0ef4fa63fa09646e1679a9ae = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f27c745d7d4cdd70128a461446784fad = $(`<div id="html_f27c745d7d4cdd70128a461446784fad" style="width: 100.0%; height: 100.0%;">及人國中</div>`)[0];
+                popup_6d725ebb0ef4fa63fa09646e1679a9ae.setContent(html_f27c745d7d4cdd70128a461446784fad);
+            
+        
+
+        marker_7605a38ff5059e045ead2de24112e4c0.bindPopup(popup_6d725ebb0ef4fa63fa09646e1679a9ae)
+        ;
+
+        
+    
+    
+            var marker_01ad89298e4279e594735c67f4e5d446 = L.marker(
+                [25.01051635, 121.44827552999618],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_d5e8b4cdc3f6e8eae24474ce2cc0ba32 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d69904e2c3fb1bf406f86e7c25b0bba = $(`<div id="html_2d69904e2c3fb1bf406f86e7c25b0bba" style="width: 100.0%; height: 100.0%;">達觀國中</div>`)[0];
+                popup_d5e8b4cdc3f6e8eae24474ce2cc0ba32.setContent(html_2d69904e2c3fb1bf406f86e7c25b0bba);
+            
+        
+
+        marker_01ad89298e4279e594735c67f4e5d446.bindPopup(popup_d5e8b4cdc3f6e8eae24474ce2cc0ba32)
+        ;
+
+        
+    
+    
+            var marker_82754df3a736e3564f762f7dc92e8bb7 = L.marker(
+                [35.0371824, 135.7593026],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_1b58c19a4a836bcd4ee336c29decacf8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0f5feff44af6a9c7d7e5190c65d31302 = $(`<div id="html_0f5feff44af6a9c7d7e5190c65d31302" style="width: 100.0%; height: 100.0%;">安康高中國中</div>`)[0];
+                popup_1b58c19a4a836bcd4ee336c29decacf8.setContent(html_0f5feff44af6a9c7d7e5190c65d31302);
+            
+        
+
+        marker_82754df3a736e3564f762f7dc92e8bb7.bindPopup(popup_1b58c19a4a836bcd4ee336c29decacf8)
+        ;
+
+        
+    
+    
+            var marker_37ee1cab244261d0dee2fca59aa21c79 = L.marker(
+                [25.259963399999997, 121.50120724923914],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_bcde89a0b7108de57ba2bef47c5f4cf7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8423cac1cb8c8543ec0143338772cdb4 = $(`<div id="html_8423cac1cb8c8543ec0143338772cdb4" style="width: 100.0%; height: 100.0%;">三芝國中</div>`)[0];
+                popup_bcde89a0b7108de57ba2bef47c5f4cf7.setContent(html_8423cac1cb8c8543ec0143338772cdb4);
+            
+        
+
+        marker_37ee1cab244261d0dee2fca59aa21c79.bindPopup(popup_bcde89a0b7108de57ba2bef47c5f4cf7)
+        ;
+
+        
+    
+    
+            var marker_d0905e15ab9aeb09656a76812201740a = L.marker(
+                [25.104773, 121.84544246350738],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_058d2bbe7274f87488a671b18f8c86e7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a242411cc8369f01603bc525af866303 = $(`<div id="html_a242411cc8369f01603bc525af866303" style="width: 100.0%; height: 100.0%;">欽賢國中</div>`)[0];
+                popup_058d2bbe7274f87488a671b18f8c86e7.setContent(html_a242411cc8369f01603bc525af866303);
+            
+        
+
+        marker_d0905e15ab9aeb09656a76812201740a.bindPopup(popup_058d2bbe7274f87488a671b18f8c86e7)
+        ;
+
+        
+    
+    
+            var marker_d711e7a1b8ed97833fde282029beff88 = L.marker(
+                [34.379695, 114.3022037],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_c72cc40a0f94cd177006645e50217779 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_480451134bb0b42fbc6bb17a2209399a = $(`<div id="html_480451134bb0b42fbc6bb17a2209399a" style="width: 100.0%; height: 100.0%;">育林國中</div>`)[0];
+                popup_c72cc40a0f94cd177006645e50217779.setContent(html_480451134bb0b42fbc6bb17a2209399a);
+            
+        
+
+        marker_d711e7a1b8ed97833fde282029beff88.bindPopup(popup_c72cc40a0f94cd177006645e50217779)
+        ;
+
+        
+    
+    
+            var marker_f526c916e16288a3aecf1a1eead466ac = L.marker(
+                [25.0059403, 121.4138262614029],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_2b63b3973b439535fb4c4645fff0a869 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92528e174297edf0d9dd1fd3cffd14f0 = $(`<div id="html_92528e174297edf0d9dd1fd3cffd14f0" style="width: 100.0%; height: 100.0%;">三多國中</div>`)[0];
+                popup_2b63b3973b439535fb4c4645fff0a869.setContent(html_92528e174297edf0d9dd1fd3cffd14f0);
+            
+        
+
+        marker_f526c916e16288a3aecf1a1eead466ac.bindPopup(popup_2b63b3973b439535fb4c4645fff0a869)
+        ;
+
+        
+    
+    
+            var marker_ae7cc88e68394813903c8f21f82ea520 = L.marker(
+                [24.96273875, 121.42953472322998],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_49aa2fdcc0617de28a35b0d03e413590 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ead67225c04ffff18a8fd906fb2182ad = $(`<div id="html_ead67225c04ffff18a8fd906fb2182ad" style="width: 100.0%; height: 100.0%;">土城國中</div>`)[0];
+                popup_49aa2fdcc0617de28a35b0d03e413590.setContent(html_ead67225c04ffff18a8fd906fb2182ad);
+            
+        
+
+        marker_ae7cc88e68394813903c8f21f82ea520.bindPopup(popup_49aa2fdcc0617de28a35b0d03e413590)
+        ;
+
+        
+    
+    
+            var marker_13cc0a092df6e30e9d00cfa8f9cae500 = L.marker(
+                [25.0318745, 121.52175421292985],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_104eb70da8c36166b6ba150b4bbbf725 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b87beb3fee46bf036db6635bd1715b8d = $(`<div id="html_b87beb3fee46bf036db6635bd1715b8d" style="width: 100.0%; height: 100.0%;">中正國中</div>`)[0];
+                popup_104eb70da8c36166b6ba150b4bbbf725.setContent(html_b87beb3fee46bf036db6635bd1715b8d);
+            
+        
+
+        marker_13cc0a092df6e30e9d00cfa8f9cae500.bindPopup(popup_104eb70da8c36166b6ba150b4bbbf725)
+        ;
+
+        
+    
+    
+            var marker_f5f4fde48e2709c4bf2d7ea23c6c1571 = L.marker(
+                [24.95112715, 121.34369081350297],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_ad0de59ad927958df9ec6c0258b417a0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_63c402d6492aba0b5c3cdabf7ca855d5 = $(`<div id="html_63c402d6492aba0b5c3cdabf7ca855d5" style="width: 100.0%; height: 100.0%;">鶯歌國中</div>`)[0];
+                popup_ad0de59ad927958df9ec6c0258b417a0.setContent(html_63c402d6492aba0b5c3cdabf7ca855d5);
+            
+        
+
+        marker_f5f4fde48e2709c4bf2d7ea23c6c1571.bindPopup(popup_ad0de59ad927958df9ec6c0258b417a0)
+        ;
+
+        
+    
+    
+            var marker_b7d82c38440954cdfeeec5f20a5ff0f2 = L.marker(
+                [24.9676742, 121.33174298296942],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_c928ca3ba2d26d2a51712664dcb199bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3c4c9f46e11552be9838e326ce446077 = $(`<div id="html_3c4c9f46e11552be9838e326ce446077" style="width: 100.0%; height: 100.0%;">鳳鳴國中</div>`)[0];
+                popup_c928ca3ba2d26d2a51712664dcb199bc.setContent(html_3c4c9f46e11552be9838e326ce446077);
+            
+        
+
+        marker_b7d82c38440954cdfeeec5f20a5ff0f2.bindPopup(popup_c928ca3ba2d26d2a51712664dcb199bc)
+        ;
+
+        
+    
+    
+            var marker_aa46211cae15b48f5de198fdd609cf85 = L.marker(
+                [24.9398244, 121.36957968140864],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_206ebe5b22c286686d6f10312d2f6f77 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b4d576f1a2e3ca8a169f0f4c34c2e847 = $(`<div id="html_b4d576f1a2e3ca8a169f0f4c34c2e847" style="width: 100.0%; height: 100.0%;">三峽國中</div>`)[0];
+                popup_206ebe5b22c286686d6f10312d2f6f77.setContent(html_b4d576f1a2e3ca8a169f0f4c34c2e847);
+            
+        
+
+        marker_aa46211cae15b48f5de198fdd609cf85.bindPopup(popup_206ebe5b22c286686d6f10312d2f6f77)
+        ;
+
+        
+    
+    
+            var marker_8b9fe614e0e00e2ad945eaffa82eefc8 = L.marker(
+                [31.24532405, 117.29057798957528],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_3215ea36d6da4394d3e84e99676f6a30 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a545bb48043d1b1dcf405f96424946e0 = $(`<div id="html_a545bb48043d1b1dcf405f96424946e0" style="width: 100.0%; height: 100.0%;">辭修高中國中</div>`)[0];
+                popup_3215ea36d6da4394d3e84e99676f6a30.setContent(html_a545bb48043d1b1dcf405f96424946e0);
+            
+        
+
+        marker_8b9fe614e0e00e2ad945eaffa82eefc8.bindPopup(popup_3215ea36d6da4394d3e84e99676f6a30)
+        ;
+
+        
+    
+    
+            var marker_f726c15220c26b97c51c26edd86afcc2 = L.marker(
+                [25.066353200000002, 121.657978849],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_26e3cc671eb99965bb0e612fbf4d6acb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f48a9da6643b35c6a45e418880d61fd6 = $(`<div id="html_f48a9da6643b35c6a45e418880d61fd6" style="width: 100.0%; height: 100.0%;">汐止國中</div>`)[0];
+                popup_26e3cc671eb99965bb0e612fbf4d6acb.setContent(html_f48a9da6643b35c6a45e418880d61fd6);
+            
+        
+
+        marker_f726c15220c26b97c51c26edd86afcc2.bindPopup(popup_26e3cc671eb99965bb0e612fbf4d6acb)
+        ;
+
+        
+    
+    
+            var marker_839ba07bff044f5c47f4eeac1bc7f16b = L.marker(
+                [25.0665208, 121.661985],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_8c8bb634912f08598737a328c64d82ec = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c4f84f6abd1bdc3e3bf8bb125bdf1c0f = $(`<div id="html_c4f84f6abd1bdc3e3bf8bb125bdf1c0f" style="width: 100.0%; height: 100.0%;">秀峰國中</div>`)[0];
+                popup_8c8bb634912f08598737a328c64d82ec.setContent(html_c4f84f6abd1bdc3e3bf8bb125bdf1c0f);
+            
+        
+
+        marker_839ba07bff044f5c47f4eeac1bc7f16b.bindPopup(popup_8c8bb634912f08598737a328c64d82ec)
+        ;
+
+        
+    
+    
+            var marker_37aecfe5adc4608646b514774f38bf6f = L.marker(
+                [34.8786583, 136.9172647],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_bdda426dfe4b7d44c9e0e984a553da6d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b071aa8b0a0ae7273e9d3669601e4036 = $(`<div id="html_b071aa8b0a0ae7273e9d3669601e4036" style="width: 100.0%; height: 100.0%;">青山國中</div>`)[0];
+                popup_bdda426dfe4b7d44c9e0e984a553da6d.setContent(html_b071aa8b0a0ae7273e9d3669601e4036);
+            
+        
+
+        marker_37aecfe5adc4608646b514774f38bf6f.bindPopup(popup_bdda426dfe4b7d44c9e0e984a553da6d)
+        ;
+
+        
+    
+    
+            var marker_999b8129d86b3b3b74ab339c2d77f989 = L.marker(
+                [25.12318535, 121.75029172471949],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_fe96aba987603d9348fcea47a60dcba1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ffd1f0bfa3919f3c2aaad0c389ce3d2 = $(`<div id="html_7ffd1f0bfa3919f3c2aaad0c389ce3d2" style="width: 100.0%; height: 100.0%;">銘傳國中</div>`)[0];
+                popup_fe96aba987603d9348fcea47a60dcba1.setContent(html_7ffd1f0bfa3919f3c2aaad0c389ce3d2);
+            
+        
+
+        marker_999b8129d86b3b3b74ab339c2d77f989.bindPopup(popup_fe96aba987603d9348fcea47a60dcba1)
+        ;
+
+        
+    
+    
+            var marker_872c58ffb2776309f958114d6771d08e = L.marker(
+                [25.1273743, 121.72162500275766],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_5a259b53dc79753b5122fdbb000d039f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1f04d8480ac5dab64274a19e56167547 = $(`<div id="html_1f04d8480ac5dab64274a19e56167547" style="width: 100.0%; height: 100.0%;">建德國中</div>`)[0];
+                popup_5a259b53dc79753b5122fdbb000d039f.setContent(html_1f04d8480ac5dab64274a19e56167547);
+            
+        
+
+        marker_872c58ffb2776309f958114d6771d08e.bindPopup(popup_5a259b53dc79753b5122fdbb000d039f)
+        ;
+
+        
+    
+    
+            var marker_31bec37badf9e7c971cafd69abb46f00 = L.marker(
+                [25.13754565, 121.70587605514437],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_211c042c133362110bc738a5c0fd1266 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9cb8af32c8765b04b10238ea1ee8aa25 = $(`<div id="html_9cb8af32c8765b04b10238ea1ee8aa25" style="width: 100.0%; height: 100.0%;">武崙國中</div>`)[0];
+                popup_211c042c133362110bc738a5c0fd1266.setContent(html_9cb8af32c8765b04b10238ea1ee8aa25);
+            
+        
+
+        marker_31bec37badf9e7c971cafd69abb46f00.bindPopup(popup_211c042c133362110bc738a5c0fd1266)
+        ;
+
+        
+    
+    
+            var marker_bf14d5eaf66c0e3fb609aba350f99acb = L.marker(
+                [25.0318745, 121.52175421292985],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_d6eb9b20a208617334ace2d71e150aec = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b813b9b17ffd836a67bdd5d6795ca8ef = $(`<div id="html_b813b9b17ffd836a67bdd5d6795ca8ef" style="width: 100.0%; height: 100.0%;">中正國中</div>`)[0];
+                popup_d6eb9b20a208617334ace2d71e150aec.setContent(html_b813b9b17ffd836a67bdd5d6795ca8ef);
+            
+        
+
+        marker_bf14d5eaf66c0e3fb609aba350f99acb.bindPopup(popup_d6eb9b20a208617334ace2d71e150aec)
+        ;
+
+        
+    
+    
+            var marker_b3f521fbbf47fd7fd344d999909a9afa = L.marker(
+                [25.01532655, 121.29372055000248],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_f28a6eafaf1ea6a3cae93a790ed18715 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f74e47ee0d40846d90643e4bfbce4f02 = $(`<div id="html_f74e47ee0d40846d90643e4bfbce4f02" style="width: 100.0%; height: 100.0%;">同德國中</div>`)[0];
+                popup_f28a6eafaf1ea6a3cae93a790ed18715.setContent(html_f74e47ee0d40846d90643e4bfbce4f02);
+            
+        
+
+        marker_b3f521fbbf47fd7fd344d999909a9afa.bindPopup(popup_f28a6eafaf1ea6a3cae93a790ed18715)
+        ;
+
+        
+    
+    
+            var marker_91b549bd1ed8ad352805c8780a5dbd1f = L.marker(
+                [36.8073339, 139.941536],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_e271ff086b1c70548c98d148a91adb49 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fabadb40420e82db09ba9141ad9b5276 = $(`<div id="html_fabadb40420e82db09ba9141ad9b5276" style="width: 100.0%; height: 100.0%;">振聲國中</div>`)[0];
+                popup_e271ff086b1c70548c98d148a91adb49.setContent(html_fabadb40420e82db09ba9141ad9b5276);
+            
+        
+
+        marker_91b549bd1ed8ad352805c8780a5dbd1f.bindPopup(popup_e271ff086b1c70548c98d148a91adb49)
+        ;
+
+        
+    
+    
+            var marker_6c1cadab2dda406d0d84a65c3fa65661 = L.marker(
+                [25.01003345, 121.30753481093578],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b2c694e1251fe97cd0511af7a1b12fbd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_12383a9f51a6c194ad3fc4212f559b28 = $(`<div id="html_12383a9f51a6c194ad3fc4212f559b28" style="width: 100.0%; height: 100.0%;">文昌國中</div>`)[0];
+                popup_b2c694e1251fe97cd0511af7a1b12fbd.setContent(html_12383a9f51a6c194ad3fc4212f559b28);
+            
+        
+
+        marker_6c1cadab2dda406d0d84a65c3fa65661.bindPopup(popup_b2c694e1251fe97cd0511af7a1b12fbd)
+        ;
+
+        
+    
+    
+            var marker_7ca3d84bd5f9631316c5c8cc7d7fa2b5 = L.marker(
+                [25.0515214, 121.37096336755906],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_bc5438a80507bfa1ba90b2078d331257 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_36829a89027366fc677226f9cff59ae1 = $(`<div id="html_36829a89027366fc677226f9cff59ae1" style="width: 100.0%; height: 100.0%;">大崗國中</div>`)[0];
+                popup_bc5438a80507bfa1ba90b2078d331257.setContent(html_36829a89027366fc677226f9cff59ae1);
+            
+        
+
+        marker_7ca3d84bd5f9631316c5c8cc7d7fa2b5.bindPopup(popup_bc5438a80507bfa1ba90b2078d331257)
+        ;
+
+        
+    
+    
+            var marker_80d64424bf71bdefd534e8406c06a20f = L.marker(
+                [24.79310615, 120.9764156060067],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_df7af6296574d46d77404ac065928bdf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e4ae0853411e1de16a39ba120fb3aa04 = $(`<div id="html_e4ae0853411e1de16a39ba120fb3aa04" style="width: 100.0%; height: 100.0%;">建華國中</div>`)[0];
+                popup_df7af6296574d46d77404ac065928bdf.setContent(html_e4ae0853411e1de16a39ba120fb3aa04);
+            
+        
+
+        marker_80d64424bf71bdefd534e8406c06a20f.bindPopup(popup_df7af6296574d46d77404ac065928bdf)
+        ;
+
+        
+    
+    
+            var marker_6615fc0b43518b0c85e83196762d30a7 = L.marker(
+                [25.070143549999997, 121.58606832354882],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_63f16221dc52370f651d4fbfd3c08582 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0df23b8ea390bb321168f5f4be7f292b = $(`<div id="html_0df23b8ea390bb321168f5f4be7f292b" style="width: 100.0%; height: 100.0%;">三民國中</div>`)[0];
+                popup_63f16221dc52370f651d4fbfd3c08582.setContent(html_0df23b8ea390bb321168f5f4be7f292b);
+            
+        
+
+        marker_6615fc0b43518b0c85e83196762d30a7.bindPopup(popup_63f16221dc52370f651d4fbfd3c08582)
+        ;
+
+        
+    
+    
+            var marker_6f28b6818ce0b977de7ce397c31b2789 = L.marker(
+                [24.7871465, 121.01248900800866],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_a48c23129f9640e61dc5a9a4b5a910dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d3d8fa30a0f747432ecf3c9aaf936476 = $(`<div id="html_d3d8fa30a0f747432ecf3c9aaf936476" style="width: 100.0%; height: 100.0%;">光武國中</div>`)[0];
+                popup_a48c23129f9640e61dc5a9a4b5a910dd.setContent(html_d3d8fa30a0f747432ecf3c9aaf936476);
+            
+        
+
+        marker_6f28b6818ce0b977de7ce397c31b2789.bindPopup(popup_a48c23129f9640e61dc5a9a4b5a910dd)
+        ;
+
+        
+    
+    
+            var marker_1c68b27abc4c9871030f6dbf76c562ca = L.marker(
+                [24.7938449, 120.9779772997521],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_6d0c7a008d962dcabc90b7ae4f57b25f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b8ad19fb670e2dd2e4188655780ffe69 = $(`<div id="html_b8ad19fb670e2dd2e4188655780ffe69" style="width: 100.0%; height: 100.0%;">培英國中</div>`)[0];
+                popup_6d0c7a008d962dcabc90b7ae4f57b25f.setContent(html_b8ad19fb670e2dd2e4188655780ffe69);
+            
+        
+
+        marker_1c68b27abc4c9871030f6dbf76c562ca.bindPopup(popup_6d0c7a008d962dcabc90b7ae4f57b25f)
+        ;
+
+        
+    
+    
+            var marker_37a698ec8d5bdb174a8bc95543d0b739 = L.marker(
+                [24.09343295, 120.69880786409604],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_ed8e5fac183d3107451a120f2a0f8122 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_28fe25982c7305be0ef300c7f7354e22 = $(`<div id="html_28fe25982c7305be0ef300c7f7354e22" style="width: 100.0%; height: 100.0%;">成功國中</div>`)[0];
+                popup_ed8e5fac183d3107451a120f2a0f8122.setContent(html_28fe25982c7305be0ef300c7f7354e22);
+            
+        
+
+        marker_37a698ec8d5bdb174a8bc95543d0b739.bindPopup(popup_ed8e5fac183d3107451a120f2a0f8122)
+        ;
+
+        
+    
+    
+            var marker_008d648dd4003a501ba11574fb38a9e2 = L.marker(
+                [24.84177025, 121.0010303394281],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_f9b7ecf6b98fb09162aecb7b1d015d3a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_73dd2377d7999aa4c19b79eb3b63c63f = $(`<div id="html_73dd2377d7999aa4c19b79eb3b63c63f" style="width: 100.0%; height: 100.0%;">竹北國中</div>`)[0];
+                popup_f9b7ecf6b98fb09162aecb7b1d015d3a.setContent(html_73dd2377d7999aa4c19b79eb3b63c63f);
+            
+        
+
+        marker_008d648dd4003a501ba11574fb38a9e2.bindPopup(popup_f9b7ecf6b98fb09162aecb7b1d015d3a)
+        ;
+
+        
+    
+    
+            var marker_9ff8e605d8ee2566c0b5db29b84e1ea3 = L.marker(
+                [38.2931621, 140.840715],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_03b97f33b475710bc8c1e830c8566d9a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c0f5a09d71a2058c0deb13c76df49461 = $(`<div id="html_c0f5a09d71a2058c0deb13c76df49461" style="width: 100.0%; height: 100.0%;">衛道國中</div>`)[0];
+                popup_03b97f33b475710bc8c1e830c8566d9a.setContent(html_c0f5a09d71a2058c0deb13c76df49461);
+            
+        
+
+        marker_9ff8e605d8ee2566c0b5db29b84e1ea3.bindPopup(popup_03b97f33b475710bc8c1e830c8566d9a)
+        ;
+
+        
+    
+    
+            var marker_160ed69bfb0e0a2f2880498ec4282d2a = L.marker(
+                [24.1372575, 120.67832255102871],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_a05ccfe8bafdba6e4213af4bad7002b4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_402d5cfd375ba04fca451a30491d7fca = $(`<div id="html_402d5cfd375ba04fca451a30491d7fca" style="width: 100.0%; height: 100.0%;">居仁國中</div>`)[0];
+                popup_a05ccfe8bafdba6e4213af4bad7002b4.setContent(html_402d5cfd375ba04fca451a30491d7fca);
+            
+        
+
+        marker_160ed69bfb0e0a2f2880498ec4282d2a.bindPopup(popup_a05ccfe8bafdba6e4213af4bad7002b4)
+        ;
+
+        
+    
+    
+            var marker_c4b1cd9f3055b279a527dfbcdf7bb947 = L.marker(
+                [23.96956275, 120.96789118112278],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_d6c3ed8c13afc586444f9b705895ca4c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f773b3a020cc82d27a2c2cbc5696acb6 = $(`<div id="html_f773b3a020cc82d27a2c2cbc5696acb6" style="width: 100.0%; height: 100.0%;">埔里國中</div>`)[0];
+                popup_d6c3ed8c13afc586444f9b705895ca4c.setContent(html_f773b3a020cc82d27a2c2cbc5696acb6);
+            
+        
+
+        marker_c4b1cd9f3055b279a527dfbcdf7bb947.bindPopup(popup_d6c3ed8c13afc586444f9b705895ca4c)
+        ;
+
+        
+    
+    
+            var marker_ec593f119e9169c49a505adfc1836ccc = L.marker(
+                [23.63311175, 120.52312570532528],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_2f04a8644e742339e847813a3b6ff5c7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0392547b2a7f7df1a834116613b0aeb8 = $(`<div id="html_0392547b2a7f7df1a834116613b0aeb8" style="width: 100.0%; height: 100.0%;">福智國中</div>`)[0];
+                popup_2f04a8644e742339e847813a3b6ff5c7.setContent(html_0392547b2a7f7df1a834116613b0aeb8);
+            
+        
+
+        marker_ec593f119e9169c49a505adfc1836ccc.bindPopup(popup_2f04a8644e742339e847813a3b6ff5c7)
+        ;
+
+        
+    
+    
+            var marker_019175a8f798d31d8b6ad295835aa0b1 = L.marker(
+                [22.65871, 120.29012],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_5b12f592e7f73f19def46e2e7b225942 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_656a37d84dd1412df29becbe037069f8 = $(`<div id="html_656a37d84dd1412df29becbe037069f8" style="width: 100.0%; height: 100.0%;">七賢國中</div>`)[0];
+                popup_5b12f592e7f73f19def46e2e7b225942.setContent(html_656a37d84dd1412df29becbe037069f8);
+            
+        
+
+        marker_019175a8f798d31d8b6ad295835aa0b1.bindPopup(popup_5b12f592e7f73f19def46e2e7b225942)
+        ;
+
+        
+    
+    
+            var marker_65baa237d1f0447ef60ce5a2d7381c7b = L.marker(
+                [22.678449, 120.3083337],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_b144a55e9bfdafb830f8b4c9a7ddb1af = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_daedc0436afb5ec4dd08f8fdaf158db3 = $(`<div id="html_daedc0436afb5ec4dd08f8fdaf158db3" style="width: 100.0%; height: 100.0%;">左營國中</div>`)[0];
+                popup_b144a55e9bfdafb830f8b4c9a7ddb1af.setContent(html_daedc0436afb5ec4dd08f8fdaf158db3);
+            
+        
+
+        marker_65baa237d1f0447ef60ce5a2d7381c7b.bindPopup(popup_b144a55e9bfdafb830f8b4c9a7ddb1af)
+        ;
+
+        
+    
+    
+            var marker_1dbb1d8d0a6204f3b06f118c0940e1c2 = L.marker(
+                [25.0318745, 121.52175421292985],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_440540fb232e313335d01395b6f080e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_19fa3722e7d6d595b3466ad940dc7e74 = $(`<div id="html_19fa3722e7d6d595b3466ad940dc7e74" style="width: 100.0%; height: 100.0%;">中正國中</div>`)[0];
+                popup_440540fb232e313335d01395b6f080e2.setContent(html_19fa3722e7d6d595b3466ad940dc7e74);
+            
+        
+
+        marker_1dbb1d8d0a6204f3b06f118c0940e1c2.bindPopup(popup_440540fb232e313335d01395b6f080e2)
+        ;
+
+        
+    
+    
+            var marker_c7aaca1aa155830e908a3498978ce9ea = L.marker(
+                [24.6713273, 121.76652623797422],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_692935df887e3e7de81149e16ee81ad4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7dd3f00b5aef39180a064459876b5995 = $(`<div id="html_7dd3f00b5aef39180a064459876b5995" style="width: 100.0%; height: 100.0%;">東光國中</div>`)[0];
+                popup_692935df887e3e7de81149e16ee81ad4.setContent(html_7dd3f00b5aef39180a064459876b5995);
+            
+        
+
+        marker_c7aaca1aa155830e908a3498978ce9ea.bindPopup(popup_692935df887e3e7de81149e16ee81ad4)
+        ;
+
+        
+    
+    
+            var marker_3784df58abc6365e038459e18f42ac72 = L.marker(
+                [24.682301, 121.76732116732295],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_dc7d4083c403e70fb2953dbda813cd6b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8a6568e20bcc55157632d5e40c950d2b = $(`<div id="html_8a6568e20bcc55157632d5e40c950d2b" style="width: 100.0%; height: 100.0%;">羅東國中</div>`)[0];
+                popup_dc7d4083c403e70fb2953dbda813cd6b.setContent(html_8a6568e20bcc55157632d5e40c950d2b);
+            
+        
+
+        marker_3784df58abc6365e038459e18f42ac72.bindPopup(popup_dc7d4083c403e70fb2953dbda813cd6b)
+        ;
+
+        
+    
+    
+            var marker_f06eb1e703db6a696f449126236677e2 = L.marker(
+                [24.8173258, 121.76688640379638],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_396da59a9fe93b9b671d9a2075aff338 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_07a1d93b8d341cd8b8ae89b08189ccad = $(`<div id="html_07a1d93b8d341cd8b8ae89b08189ccad" style="width: 100.0%; height: 100.0%;">礁溪國中</div>`)[0];
+                popup_396da59a9fe93b9b671d9a2075aff338.setContent(html_07a1d93b8d341cd8b8ae89b08189ccad);
+            
+        
+
+        marker_f06eb1e703db6a696f449126236677e2.bindPopup(popup_396da59a9fe93b9b671d9a2075aff338)
+        ;
+
+        
+    
+    
+            var marker_d4d584a434717d83a6a7fb791417d42d = L.marker(
+                [23.977136350000002, 121.61280395359748],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_1fdb396a5c4037d470859103462c45d5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ea60aa3741cff0d51f991b825dd809f2 = $(`<div id="html_ea60aa3741cff0d51f991b825dd809f2" style="width: 100.0%; height: 100.0%;">花崗國中</div>`)[0];
+                popup_1fdb396a5c4037d470859103462c45d5.setContent(html_ea60aa3741cff0d51f991b825dd809f2);
+            
+        
+
+        marker_d4d584a434717d83a6a7fb791417d42d.bindPopup(popup_1fdb396a5c4037d470859103462c45d5)
+        ;
+
+        
+    
+    
+            var marker_fc5871a30f89fc9f980bdfb2f61afe7e = L.marker(
+                [23.10156595, 121.37620006483724],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_0d83642aa974bb3318c50997119829d5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_441c4aba9542f3a23e2273fbcff76fff = $(`<div id="html_441c4aba9542f3a23e2273fbcff76fff" style="width: 100.0%; height: 100.0%;">新港國中</div>`)[0];
+                popup_0d83642aa974bb3318c50997119829d5.setContent(html_441c4aba9542f3a23e2273fbcff76fff);
+            
+        
+
+        marker_fc5871a30f89fc9f980bdfb2f61afe7e.bindPopup(popup_0d83642aa974bb3318c50997119829d5)
+        ;
+
+        
+    
+    
+            var marker_490b1304085c730ef367e22c944807da = L.marker(
+                [23.1159569, 121.2044056094957],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_34366c8c2cec8aa6a413aa12241b76bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2cdac9f418ed39b7e5839a58bd56ed5f = $(`<div id="html_2cdac9f418ed39b7e5839a58bd56ed5f" style="width: 100.0%; height: 100.0%;">池上國中</div>`)[0];
+                popup_34366c8c2cec8aa6a413aa12241b76bc.setContent(html_2cdac9f418ed39b7e5839a58bd56ed5f);
+            
+        
+
+        marker_490b1304085c730ef367e22c944807da.bindPopup(popup_34366c8c2cec8aa6a413aa12241b76bc)
+        ;
+
+        
+    
+    
+            var marker_1d05eb41ee6c6d7ce20fb691a4ef26d0 = L.marker(
+                [34.8499997, 135.6211959],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_891ef0d2efda36d13aedd4e453be9da5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e86f599bd2254b2db719e0e5e41ece3 = $(`<div id="html_7e86f599bd2254b2db719e0e5e41ece3" style="width: 100.0%; height: 100.0%;">均一高中國中</div>`)[0];
+                popup_891ef0d2efda36d13aedd4e453be9da5.setContent(html_7e86f599bd2254b2db719e0e5e41ece3);
+            
+        
+
+        marker_1d05eb41ee6c6d7ce20fb691a4ef26d0.bindPopup(popup_891ef0d2efda36d13aedd4e453be9da5)
+        ;
+
+        
+    
+    
+            var marker_c41360573ae9d844067657440b0e1057 = L.marker(
+                [22.7629127, 121.13465223858407],
+                {}
+            ).addTo(map_653fb105af7e64bca0b54a49f5766cdc);
+        
+    
+        var popup_fe988223c592d4dae821235874371e1e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9476036a917646cf291fe822e23479b0 = $(`<div id="html_9476036a917646cf291fe822e23479b0" style="width: 100.0%; height: 100.0%;">新生國中</div>`)[0];
+                popup_fe988223c592d4dae821235874371e1e.setContent(html_9476036a917646cf291fe822e23479b0);
+            
+        
+
+        marker_c41360573ae9d844067657440b0e1057.bindPopup(popup_fe988223c592d4dae821235874371e1e)
+        ;
+
+        
+    
+</script>
+</html>
