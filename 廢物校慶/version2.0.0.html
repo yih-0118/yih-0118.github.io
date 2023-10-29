@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #question {
+            font-size: 24px;
+            margin: 20px;
+        }
+        #options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+        }
+        @media (max-width: 768px) {
+            #question {
+                font-size: 18px;
+            }
+            button {
+                font-size: 16px;
+            }
+            h1{
+                margin-top: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>示例</h1>
+    <div id="question"></div>
+    <div id="options">
+        <button onclick="checkAnswer(1)">選項 1</button>
+        <button onclick="checkAnswer(2)">選項 2</button>
+        <button onclick="checkAnswer(3)">選項 3</button>
+        <button onclick="checkAnswer(4)">選項 4</button>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "“桂棹兮蘭槳，擊空明兮泝流光。渺渺兮予懷，望美人兮天一方”。 出自於下列何者？",
+                options: ["赤壁賦", "出師表", "浮生六記", "四庫全書"],
+                correctAnswer: 0
+            },
+            {
+                question: "2 + 2 等於多少？",
+                options: ["3", "4", "5","6"],
+                correctAnswer: 1
+            },
+            {
+                question: "哪個恆星最靠近太陽？",
+                options: ["地球", "火星", "水星","比鄰星"],
+                correctAnswer: 3
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+
+        function showQuestion(index) {
+            const questionElement = document.getElementById("question");
+            questionElement.textContent = questions[index].question;
+
+            const optionsElement = document.getElementById("options");
+            optionsElement.innerHTML = "";
+
+            questions[index].options.forEach((option, i) => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.onclick = () => checkAnswer(i);
+                optionsElement.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedIndex) {
+            if (selectedIndex === questions[currentQuestionIndex].correctAnswer) {
+                alert("正確答案！");
+            } else {
+                alert("答錯了。");
+            }
+
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert("遊戲結束！");
+            }
+        }
+
+        showQuestion(currentQuestionIndex);
+    </script>
+</body>
+</html>
