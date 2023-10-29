@@ -92,14 +92,15 @@
             <button id="no">不懂</button>
             <button id="fuck">幹</button>
             <button id="love">愛</button>
+            <button id="pee">戳屁屁</button>
         </div>
     </div>
     <script>
         
         document.getElementById("yes").addEventListener('click', function () {
             const heart = document.createElement("yes");
-            heart.innerText = "⚡";
-            heart.style.fontSize = "80px";
+            heart.innerText = "你根本就不懂塞尚！";
+            heart.style.fontSize = "45px";
 
             heart.style.position = "absolute";
             heart.style.left = Math.random() * 90 + "vw";
@@ -115,7 +116,7 @@
 
         document.getElementById("no").addEventListener('click', function () {
             const heart = document.createElement("no");
-            heart.innerText = "滾!";
+            heart.innerText = "滾!🫵";
             heart.style.fontSize = "80px";
 
             heart.style.position = "absolute";
@@ -151,6 +152,23 @@
             const heart = document.createElement("love");
             heart.innerText = "❤️";
             heart.style.fontSize = "80px";
+
+            heart.style.position = "absolute";
+            heart.style.left = Math.random() * 90 + "vw";
+            heart.style.top = Math.random() * 90 + "vh";
+            heart.style.animation = "fade 3s linear";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        });
+
+        document.getElementById("pee").addEventListener('click', function () {
+            const heart = document.createElement("pee");
+            heart.innerText = "慎固：啊～好痛痛👇";
+            heart.style.fontSize = "45px";
 
             heart.style.position = "absolute";
             heart.style.left = Math.random() * 90 + "vw";
