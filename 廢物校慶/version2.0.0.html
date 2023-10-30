@@ -175,28 +175,26 @@
                 scoreElement.textContent = score;
             } else {
                 cnt+=1;
-                alert("答錯了。");
+               alert("答錯了。");
             }
 
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
                 showQuestion(currentQuestionIndex);
             } else {
-                alert("遊戲結束！");
+               // alert("遊戲結束！");
             }
 
-            /*if(cnt==12)
-            {
-                else if (score < 60) {
+            if (cnt == 12) {
+                if (score < 60) {
                     alert("你智障喔不到60分。遊戲結束！");
-                }
-                else if (socre >= 60 && socre < 100) {
+                } else if (score >= 60 && score < 100) {
                     alert("還可以。遊戲結束！");
+                } else {
+                    alert("Genius 遊戲結束！");
                 }
-                else {
-                    alert("Genius 遊戲結束！")
-                }
-            }*/
+            }
+            
             
         }
 
