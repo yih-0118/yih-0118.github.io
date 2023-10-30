@@ -6,44 +6,55 @@
 
     <title>示例</title>
     <style>
+        /* 馬卡龍風格的UI */
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             text-align: center;
+            box-sizing: border-box;
+            background-color: #f1f1f1;
+            margin-top: 55%;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #865c5c;
+            
+            /* 粉紅色 */
         }
 
         #question {
-            font-size: 24px;
+            font-size: 18px;
             margin: 20px;
-        }
-
-        #options {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #ffebcd;
+            /* 淡黃色 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         button {
             font-size: 18px;
             padding: 10px 20px;
             margin: 10px;
+            background-color: #a2dfffbc;
+            /* 綠色 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #332f2f;
         }
 
-        @media (max-width: 768px) {
-            #question {
-                font-size: 18px;
-            }
+        button:hover {
+            background-color: #6ac3b8;
+            /* 深綠色 */
+        }
 
-            button {
-                font-size: 16px;
-            }
-
-            h1 {
-                margin-top: 40%;
-            }
-
-            #score-container {
-                margin-top: 20%;
-            }
+        #score-container {
+            margin-top: 10%;
+            font-size: 16px;
+            color: #231919;
+            /* 粉紅色 */
         }
     </style>
 </head>
@@ -63,6 +74,13 @@
     </div>
 
     <script>
+        const bgImages = [
+
+            "42702_0.jpg",
+            "42703_0.jpg",
+            "42704_0.jpg",
+        ];
+
         const questions = [
 
             {
@@ -146,6 +164,7 @@
                 correctAnswer:
             }*/
         ];
+
         const scoreElement = document.getElementById("score");
 
         let score = 0;
@@ -170,19 +189,20 @@
         function checkAnswer(selectedIndex) {
             if (selectedIndex === questions[currentQuestionIndex].correctAnswer) {
                 //alert("正確答案！");
-                cnt+=1;
+                cnt += 1;
                 score += 10;
                 scoreElement.textContent = score;
+                //document.body.style.backgroundImage = "url(" + bgImages[cnt] + ")";
             } else {
-                cnt+=1;
-               alert("答錯了。");
+                cnt += 1;
+                alert("答錯了。");
             }
 
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
                 showQuestion(currentQuestionIndex);
             } else {
-               // alert("遊戲結束！");
+                // alert("遊戲結束！");
             }
 
             if (cnt == 12) {
@@ -194,8 +214,8 @@
                     alert("Genius 遊戲結束！");
                 }
             }
-            
-            
+
+
         }
 
         scoreElement.innerHTML = score;
