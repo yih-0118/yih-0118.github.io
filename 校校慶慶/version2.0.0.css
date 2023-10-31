@@ -51,4 +51,9 @@ button:hover {
 
 #end-container {
     color: red;
+    font-size: 24px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
 }
