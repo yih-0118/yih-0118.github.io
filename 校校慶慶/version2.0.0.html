@@ -18,7 +18,7 @@
     </div>
 
     <div id="score-container">
-        分數: <span id="score">0</span>
+        答對題數: <span id="score">0</span>
     </div>
 
     <div id="end-container" style="display: none;">
@@ -62,7 +62,7 @@
 
         function checkAnswer(selectedIndex) {
             if (selectedIndex === questions[currentQuestionIndex].correctAnswer) {
-                score += 10;
+                score += 1;
                 scoreElement.textContent = score;
                 cnt += 1;
                 numQuesion += 1;
