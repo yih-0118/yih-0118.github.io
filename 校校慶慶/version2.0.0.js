@@ -1,5 +1,9 @@
 const questions = [
-
+    {
+        question: "哪個恆星最靠近太陽？",
+        options: ["水星","半人馬座α星C","天狼星","參宿四"],
+        correctAnswer: 1
+    },
     {
         question: "明倫高中的校訓是？",
         options: ["篤信忠誠", "自強不息", "博學篤行", "和平友愛"],
@@ -58,11 +62,6 @@ const questions = [
     {
         question: "2 + 2 等於多少？",
         options: ["3", "4", "5","6"],
-        correctAnswer: 1
-    },
-    {
-        question: "哪個恆星最靠近太陽？",
-        options: ["水星","半人馬座α星C","天狼星","參宿四"],
         correctAnswer: 1
     }
 ];
