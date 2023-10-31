@@ -1,6 +1,6 @@
 const questions = [
     {
-        question: "哪個恆星最靠近太陽？",
+        question: "請問除了太陽之外距離明倫高中最近的恆星是？",
         options: ["水星","半人馬座α星C","天狼星","參宿四"],
         correctAnswer: 1
     },
