@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../js/yinghua.js"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+            background-image: url(42643.jpg);
+            background-repeat: no-repeat;
+            background-position: 70% 50%;
+            background-size: contain;
+            background-color: white;
+            background-attachment: fixed;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            margin-top: -5%;
+            opacity: 0.5;
+            position: absolute;
+            z-index: 99;
+            border-radius: 5px;
+        }
+
+        .card-body {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 10px;
+            margin-top: 10%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 10%;
+            color: white;
+            font-size: 1.5em;
+            font-family: 'Roboto', sans-serif;
+            border-left: 20%;
+        }
+
+        .card {
+            border-radius: 20px;
+            margin-top: 10%;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .buttons {
+            flex: 1;
+        }
+
+        .cherry {
+            flex: 5;
+        }
+
+        button {
+            background: rgb(49, 199, 226);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: black;
+            font-size: 25px;
+        }
+
+        @media (max-width: 768px) {
+
+            .container,
+            .card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h5 {
+                font-size: 40px
+            }
+
+            button {
+                padding: 16px 24px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cherry">
+        <!-- <img id="yinghua" src="../image/yinghua.png" alt=""> -->
+    </div>
+    <div class="card" style="width: 40rem;">
+        <div class="card-body">
+            <h5 class="card-title">你懂美嗎？ by 慎固</h5>
+            <button id="yes">懂</button>
+            <button id="no">不懂</button>
+            <button id="fuck">幹</button>
+            <button id="love">愛</button>
+            <button id="pee">戳屁屁</button>
+        </div>
+    </div>
+    <script>
+
+        const titles = [
+
+            "我在上數學，你在看手機！！",
+            "你要吃糖果嗎？",
+            "老師唱歌唱歌"
+        ];
+
+        // 按钮文字数组
+        const buttonsText = 
+        [
+            "你懂美嗎?..",
+            "不懂..",
+            "幹..",
+            "愛..",
+            "戳屁屁..",
+        ]
+        
+        
+        
+        // 背景图片数组  
+        const bgImages = [
+            
+            "42702_0.jpg",
+            "42703_0.jpg",
+            "42704_0.jpg",
+        ];
+
+        let currentStage = 0;
+        const buttons = document.querySelectorAll('button');
+
+        document.getElementById('yes').addEventListener('click', function (e) {
+
+            buttons.forEach((button, index) => {
+                button.innerText = buttonsText[index];
+            });
+
+            document.body.style.backgroundImage = "url(" + bgImages[currentStage] + ")";
+
+            currentStage++;
+            document.querySelector('.card-title').innerText = titles[currentStage];
+
+            if (currentStage > bgImages.length) {
+                currentStage = 0;
+            }
+            console.log(currentStage);
+
+        });
+
+
+        /*function renderButtons(currentStage) {
+
+            console.log(currentStage);
+            // 移除旧按钮
+            document.querySelector('.buttons').innerHTML = '';
+
+            if (currentStage == 0) {
+                // 第一关按钮
+                document.querySelector('.card-title').innerText = titles[currentStage];
+
+                let btn1_1 = document.createElement('button');
+                btn1_1.id = 'btn1_1';
+                btn1_1.innerText = 'Button 1';
+
+                let btn1_2 = document.createElement('button');
+                btn1_2.id = 'btn1_2';
+                btn1_2.innerText = 'Button 2';
+
+                let btn1_3 = document.createElement('button');
+                btn1_3.id = 'btn1_3';
+                btn1_3.innerText = 'Button 2';
+
+                let btn1_4 = document.createElement('button');
+                btn1_4.id = 'btn1_4';
+                btn1_4.innerText = 'Button 2';
+
+                let btn1_5 = document.createElement('button');
+                btn1_5.id = 'btn1_5';
+                btn1_5.innerText = 'Button 2';
+
+                document.querySelector('.buttons').appendChild(btn1);
+                document.querySelector('.buttons').appendChild(btn2);
+
+            } else if (currentStage === 1) {
+                // 第二关按钮
+
+                document.querySelector('.card-title').innerText = titles[currentStage];
+
+                let btn3 = document.createElement('button');
+                btn3.id = 'btn3';
+                btn3.innerText = 'Button 3';
+
+                let btn4 = document.createElement('button');
+                btn4.id = 'btn4';
+                btn4.innerText = 'Button 4';
+
+                document.querySelector('.buttons').appendChild(btn3);
+                document.querySelector('.buttons').appendChild(btn4);
+            }
+
+            // 给按钮绑定点击监听
+            document.querySelector('.buttons').addEventListener('click', function (e) {
+                currentStage++;
+
+                renderButtons(currentStage);
+            });
+
+        }*/
+
+        // 初始化按钮
+        //renderButtons(currentStage);
+
+
+
+
+        document.getElementById("no").addEventListener('click', function () {
+            const heart = document.createElement("no");
+            heart.innerText = "滾!🫵";
+            heart.style.fontSize = "80px";
+
+            heart.style.position = "absolute";
+            heart.style.left = Math.random() * 90 + "vw";
+            heart.style.top = Math.random() * 90 + "vh";
+            heart.style.animation = "fade 3s linear";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        });
+
+        document.getElementById("fuck").addEventListener('click', function () {
+            const heart = document.createElement("fuck");
+            heart.innerText = "幹🤬";
+            heart.style.fontSize = "80px";
+
+            heart.style.position = "absolute";
+            heart.style.left = Math.random() * 90 + "vw";
+            heart.style.top = Math.random() * 90 + "vh";
+            heart.style.animation = "fade 3s linear";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        });
+
+        document.getElementById("love").addEventListener('click', function () {
+            const heart = document.createElement("love");
+            heart.innerText = "❤️";
+            heart.style.fontSize = "80px";
+
+            heart.style.position = "absolute";
+            heart.style.left = Math.random() * 90 + "vw";
+            heart.style.top = Math.random() * 90 + "vh";
+            heart.style.animation = "fade 3s linear";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        });
+
+        document.getElementById("pee").addEventListener('click', function () {
+            const heart = document.createElement("pee");
+            heart.innerText = "慎固：啊～好痛痛👇";
+            heart.style.fontSize = "45px";
+
+            heart.style.position = "absolute";
+            heart.style.left = Math.random() * 90 + "vw";
+            heart.style.top = Math.random() * 90 + "vh";
+            heart.style.animation = "fade 3s linear";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

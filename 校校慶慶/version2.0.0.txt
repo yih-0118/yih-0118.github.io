@@ -1,0 +1,83 @@
+const questions = [
+
+    {
+        question: "1. 明倫高中的校訓是？",
+        options: ["(A) 篤信忠誠", "(B) 自強不息", "(C) 博學篤行", "(D) 和平友愛"],
+        correctAnswer: 3
+    },
+    {
+        question: "2. 明倫高中位於哪個城市？",
+        options: ["(A) 台北市", "(B) 高雄市", "(C) 台中市", "(D) 新北市"],
+        correctAnswer: 0
+    },
+    {
+        question: "3. 明倫高中提供哪些學術課程？",
+        options: ["(A) 文學和藝術", "(B) 體育和音樂", "(C) 文理學科", "(D) 建築和工程"],
+        correctAnswer: 2
+    },
+    {
+        question: "4. 這所學校的校徽通常是什麼顏色的？",
+        options: ["(A) 紅色和白色", "(B) 藍色和金色", "(C) 綠色和紫色", "(D) 黑色和灰色"],
+        correctAnswer: 0
+    },
+    {
+        question: "5. 明倫高中是否擁有一個特別的傳統節慶？",
+        options: ["(A) 是，元宵節慶", "(B) 是，春季運動會", "(C) 否，沒有特別的節慶", "(D) 是，聖誕節慶"],
+        correctAnswer: 1
+    },
+    {
+        question: "6. 哪種行為最能表達對弱勢群體的關懷？",
+        options: ["(A) 提供經濟援助", "(B) 主動聆聽他們的故事", "(C) 分享有關他們的信息在社交媒體上", "(D) 忽略他們的需求"],
+        correctAnswer: 1
+    },
+    {
+        question: "7. 在幫助弱勢群體時，你應該選擇的方法是？",
+        options: ["(A) 以慈善機構捐款", "(B) 直接參與志願服務", "(C) 討論他們的需求", "(D) 不關心他們的處境"],
+        correctAnswer: 1
+    },
+    {
+        question: "8. 什麼是「無家可歸」？",
+        options: ["(A) 一種極端貧困", "(B) 無固定住處的人們", "(C) 一種疾病", "(D) 地震造成的破壞"],
+        correctAnswer: 1
+    },
+    {
+        question: "9. 哪個行為最能幫助兒童接受教育，特別是那些生活在貧困地區的兒童？",
+        options: ["(A) 提供教科書", "(B) 提供午餐", "(C) 提供遊戲玩具", "(D) 無需幫助"],
+        correctAnswer: 1
+    },
+    {
+        question: "10. 什麼是「社會排斥」？",
+        options: ["(A) 推動社會變革的運動", "(B) 把人們排除在社交圈之外", "(C) 經濟增長", "(D) 高度社交互動"],
+        correctAnswer: 1
+    },
+    {
+        question: "11. 哪一年校慶不能賣吃的？",
+        options: ["(A) 2022", "(B) 2222", "(C) 2023", "(D) 2019"],
+        correctAnswer: 0
+    },
+    {
+        question: "12. 什麼是塞尚？",
+        options: ["(A) 俞慎固", "(B) 一個畫家", "(C) 抽象派畫家", "(D) 校長"],
+        correctAnswer: 0
+    },
+    /*{
+        question: "“桂棹兮蘭槳，擊空明兮泝流光。渺渺兮予懷，望美人兮天一方”。 出自於下列何者？",
+        options: ["赤壁賦", "出師表", "浮生六記", "四庫全書"],
+        correctAnswer: 0
+    },
+    {
+        question: "2 + 2 等於多少？",
+        options: ["3", "4", "5","6"],
+        correctAnswer: 1
+    },
+    {
+        question: "哪個恆星最靠近太陽？",
+        options: ["地球", "火星", "水星","比鄰星"],
+        correctAnswer: 3
+    }
+    {
+        question:
+        options:
+        correctAnswer:
+    }*/
+];
