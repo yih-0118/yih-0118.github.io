@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="version2.0.0.css">
     <link rel="shortcut icon" href="1698722833.ico" />
 </head>
+
 <body>
+    <div id="end-container" style="display: none;">
+        <!-- style="display: none;" -->
+        <div id="end-container-text">遊戲結束</div>
+        <div id="end-container-score">答對題數: <span id="score-end">0</span></div>
+    </div>
+    </div>
     <h1>明倫知多少？</h1>
     <div id="question"></div>
     <div id="options">
@@ -20,17 +27,14 @@
     <div id="score-container">
         答對題數: <span id="score">0</span>
     </div>
-
-    <div id="end-container" style="display: none;">
-        <h2>遊戲結束</h2>
-    </div>
-
     <script src="version2.0.0.js"></script>
     <script>
 
+        const timerElement = document.getElementById("timer");
+        const timeLeftElement = document.getElementById("time-left");
         const scoreElement = document.getElementById("score");
         const endContainer = document.getElementById("end-container");
-        const finalScoreElement = document.getElementById("final-score");
+        const GameOverScore = document.getElementById("score-end");
 
         let score = 0;
         let cnt = 0;
@@ -56,13 +60,13 @@
                 });
             } else {
                 endContainer.style.display = "block";
-                finalScoreElement.textContent = score;
             }
         }
 
         function checkAnswer(selectedIndex) {
             if (selectedIndex === questions[currentQuestionIndex].correctAnswer) {
                 score += 1;
+                GameOverScore.textContent = score;
                 scoreElement.textContent = score;
                 cnt += 1;
                 numQuesion += 1;
@@ -75,8 +79,12 @@
             showQuestion(currentQuestionIndex);
         }
 
+        GameOverScore.innerHTML = score;
         scoreElement.innerHTML = score;
         showQuestion(currentQuestionIndex);
+
+
+
     </script>
 </body>
 
