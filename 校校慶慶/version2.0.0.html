@@ -3,79 +3,17 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>示例</title>
-    <style>
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            text-align: center;
-            box-sizing: border-box;
-            background-color: #ffffff;
-            margin-top: 55%;            
-            /*background-image: url(42643.jpg);*/
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 0% -50%;
-
-
-
-        }
-
-        h1 {
-            font-size: 32px;
-            color: #865c5c;
-            background-color: #f1f1f1;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-
-        }
-
-        #question {
-            font-size: 24px;
-            margin: 20px;
-            background-color: #ffebcd;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        button {
-            font-size: 18px;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #c5e2f1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            color: #332f2f;
-        }
-
-        button:hover {
-            background-color: #6ac3b8;
-        }
-
-        #score-container {
-            font-size: 28px;
-            margin: 20px;
-            background-color: #ccf6eb;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            
-
-        }
-    </style>
+    <title>v2.1</title>
+<link rel="stylesheet" href="version2.0.0.css">
 </head>
-
 <body>
     <h1>明倫知多少？</h1>
     <div id="question"></div>
     <div id="options">
-        <button onclick="checkAnswer(1)">選項 1</button>
-        <button onclick="checkAnswer(2)">選項 2</button>
-        <button onclick="checkAnswer(3)">選項 3</button>
-        <button onclick="checkAnswer(4)">選項 4</button>
+        <button id="option-1" onclick="checkAnswer(0)"></button>
+        <button id="option-2" onclick="checkAnswer(1)"></button>
+        <button id="option-3" onclick="checkAnswer(2)"></button>
+        <button id="option-4" onclick="checkAnswer(3)"></button>
     </div>
 
     <div id="score-container">
@@ -88,16 +26,7 @@
 
     <script src="version2.0.0.js"></script>
     <script>
-        /*const bgImages = [
-            {"42702_0.jpg";},
-            {"42703_0.jpg";},
-            {"42704_0.jpg"}
-        ];*/
 
-        /*let background_cnt=0;
-        if (background_cnt >= bgImages.length) {
-            background_cnt = 0;
-        }*/
         const scoreElement = document.getElementById("score");
         const endContainer = document.getElementById("end-container");
         const finalScoreElement = document.getElementById("final-score");
@@ -105,19 +34,22 @@
         let score = 0;
         let cnt = 0;
         let currentQuestionIndex = 0;
+        let numQuesion = 1;
+        if (numQuesion > question.length + 1) {
+            numQuesion = question.length;
+        }
 
         function showQuestion(index) {
             if (index < questions.length) {
                 const questionElement = document.getElementById("question");
-                questionElement.textContent = questions[index].question;
+                questionElement.textContent = numQuesion + (". ") + questions[index].question;
 
                 const optionsElement = document.getElementById("options");
                 optionsElement.innerHTML = "";
-                //document.body.style.backgroundImage = "url(" + bgImages[background_cnt] + ")";
 
                 questions[index].options.forEach((option, i) => {
                     const button = document.createElement("button");
-                    button.textContent = option;
+                    button.textContent = "(" + String.fromCharCode(65 + i) + ") " + option;
                     button.onclick = () => checkAnswer(i);
                     optionsElement.appendChild(button);
                 });
@@ -132,22 +64,19 @@
                 score += 10;
                 scoreElement.textContent = score;
                 cnt += 1;
-                //background_cnt+=1;
+                numQuesion += 1;
             } else {
                 cnt += 1;
+                numQuesion += 1;
             }
 
             currentQuestionIndex++;
             showQuestion(currentQuestionIndex);
-
-            /*if (cnt == 12) {
-                endContainer.style.display = "block";
-                finalScoreElement.textContent = score;
-            }*/
         }
 
         scoreElement.innerHTML = score;
         showQuestion(currentQuestionIndex);
     </script>
 </body>
+
 </html>
