@@ -62,8 +62,8 @@ const questions = [
     },
     {
         question: "哪個恆星最靠近太陽？",
-        options: ["地球", "火星", "水星","半人馬座α星C"],
-        correctAnswer: 3
+        options: ["水星","半人馬座α星C","天狼星","參宿四"],
+        correctAnswer: 1
     }
 ];
 
