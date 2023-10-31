@@ -50,16 +50,6 @@ const questions = [
         options: ["推動社會變革的運動", "把人們排除在社交圈之外", "經濟增長", "高度社交互動"],
         correctAnswer: 1
     },
-    // {
-    //     question: "哪一年校慶不能賣吃的？",
-    //     options: ["2022", "2021", "2023", "2019"],
-    //     correctAnswer: 0
-    // },
-    // {
-    //     question: "什麼是塞尚？",
-    //     options: ["一種美", "一個運氣好的總稱", "抽象派畫家", "李石樵"],
-    //     correctAnswer: 0
-    // },
     {
         question: "“桂棹兮蘭槳，擊空明兮泝流光。渺渺兮予懷，望美人兮天一方”。 出自於下列何者？",
         options: ["赤壁賦", "出師表", "浮生六記", "四庫全書"],
@@ -72,7 +62,7 @@ const questions = [
     },
     {
         question: "哪個恆星最靠近太陽？",
-        options: ["地球", "火星", "水星","比鄰星"],
+        options: ["地球", "火星", "水星","半人馬座α星C"],
         correctAnswer: 3
     }
 ];
