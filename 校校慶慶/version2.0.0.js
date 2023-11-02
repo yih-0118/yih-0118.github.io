@@ -15,9 +15,9 @@ const questions = [
         correctAnswer: 0
     },
     {
-        question: "明倫高中提供哪些學術課程？",
-        options: ["文學和藝術", "體育和音樂", "文理學科", "建築和工程"],
-        correctAnswer: 2
+        question: "明倫校歌裡有什麼？",
+        options: ["努力向前跑", "努力前進", "跑不動", "跳起來"],
+        correctAnswer: 1
     },
     {
         question: "這所學校的校徽通常是什麼顏色的？",
