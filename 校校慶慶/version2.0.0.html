@@ -11,7 +11,6 @@
     <div id="end-container" style="display: none;">
         <div id="end-container-text">遊戲結束</div>
         <div id="end-container-score">答對題數: <span id="score-end">0</span></div>
-        <div id="end-container-length_questions">共 <span id="length_question"> 0 </span> 題</div>
     </div>
     </div>
     <h1>明倫知多少？</h1>
@@ -32,8 +31,6 @@
         const score_element = document.getElementById("score");
         const end_container = document.getElementById("end-container");
         const game_over_score = document.getElementById("score-end");
-        const length_question = document.getElementById("length_question"); 
-
 
         let score = 0;
         let cnt = 0;
@@ -86,7 +83,6 @@
         game_over_score.innerHTML = score;
         score_element.innerHTML = score;
         show_question(current_question_index);
-        length_question.innerHTML = questions.length; 
 
 
 
