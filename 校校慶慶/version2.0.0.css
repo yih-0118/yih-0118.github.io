@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-    font-size: 34px;
+    font-size: 30px;
     color: #865c5c;
     background-color: #f4f4f4;
     padding: 20px;
@@ -41,7 +41,7 @@ button:hover {
 }
 
 #score-container {
-    font-size: 26px;
+    font-size: 18px;
     margin: 20px;
     background-color: #ffe9c5;
     padding: 10px;
@@ -49,18 +49,9 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* #end-container {
-    color: rgb(199, 59, 59);
-    font-size: 24px;
-    background-color: #f4f4f4;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 15px;
-} */
-
 #end-container {
     background-color: rgb(53, 51, 51);
-    position:fixed;
+    position: fixed;
     width: 80vw;
     height: 70vh;
     top: 0px;
@@ -70,17 +61,23 @@ button:hover {
     margin: auto;
     text-align: center;
     border-radius: 10px;
-
 }
-#end-container-text{
 
+#end-container-text {
     color: rgb(234, 86, 86);
     line-height: 50vh;
     margin: auto;
     display: inline-block;
     font-size: 50px;
 }
-#end-container-score{
+
+#end-container-score {
     color: #ffffff;
     font-size: 25px;
+}
+
+#end-container-length_questions {
+    margin-top: 1vh;
+    color: #ffffff;
+    font-size: 22px;
 }
