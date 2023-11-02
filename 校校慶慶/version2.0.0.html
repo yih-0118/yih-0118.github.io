@@ -9,9 +9,9 @@
 </head>
 <body>
     <div id="end-container" style="display: none;">
-        <!-- style="display: none;" -->
         <div id="end-container-text">遊戲結束</div>
         <div id="end-container-score">答對題數: <span id="score-end">0</span></div>
+        <div id="end-container-length_questions">共 <span id="length_question"> 0 </span> 題</div>
     </div>
     </div>
     <h1>明倫知多少？</h1>
@@ -29,24 +29,25 @@
     <script src="version2.0.0.js"></script>
     <script>
 
-        const timerElement = document.getElementById("timer");
-        const timeLeftElement = document.getElementById("time-left");
-        const scoreElement = document.getElementById("score");
-        const endContainer = document.getElementById("end-container");
-        const GameOverScore = document.getElementById("score-end");
+        const score_element = document.getElementById("score");
+        const end_container = document.getElementById("end-container");
+        const game_over_score = document.getElementById("score-end");
+        const length_question = document.getElementById("length_question"); 
+
 
         let score = 0;
         let cnt = 0;
-        let currentQuestionIndex = 0;
-        let numQuesion = 1;
-        if (numQuesion > question.length + 1) {
-            numQuesion = question.length;
+        let current_question_index = 0;
+        let number_of_quesion = 1;
+
+        if (number_of_quesion > question.length + 1) {
+            number_of_quesion = question.length;
         }
 
-        function showQuestion(index) {
+        function show_question(index) {
             if (index < questions.length) {
                 const questionElement = document.getElementById("question");
-                questionElement.textContent = numQuesion + (". ") + questions[index].question;
+                questionElement.textContent = number_of_quesion + (". ") + questions[index].question;
 
                 const optionsElement = document.getElementById("options");
                 optionsElement.innerHTML = "";
@@ -58,31 +59,34 @@
                     optionsElement.appendChild(button);
                 });
             } else {
-                endContainer.style.display = "block";
+                end_container.style.display = "block";
             }
         }
 
-        function checkAnswer(selectedIndex) {
-            if (selectedIndex === questions[currentQuestionIndex].correctAnswer) {
+        function checkAnswer(selected_index) {
+            if (selected_index === questions[current_question_index].correct_answer) {
                 score += 1;
-                GameOverScore.textContent = score;
-                scoreElement.textContent = score;
+                game_over_score.textContent = score;
+                score_element.textContent = score;
                 cnt += 1;
-                numQuesion += 1;
+                number_of_quesion += 1;
             } else {
+                
                 cnt += 1;
-                numQuesion += 1;
+                number_of_quesion += 1;
+                game_over_score.textContent = score;
+                score_element.textContent = score;
                 alert("答錯了唷！")
-
             }
 
-            currentQuestionIndex++;
-            showQuestion(currentQuestionIndex);
+            current_question_index++;
+            show_question(current_question_index);
         }
 
-        GameOverScore.innerHTML = score;
-        scoreElement.innerHTML = score;
-        showQuestion(currentQuestionIndex);
+        game_over_score.innerHTML = score;
+        score_element.innerHTML = score;
+        show_question(current_question_index);
+        length_question.innerHTML = questions.length; 
 
 
 
