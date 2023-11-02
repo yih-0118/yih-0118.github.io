@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 貼合手機介面 -->
-    <title>v2.1</title><!-- 標題 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v2.1</title>
     <link rel="stylesheet" href="version2.0.0.css">
-    <link rel="shortcut icon" href="1698722833.ico" /> <!-- 網頁標籤插入 -->
+    <link rel="shortcut icon" href="1698722833.ico" /> 
 </head>
 <body>
-    <div id="end-container" style="display: none;"><!-- 先隱藏最終頁面 --><!-- 最終分數頁面 -->
+    <div id="end-container" style="display: none;">
         <div id="end-container-text">遊戲結束</div>
         <div id="end-container-score">答對題數: <span id="score-end">0</span></div>
         <div id="end-container-length_questions">共 <span id="length_question"> 0 </span> 題</div>
     </div>
     </div>
-    <h1>明倫知多少？</h1><!-- 標題 -->
+    <h1>明倫知多少？</h1>
     <div id="question"></div><!-- 設id:question -->
-    <div id="options"><!-- 題目選項 -->
+    <div id="options">
         <button id="option-1" onclick="checkAnswer(0)"></button>
         <button id="option-2" onclick="checkAnswer(1)"></button>
         <button id="option-3" onclick="checkAnswer(2)"></button>
         <button id="option-4" onclick="checkAnswer(3)"></button>
     </div>
-    <div id="score-container"><!-- 使用介面分數 -->
+    <div id="score-container">
         答對題數: <span id="score">0</span>
     </div>
-    <script src="version2.0.0.js"></script><!-- 題目庫 -->
+    <script src="version2.0.0.js"></script>
     <script>
         const score_element = document.getElementById("score");
         const end_container = document.getElementById("end-container");
         const game_over_score = document.getElementById("score-end");
         const length_question = document.getElementById("length_question"); //dom提出element
 
-        let score = 0; //分數
-        let current_question_index = 0; //現在題目
+        let score = 0; 
+        let current_question_index = 0; 
 
         function show_question(index) {
             if (index < questions.length) {
                 const questionElement = document.getElementById("question");
-                questionElement.textContent = current_question_index + 1 + (". ") + questions[index].question; //顯示題號和題目
+                questionElement.textContent = current_question_index + 1 + (". ") + questions[index].question; 
 
                 const optionsElement = document.getElementById("options");
                 optionsElement.innerHTML = "";
@@ -47,10 +47,10 @@
                     button.textContent = "(" + String.fromCharCode(65 + i) + ") " + option;
                     button.onclick = () => checkAnswer(i);
                     optionsElement.appendChild(button);
-                });//建立選項和題號並確認答案
+                });
             } else {
                 end_container.style.display = "block";
-            }//length已盡，故遊戲結束
+            }
         }
 
         function checkAnswer(selected_index) {
@@ -60,7 +60,7 @@
                 score_element.textContent = score;
             } else {
                 alert("答錯了唷！")
-            }//更新答對題數
+            }
 
             current_question_index++;
             show_question(current_question_index);
@@ -68,7 +68,7 @@
 
         game_over_score.innerHTML = score;
         score_element.innerHTML = score;
-        length_question.innerHTML = questions.length + 1; //回傳回去
+        length_question.innerHTML = questions.length + 1; 
         show_question(current_question_index);
     </script>
 </body>
