@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>PingYuan_GAY_SURVEY</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body 
-        {
+        body {
             background-color: #f0f0f0;
             display: flex;
             justify-content: center;
@@ -14,24 +14,19 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        
-        .container 
-        {
+
+        .container {
             text-align: center;
         }
 
-        
-
-        h1 
-        {
+        h1 {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
             color: #333;
         }
-        
-        .btn 
-        {
+
+        .btn {
             font-size: 20px;
             font-weight: bold;
             margin: 10px;
@@ -44,22 +39,23 @@
             transition: background-color 0.3s, transform 0.2s;
         }
 
-        .btn:hover 
-        {
+        .btn:hover {
             background-color: #2980b9;
             transform: scale(1.05);
         }
 
-        .icon 
-        {
+        .icon {
             margin-right: 8px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <a href="https://1drv.ms/f/s!Am_dLlD2CRUbgZxksGnjh505XsZ0jA?e=ImNqoR"><h1>Are you gay?(Click it)</h1></a>
-        
+        <a href="https://1drv.ms/f/s!Am_dLlD2CRUbgZxksGnjh505XsZ0jA?e=ImNqoR">
+            <h1>Are you gay?(Click it)</h1>
+        </a>
+
         <button id="noBtn" class="btn">
             <i class="icon fas fa-times"></i>No
         </button>
@@ -67,19 +63,18 @@
             <i class="icon fas fa-check"></i>Yes
         </button>
     </div>
-    
+
     <script>
-        document.getElementById('noBtn').addEventListener('mouseover', function() 
-        {
+        document.getElementById('noBtn').addEventListener('mouseover', function () {
             this.style.position = 'absolute';
             this.style.left = Math.random() * 600 + 'px';
             this.style.top = Math.random() * 600 + 'px';
         });
-        
-        function no() 
-        {
+
+        function no() {
             alert('Thanks bro');
         }
     </script>
 </body>
+
 </html>
