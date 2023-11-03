@@ -2,132 +2,132 @@ const questions = [
     {
         question: "請問除了太陽之外距離明倫高中最近的恆星是？",
         options: ["南門二","半人馬座α星C","天狼星","參宿四"],
-        correctAnswer: 1
+        correct_answer: 1
     },
     {
         question: "明倫高中的校訓是？",
         options: ["篤信忠誠", "自強不息", "博學篤行", "和平友愛"],
-        correctAnswer: 3
+        correct_answer: 3
     },
     {
         question: "明倫高中位於哪個城市？",
         options: ["台北市", "高雄市", "台中市", "新北市"],
-        correctAnswer: 0
+        correct_answer: 0
     },
     {
         question: "明倫校歌裡有什麼？",
         options: ["努力向前跑", "努力前進", "跑不動", "跳起來"],
-        correctAnswer: 1
+        correct_answer: 1
     },
     {
         question: "這所學校的校徽通常是什麼顏色的？",
         options: ["紅色和白色", "藍色和金色", "綠色和紫色", "黑色和灰色"],
-        correctAnswer: 0
+        correct_answer: 0
     },
     {
         question: "明倫高中是否擁有一個特別的傳統節慶？",
         options: ["是，元宵節慶", "否，沒有特別的節慶", "是，聖誕節慶", "是，春季運動會",],
-        correctAnswer: 3
+        correct_answer: 3
     },
     {
         question: "哪種行為最能表達對弱勢群體的關懷？",
         options: ["提供經濟援助", "主動聆聽他們的故事", "分享有關他們的信息在社交媒體上", "忽略他們的需求"],
-        correctAnswer: 1
+        correct_answer: 1
     },
     {
         question: "在幫助弱勢群體時，你應該選擇的方法是？",
         options: ["直接參與志願服務", "以慈善機構捐款", "討論他們的需求", "不關心他們的處境"],
-        correctAnswer: 0
+        correct_answer: 0
     },
     {
         question: "什麼是「無家可歸」？",
         options: ["一種極端貧困", "一種疾病", "無固定住處的人們", "地震造成的破壞"],
-        correctAnswer: 2
+        correct_answer: 2
     },
     {
         question: "哪個行為最能幫助兒童接受教育，特別是那些生活在貧困地區的兒童？",
         options: ["提供教科書", "提供午餐", "提供遊戲玩具", "無需幫助"],
-        correctAnswer: 1
+        correct_answer: 1
     },
     {
         question: "什麼是「社會排斥」？",
         options: ["推動社會變革的運動", "把人們排除在社交圈之外", "經濟增長", "高度社交互動"],
-        correctAnswer: 1
+        correct_answer: 1
     },
     {
         question: "“桂棹兮蘭槳，擊空明兮泝流光。渺渺兮予懷，望美人兮天一方”。 出自於下列何者？",
         options: ["赤壁賦", "出師表", "浮生六記", "四庫全書"],
-        correctAnswer: 0
+        correct_answer: 0
     },
     {
         question: "2 + 2 等於多少？",
         options: ["3", "4", "5","6"],
-        correctAnswer: 1
+        correct_answer: 1
     },
     {
         question: "臺灣哪個地名,如同新竹市與新竹縣類似,同時作為市名與縣名的稱謂?",
         options: ['臺北' ,'臺南' ,'高雄','嘉義'],
-        correctAnswer: 3
+        correct_answer: 3
     },
     {
         question: "臺灣內灣線鐵路的興築,與下列哪項資源開發的關係最密切?",
         options: ["水泥", "金礦", "紅樹林","總督府"],
-        correctAnswer: 0
+        correct_answer: 0
     },
     {
         question: "「買」姓是西拉雅族的特有姓氏,這些買姓族人的祖先,在18世紀時期最可能以下列哪個地區為主要活動範圍?",
         options: ["海岸山脈東側", "雪山山脈西側", "玉山山脈東側","阿里山山脈西側"],
-        correctAnswer: 3
+        correct_answer: 3
     },
     {
         question: "近年來,在基隆市和平島挖掘到一處教堂的考古遺址,可證明 17 世紀西方在臺灣傳教的證據。這個宗教最可能為下列何者?",
         options: ["猶太教", "天主教", "基督新教","英國國教"],
-        correctAnswer: 1
+        correct_answer: 1
     },
     {
         question: "某人想開一家以在地新鮮水果為主要商品的飲料店,品項包含「蓮霧金萱茶」與「蜂蜜檸檬」。他最適合到下列哪些水果原產地購買材料?",
         options: ["屏東的林邊和九如", "臺南的關廟和玉井", "臺中的新社和東勢","臺東的金峰和太麻里"],
-        correctAnswer: 0
+        correct_answer: 0
     },
     {
         question: "2023 年 3 月,宏都拉斯宣布與我國斷交,該國位於哪個大洲?",
         options: ["亞洲", "非洲", "中美洲","大洋洲"],
-        correctAnswer: 2
+        correct_answer: 2
     },
     {
         question: "2022 年,中國曾與大洋洲的哪個國家簽署安全協議?",
         options: ["關島", "大溪地", "夏威夷","索羅門群島"],
-        correctAnswer: 3
+        correct_answer: 3
     },
     {
         question: "JR 東日本傾出全力打造的豪華郵輪式列車,最近五月份的行程為「東京出發,一路行經函館-白老-青森-鳴子溫泉周遊一圈,最後回到東京」。該列車行經下列哪些島嶼?",
         options: ["九州、四國", "四國、本州", "九州、北海道","本州、北海道"],
-        correctAnswer: 3
+        correct_answer: 3
     },
     {
         question: "某外國節目舉辦荒野求生競賽活動,安排在 11 月的溫哥華島進行。選手們在島上最可能遭遇下列哪種環境,使得在尋找生活資源時變得益加困難?",
         options: ["綿延數日的風雨", "面積廣大的鹽湖", "四處覓食的獅子","終年不退的積雪"],
-        correctAnswer: 0
+        correct_answer: 0
     },
     {
         question: "有學者懷疑,中國商朝曾經抵達過美洲阿留申群島狩獵,或是進行貿易。會有此推論,最可能是在河南殷墟中發現哪種動物的骨頭?",
         options: ["烏龜", "老虎", "鯨魚","大象"],
-        correctAnswer: 2
+        correct_answer: 2
     },
     {
         question: "臺灣中油公司在高雄市、臺中市及新北市皆設有油輪專用碼頭,以利將進口的原油運輸至旗下石化工廠進行煉製,並生產如乙烯、丙烯、丁二烯、苯、甲苯、二甲苯等石化原料,提供國內各產業所需。依據上述,該公司在國內設置石化工廠,最可能是考量下列哪個工業區位?",
         options: ["交通", "勞力", "市場","動力"],
-        correctAnswer: 2
+        correct_answer: 2
     },
     {
         question: "某個地區的三個國家,打算建立「鋰佩克」(Lithium OPEC)組織,目的是組成類似石油輸出國組織(OPEC)的機構,來決定國際的鋰金屬價格。這個大洲最可能是下列何者?",
         options: ["西亞", "南歐", "北美洲","南美洲"],
-        correctAnswer: 3
+        correct_answer: 3
     },
     {
         question: "捷克致力於發展再生能源發電系統,根據該國自然環境判斷,下列何者最可能是捷克採行的再生能源發電策略?",
         options: ["利用阿爾卑斯山地勢落差的水力發電", "利用終年盛行西風發展離岸風力發電", "利用夏日日照較長發展太陽光能發電","利用當地盛產甘蔗發展生質燃料發電"],
-        correctAnswer: 2
+        correct_answer: 2
     },
     
 
