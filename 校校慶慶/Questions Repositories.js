@@ -5,9 +5,9 @@ const questions = [
         correct_answer: 1
     },
     {
-        question: "明倫高中的校訓是？",
-        options: ["篤信忠誠", "自強不息", "博學篤行", "和平友愛"],
-        correct_answer: 3
+        question: "哪個是關愛弱勢群體的標語？",
+        options: ["流動的是人口，不變的是服務","尊重每個人，追求和平與協作","遵守速限，保持安全","超速等於超危險"],
+        correct_answer: 1
     },
     {
         question: "明倫高中位於哪個城市？",
@@ -20,13 +20,13 @@ const questions = [
         correct_answer: 1
     },
     {
-        question: "這所學校的校徽通常是什麼顏色的？",
+        question: "這所學校的校徽有什麼顏色的？",
         options: ["紅色和白色", "藍色和金色", "綠色和紫色", "黑色和灰色"],
         correct_answer: 0
     },
     {
         question: "明倫高中是否擁有一個特別的傳統節慶？",
-        options: ["是，元宵節慶", "否，沒有特別的節慶", "是，聖誕節慶", "是，春季運動會",],
+        options: ["是，元宵節慶", "否，沒有特別的節慶", "是，聖誕節慶", "是，校慶活動",],
         correct_answer: 3
     },
     {
@@ -55,14 +55,9 @@ const questions = [
         correct_answer: 1
     },
     {
-        question: "“桂棹兮蘭槳，擊空明兮泝流光。渺渺兮予懷，望美人兮天一方”。 出自於下列何者？",
-        options: ["赤壁賦", "出師表", "浮生六記", "四庫全書"],
-        correct_answer: 0
-    },
-    {
-        question: "2 + 2 等於多少？",
-        options: ["3", "4", "5","6"],
-        correct_answer: 1
+        question: "翩若驚鴻，婉若游龍，榮曜秋菊，華茂春鬆。出自於下列何者？",
+        options: ["赤壁賦", "出師表", "浮生六記", "洛神賦"],
+        correct_answer: 3
     },
     {
         question: "臺灣哪個地名,如同新竹市與新竹縣類似,同時作為市名與縣名的稱謂?",

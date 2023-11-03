@@ -40,5 +40,5 @@ function check_answer(selected_index) {
 
 game_over_score.innerHTML = score;
 score_element.innerHTML = score;
-length_question.innerHTML = questions.length + 1; //回傳回去
+length_question.innerHTML = questions.length; //回傳回去
 show_question(current_question_index);
