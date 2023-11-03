@@ -4,6 +4,9 @@ body {
     box-sizing: border-box;
     background-color: #ffffff;
     margin-top: 5%;
+    background-image:url(45640.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
