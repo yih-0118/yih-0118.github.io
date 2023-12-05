@@ -47,7 +47,7 @@
     <div id="weatherData"></div>
 
     <script>
-        const apiUrl = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-093?Authorization=CWB-AFCD05A4-A82B-452D-A0C0-3434C0A7B30D&format=JSON&locationId=F-D0047-069&locationName=%E6%96%B0%E8%8E%8A%E5%8D%80&elementName=T&sort=time';
+        const apiUrl = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=CWB-AFCD05A4-A82B-452D-A0C0-3434C0A7B30D&format=JSON&StationName=%E6%96%B0%E8%8E%8A&WeatherElement=AirTemperature';
 
         const updateInterval = 30000000;
 
@@ -55,38 +55,36 @@
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    const weatherData = processData(data);
+                    const weatherData = processData(data.records.Station);
 
                     updateUI(weatherData);
                 })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
         }
 
-        function processData(data) {
-
-            const locations = data.records.locations;
-            const weatherData = [];
-
-            locations.forEach(location => {
-                const locationName = location.location[0].locationName;
-                const temperatureData = location.location[0].weatherElement.find(element => element.elementName === 'T').time;
-
-                const latestTemperature = temperatureData[0].elementValue[0].value;
-
-                weatherData.push({ locationName, latestTemperature });
-            });
-
-            return weatherData;
+        function processData(records) {
+            const firstRecord = records[0];
+            
+            const locationName = firstRecord.StationName;
+            const latestTemperature = firstRecord.WeatherElement.AirTemperature;
+          
+            return [{
+              locationName,
+              latestTemperature 
+            }];
         }
 
         function updateUI(weatherData) {
             const weatherContainer = document.getElementById('weatherData');
             weatherContainer.innerHTML = '';
 
-            weatherData.forEach(data => {
-                const locationDiv = document.createElement('div');
-                locationDiv.innerHTML = `<p>${data.locationName}: ${data.latestTemperature}℃</p>`;
-                weatherContainer.appendChild(locationDiv);
-            });
+            const data = weatherData[0];
+
+            const locationDiv = document.createElement('div');
+            locationDiv.innerHTML = `<p>${data.locationName}: ${data.latestTemperature}°C</p>`;
+            weatherContainer.appendChild(locationDiv);
         }
 
         fetchData();
