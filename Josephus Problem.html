@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josephus Problem Solver</title>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 90%;
+            width: 320px;
+        }
+
+        h1 {
+            color: #333333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #666666;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #333333;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Josephus Problem Solver</h1>
+        <form id="josephusForm">
+            <label for="n">Enter the number of people:</label>
+            <input type="number" id="n" required>
+            <label for="m">Enter the step value (m):</label>
+            <input type="number" id="m" required>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("josephusForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            var n = parseInt(document.getElementById("n").value);
+            var m = parseInt(document.getElementById("m").value);
+            var result = f(n, m);
+
+            document.getElementById("result").innerText = "Survivor: " + result;
+        });
+
+        function f(n, m) {
+            if (n === 1) {
+                return 1;
+            } else {
+                return (f(n - 1, m) + m - 1) % n + 1;
+            }
+        }
+    </script>
+</body>
+</html>
