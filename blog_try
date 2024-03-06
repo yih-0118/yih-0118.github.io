@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXIF Photo Blog</title>
+  <style>
+    .example {
+      font-family: 'IBMPlexMonoMedium', monospace;
+    }
+    
+    @font-face {
+      font-family: 'IBMPlexMonoMedium';
+      src: url('./fonts/IBMPlexMono-Medium.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      font-family: 'IBMPlexMonoMedium', monospace;
+      margin: 0;
+      padding: 0;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .photo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      height: 300px; /* 设置图片容器高度为300px */
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 裁剪图片以适应容器 */
+      transition: transform 0.3s ease;
+    }
+    .photo:hover img {
+      transform: scale(1.1);
+    }
+    .exif {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px;
+      font-size: 12px;
+    }
+    .toggle-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="photo-grid" id="photoGrid"></div>
+
+  <button class="toggle-button" onclick="toggleLayout()">Toggle Layout</button>
+
+  <script>
+    // JavaScript 代码
+    let isGridMode = true;
+
+    function toggleLayout() {
+      const photoGrid = document.getElementById('photoGrid');
+      if (isGridMode) {
+        photoGrid.classList.remove('photo-grid');
+        photoGrid.classList.add('photo-list');
+        const photos = document.querySelectorAll('.photo');
+        photos.forEach(photo => {
+          photo.style.height = 'auto';
+        });
+      } else {
+        photoGrid.classList.remove('photo-list');
+        photoGrid.classList.add('photo-grid');
+        const photos = document.querySelectorAll('.photo');
+        photos.forEach(photo => {
+          photo.style.height = '300px'; 
+        });
+      }
+      isGridMode = !isGridMode;
+    }
+
+    const photos = [
+      { src: 'https://onedrive.live.com/embed?resid=1B1509F6502EDD6F%2121751&authkey=%21AAPBMNSoPiq9QP8&width=3600&height=2400', exif: { camera: 'Samsung S21 Ultra', aperture: 'f/2.8', shutterSpeed: '1/500', iso: '100', date: '2014-03-06' } },
+      { src: 'https://onedrive.live.com/embed?resid=1B1509F6502EDD6F%2126050&authkey=%21AD_TLhRxKsczHqc&width=1920&height=1080', exif: { camera: 'Nikon D850', aperture: 'f/4', shutterSpeed: '1/1000', iso: '200', date: '2021-03-05' } },
+      { src: '/41136拷貝.jpg', exif: { camera: 'Canon EOS 5D Mark IV', aperture: 'f/1.6', shutterSpeed: '1/500', iso: '600', date: '2024-03-05' } },
+
+      // 添加更多照片...
+    ];
+
+    const photoGrid = document.getElementById('photoGrid');
+
+    photos.forEach(photo => {
+      const photoDiv = document.createElement('div');
+      photoDiv.classList.add('photo');
+
+      const img = document.createElement('img');
+      img.src = photo.src;
+      photoDiv.appendChild(img);
+
+      const exifData = document.createElement('div');
+      exifData.classList.add('exif');
+      exifData.innerHTML = `Camera: ${photo.exif.camera}<br>Aperture: ${photo.exif.aperture}<br>Shutter Speed: ${photo.exif.shutterSpeed}<br>ISO: ${photo.exif.iso}<br>Date: ${photo.exif.date}`;
+      photoDiv.appendChild(exifData);
+
+      photoGrid.appendChild(photoDiv);
+    });
+  </script>
+</body>
+</html>
