@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        document.body.appendChild(canvas);
+
+        const gravity = { x: 0, y: 0.3 };
+        const DISPLAY_WIDTH = 800;
+        const DISPLAY_HEIGHT = 800;
+
+        const trail_colours = [
+            [45, 45, 45],
+            [60, 60, 60],
+            [75, 75, 75],
+            [125, 125, 125],
+            [150, 150, 150]
+        ];
+        const dynamic_offset = 1;
+        const static_offset = 3;
+
+        const MAX_FIREWORKS = 200;
+        const MAX_PARTICLES = 5000;
+
+        class Firework {
+            constructor() {
+                this.colour = [
+                    Math.floor(Math.random() * 256),
+                    Math.floor(Math.random() * 256),
+                    Math.floor(Math.random() * 256)
+                ];
+                this.colours = [
+                    [
+                        Math.floor(Math.random() * 256),
+                        Math.floor(Math.random() * 256),
+                        Math.floor(Math.random() * 256)
+                    ],
+                    [
+                        Math.floor(Math.random() * 256),
+                        Math.floor(Math.random() * 256),
+                        Math.floor(Math.random() * 256)
+                    ],
+                    [
+                        Math.floor(Math.random() * 256),
+                        Math.floor(Math.random() * 256),
+                        Math.floor(Math.random() * 256)
+                    ]
+                ];
+                this.firework = new Particle(
+                    Math.floor(Math.random() * DISPLAY_WIDTH),
+                    DISPLAY_HEIGHT,
+                    true,
+                    this.colour
+                );
+                this.exploded = false;
+                this.particles = [];
+                this.min_max_particles = [100, 225];
+            }
+
+            update() {
+                if (!this.exploded) {
+                    this.firework.apply_force(gravity);
+                    this.firework.move();
+                    this.firework.show();
+                    if (this.firework.vel.y >= 0) {
+                        this.exploded = true;
+                        this.explode();
+                    }
+                } else {
+                    for (const particle of this.particles) {
+                        particle.apply_force({
+                            x: gravity.x + (Math.random() - 0.5) / 20,
+                            y: gravity.y / 2 + (Math.floor(Math.random() * 8) + 1) / 100
+                        });
+                        particle.move();
+                        particle.show();
+                    }
+                }
+            }
+
+            explode() {
+                const amount = Math.floor(
+                    Math.random() * (this.min_max_particles[1] - this.min_max_particles[0] + 1) +
+                    this.min_max_particles[0]
+                );
+                for (let i = 0; i < amount; i++) {
+                    this.particles.push(
+                        new Particle(this.firework.pos.x, this.firework.pos.y, false, this.colours)
+                    );
+                }
+            }
+
+            remove() {
+                if (this.exploded) {
+                    this.particles = this.particles.filter((p) => !p.remove);
+                    return this.particles.length === 0;
+                }
+                return false;
+            }
+        }
+
+        class Particle {
+            constructor(x, y, firework, colour) {
+                this.firework = firework;
+                this.pos = { x, y };
+                this.origin = { x, y };
+                this.radius = 20;
+                this.remove = false;
+                this.explosion_radius = Math.floor(Math.random() * 14) + 5;
+                this.life = 0;
+                this.acc = { x: 0, y: 0 };
+                this.trails = [];
+                this.prev_posx = Array(10).fill(-10);
+                this.prev_posy = Array(10).fill(-10);
+
+                if (this.firework) {
+                    this.vel = { x: 0, y: -Math.floor(Math.random() * 4) - 17 };
+                    this.size = 5;
+                    this.colour = colour;
+                    for (let i = 0; i < 5; i++) {
+                        this.trails.push(new Trail(i, this.size, true));
+                    }
+                } else {
+                    this.vel = {
+                        x: (Math.random() - 0.5) * 2 * Math.floor(Math.random() * this.explosion_radius),
+                        y: (Math.random() - 0.5) * 2 * Math.floor(Math.random() * this.explosion_radius)
+                    };
+                    this.size = Math.floor(Math.random() * 3) + 2;
+                    this.colour = colour[Math.floor(Math.random() * colour.length)];
+                    for (let i = 0; i < 5; i++) {
+                        this.trails.push(new Trail(i, this.size, false));
+                    }
+                }
+            }
+
+            apply_force(force) {
+                this.acc.x += force.x;
+                this.acc.y += force.y;
+            }
+
+            move() {
+                if (!this.firework) {
+                    this.vel.x *= 0.9;
+                    this.vel.y *= 0.9;
+                }
+                this.vel.x += this.acc.x;
+                this.vel.y += this.acc.y;
+                this.pos.x += this.vel.x;
+                this.pos.y += this.vel.y;
+                this.acc.x = 0;
+                this.acc.y = 0;
+
+                if (this.life === 0 && !this.firework) {
+                    const distance = Math.sqrt(
+                        (this.pos.x - this.origin.x) ** 2 + (this.pos.y - this.origin.y) ** 2
+                    );
+                    if (distance > this.explosion_radius) {
+                        this.remove = true;
+                    }
+                }
+
+                if (Math.abs(this.vel.x) < 0.5 && Math.abs(this.vel.y) < 0.5) {
+                    this.remove = true;
+                }
+
+                this.decay();
+                this.trail_update();
+                this.life++;
+            }
+
+            show() {
+                ctx.beginPath();
+                ctx.arc(this.pos.x, this.pos.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.colour[0]}, ${this.colour[1]}, ${this.colour[2]}, 1)`;
+                ctx.fill();
+            }
+
+            decay() {
+                if (this.life > 10 && this.life < 50 && Math.random() < 0.03) {
+                    this.remove = true;
+                } else if (this.life >= 50 && Math.random() < 0.2) {
+                    this.remove = true;
+                }
+            }
+
+            trail_update() {
+                this.prev_posx.pop();
+                this.prev_posx.unshift(this.pos.x);
+                this.prev_posy.pop();
+                this.prev_posy.unshift(this.pos.y);
+
+                for (let n = 0; n < this.trails.length; n++) {
+                    const t = this.trails[n];
+                    if (t.dynamic) {
+                        t.get_pos(this.prev_posx[n + dynamic_offset], this.prev_posy[n + dynamic_offset]);
+                    } else {
+                        t.get_pos(this.prev_posx[n + static_offset], this.prev_posy[n + static_offset]);
+                    }
+                }
+            }
+        }
+
+        class Trail {
+            constructor(n, size, dynamic) {
+                this.pos_in_line = n;
+                this.pos = { x: -10, y: -10 };
+                this.dynamic = dynamic;
+
+                if (this.dynamic) {
+                    this.colour = `rgb(${trail_colours[n][0]}, ${trail_colours[n][1]}, ${trail_colours[n][2]})`;
+                    this.size = size - n / 2;
+                } else {
+                    this.colour = 'rgb(255, 255, 200)';
+                    this.size = size - 2;
+                    if (this.size < 0) {
+                        this.size = 0;
+                    }
+                }
+            }
+
+            get_pos(x, y) {
+                this.pos = { x, y };
+            }
+
+            show() {
+                ctx.beginPath();
+                ctx.arc(this.pos.x, this.pos.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.colour;
+                ctx.fill();
+            }
+        }
+
+        function update(fireworks) {
+            const to_remove = [];
+            fireworks.forEach((fw) => {
+                fw.update();
+                if (fw.remove()) {
+                    to_remove.push(fw);
+                }
+            });
+
+            to_remove.forEach((fw) => {
+                const index = fireworks.indexOf(fw);
+                fireworks.splice(index, 1);
+            });
+        }
+
+        function main() {
+            canvas.width = DISPLAY_WIDTH;
+            canvas.height = DISPLAY_HEIGHT;
+
+            const fireworks = Array.from({ length: 2 }, () => new Firework());
+
+            setInterval(() => {
+                if (fireworks.length < MAX_FIREWORKS && Math.random() < 0.05) {
+                    fireworks.push(new Firework());
+                }
+            }, 100);
+
+            setInterval(() => {
+                if (fireworks.length < MAX_FIREWORKS && Math.random() < 0.1) {
+                    for (let i = 0; i < 10; i++) {
+                        if (fireworks.length < MAX_FIREWORKS) {
+                            fireworks.push(new Firework());
+                        }
+                    }
+                }
+            }, 500);
+
+            setInterval(() => {
+                if (fireworks.length < MAX_FIREWORKS && Math.random() < 0.2) {
+                    for (let i = 0; i < 100; i++) {
+                        if (fireworks.length < MAX_FIREWORKS) {
+                            fireworks.push(new Firework());
+                        }
+                    }
+                }
+            }, 1000);
+
+            function animate() {
+                ctx.fillStyle = 'rgba(20, 20, 30, 0.2)';
+                ctx.fillRect(0, 0, DISPLAY_WIDTH, DISPLAY_HEIGHT);
+                update(fireworks);
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        main();
+
+    </script>
+</body>
+
+</html>
