@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>座號與分數</title>
+  <title>地科成績</title>
   <!-- 引入 Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -43,11 +43,11 @@
           <form id="gradeForm">
             <div class="form-group">
               <label for="seatNumber">座號：</label>
-              <input type="number" class="form-control" id="seatNumber" required>
+              <input type="number" class="form-control" id="seatNumber"required>
             </div>
             <div class="form-group">
               <label for="score">分數：</label>
-              <input type="number" class="form-control" id="score" required>
+              <input type="number" class="form-control" id="score"required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">提交</button>
           </form>
@@ -67,7 +67,7 @@
       const seatNumber = document.getElementById('seatNumber').value;
       const score = document.getElementById('score').value;
 
-      if (seatNumber && score) {
+      if (seatNumber >= 1 && seatNumber <= 40 && score >= 0 && score <= 100) {
         const formData = new FormData();
         formData.append('entry.1158933007', seatNumber); // 將座號的ID替換為Google表單中座號的entry ID
         formData.append('entry.801718045', score); // 將分數的ID替換為Google表單中分數的entry ID
@@ -89,6 +89,9 @@
           document.getElementById('result').innerHTML = '<div class="alert alert-danger" role="alert">提交失敗！</div>';
           console.error('提交失敗:', error);
         });
+      } else {
+        // 如果座號或分數不在範圍內，將用戶重新導向到指定的連結
+        window.location.href = 'https://youtu.be/dQw4w9WgXcQ?feature=shared';
       }
     }
 
