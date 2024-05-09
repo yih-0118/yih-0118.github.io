@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定位簽到</title>
+  <!-- 引入 Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* 添加自定義 CSS 樣式來增加設計感 */
+    .container {
+      margin-top: 50%;
+      border-radius: 5px;
+    }
+
+    .btn-primary {
+      background-color: #7778d3;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center">210定位簽到系統</h2>
+        <div class="form-group">
+          <label for="seatNumber">座號：</label>
+          <input type="number" class="form-control" id="seatNumber" min="1" max="40" required>
+        </div>
+        <button id="checkInButton" class="btn btn-primary btn-block">簽到</button>
+        <div id="result" class="mt-3 text-center"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 引入 Bootstrap 和 jQuery JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    $('#checkInButton').click(function () {
+      const seatNumber = document.getElementById('seatNumber').value;
+      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+      function successCallback(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const distance = calculateDistance(latitude, longitude, 25.076106, 121.519038);
+        if (distance <= 100) {
+          document.getElementById('result').innerHTML = '<div class="alert alert-success" role="alert">座號 ' + seatNumber + ' 簽到成功！</div>';
+          const formData = new FormData();
+          formData.append('entry.1508486144', seatNumber); // 將座號的ID替換為Google表單中座號的entry ID
+          fetch('https://docs.google.com/forms/d/e/1FAIpQLSe3rGPHm_RsiUt8h0gaDsQO1gFaOz3lsosa5dSqRkcARiov3w/formResponse', {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+          });
+        } else {
+          document.getElementById('result').innerHTML = '<div class="alert alert-danger" role="alert">您不在簽到範圍內！</div>';
+        }
+      }
+      function errorCallback(error) {
+        console.error('獲取位置失敗:', error);
+        document.getElementById('result').innerHTML = '<div class="alert alert-danger" role="alert">無法獲取您的位置！</div>';
+      }
+    });
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371e3;
+      const φ1 = lat1 * Math.PI / 180;
+      const φ2 = lat2 * Math.PI / 180;
+      const Δφ = (lat2 - lat1) * Math.PI / 180;
+      const Δλ = (lon2 - lon1) * Math.PI / 180;
+
+      const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+        Math.cos(φ1) * Math.cos(φ2) *
+        Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+      const distance = R * c;
+
+      return distance;
+    }
+  </script>
+</body>
+
+</html>
