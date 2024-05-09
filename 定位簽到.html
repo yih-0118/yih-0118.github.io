@@ -61,7 +61,7 @@
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         const distance = calculateDistance(latitude, longitude, 25.076106, 121.519038);
-        if (distance <= 100) {
+        if (distance <= 40) {
           document.getElementById('result').innerHTML = '<div class="alert alert-success" role="alert">座號 ' + seatNumber + ' 簽到成功！</div>';
           const formData = new FormData();
           formData.append('entry.1508486144', seatNumber); // 將座號的ID替換為Google表單中座號的entry ID
