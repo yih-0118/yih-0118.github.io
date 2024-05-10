@@ -158,6 +158,25 @@
                 $('#loadingSpinner').hide();
                 return;
             }
+            if (seatNumber>40 || seatNumber===29||seatNumber===30||seatNumber===31) {
+                // 如果座號為空，顯示提示並返回
+                const errorAlert = document.createElement('div');
+                errorAlert.classList.add('alert', 'alert-danger');
+                errorAlert.setAttribute('role', 'alert');
+                errorAlert.innerText = '請輸入存在的座號！！！';
+                document.getElementById('result').appendChild(errorAlert);
+                // 5秒後自動消失
+                setTimeout(() => {
+                    errorAlert.style.opacity = '0'; // 淡出效果
+                    setTimeout(() => {
+                        errorAlert.remove(); // 從 DOM 中移除
+                    }, 500); // 延遲0.5秒後移除，以確保動畫完成
+                }, 1000); // 5秒後自動消失
+                // 隱藏等待條
+                $('#loadingSpinner').hide();
+                return;
+            }
+
             navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
             function successCallback(position) {
                 const latitude = position.coords.latitude;
