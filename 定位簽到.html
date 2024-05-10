@@ -2,100 +2,240 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>定位簽到</title>
-  <!-- 引入 Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* 添加自定義 CSS 樣式來增加設計感 */
-    .container {
-      margin-top: 50%;
-      border-radius: 5px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位簽到</title>
+    <!-- 引入 Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 添加自定義 CSS 樣式來增加設計感 */
+        body {
+            background: linear-gradient(to right, #667eea, #764ba2);
+            background-size: 400% 400%;
+            animation: gradient-background 10s ease infinite;
+            color: #fff;
+        }
 
-    .btn-primary {
-      background-color: #7778d3;
-      /* Green */
-      border: none;
-      color: white;
-      padding: 10px 24px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      border-radius: 5px;
-      transition-duration: 0.4s;
-      cursor: pointer;
-    }
-  </style>
+        @keyframes gradient-background {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            margin-top: 20%;
+            border-radius: 10px;
+            background-color: rgba(57, 57, 57, 0.652);
+            padding: 20px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #ff758c, #ff7eb3, #7a5cff, #2bd2ff);
+            border: none;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            animation: gradient-background 10s ease infinite;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background: linear-gradient(to right, #ff758c, #ff7eb3, #7a5cff, #2bd2ff);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .text-primary {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        /* 添加成功/失敗提示的動畫效果 */
+        .alert {
+            opacity: 0;
+            animation: fade-in 0.5s ease forwards;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* 添加等待條的樣式 */
+        .spinner-border {
+            display: none;
+            margin: 0 auto;
+        }
+
+        hr {
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <h2 class="text-center">210定位簽到系統</h2>
-        <div class="form-group">
-          <label for="seatNumber">座號：</label>
-          <input type="number" class="form-control" id="seatNumber" min="1" max="40" required>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center">210定位簽到系統</h2>
+                <div class="form-group">
+                    <label for="seatNumber">座號：</label>
+                    <input type="number" class="form-control" id="seatNumber" min="1" max="40" required>
+                </div>
+
+                <button id="checkInButton" class="btn btn-primary btn-block">簽到</button>
+                <div>
+                    <hr>
+                </div>
+                <!-- 添加等待條 -->
+                <div class="spinner-border text-light" role="status" id="loadingSpinner">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div id="result" class="mt-3 text-center"></div>
+                <p class="text-white">記得打開定位</p>
+                <p class="text-white">僅會運算按下瞬間的位置資訊</p>
+                <p class="text-white">並不會被存在資料庫中</p>
+            </div>
         </div>
-        <button id="checkInButton" class="btn btn-primary btn-block">簽到</button>
-        <div id="result" class="mt-3 text-center"></div>
-        <p class="text-primary">記得打開定位，僅會存取按下瞬間的，且並不會被存在資料庫中。</p>
-
-      </div>
     </div>
-  </div>
 
-  <!-- 引入 Bootstrap 和 jQuery JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- 引入 Bootstrap 和 jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <script>
-    $('#checkInButton').click(function () {
-      const seatNumber = document.getElementById('seatNumber').value;
-      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-      function successCallback(position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        const distance = calculateDistance(latitude, longitude, 25.076106, 121.519038);
-        if (distance <= 40) {
-          document.getElementById('result').innerHTML = '<div class="alert alert-success" role="alert">座號 ' + seatNumber + ' 簽到成功！</div>';
-          const formData = new FormData();
-          formData.append('entry.1508486144', seatNumber); // 將座號的ID替換為Google表單中座號的entry ID
-          fetch('https://docs.google.com/forms/d/e/1FAIpQLSe3rGPHm_RsiUt8h0gaDsQO1gFaOz3lsosa5dSqRkcARiov3w/formResponse', {
-            method: 'POST',
-            mode: 'no-cors',
-            body: formData
-          });
-        } else {
-          document.getElementById('result').innerHTML = '<div class="alert alert-danger" role="alert">您不在簽到範圍內！</div>';
+    <script>
+        $('#checkInButton').click(function () {
+            // 顯示等待條
+            $('#loadingSpinner').show();
+
+            const seatNumber = document.getElementById('seatNumber').value;
+            if (seatNumber.trim() === "") {
+                // 如果座號為空，顯示提示並返回
+                const errorAlert = document.createElement('div');
+                errorAlert.classList.add('alert', 'alert-danger');
+                errorAlert.setAttribute('role', 'alert');
+                errorAlert.innerText = '請輸入座號';
+                document.getElementById('result').appendChild(errorAlert);
+                // 5秒後自動消失
+                setTimeout(() => {
+                    errorAlert.style.opacity = '0'; // 淡出效果
+                    setTimeout(() => {
+                        errorAlert.remove(); // 從 DOM 中移除
+                    }, 500); // 延遲0.5秒後移除，以確保動畫完成
+                }, 1000); // 5秒後自動消失
+                // 隱藏等待條
+                $('#loadingSpinner').hide();
+                return;
+            }
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+            function successCallback(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                const distance = calculateDistance(latitude, longitude, 25.076222, 121.519056);
+                console.log(latitude,longitude)
+                console.log(distance); // 添加這一行
+                if (distance <= 20) {
+                    // 簽到成功提示
+                    const successAlert = document.createElement('div');
+                    successAlert.classList.add('alert', 'alert-success');
+                    successAlert.setAttribute('role', 'alert');
+                    successAlert.innerText = seatNumber+'號' + ' 簽到成功！'+"您距離目標位置"+distance+"公尺";
+
+                    document.getElementById('result').appendChild(successAlert);
+
+                    // 5秒後自動消失
+                    setTimeout(() => {
+                        successAlert.style.opacity = '0'; // 淡出效果
+                        setTimeout(() => {
+                            successAlert.remove(); // 從 DOM 中移除
+                        }, 500); // 延遲0.5秒後移除，以確保動畫完成
+                    }, 5000); // 5秒後自動消失
+
+                    // 發送簽到信息至Google表單
+                    const formData = new FormData();
+                    formData.append('entry.1508486144', seatNumber);
+                    fetch('https://docs.google.com/forms/d/e/1FAIpQLSe3rGPHm_RsiUt8h0gaDsQO1gFaOz3lsosa5dSqRkcARiov3w/formResponse', {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: formData
+                    });
+                } else {
+                    // 簽到失敗提示
+                    const errorAlert = document.createElement('div');
+                    errorAlert.classList.add('alert', 'alert-danger');
+                    errorAlert.setAttribute('role', 'alert');
+                    errorAlert.innerText = '您不在簽到範圍內！'+"您距離目標位置"+distance+"公尺";
+                    document.getElementById('result').appendChild(errorAlert);
+                    setTimeout(() => {
+                        errorAlert.style.opacity = '0'; // 淡出效果
+                    }, 5000); // 5秒後自動消失
+                }
+                // 隱藏等待條
+                $('#loadingSpinner').hide();
+            }
+            function errorCallback(error) {
+                console.error('獲取位置失敗:', error);
+                // 無法獲取位置提示
+                const errorAlert = document.createElement('div');
+                errorAlert.classList.add('alert', 'alert-danger');
+                errorAlert.setAttribute('role', 'alert');
+                errorAlert.innerText = '無法獲取您的位置！';
+                document.getElementById('result').appendChild(errorAlert);
+                setTimeout(() => {
+                    errorAlert.style.opacity = '0'; // 淡出效果
+                }, 5000); // 5秒後自動消失
+                // 隱藏等待條
+                $('#loadingSpinner').hide();
+            }
+        });
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371e3;
+            const φ1 = lat1 * Math.PI / 180;
+            const φ2 = lat2 * Math.PI / 180;
+            const Δφ = (lat2 - lat1) * Math.PI / 180;
+            const Δλ = (lon2 - lon1) * Math.PI / 180;
+
+            const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+                Math.cos(φ1) * Math.cos(φ2) *
+                Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+            const distance = R * c;
+
+            return distance;
         }
-      }
-      function errorCallback(error) {
-        console.error('獲取位置失敗:', error);
-        document.getElementById('result').innerHTML = '<div class="alert alert-danger" role="alert">無法獲取您的位置！</div>';
-      }
-    });
-    function calculateDistance(lat1, lon1, lat2, lon2) {
-      const R = 6371e3;
-      const φ1 = lat1 * Math.PI / 180;
-      const φ2 = lat2 * Math.PI / 180;
-      const Δφ = (lat2 - lat1) * Math.PI / 180;
-      const Δλ = (lon2 - lon1) * Math.PI / 180;
-
-      const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-        Math.cos(φ1) * Math.cos(φ2) *
-        Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-      const distance = R * c;
-
-      return distance;
-    }
-  </script>
+    </script>
 </body>
 
 </html>
