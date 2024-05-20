@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accelerometer Waveform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .data {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+        #waveform {
+            border: 1px solid #000;
+            width: 90%;
+            max-width: 800px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Accelerometer Data</h1>
+    <div class="data" id="accelerationX">X: 0</div>
+    <div class="data" id="accelerationY">Y: 0</div>
+    <div class="data" id="accelerationZ">Z: 0</div>
+    <canvas id="waveform" width="800" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('waveform');
+        const ctx = canvas.getContext('2d');
+        const maxDataPoints = canvas.width;
+        const dataX = [];
+        const dataY = [];
+        const dataZ = [];
+
+        function drawWaveform() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.strokeStyle = 'red';
+            drawLine(dataX);
+
+            ctx.strokeStyle = 'green';
+            drawLine(dataY);
+
+            ctx.strokeStyle = 'blue';
+            drawLine(dataZ);
+        }
+
+        function drawLine(data) {
+            ctx.beginPath();
+            for (let i = 0; i < data.length; i++) {
+                const x = i;
+                const y = canvas.height / 2 - data[i] * 10; // Scale the acceleration for visualization
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.stroke();
+        }
+
+        if (window.DeviceMotionEvent) {
+            window.addEventListener('devicemotion', function(event) {
+                const acceleration = event.accelerationIncludingGravity;
+
+                document.getElementById('accelerationX').textContent = 'X: ' + acceleration.x.toFixed(2);
+                document.getElementById('accelerationY').textContent = 'Y: ' + acceleration.y.toFixed(2);
+                document.getElementById('accelerationZ').textContent = 'Z: ' + acceleration.z.toFixed(2);
+
+                // Add new data points
+                dataX.push(acceleration.x);
+                dataY.push(acceleration.y);
+                dataZ.push(acceleration.z);
+
+                // Maintain the array length
+                if (dataX.length > maxDataPoints) {
+                    dataX.shift();
+                }
+                if (dataY.length > maxDataPoints) {
+                    dataY.shift();
+                }
+                if (dataZ.length > maxDataPoints) {
+                    dataZ.shift();
+                }
+
+                drawWaveform();
+            });
+        } else {
+            alert('DeviceMotionEvent is not supported on your device.');
+        }
+    </script>
+</body>
+</html>
