@@ -81,6 +81,18 @@
             height: 30px;
             text-align: center;
         }
+        #totalResult {
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+        }
+        #totalResult li {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
@@ -97,6 +109,8 @@
             <input type="number" id="drawCount" min="1" value="1">
         </div>
         <ul id="resultList"></ul>
+        <h3>總結果</h3>
+        <ul id="totalResult"></ul>
     </div>
 
     <script type="text/javascript">
@@ -105,7 +119,8 @@
             stop = document.getElementById('stop'),
             count = document.getElementById('count'),
             drawCountInput = document.getElementById('drawCount'),
-            resultList = document.getElementById('resultList');
+            resultList = document.getElementById('resultList'),
+            totalResult = document.getElementById('totalResult');
 
         // 獎品及其對應的機率
         var prizes = [
@@ -133,6 +148,7 @@
         var timer = null;
         var flag = 0;
         var drawCount = 0;
+        var totalResults = {};
 
         window.onload = function () {
             start.onclick = playFun;
@@ -177,20 +193,41 @@
             setTimeout(function () {
                 list.style.backgroundColor = 'white';
                 list.style.color = 'red';
-            }, 500);
+            }, 100);
             drawCount++; // 每次停止時增加計數器
             count.innerText = "已抽次數: " + drawCount;
             // 將結果添加到列表
+            var prize = list.innerText;
             var li = document.createElement('li');
-            li.innerText = list.innerText;
+            li.innerText = prize;
             resultList.appendChild(li);
+
+            // 更新總結果
+            if (totalResults[prize]) {
+                totalResults[prize]++;
+            } else {
+                totalResults[prize] = 1;
+            }
 
             // 如果設定了連抽次數，則繼續抽獎
             var multiDrawCount = parseInt(drawCountInput.value, 10) - 1;
             if (multiDrawCount > 0) {
                 drawCountInput.value = multiDrawCount;
-                setTimeout(playFun, 1000); // 延遲1秒後繼續抽獎
-                setTimeout(stopFun, 1000 + Math.random() * 1000); // 隨機延遲後停止抽獎
+                setTimeout(playFun, 100); // 延遲0.1秒後繼續抽獎
+                setTimeout(stopFun, 200 + Math.random() * 200); // 隨機延遲後停止抽獎
+            } else {
+                // 連抽結束後顯示總結果
+                displayTotalResults();
+            }
+        }
+
+        // 顯示總結果
+        function displayTotalResults() {
+            totalResult.innerHTML = '';
+            for (var prize in totalResults) {
+                var li = document.createElement('li');
+                li.innerText = prize + ": " + totalResults[prize] + " 次";
+                totalResult.appendChild(li);
             }
         }
     </script>
