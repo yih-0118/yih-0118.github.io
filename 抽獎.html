@@ -81,6 +81,18 @@
 			font-size: 14px;
 			color: #555;
 		}
+
+		#multiDraw {
+			margin-top: 20px;
+			width: 100%;
+			text-align: center;
+		}
+
+		#multiDraw input {
+			width: 50px;
+			height: 30px;
+			text-align: center;
+		}
 	</style>
 </head>
 
@@ -93,6 +105,10 @@
 			<span id="stop">停止</span>
 		</div>
 		<div id="count">已抽次數: 0</div>
+		<div id="multiDraw">
+			<label for="drawCount">連抽次數: </label>
+			<input type="number" id="drawCount" min="1" value="1">
+		</div>
 		<ul id="resultList"></ul>
 	</div>
 
@@ -101,16 +117,15 @@
 			start = document.getElementById('start'),
 			stop = document.getElementById('stop'),
 			count = document.getElementById('count'),
+			drawCountInput = document.getElementById('drawCount'),
 			resultList = document.getElementById('resultList');
 
 		// 獎品及其對應的機率
 		var prizes = [
-			{ name: "五星裝", weight: 700 },
-			{ name: "六星裝", weight: 270 },
-			{ name: "七星廢物裝", weight: 10 },
-			{ name: "七星合作裝", weight: 10 },
-			{ name: "八星廢物裝", weight: 5 },
-			{ name: "八星合作裝", weight: 5 },
+			{ name: "五星裝", weight: 50 },
+			{ name: "六星裝", weight: 47 },
+			{ name: "七星裝", weight: 2 },
+			{ name: "八星裝", weight: 1 },
 		];
 
 		// 根據機率生成獎品數組
@@ -175,6 +190,14 @@
 			var li = document.createElement('li');
 			li.innerText = list.innerText;
 			resultList.appendChild(li);
+
+			// 如果設定了連抽次數，則繼續抽獎
+			var multiDrawCount = parseInt(drawCountInput.value, 10) - 1;
+			if (multiDrawCount > 0) {
+				drawCountInput.value = multiDrawCount;
+				setTimeout(playFun, 1000); // 延遲1秒後繼續抽獎
+				setTimeout(stopFun, 2000); // 再延遲1秒後停止抽獎
+			}
 		}
 	</script>
 </body>
