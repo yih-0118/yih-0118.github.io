@@ -46,17 +46,19 @@
       <div class="col-md-6 offset-md-3">
         <div class="card p-4">
           <h2 class="text-center mb-4">地科成績</h2>
-          <form id="gradeForm">
-            <div class="form-group">
-              <label for="seatNumber">座號：</label>
-              <input type="number" class="form-control" id="seatNumber" required>
-            </div>
-            <div class="form-group">
-              <label for="score">分數：</label>
-              <input type="number" class="form-control" id="score" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">提交</button>
-          </form>
+          <div id="formContainer">
+            <form id="gradeForm">
+              <div class="form-group">
+                <label for="seatNumber">座號：</label>
+                <input type="number" class="form-control" id="seatNumber" required>
+              </div>
+              <div class="form-group">
+                <label for="score">分數：</label>
+                <input type="number" class="form-control" id="score" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">提交</button>
+            </form>
+          </div>
           <div id="result" class="mt-3 text-center"></div>
         </div>
       </div>
@@ -102,10 +104,16 @@
     }
 
     $(document).ready(function () {
-      $('#gradeForm').submit(function (event) {
-        event.preventDefault(); // 防止表單提交刷新頁面
-        sendToGoogleForm(); // 提交到 Google 表單
-      });
+      const currentDate = new Date();
+      const openingDate = new Date('2024-06-20T14:30:00');
+      if (currentDate >= openingDate) {
+        $('#gradeForm').submit(function (event) {
+          event.preventDefault(); // 防止表單提交刷新頁面
+          sendToGoogleForm(); // 提交到 Google 表單
+        });
+      } else {
+        $('#formContainer').html('<div class="alert alert-warning" role="alert">他媽的你還沒考填個屁</div>');
+      }
     });
   </script>
 </body>
