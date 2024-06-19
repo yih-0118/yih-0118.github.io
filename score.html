@@ -112,7 +112,10 @@
           sendToGoogleForm(); // 提交到 Google 表單
         });
       } else {
-        $('#formContainer').html('<div class="alert alert-warning" role="alert">他媽的你還沒考填個屁</div>');
+        $('#formContainer').html(`
+          <div class="alert alert-warning" role="alert">他媽的你還沒考填個屁。</div>
+          <img src="https://i.imgflip.com/5p08x0.jpg" class="img-fluid" alt="時間未到">
+        `);
       }
     });
   </script>
