@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>tags | 此情吳計可消除</title>
+    <title>此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -46,6 +46,8 @@
 
 
 
+
+<script src="/js/lib/home.js"></script>
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -168,44 +170,329 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
+            <div id="home-head">
+    <div
+        id="home-background"
+        ref="homeBackground"
+        data-images="/images/background.jpg"
+    ></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>此情吳計可消除</h1>
+                <h3>Android app/ Frontend/ CTF</h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div
+    id="home-posts-wrap"
+    ref="homePostsWrap"
+    true
+>
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2023/11/26/MLSH%20%E7%82%BA%E6%A0%A1%E6%85%B6%E7%94%9F%E5%87%BA%E7%9A%84%E5%A5%87%E6%80%AA%E4%BD%9C%E5%93%81/">
+        <h2 class="post-title">MLSH 為校慶生出的奇怪作品</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/web%E5%89%8D%E7%AB%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                web前端
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/26
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <ul>
+<li>奇葩校慶社團靜態展
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/11/26/MLSH%20%E7%82%BA%E6%A0%A1%E6%85%B6%E7%94%9F%E5%87%BA%E7%9A%84%E5%A5%87%E6%80%AA%E4%BD%9C%E5%93%81/" class="go-post">展開</a>
+</div>
+
+<div class="post">
+    <a href="/2023/11/03/3d-gis/">
+        <h2 class="post-title">How to export a 3D population density map using QGIS and Aerialo</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/GIS/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                GIS
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>🤏</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/11/03/3d-gis/" class="go-post">展開</a>
+</div>
+
+<div class="post">
+    <a href="/2023/09/10/QGIS%E6%95%99%E5%AD%B8/">
+        <h2 class="post-title">QGIS教學</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/GIS/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                GIS
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="利用QGIS製作面量圖"><a href="#利用QGIS製作面量圖" class="headerlink" title="利用QGIS製作面量圖"></a>利用QGIS製作面量圖</h1>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/09/10/QGIS%E6%95%99%E5%AD%B8/" class="go-post">展開</a>
+</div>
+
+<div class="post">
+    <a href="/2023/08/17/AIS3%20JUNIOR/">
+        <h2 class="post-title">人生第一篇 writeup</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/AIS3/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                AIS3
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/17
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <ul>
+<li>2023 AIS3 JUNIOR Homework
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/writeup/" style="color: #ff7d73">writeup</a>
+        </span>
+        
+    </div>
+    <a href="/2023/08/17/AIS3%20JUNIOR/" class="go-post">展開</a>
+</div>
+
+<div class="post">
+    <a href="/2023/06/24/%E9%9E%8B%E6%8B%8B%E7%B6%B2%E9%A0%81%E8%A3%BD%E4%BD%9C/">
+        <h2 class="post-title">鞋拋網頁製作</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/web%E5%89%8D%E7%AB%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                web前端
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/6/24
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <ul>
+<li>高一自主學習
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/06/24/%E9%9E%8B%E6%8B%8B%E7%B6%B2%E9%A0%81%E8%A3%BD%E4%BD%9C/" class="go-post">展開</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/12/%E6%B8%AC%E8%A9%A6/">
+        <h2 class="post-title">測試</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/12
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <span id="more"></span>
+
+<p>這只是一個測試哈哈</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="color: #ff7d73">測試</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/12/%E6%B8%AC%E8%A9%A6/" class="go-post">展開</a>
+</div>
+
+
+        <div class="page-current">
     
-    <div class="categories-tags">
+    <a class="page-num" href="/">
+        <i class="fa-solid fa-caret-left fa-fw"></i>
+    </a>
+    <a class="page-num" href="/">1</a>
+    <span class="page-omit">...</span>
+    
+    <span class="current">2</span>
+    
+    
+    
+    
+</div>
+
+    </div>
+    
+    <div id="home-card">
+        <div id="card-style">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">yih-0118</div>
+        <div class="description">
+            <p>明倫程式設計社：副社長＆教學</p>
+
+        </div>
         
         
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://mlsh-vocabulary.web.app/">明倫單字卡</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.MLCP.MLCP_31st&pcampaignid=web_share">MLCP APP</a>
+            </div>
+            
+        </div>
         
-        <span>
-            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                測試
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/writeup/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                writeup
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                不知道
-            </a>
-        </span>
-        
-        
+    </div>
+</div>
+
     </div>
     
 </div>

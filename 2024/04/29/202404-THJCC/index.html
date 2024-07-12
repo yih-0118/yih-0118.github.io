@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>2024 Apr THJCC CTF | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/lioshi.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>載入過慢請開啟快取 瀏覽器預設開啟</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '淺色模式' : '深色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '淺色模式' : '深色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>2024 Apr THJCC CTF</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/4/29
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><img src="https://hackmd.io/_uploads/HJVb5Jk_R.png" alt="image"></p>
+<span id="more"></span>
+
+
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="Empty"><a href="#Empty" class="headerlink" title="Empty"></a>Empty</h2><p>進入到網頁後，看到有個怪怪標頭，感覺可以直接前往<br><img src="https://hackmd.io/_uploads/Hksak5uGR.png" alt="image"><br>找到其中一段<br><img src="https://hackmd.io/_uploads/Bkegl9OfC.png" alt="image"><br>看一下cookie有什麼東東<br><img src="https://hackmd.io/_uploads/SyASeqdMA.png" alt="image"></p>
+<blockquote>
+<p>FLAG:THJCC{cookie_&amp;_view_source_!}<br>THJCC CTF</p>
+</blockquote>
+<hr>
+<h2 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h2><p>這題靠通靈<br><img src="https://hackmd.io/_uploads/rk32lcuGA.png" alt="image"><br>密碼是這個<br><img src="https://hackmd.io/_uploads/B1TAeqdfA.png" alt="image"><br><code>username=admin</code><br><code>password=iloveshark</code></p>
+<blockquote>
+<p>FLAG:THJCC{w31c0me_h@cker}<br>THJCC CTF</p>
+</blockquote>
+<hr>
+<h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><h2 id="Baby-C"><a href="#Baby-C" class="headerlink" title="Baby C"></a>Baby C</h2><p>會發現這題只是XOR而已，反著回去就好，反正數值都給你了<br>截原題目程式</p>
+<pre><code class="cpp">int main()&#123;
+    char c[50];
+    int a[50]=&#123;44, 48, 50, 59, 59, 3, 16, 12, 12, 8, 11, 66, 87, 87, 15, 15, 15, 86, 1, 23, 13, 12, 13, 26, 29, 86, 27, 23, 21, 87, 15, 25, 12, 27, 16, 71, 14, 69, 75, 32, 59, 46, 53, 75, 63, 75, 8, 22, 11, 5&#125;;
+    scanf(&quot;%s&quot;, c);
+    for(int i=0;i&lt;50;i++)&#123;
+        if (((int)c[i]^120)!=a[i])&#123;
+            printf(&quot;Password Incorrect!!!\n&quot;);
+            return 0;
+        &#125;
+    &#125;
+    printf(&quot;Password Correct!!!\n&quot;);
+    return 0;
+&#125;
+</code></pre>
+<p>解題程式</p>
+<pre><code class="cpp">int main() &#123;
+    int a[50] = &#123;44, 48, 50, 59, 59, 3, 16, 12, 12, 8, 11, 66, 87, 87, 15, 15, 15, 86, 1, 23, 13, 12, 13, 26, 29, 86, 27, 23, 21, 87, 15, 25, 12, 27, 16, 71, 14, 69, 75, 32, 59, 46, 53, 75, 63, 75, 8, 22, 11, 5&#125;;
+    char c[51]; 
+    for(int i = 0; i &lt; 50; i++) &#123;
+        c[i] = (char)(a[i] ^ 120); 
+    &#125;
+    printf(&quot;%s\n&quot;, c);
+    return 0;
+&#125;
+</code></pre>
+<blockquote>
+<p>FLAG:THJCC{<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=3XCVM3G3pns%7D">https://www.youtube.com/watch?v=3XCVM3G3pns}</a><br>THJCC CTF</p>
+</blockquote>
+<hr>
+<h2 id="PYC-REVERSE"><a href="#PYC-REVERSE" class="headerlink" title="PYC REVERSE"></a>PYC REVERSE</h2><p>這題要把.pyc還原<br>用線上反編譯工具就好<br>反編譯的結果</p>
+<pre><code class="python">#!/usr/bin/env python
+# visit https://tool.lu/pyc/ for more information
+# Version: Python 3.10
+
+from FLAG import FLAG
+from Crypto.Util.number import bytes_to_long
+
+def xor1(flag):
+    return flag ^ 124789
+
+
+def xor2(flag):
+    return flag ^ 487531
+
+
+def xor3(flag):
+    return flag ^ 784523
+
+
+def xor4(flag):
+    return flag ^ 642871
+
+
+def xor5(flag):
+    return flag ^ 474745
+
+flag = bytes_to_long(FLAG)
+count = 0
+count += 1
+if count == 1:
+    flag = xor1(flag)
+    count += 2
+    if count == 3:
+        flag = xor2(flag)
+        count += 1
+    if count == 4:
+        flag = xor3(flag)
+        count -= 2
+    else:
+        flag = xor2(flag)
+        count += 1
+else:
+    flag = xor3(flag)
+    count += 5
+if count == 2:
+    flag = xor4(flag)
+elif count == 6:
+    flag = xor5(flag)
+print(flag)
+</code></pre>
+<p>發現跟著msg.txt逆著XOR回去就好<br>解題程式：</p>
+<pre><code class="python">from Crypto.Util.number import long_to_bytes
+flag = FLAG = 10730390416708814647386325276467849806006354580175878786363505755256613965929606057246313695
+def xor1(flag):
+    return flag ^ 124789
+def xor2(flag):
+    return flag ^ 487531
+def xor3(flag):
+    return flag ^ 784523
+def xor4(flag):
+    return flag ^ 642871
+def xor5(flag):
+    return flag ^ 474745
+count = 0
+count += 1
+if count == 1:
+    flag = xor1(flag)
+    count += 2
+    if count == 3:
+        flag = xor2(flag)
+        count += 1
+    if count == 4:
+        flag = xor3(flag)
+        count -= 2
+    else:
+        flag = xor2(flag)
+        count += 1
+else:
+    flag = xor3(flag)
+    count += 5
+if count == 2:
+    flag = xor4(flag)
+elif count == 6:
+    flag = xor5(flag)
+print(long_to_bytes(flag))
+</code></pre>
+<blockquote>
+<p>FLAG:THJCC{pyc_rev3r3e_C3n_u32_on1i5e_t0Ol}<br>THJCC CTF</p>
+</blockquote>
+<hr>
+<h1 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h1><h2 id="nc"><a href="#nc" class="headerlink" title="nc"></a>nc</h2><p>連上nc後他會問你<code>Never Gonna Give You Up</code>的作者是誰</p>
+<blockquote>
+<p>FLAG:THJCC{N3veR_g0nn4_l37_You_dOwn!!!}<br>THJCC CTF</p>
+</blockquote>
+<h2 id="NPSC"><a href="#NPSC" class="headerlink" title="NPSC"></a>NPSC</h2><p>我用垃圾寫法寫得<br>運算之久讓我感到疑惑</p>
+<pre><code class="python">from pwn import *
+def max_score(balls):
+    if not balls:
+        return 0
+    max_score = 0
+    for i in range(len(balls)):
+        score = balls[i] 
+        remaining_balls = balls[i+1:]  
+        for j in range(len(remaining_balls)):
+            if score &gt;= remaining_balls[j]:
+                score += remaining_balls[j]
+            else:
+                break
+        max_score = max(max_score, score)  
+    return max_score
+
+io = remote(&#39;23.146.248.36&#39;, 30003)
+io.recvlines(4)  
+
+for round_ in range(3):
+    print(f&#39;=============== ROUND &#123;round_+1&#125; ===============&#39;)
+    if round_ in [1, 2]:
+    for _ in range(10):
+        numbers = eval(io.recvline().decode().strip())
+        io.sendline(str(max_score(numbers)).encode())  
+        result = io.recvline().decode().strip()
+        print(f&#39;Input: &#123;numbers&#125;&#39;)
+        print(f&#39;Output: &#123;result&#125;&#39;)
+io.interactive()
+</code></pre>
+<hr>
+<h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h2 id="博元婦產科"><a href="#博元婦產科" class="headerlink" title="博元婦產科"></a>博元婦產科</h2><p>其實也就解密這個<code>TUFDVlZ7cFBwLnU0VXJmVGQzay52MEYubVB9Cg==</code><br>先憑直覺，Base64回去<br><img src="https://hackmd.io/_uploads/Sy1pby_MR.png" alt="image"><br>確實格式有對，然後試試看是不是凱薩<br>一個一個try會發現是位移19個<br><img src="https://hackmd.io/_uploads/By58Gydf0.png" alt="image"></p>
+<blockquote>
+<p>FLAG:THJCC{wWw.b4BymAk3r.c0M.tW}<br>THJCC CTF</p>
+</blockquote>
+<hr>
+<h2 id="Baby-RSA"><a href="#Baby-RSA" class="headerlink" title="Baby RSA"></a>Baby RSA</h2><p>只要用線上的rsa decoder就好了<br><img src="https://hackmd.io/_uploads/Sy0P8ddz0.png" alt="image"></p>
+<blockquote>
+<p>FLAG:THJCC{small_eeeee_can_be_pwned_easily}<br>THJCC CTF</p>
+</blockquote>
+<hr>
+<h2 id="《SSS-GRIDMAN》"><a href="#《SSS-GRIDMAN》" class="headerlink" title="《SSS.GRIDMAN》"></a>《SSS.GRIDMAN》</h2><p>在題目中看到會生成二次方程式的樣子</p>
+<pre><code class="python">def random_ploy():
+    poly=[]
+    for i in range(2):
+        poly.append(random.randint(99,999))
+    return poly
+</code></pre>
+<p><code>polyc</code> 被定義為這兩個係數加上<code>secret</code>用成常數項：</p>
+<pre><code class="python">polyc =random_ploy()
+polyc.append(secret)
+poly_enc = numpy.poly1d(polyc)
+</code></pre>
+<p><code>numpy.poly1d(polyc)</code> 會 return <code>ax^2 + bx + c</code> 的二次方程式，其中 <code>a</code> 和 <code>b</code> 是隨機的，<code>c</code> 是<code>secret</code><br><code>f(x_value, y_value, x)</code> 給定一系列的資料點<code>（x_value, y_value）</code>，函數計算了多項式在 x 點的值。<br>其中，<code>shares</code>是題目給我的資料點，就可以找到了。<br>總體而現 就是藉由三個點找到方程式的常數項而已。<br><a target="_blank" rel="noopener" href="https://highscope.ch.ntu.edu.tw/wordpress/?tag=%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E5%A4%9A%E9%A0%85%E5%BC%8F">參考文獻：拉格朗日插值多項式</a><br>解決程式：</p>
+<pre><code class="python">def f(x_value, y_value, x):
+    result = 0
+    for i in range(len(x_value)):
+        temp = y_value[i]
+        for j in range(len(x_value)):
+            if j != i:
+                temp = temp * (x - x_value[j]) / (x_value[i] - x_value[j])
+        result += temp
+    return result
+shares = [(139, 3875728327), (982, 4473718807), (707, 4179926407)] #把點點丟進來
+x_value, y_value = zip(*shares)
+secret = f(x_value, y_value, 0)
+print(&quot;密碼是：&quot;, int(secret))
+</code></pre>
+<p><img src="https://hackmd.io/_uploads/rJJeyq_z0.png" alt="image"></p>
+<blockquote>
+<p>FLAG:THJCC{SSS_1s_a_c001_w2y_t0_pr0t3c7_s3c23t}<br>THJCC CTF</p>
+</blockquote>
+<hr>
+<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h2 id="原神帳號外流"><a href="#原神帳號外流" class="headerlink" title="原神帳號外流"></a>原神帳號外流</h2><p>會有一個登入介面，要從網路封包去抓取<br><img src="https://hackmd.io/_uploads/Hky-68Df0.png" alt="image"><br>打開封包來看，每一組都試一遍，FLAG就噴出來了<br><img src="https://hackmd.io/_uploads/HyCP08PMR.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>THJCC&#123;W3r3_sHarKKKKKK_MasT3R_C8763&#125;</code><br>THJCC CTF</p>
+</blockquote>
+<hr>
+<h2 id="PyJail-0"><a href="#PyJail-0" class="headerlink" title="PyJail-0"></a>PyJail-0</h2><p>這是題目執行程式</p>
+<pre><code class="python=">
+WELCOME=&#39;&#39;&#39;
+ ____            _       _ _ 
+|  _ \ _   _    | | __ _(_) |
+| |_) | | | |_  | |/ _` | | |
+|  __/| |_| | |_| | (_| | | |
+|_|    \__, |\___/ \__,_|_|_|
+       |___/                 
+&#39;&#39;&#39;
+
+def main():
+    
+    print(&quot;-&quot;*30)
+    print(WELCOME)
+    print(&quot;-&quot;*30)
+    print(&quot;Try to escape!!This is a jail&quot;)
+    a=input(&quot;&gt; &quot;)
+    eval(a)
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>會發現只要能跳過就可以<br>所以只要輸入<code>eval(input())</code><br>然後拿到存取的方式<code>__import__(&#39;os&#39;).system(&#39;sh&#39;)</code><br><img src="https://hackmd.io/_uploads/HySEzPwMR.png" alt="image"><br>這樣就拿到了</p>
+<blockquote>
+<p>FLAG:THJCC{Use_M2g1c_f2un3ti0n_in_P9Ja1l!!}<br>THJCC CTF</p>
+</blockquote>
+<hr>
+<h2 id="PyJail-1"><a href="#PyJail-1" class="headerlink" title="PyJail-1"></a>PyJail-1</h2><pre><code class="python=">WELCOME=&#39;&#39;&#39;
+ ____            _       _ _ 
+|  _ \ _   _    | | __ _(_) |
+| |_) | | | |_  | |/ _` | | |
+|  __/| |_| | |_| | (_| | | |
+|_|    \__, |\___/ \__,_|_|_|
+       |___/                 
+&#39;&#39;&#39;
+
+def main():
+    try:
+        print(&quot;-&quot;*30)
+        print(WELCOME)
+        print(&quot;-&quot;*30)
+        print(&quot;Try to escape!!This is a jail&quot;)
+        print(&quot;I increased security!!!&quot;)
+        a=input(&quot;&gt; &quot;)
+        if len(a)&lt;15:
+            eval(a)
+        else:
+            print(&quot;Don&#39;t escape!!&quot;)
+    except:
+        print(&quot;error&quot;)
+        exit()
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>感覺相較上一題變複雜了，但是用同一個策略還是行的通<br><img src="https://hackmd.io/_uploads/ryCNU3DzR.png" alt="image"></p>
+<blockquote>
+<p>FLAG:THJCC{Inp3t_b9p2sss_lim1t_1n+p3j2i1!}<br>THJCC CTF</p>
+</blockquote>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

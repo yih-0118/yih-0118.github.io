@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>FhCTF writeup | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/lioshi.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>載入過慢請開啟快取 瀏覽器預設開啟</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '淺色模式' : '深色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '淺色模式' : '深色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>FhCTF writeup</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/6/8
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/writeup/" style="color: #00a596">
+                    writeup
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="比賽成果紀錄"><a href="#比賽成果紀錄" class="headerlink" title="比賽成果紀錄"></a>比賽成果紀錄<br><img src="https://hackmd.io/_uploads/SJkl6WGB0.png" alt="ctfd.fhh4ck3rs.taipei_team"><br><span id="more"></span></h2><p><img src="https://hackmd.io/_uploads/Hyv7p-zSC.png" alt="ctfd.fhh4ck3rs.taipei_scoreboard"></p>
+<h1 id="Writeup"><a href="#Writeup" class="headerlink" title="Writeup"></a>Writeup</h1><h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="穿越檔案的旅人"><a href="#穿越檔案的旅人" class="headerlink" title="[穿越檔案的旅人]"></a>[穿越檔案的旅人]</h3><p>題目提示到：<strong>「flag 在 &#x2F;flag.txt」</strong></p>
+<pre><code>server &#123;
+    listen 80;
+    server_name _;
+
+    location / &#123;
+        root /html;
+        index index.html index.htm;
+    &#125;
+
+    location /img &#123;
+        alias /images/;
+    &#125;
+&#125;
+</code></pre>
+<p>發現可以用img作為跳板<br>改一下url: <code>https://travaling.fhh4ck3rs.taipei/img../flag.txt</code></p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;how_1_tr4v3rs4l_7h3_w0rld!&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="A-Web"><a href="#A-Web" class="headerlink" title="[A Web]"></a>[A Web]</h3><p><del>我還是diesearch去看</del><br><img src="https://hackmd.io/_uploads/H1Tr1eGH0.png" alt="image"></p>
+<p>有robots.txt誒</p>
+<p>先找到第一段：<code>FhCTF&#123;1aSy_t0_f0</code></p>
+<p>有一個登入畫面，可以用sql injection</p>
+<p>username &#x3D; <code>admin</code></p>
+<p>password &#x3D; <code>&#39;OR 1=1 --</code></p>
+<p>第二段<code>UnD_A_f1AG_c</code></p>
+<p>登入成功後看到</p>
+<p><img src="https://hackmd.io/_uploads/ryu8eezBC.png" alt="image"></p>
+<h2 id="在isAdmin中是base64格式只要改成True的base64格式-VHJ1ZQ-FLAG-FhCTF-1aSy-t0-f0UnD-A-f1AG-cAn-u-f1ND-1T"><a href="#在isAdmin中是base64格式只要改成True的base64格式-VHJ1ZQ-FLAG-FhCTF-1aSy-t0-f0UnD-A-f1AG-cAn-u-f1ND-1T" class="headerlink" title="在isAdmin中是base64格式只要改成True的base64格式 -&gt; VHJ1ZQ==&gt; FLAG:FhCTF{1aSy_t0_f0UnD_A_f1AG_cAn_u_f1ND_1T}"></a>在<code>isAdmin</code>中是base64格式<br>只要改成<code>True</code>的base64格式 -&gt; <code>VHJ1ZQ==</code><br><img src="https://hackmd.io/_uploads/SkCEGxGBA.png" alt="image"><br>&gt; FLAG:<code>FhCTF&#123;1aSy_t0_f0UnD_A_f1AG_cAn_u_f1ND_1T&#125;</code></h2><h3 id="Gotcha"><a href="#Gotcha" class="headerlink" title="[Gotcha]"></a>[Gotcha]</h3><h2 id="會先發現這是git洩漏利用DotGit擴充去把zip下載下來再把丟到SourceTree去看歷史紀錄-FLAG-FhCTF-I-9iT-7"><a href="#會先發現這是git洩漏利用DotGit擴充去把zip下載下來再把丟到SourceTree去看歷史紀錄-FLAG-FhCTF-I-9iT-7" class="headerlink" title="會先發現這是git洩漏利用DotGit擴充去把zip下載下來再把丟到SourceTree去看歷史紀錄&gt; FLAG:FhCTF{I_9iT_!7}"></a>會先發現這是git洩漏<br>利用DotGit擴充去把zip下載下來<br>再把丟到SourceTree去看歷史紀錄<br><img src="https://hackmd.io/_uploads/rJ-fHgMrC.png" alt="image"><br>&gt; FLAG:<code>FhCTF&#123;I_9iT_!7&#125;</code></h2><h3 id="BMI-計算機"><a href="#BMI-計算機" class="headerlink" title="[BMI 計算機]"></a>[BMI 計算機]</h3><p>去看源碼，會發現有<code>eval()</code>可以鑽<br><img src="https://hackmd.io/_uploads/r1uCreGrR.png" alt="image"><br>先把身高體重用burp suite攔下來<br><img src="https://hackmd.io/_uploads/SJrKLxMrA.png" alt="image"><br>會發現是用strings傳送<br>把它改成<br><code>&#123; &quot;string&quot;: &quot;require(&#39;fs&#39;).readFileSync(&#39;flag&#39;, &#39;utf8&#39;)&quot; &#125;</code><br>就可以執行了<br><img src="https://hackmd.io/_uploads/HJcp8efrR.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;bReAk_bM1_cAcu1aT0r&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="Login"><a href="#Login" class="headerlink" title="[Login]"></a>[Login]</h3><p>用githacker抓下來後再用source tree去看<br><img src="https://hackmd.io/_uploads/By0GPbESR.png" alt="image"></p>
+<hr>
+<blockquote>
+<p>FhCTF{r3m0ve_fr0m_F1LE_6U7_in_Rep0}</p>
+</blockquote>
+<h3 id="上鎖了！？"><a href="#上鎖了！？" class="headerlink" title="[上鎖了！？]"></a>[上鎖了！？]</h3><p><del>先用dirsearch再說</del><br><img src="https://hackmd.io/_uploads/r1kPvxMHR.png" alt="image"><br>得知有admin，去看main.js發現有<code>#secret</code><br><img src="https://hackmd.io/_uploads/Skw2vefB0.png" alt="image"><br>我們知道在flag.txt，但我們沒有權限進去，會被403<br>所以要用burp suite攔下來後加入referer到locked.fhh4ck3rs.taipei就好<br><img src="https://hackmd.io/_uploads/rJ36DgzrR.png" alt="image"><br>request只要這樣就好</p>
+<pre><code>GET /admin/flag.txt HTTP/2
+Host: locked.fhh4ck3rs.taipei
+Referer: http://locked.fhh4ck3rs.taipei
+</code></pre>
+<p><img src="https://hackmd.io/_uploads/SJX1KlzHA.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;4n_unl0cked_l0ck_15_s7up1d&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="Information"><a href="#Information" class="headerlink" title="[Information]"></a>[Information]</h3><p><del>看到連結無腦先用dirsearch</del><br><img src="https://hackmd.io/_uploads/H1T-0JGSA.png" alt="image"><br>真的有好東西誒，<code>/redoc</code><br>到目錄下去看就有了<br><img src="https://hackmd.io/_uploads/Bk-DRyfrA.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;Y0u_r3411y_n33d_t0_l0ck_y0ur_API_d0cum3n75&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="Information-Ultimate"><a href="#Information-Ultimate" class="headerlink" title="[Information Ultimate]"></a>[Information Ultimate]</h3><p><del>老生常談，先用dirsearch</del><br>會發現有<code>/docs</code>可以進去<br>有api可以玩<br>先到No One Can Pass<br>隨便打，會跳出<code>access-token</code>而且還是<code>jwt</code>格式的<br><img src="https://hackmd.io/_uploads/SkHD6ezSC.png" alt="image"><br>我們要用<code>jwt-cracker</code>暴力解密鑰<br><img src="https://hackmd.io/_uploads/r1aiplfHA.png" alt="image"><br>發現密鑰是<code>secret</code><br>那這樣token就出來了<br><img src="https://hackmd.io/_uploads/BkIqAgfSC.png" alt="image"><br>得到flag~~~~<br><img src="https://hackmd.io/_uploads/B1LCAxzHC.png" alt="image"><br>FLAG:<code>FhCTF&#123;N3w_ch4ll3ng3_1n_JWT_c95ceec4ea7d5414f10853e616da8e521f957e7627368a641e46fe74720b53b1&#125;</code></p>
+<hr>
+<h3 id="Information-Revenge"><a href="#Information-Revenge" class="headerlink" title="[Information Revenge]"></a>[Information Revenge]</h3><p><del>我仍然先用dirsearch</del><br>有docs可以進去<br>但是要帳密<br><img src="https://hackmd.io/_uploads/SyN_WbfSA.png" alt="image"><br>題目提到，以他的名字作為擔保，username就是CXPh031x<br><img src="https://hackmd.io/_uploads/rylLWbzHR.png" alt="image"><br>先用burp suite攔下來看，發現是用<code>username:password</code>的方式驗證<br>而且還套用base64格式<br><img src="https://hackmd.io/_uploads/BJUgzWGH0.png" alt="image"><br>知道這些後，<del>就可以爆破了</del></p>
+<p><img src="https://hackmd.io/_uploads/r1bSXZfHA.png" alt="image"><br>這樣就知道密碼是<code>Password1</code>了<br>能進到api那邊直接拿到flag</p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;W34k_p455w0rd_m4y_c4u53_d4ng3r&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="Baking-Store"><a href="#Baking-Store" class="headerlink" title="[Baking Store]"></a>[Baking Store]</h3><p>發現是要等旗子烤好<br><img src="https://hackmd.io/_uploads/Hk3zfeQrR.png" alt="image"><br>我們先用burp suite攔下來，有看到一串特殊的cookie<br>用ciphey看，發現是這樣的加密方式<br><img src="https://hackmd.io/_uploads/HJnYGl7r0.png" alt="image"><br>再把時間改成0秒就好摟囉<br><img src="https://hackmd.io/_uploads/HJ5N7lXS0.png" alt="image"><br><img src="https://hackmd.io/_uploads/BJUHQe7rC.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;Cl13nt_s1d3_auth0r1z3d_1s_d4ng3r!!!!&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="Baking-Store-Revenge"><a href="#Baking-Store-Revenge" class="headerlink" title="[Baking Store Revenge]"></a>[Baking Store Revenge]</h3><p>進去會有一個登入頁面，先隨便註冊後再登入看看<br><img src="https://hackmd.io/_uploads/HJXbEe7SC.png" alt="image"><br>看看能不能修改url找到flag<br>在<code>65536</code>的地方<br><img src="https://hackmd.io/_uploads/rypN4eQHR.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;IDOR_1s_t3rr4bl3_w1th_n0_l1m173d...&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h2><h3 id="MitM-攻擊者"><a href="#MitM-攻擊者" class="headerlink" title="[MitM 攻擊者]"></a>[MitM 攻擊者]</h3><p>下載檔案<br>丟進wireshake<br>從題目中 <strong>不要用不安全的協定</strong><br>去找最特別的協定<br><img src="https://hackmd.io/_uploads/BytTTgMrA.png" alt="image"><br>就找到flag了</p>
+<blockquote>
+<p>fhsfctf{w1ll_a1w4y5_pr3v4il}</p>
+</blockquote>
+<hr>
+<h3 id="Hex-Dumb-Dumb"><a href="#Hex-Dumb-Dumb" class="headerlink" title="[Hex Dumb Dumb]"></a>[Hex Dumb Dumb]</h3><p>題目給你一個<code>.chal</code>檔案，但其實他是張圖片<br><img src="https://hackmd.io/_uploads/Bksp6ZGB0.jpg" alt="HexDumbDumb"><br>把這張strings出來看，把strings最後部分拿來看<br>抓”)”上面</p>
+<pre><code>FFFFFF
+))))))
+hhhhhh
+))))))
+HHHH
+C))C
+TTTTTt
+)))))t
+FFFFFF
+))))))
+))&#123;)&#123;)
+HHHHHH
+))))))
+hhhhhh
+hhhhhh
+##3###
+d))d
+DDDDdd
+DDDD))
+u)))
+UUUU
+)))m
+MMMM
+pppppp
+))))))
+PPPP
+nnnn
+))))
+NNNN
+##3###
+##3###
+d))d
+DDDDdd
+DDDD))
+)))m
+MMMM
+0000
+0))))0
+))))))
+))))
+)))r
+##3###
+##3###
+C))C
+UUUUU
+U)))))
+uuuuuu
+uuuuu
+RRRRRR
+))))))
+##3###
+]&#125;)&#125;)]
+</code></pre>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;H3xdump_n33d_m0r3_S3CUR3&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="Do-you-know-packet"><a href="#Do-you-know-packet" class="headerlink" title="[Do you know packet?]"></a>[Do you know packet?]</h3><p>打開題目封包後發現跟usb有關<br>之後到這邊載工具<br><a target="_blank" rel="noopener" href="https://github.com/horosora/wireshark-usb-keyboard-analyzer/tree/master">https://github.com/horosora/wireshark-usb-keyboard-analyzer/tree/master</a><br>載好後丟到wireshark<br>再用wireshark打開封包並使用工具<br>得到flag<br><img src="https://hackmd.io/_uploads/HJqWzZNHC.png" alt="image"></p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;a_S1mp13_USB_C@p7uRe&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><h3 id="BabyReverse"><a href="#BabyReverse" class="headerlink" title="[BabyReverse]"></a>[BabyReverse]</h3><p>去用ida去看print_flag()<br><img src="https://hackmd.io/_uploads/HkbHi-zSA.png" alt="image"></p>
+<pre><code class="python">v3 = [57, 23, 60, 43, 57, 4, 38, 79, 10, 32, 30, 13, 76, 32, 29, 75, 29, 6, 32, 13, 76, 9, 76, 13, 74, 76, 32, 26, 17, 24, 78, 17, 76, 76, 13, 91, 90, 89, 2]
+s = &#39;&#39;.join(chr(byte ^ 0x7F) for byte in v3)
+print(s)
+</code></pre>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;Y0u_ar3_b4by_r3v3r53_eng1n33r$%&amp;&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="Secret-Message"><a href="#Secret-Message" class="headerlink" title="[Secret Message]"></a>[Secret Message]</h3><p>先用ida打開<br><img src="https://hackmd.io/_uploads/SyQJmWVrA.png" alt="image"><br>會發現說雖然他用rand<br>但因為srand有給種子碼，所以基本上每次執行的時候<br>隨機數都是相同的<br>然後有給flag被加密後的檔案<br><img src="https://hackmd.io/_uploads/Sk9NQZNr0.png" alt="image"></p>
+<p>所以可以來暴力解<br>把可視字元當作flag<br>之後執行<code>enc flag</code><br>如果enc後的結果等於751<br>那就記錄下來<br>然後繼續往下跑<br>如果enc後的結果等於707<br>繼續記錄下來<br>到最後就會有flag了</p>
+<ul>
+<li>solve</li>
+</ul>
+<pre><code class="python">from pwn import *
+seed = [751, 707, 513, 755, 627, 1036, 1005, 109, 682, 674, 252, 671, 247, 259, 439, 526, 318, 574, 742, 135, 709, 731, 495, 872, 436, 827]
+key = &quot;!\&quot;#$%&amp;&#39;()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz&#123;|&#125;~&quot;
+ans = &quot;&quot;
+origin = &quot;&quot;
+for i in range(len(seed)):
+    for j in key:
+        origin = ans
+        origin = origin + j
+        with open(&quot;flag&quot;, &quot;w&quot;) as file:
+            file.write(origin)
+
+        r = process([&quot;./enc&quot;, &quot;flag&quot;])
+        gg = r.recvall()
+        nums = [int(x) for x in gg.decode().split()]
+        if nums[i] == seed[i]:
+            ans+=j
+            break
+    
+print(ans)
+</code></pre>
+<hr>
+<h3 id="BabyReverse-Revenge"><a href="#BabyReverse-Revenge" class="headerlink" title="[BabyReverse Revenge]"></a>[BabyReverse Revenge]</h3><p>去用ida去看print_flag()<br><img src="https://hackmd.io/_uploads/Hk4KaJXS0.png" alt="image"><br>v9為加密數值，v4&#x3D;127是XOR鑰匙，v5&#x3D;35解密的字串長度<br>用 for 嘗試0~255 分配記憶體儲存解密字串<br>用for進行 XOR 運算之後printf每個可能</p>
+<pre><code class="cpp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void print_flag() &#123;
+    int v9[] = &#123;121, 87, 124, 107, 121, 68, 104, 87, 70, 96, 124, 8, 121, 12, 77, 76, 96, 
+                83, 14, 84, 12, 96, 77, 12, 73, 12, 81, 88, 12, 17, 17, 27, 0, 27, 66&#125;;
+    int length = 35;
+
+    for (int key = 0; key &lt; 256; ++key) &#123;
+        char *s = (char *)malloc(length + 1);
+        if (!s) &#123;
+            printf(&quot;Memory allocation failed\n&quot;);
+            return;
+        &#125;
+
+        for (int i = 0; i &lt; length; ++i) &#123;
+            s[i] = key ^ v9[i];
+        &#125;
+        s[length] = &#39;\0&#39;;
+
+        printf(&quot;Key %d: %s\n&quot;, key, s);
+
+        free(s);
+    &#125;
+&#125;
+
+int main() &#123;
+    print_flag();
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://hackmd.io/_uploads/HJP6RkmHA.png" alt="image"></p>
+<blockquote>
+<p>Flag:<code>FhCTF&#123;Why_C7F3rs_l1k3_r3v3ng3..$?$&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="真。逆向工程"><a href="#真。逆向工程" class="headerlink" title="[真。逆向工程]"></a>[真。逆向工程]</h3><p>其實找到print_flag function後照他的用下來就出來了</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;cstdint&gt;
+using namespace std;
+void print_flag() &#123;
+    int i, j, k;
+    uint64_t v4[7];
+    uint64_t v6[13];
+    char v7[10];
+    char result[57]; 
+    v6[0] = 0x30602D1979572B0BLL;
+    v6[1] = 0x44191E0B2C405607LL;
+    v6[2] = 0x1B777409180F6D6FLL;
+    v6[3] = 0x2A0F022A52672416LL;
+    v6[4] = 0x601B25524E775D7DLL;
+    v6[5] = 0x2C2D25635B640649LL;
+    v6[6] = 0x527A4B6640082160LL;
+    v6[7] = 0x71E2064576E5B5BLL;
+    v6[8] = 0x342B373625031C69LL;
+    v6[9] = 0x7C0972711E5E5D23LL;
+    v6[10] = 0x191D703028635C21LL;
+    v6[11] = 0x405D1C7E0B601446LL;
+    v6[12] = 0x62611D4B320D6C78LL;
+    memcpy(v7, &quot;GQ6,/rqswO&quot;, 10);
+    v4[0] = 0x48633E0137730E24LL;
+    v4[1] = 0x722D6E6F3E295F53LL;
+    v4[2] = 0x2738791141693007LL;
+    v4[3] = 0x7965302D5A09586CLL;
+    v4[4] = 0x17B38197D691A1ELL;
+    v4[5] = 0x78097A453D3C5554LL;
+    v4[6] = 0x182D517B73331FLL;
+    for (i = 56; i &gt; 0; --i)
+        *((uint8_t *)v4 + i) ^= *((uint8_t *)v4 + i - 1);
+    for (j = 0; j &lt; 0x39; ++j)
+        *((uint8_t *)v4 + j) ^= 0x69;
+    for (k = 0; k &lt; 0x39; ++k)
+        *((uint8_t *)v4 + k) ^= *((uint8_t *)v6 + k);
+    memcpy(result, v4, 56);
+    cout &lt;&lt; result &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+    print_flag();
+    return 0;
+&#125;
+</code></pre>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;Tru3_R3v3rs3?Y0u_m4y_h4v3_s0m3_m1sund3rs74nd!!%^&amp;#&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="Osint"><a href="#Osint" class="headerlink" title="Osint"></a>Osint</h2><h3 id="祭"><a href="#祭" class="headerlink" title="[祭]"></a>[祭]</h3><p>女巫我會想到北投區<br><del>(絕對不是復興高中就在北投)</del><br>北投我能想到的景點:(1.北投公園 2.溫泉博物館 &#x3D;&#x3D;3.文物館&#x3D;&#x3D;)</p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;112台北市北投區幽雅路32號&#125;</code></p>
+</blockquote>
+<hr>
+<h3 id="緣"><a href="#緣" class="headerlink" title="[緣]"></a>[緣]</h3><p>google 以圖搜圖加關鍵字 &lt;華山 祭典 地址&gt;<br>得到<img src="https://hackmd.io/_uploads/HJfIjgzHC.png" alt="image"></p>
+<blockquote>
+<p>FhCTF{108台北市萬華區康定路173巷}</p>
+</blockquote>
+<hr>
+<h2 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h2><h3 id="Taiwan-No-1"><a href="#Taiwan-No-1" class="headerlink" title="[Taiwan No.1]"></a>[Taiwan No.1]</h3><p>題目有說到，每一個可視字元有獨立的編碼形式<br>我們只要將output縮成一行，利用<code>taiwan-art.py</code>去做成表</p>
+<ul>
+<li><code>taiwan-art.py</code></li>
+</ul>
+<pre><code class="python">Secret = open(&#39;./Secret.txt&#39;, &#39;rb&#39;).read()
+encode = &quot;~!@#$%^&amp;*()-=[]\\&quot;
+Taiwan = list(open(&#39;./taiwan.txt&#39;, &#39;r&#39;).read())
+SuperPower = 13 * 3 * 7 * 5
+New_Taiwan = &#39;&#39;
+for sec in Secret:
+    for prime in [13, 3, 7, 5]:
+        for sp in range(SuperPower):
+            char = Taiwan.pop(0)
+            if char != &quot;#&quot;:
+                New_Taiwan += char
+            else:
+                New_Taiwan += encode[sec % prime]
+                break
+
+print(New_Taiwan)
+</code></pre>
+<p>分析一下會發現，他會讀取taiwan.txt，而taiwan.txt要有4的倍數個<code>#</code><br>我在<code>Secret.txt</code>中打</p>
+<pre><code>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[]^_`&#123;|&#125;~
+</code></pre>
+<p>可以知道所有的可視字元符號，每四個一組，根據輸出值去查表</p>
+<ul>
+<li>製表C++（要根據Secret.txt微調修正）</li>
+</ul>
+<pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+int main()
+&#123;
+    string re = &quot;~@@~!~#!@!$@#@%#$~^$%!~~^@!!&amp;~@@*!##(@$$)~%~-!^!=@~@~~!#!!@$@@#~#~$!$!%@%@^#^~~$&amp;!!~*@@!(~#@)!$#-@%$=~^~&quot;;
+    string abc =&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+    for(int i=0;i&lt;104;i+=4)&#123;
+        cout&lt;&lt;abc[i/4]&lt;&lt;&quot;:&quot;&lt;&lt;re[i]&lt;&lt;re[i+1]&lt;&lt;re[i+2]&lt;&lt;re[i+3]&lt;&lt;&quot;\n&quot;;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<ul>
+<li>python解</li>
+</ul>
+<pre><code class="python">stardand=&#123;&#39;0&#39;:&quot;(~^#&quot;,&#39;1&#39;:&quot;)!~$&quot;,&#39;2&#39;:&quot;-@!~&quot;,&#39;3&#39;:&quot;=~@!&quot;,&#39;4&#39;:&quot;~!#@&quot;,&#39;5&#39;:&quot;!@$#&quot;,&#39;6&#39;:&quot;@~%$&quot;,&#39;7&#39;:&quot;#!^~&quot;,&#39;8&#39;:&quot;$@~!&quot;,&#39;9&#39;:&quot;%~!@&quot;,&#39;a&#39;:&quot;^!^@&quot;,&#39;b&#39;:&quot;&amp;@~#&quot;,&#39;c&#39;:&quot;*~!$&quot;,&#39;d&#39;:&quot;(!@~&quot;,&#39;e&#39;:&quot;)@#!&quot;,&#39;f&#39;:&quot;-~$@&quot;,&#39;g&#39;:&quot;=!%#&quot;,&#39;h&#39;:&quot;~@^$&quot;,&#39;i&#39;:&quot;!~~~&quot;,&#39;j&#39;:&quot;@!!!&quot;,&#39;k&#39;:&quot;#@@@&quot;,&#39;l&#39;:&quot;$~##&quot;,&#39;m&#39;:&quot;%!$$&quot;,&#39;n&#39;:&quot;^@%~&quot;,&#39;o&#39;:&quot;&amp;~^!&quot;,&#39;p&#39;:&quot;*!~@&quot;,&#39;q&#39;:&quot;(@!#&quot;,&#39;r&#39;:&quot;)~@$&quot;,&#39;s&#39;:&quot;-!#~&quot;,&#39;t&#39;:&quot;=@$!&quot;,&#39;u&#39;:&quot;~~%@&quot;,&quot;v&quot;:&quot;!!^#&quot;,&#39;w&#39;:&quot;@@~$&quot;,&#39;x&#39;:&quot;#~!~&quot;,&#39;y&#39;:&quot;$!@!&quot;,&#39;z&#39;:&quot;%@#@&quot;,&#39;A&#39;:&quot;~@@~&quot;,&#39;B&#39;:&quot;!~#!&quot;,&#39;C&#39;:&quot;@!$@&quot;,&#39;D&#39;:&quot;#@%#&quot;,&#39;E&#39;:&quot;$~^$&quot;,&#39;F&#39;:&quot;%!~~&quot;,&#39;G&#39;:&quot;^@!!&quot;,&#39;H&#39;:&quot;&amp;~@@&quot;,&#39;I&#39;:&quot;*!##&quot;,&#39;J&#39;:&quot;(@$$&quot;,&#39;K&#39;:&quot;)~%~&quot;,&#39;L&#39;:&quot;-!^!&quot;,&#39;M&#39;:&quot;=@~@&quot;,&#39;N&#39;:&quot;~~!#&quot;,&#39;O&#39;:&quot;!!@$&quot;,&#39;P&#39;:&quot;@@#~&quot;,&#39;Q&#39;:&quot;#~$!&quot;,&#39;R&#39;:&quot;$!%@&quot;,&quot;S&quot;:&quot;%@^#&quot;,&#39;T&#39;:&quot;^~~$&quot;,&#39;U&#39;:&quot;&amp;!!~&quot;,&#39;V&#39;:&quot;*@@!&quot;,&#39;W&#39;:&quot;(~#@&quot;,&#39;X&#39;:&quot;)!$#&quot;,&#39;Y&#39;:&quot;-@%$&quot;,&#39;Z&#39;:&quot;=~^~&quot;,&#39;!&#39;:&quot;&amp;~%#&quot;,&#39;&quot;&#39;:&quot;*!^$&quot;,&#39;#&#39;:&quot;(@~~&quot;,&#39;$&#39;:&quot;)~!!&quot;,&#39;%&#39;:&quot;-!@@&quot;,&#39;&amp;&#39;:&quot;=@##&quot;,&quot;&#39;&quot;:&quot;~~$$&quot;,&#39;(&#39;:&quot;!!%~&quot;,&#39;)&#39;:&quot;@@^!&quot;,&#39;*&#39;:&quot;#~~@&quot;,&#39;+&#39;:&quot;$!!#&quot;,&#39;,&#39;:&quot;%@@$&quot;,&#39;-&#39;:&quot;^~#~&quot;,&#39;.&#39;:&quot;&amp;!$!&quot;,&#39;/&#39;:&quot;*@%@&quot;,&quot;&#39;&quot;:&quot;^!@#&quot;,&#39;;&#39;:&quot;&amp;@#$&quot;,&#39;&lt;&#39;:&quot;*~$~&quot;,&#39;=&#39;:&quot;(!%!&quot;,&#39;&gt;&#39;:&quot;)@^@&quot;,&#39;?&#39;:&quot;-~~#&quot;,&#39;@&#39;:&quot;=!!$&quot;,&#39;[&#39;:&quot;~!~!&quot;,&#39;]&#39;:&quot;@~@#&quot;,&#39;^&#39;:&quot;#!#$&quot;,&#39;_&#39;:&quot;$@$~&quot;,&#39;`&#39;:&quot;%~%!&quot;,&#39;&#123;&#39;:&quot;^~$#&quot;,&#39;|&#39;:&quot;&amp;!%$&quot;,&#39;&#125;&#39;:&quot;*@^~&quot;,&#39;~&#39;:&quot;(~~!&quot;&#125;
+transform=&#123;
+    v:k for k,v in stardand.items()
+&#125;
+message=&quot;@!$@&amp;~^!^@%~=!%#)~@$^!^@=@$!~~%@$~##^!^@=@$!!~~~&amp;~^!^@%~-!#~^@$@&amp;~^!^@%~^@$@-!#~&amp;~^!$~##!!^#!~~~^@%~=!%#^@$@=@$!~@^$!~~~-!#~^@$@*~!$~@^$^!^@$~##$~##)@#!^@%~=!%#)@#!&amp;~%#^@$@~!^#)!#~^~~$~@^$)@#!^@$@%!$$^!^@-!#~#@@@^@$@~@^$^!^@-!#~)!~$$@~!=~@!@~%$^@$@(@~~~~$$-!#~^@$@-!#~&amp;~^!^@$@~@^$)@#!)~@$)@#!^@$@^!^@)~@$)@#!^@$@-!#~&amp;~^!%!$$)@#!^@$@)~@$^!^@^@%~(!@~&amp;~^!%!$$^@$@@@~$&amp;~^!)~@$(!@~-!#~^@$@=@$!&amp;~^!^@$@%!$$^!^@#@@@)@#!^@$@=@$!~@^$)@#!^@$@%!$$)@#!-!#~-!#~^!^@=!%#)@#!^@$@$~##&amp;~^!^@%~=!%#^@$@)@#!^@%~&amp;~^!~~%@=!%#~@^$&amp;!$!~!^#)!#~@!$@&amp;~^!^@%~-~$@$~##!~~~*~!$=@$!^@$@%!$$~~%@-!#~=@$!^@$@^@%~&amp;~^!=@$!^@$@&amp;@~#)@#!^@$@-!#~)@#!)@#!^@%~^@$@=@$!~@^$)~@$&amp;~^!~~%@=!%#~@^$^@$@=@$!~@^$)@#!^@$@&amp;~@@&amp;~^!$~##$!@!^@$@)~%~~@^$^!^@$~##^!^@&amp;!$!~!^#)!#~(~#@)@#!^@$@-!#~~@^$^!^@$~##$~##^@$@)~@$!~~~-!#~)@#!^@$@-~$@)~@$&amp;~^!%!$$^@$@=@$!~@^$)@#!^@$@^!^@-!#~~@^$)@#!-!#~&amp;!$!=@~@$!@!^@$@~@^$)@#!^!^@)~@$=@$!^@$@!~~~-!#~^@$@*~!$&amp;~^!$~##(!@~)@#!)~@$^@$@=@$!~@^$^!^@^@%~^@$@=@$!~@^$)@#!-!#~)@#!^@$@-!#~=@$!)@#!)@#!$~##^@$@$~##!~~~%!$$&amp;@~#-!#~&amp;!$!~!^#)!#~@@#~)~@$!~~~-!#~%!$$^!^@=@$!!~~~*~!$^@$@*~!$&amp;~^!)~@$)@#!^@$@-~$@^!^@!~~~$~##!~~~^@%~=!%#&amp;~%#^@$@(~#@)@#!^@$@)~@$)@#!(@!#~~%@!~~~)~@$)@#!^@$@^!^@-!#~-!#~!~~~-!#~=@$!^!^@^@%~*~!$)@#!&amp;!$!~!^#)!#~-@%$&amp;~^!~~%@)~@$^@$@-~$@$~##^!^@=!%#^@$@!~~~-!#~^@$@~@^$)@#!)~@$)@#!^!@#^@$@%!~~~@^$@!$@^~~$%!~~^~$#-!^!!~~~!!^#=~@!(!@~$@$~)!~$^@%~$@$~^~~$~!#@)!~$@@~$=~@!^@%~$@$~^@!!&amp;~^!&amp;~^!(~^#(~^#&amp;~^!&amp;~^!(~^#(~^#(!@~*@^~&quot;
+result=&#39;&#39;
+for i in range(0,len(message),4):
+    ans=message[i:i+4]
+    if ans in transform:
+        result+=transform[ans]
+print(result)
+</code></pre>
+<ul>
+<li>C++解</li>
+</ul>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+int main() &#123;
+    unordered_map&lt;char, string&gt; encode_map = &#123;
+        &#123;&#39;0&#39;, &quot;(~^#&quot;&#125;, &#123;&#39;1&#39;, &quot;)!~$&quot;&#125;, &#123;&#39;2&#39;, &quot;-@!~&quot;&#125;, &#123;&#39;3&#39;, &quot;=~@!&quot;&#125;, &#123;&#39;4&#39;, &quot;~!#@&quot;&#125;,
+        &#123;&#39;5&#39;, &quot;!@$#&quot;&#125;, &#123;&#39;6&#39;, &quot;@~%$&quot;&#125;, &#123;&#39;7&#39;, &quot;#!^~&quot;&#125;, &#123;&#39;8&#39;, &quot;$@~!&quot;&#125;, &#123;&#39;9&#39;, &quot;%~!@&quot;&#125;,
+        &#123;&#39;a&#39;, &quot;^!^@&quot;&#125;, &#123;&#39;b&#39;, &quot;&amp;@~#&quot;&#125;, &#123;&#39;c&#39;, &quot;*~!$&quot;&#125;, &#123;&#39;d&#39;, &quot;(!@~&quot;&#125;, &#123;&#39;e&#39;, &quot;)@#!&quot;&#125;,
+        &#123;&#39;f&#39;, &quot;-~$@&quot;&#125;, &#123;&#39;g&#39;, &quot;=!%#&quot;&#125;, &#123;&#39;h&#39;, &quot;~@^$&quot;&#125;, &#123;&#39;i&#39;, &quot;!~~~&quot;&#125;, &#123;&#39;j&#39;, &quot;@!!!&quot;&#125;,
+        &#123;&#39;k&#39;, &quot;#@@@&quot;&#125;, &#123;&#39;l&#39;, &quot;$~##&quot;&#125;, &#123;&#39;m&#39;, &quot;%!$$&quot;&#125;, &#123;&#39;n&#39;, &quot;^@%~&quot;&#125;, &#123;&#39;o&#39;, &quot;&amp;~^!&quot;&#125;,
+        &#123;&#39;p&#39;, &quot;*!~@&quot;&#125;, &#123;&#39;q&#39;, &quot;(@!#&quot;&#125;, &#123;&#39;r&#39;, &quot;)~@$&quot;&#125;, &#123;&#39;s&#39;, &quot;-!#~&quot;&#125;, &#123;&#39;t&#39;, &quot;=@$!&quot;&#125;,
+        &#123;&#39;u&#39;, &quot;~~%@&quot;&#125;, &#123;&#39;v&#39;, &quot;!!^#&quot;&#125;, &#123;&#39;w&#39;, &quot;@@~$&quot;&#125;, &#123;&#39;x&#39;, &quot;#~!~&quot;&#125;, &#123;&#39;y&#39;, &quot;$!@!&quot;&#125;,
+        &#123;&#39;z&#39;, &quot;%@#@&quot;&#125;, &#123;&#39;A&#39;, &quot;~@@~&quot;&#125;, &#123;&#39;B&#39;, &quot;!~#!&quot;&#125;, &#123;&#39;C&#39;, &quot;@!$@&quot;&#125;, &#123;&#39;D&#39;, &quot;#@%#&quot;&#125;,
+        &#123;&#39;E&#39;, &quot;$~^$&quot;&#125;, &#123;&#39;F&#39;, &quot;%!~~&quot;&#125;, &#123;&#39;G&#39;, &quot;^@!!&quot;&#125;, &#123;&#39;H&#39;, &quot;&amp;~@@&quot;&#125;, &#123;&#39;I&#39;, &quot;*!##&quot;&#125;,
+        &#123;&#39;J&#39;, &quot;(@$$&quot;&#125;, &#123;&#39;K&#39;, &quot;)~%~&quot;&#125;, &#123;&#39;L&#39;, &quot;-!^!&quot;&#125;, &#123;&#39;M&#39;, &quot;=@~@&quot;&#125;, &#123;&#39;N&#39;, &quot;~~!#&quot;&#125;,
+        &#123;&#39;O&#39;, &quot;!!@$&quot;&#125;, &#123;&#39;P&#39;, &quot;@@#~&quot;&#125;, &#123;&#39;Q&#39;, &quot;#~$!&quot;&#125;, &#123;&#39;R&#39;, &quot;$!%@&quot;&#125;, &#123;&#39;S&#39;, &quot;%@^#&quot;&#125;,
+        &#123;&#39;T&#39;, &quot;^~~$&quot;&#125;, &#123;&#39;U&#39;, &quot;&amp;!!~&quot;&#125;, &#123;&#39;V&#39;, &quot;*@@!&quot;&#125;, &#123;&#39;W&#39;, &quot;(~#@&quot;&#125;, &#123;&#39;X&#39;, &quot;)!$#&quot;&#125;,
+        &#123;&#39;Y&#39;, &quot;-@%$&quot;&#125;, &#123;&#39;Z&#39;, &quot;=~^~&quot;&#125;, &#123;&#39;!&#39;, &quot;&amp;~%#&quot;&#125;, &#123;&#39;&quot;&#39;, &quot;*!^$&quot;&#125;, &#123;&#39;#&#39;, &quot;(@~~&quot;&#125;,
+        &#123;&#39;$&#39;, &quot;)~!!&quot;&#125;, &#123;&#39;%&#39;, &quot;-!@@&quot;&#125;, &#123;&#39;&amp;&#39;, &quot;=@##&quot;&#125;, &#123;&#39;\&#39;&#39;, &quot;~~$$&quot;&#125;, &#123;&#39;(&#39;, &quot;!!%~&quot;&#125;,
+        &#123;&#39;)&#39;, &quot;@@^!&quot;&#125;, &#123;&#39;*&#39;, &quot;#~~@&quot;&#125;, &#123;&#39;+&#39;, &quot;$!!#&quot;&#125;, &#123;&#39;,&#39;, &quot;%@@$&quot;&#125;, &#123;&#39;-&#39;, &quot;^~#~&quot;&#125;,
+        &#123;&#39;.&#39;, &quot;&amp;!$!&quot;&#125;, &#123;&#39;/&#39;, &quot;*@%@&quot;&#125;, &#123;&#39;:&#39;, &quot;^!@#&quot;&#125;, &#123;&#39;;&#39;, &quot;&amp;@#$&quot;&#125;, &#123;&#39;&lt;&#39;, &quot;*~$~&quot;&#125;,
+        &#123;&#39;=&#39;, &quot;(!%!&quot;&#125;, &#123;&#39;&gt;&#39;, &quot;)@^@&quot;&#125;, &#123;&#39;?&#39;, &quot;-~~#&quot;&#125;, &#123;&#39;@&#39;, &quot;=!!$&quot;&#125;, &#123;&#39;[&#39;, &quot;~!~!&quot;&#125;,
+        &#123;&#39;]&#39;, &quot;@~@#&quot;&#125;, &#123;&#39;^&#39;, &quot;#!#$&quot;&#125;, &#123;&#39;_&#39;, &quot;$@$~&quot;&#125;, &#123;&#39;`&#39;, &quot;%~%!&quot;&#125;, &#123;&#39;&#123;&#39;, &quot;^~$#&quot;&#125;,
+        &#123;&#39;|&#39;, &quot;&amp;!%$&quot;&#125;, &#123;&#39;&#125;&#39;, &quot;*@^~&quot;&#125;, &#123;&#39;~&#39;, &quot;(~~!&quot;&#125;
+    &#125;;
+    unordered_map&lt;string, char&gt; decode_map;
+    for (const auto&amp; pair : encode_map) &#123;
+        decode_map[pair.second] = pair.first;
+    &#125;
+    string encoded_message = &quot;@!$@&amp;~^!^@%~=!%#)~@$^!^@=@$!~~%@$~##^!^@=@$!!~~~&amp;~^!^@%~-!#~^@$@&amp;~^!^@%~^@$@-!#~&amp;~^!$~##!!^#!~~~^@%~=!%#^@$@=@$!~@^$!~~~-!#~^@$@*~!$~@^$^!^@$~##$~##)@#!^@%~=!%#)@#!&amp;~%#^@$@~!^#)!#~^~~$~@^$)@#!^@$@%!$$^!^@-!#~#@@@^@$@~@^$^!^@-!#~)!~$$@~!=~@!@~%$^@$@(@~~~~$$-!#~^@$@-!#~&amp;~^!^@$@~@^$)@#!)~@$)@#!^@$@^!^@)~@$)@#!^@$@-!#~&amp;~^!%!$$)@#!^@$@)~@$^!^@^@%~(!@~&amp;~^!%!$$^@$@@@~$&amp;~^!)~@$(!@~-!#~^@$@=@$!&amp;~^!^@$@%!$$^!^@#@@@)@#!^@$@=@$!~@^$)@#!^@$@%!$$)@#!-!#~-!#~^!^@=!%#)@#!^@$@$~##&amp;~^!^@%~=!%#^@$@)@#!^@%~&amp;~^!~~%@=!%#~@^$&amp;!$!~!^#)!#~@!$@&amp;~^!^@%~-~$@$~##!~~~*~!$=@$!^@$@%!$$~~%@-!#~=@$!^@$@^@%~&amp;~^!=@$!^@$@&amp;@~#)@#!^@$@-!#~)@#!)@#!^@%~^@$@=@$!~@^$)~@$&amp;~^!~~%@=!%#~@^$^@$@=@$!~@^$)@#!^@$@$~##)@#!^@%~-!#~)@#!-!#~^@$@&amp;~^!-~$@^@$@(!@~)@#!-!#~*!~@)@#!)~@$^!^@=@$!!~~~&amp;~^!^@%~&amp;!$!~!^#)!#~~@@~$~##$~##^@$@*!~@^!^@=@$!~@^$-!#~^@$@^!^@)~@$)@#!^@$@-!#~)@#!)@#!^@%~^@$@=@$!~@^$)~@$&amp;~^!~~%@=!%#~@^$^@$@=@$!~@^$)@#!^@$@*!~@)~@$!~~~-!#~%!$$^@$@&amp;~^!-~$@^@$@-~$@^!^@=@$!)@#!&amp;!$!~!^#)!#~!!@$~~%@)~@$^@$@@@~$!~~~$~##$~##-!#~^@$@^!^@)~@$)@#!^@$@^!^@$~##!~~~=!%#^@%~)@#!(!@~^@$@=@$!~@^$)~@$&amp;~^!~~%@=!%#~@^$^@$@=@$!~@^$)@#!^@$@&amp;~@@&amp;~^!$~##$!@!^@$@)~%~~@^$^!^@$~##^!^@&amp;!$!~!^#)!#~(~#@)@#!^@$@-!#~~@^$^!^@$~##$~##^@$@)~@$!~~~-!#~)@#!^@$@-~$@)~@$&amp;~^!%!$$^@$@=@$!~@^$)@#!^@$@^!^@-!#~~@^$)@#!-!#~&amp;!$!=@~@$!@!^@$@~@^$)@#!^!^@)~@$=@$!^@$@!~~~-!#~^@$@*~!$&amp;~^!$~##(!@~)@#!)~@$^@$@=@$!~@^$^!^@^@%~^@$@=@$!~@^$)@#!-!#~)@#!^@$@-!#~=@$!)@#!)@#!$~##^@$@$~##!~~~%!$$&amp;@~#-!#~&amp;!$!~!^#)!#~@@#~)~@$!~~~-!#~%!$$^!^@=@$!!~~~*~!$^@$@*~!$&amp;~^!)~@$)@#!^@$@-~$@^!^@!~~~$~##!~~~^@%~=!%#&amp;~%#^@$@(~#@)@#!^@$@)~@$)@#!(@!#~~%@!~~~)~@$)@#!^@$@^!^@-!#~-!#~!~~~-!#~=@$!^!^@^@%~*~!$)@#!&amp;!$!~!^#)!#~-@%$&amp;~^!~~%@)~@$^@$@-~$@$~##^!^@=!%#^@$@!~~~-!#~^@$@~@^$)@#!)~@$)@#!^!@#^@$@%!~~~@^$@!$@^~~$%!~~^~$#-!^!!~~~!!^#=~@!(!@~$@$~)!~$^@%~$@$~^~~$~!#@)!~$@@~$=~@!^@%~$@$~^@!!&amp;~^!&amp;~^!(~^#(~^#&amp;~^!&amp;~^!(~^#(~^#(!@~*@^~&quot;;
+    string decoded_message;
+    for (size_t i = 0; i &lt; encoded_message.length(); i += 4) &#123;
+        string encoded_char = encoded_message.substr(i, 4);
+        if (decode_map.count(encoded_char) &gt; 0) &#123;
+            decoded_message += decode_map[encoded_char];
+        &#125;
+    &#125;
+    cout &lt;&lt; &quot;Decoded message: &quot; &lt;&lt; decoded_message &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;Liv3d_1n_T41w3n_Goo00oo00d&#125;</code></p>
+</blockquote>
+<hr>
+<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="Welcome"><a href="#Welcome" class="headerlink" title="[Welcome]"></a>[Welcome]</h3><p><img src="https://hackmd.io/_uploads/SkBuAxGrC.png" alt="image"></p>
+<hr>
+<h3 id="Survey"><a href="#Survey" class="headerlink" title="[Survey]"></a>[Survey]</h3><p><code>就是表單</code></p>
+<hr>
+<h3 id="INDEX-與-RULES-的差集"><a href="#INDEX-與-RULES-的差集" class="headerlink" title="[INDEX 與 RULES 的差集]"></a>[INDEX 與 RULES 的差集]</h3><p>到index中發現xorkey<br>但是在經過base64 decode後是<code>FhCTF&#123;H3l1o &lt;-- part 1/2</code><br>在rules中發現</p>
+<pre><code>&lt;!-- crypt value --&gt;
+&lt;!-- 192b741219293d0209041200000000000000000000030000 --&gt;
+</code></pre>
+<p>再去解xor<br>其一解：</p>
+<pre><code class="python">import base64
+base64_something = &quot;RmhDVEZ7SDNsMW8gPC0tIHBhcnQgMS8y&quot;
+crypt_value_hex = &quot;192b741219293d0209041200000000000000000000030000&quot;
+xorkey = base64.b64decode(base64_something)
+crypt_value = bytes.fromhex(crypt_value_hex)
+repeated_xorkey = (xorkey * ((len(crypt_value) // len(xorkey)) + 1))[:len(crypt_value)]
+second_bytes = bytes(a ^ b for a, b in zip(crypt_value, repeated_xorkey))
+second = second_bytes.decode(&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+print(xorkey,second)
+</code></pre>
+<p>其二解：</p>
+<pre><code class="python">import base64
+from pwn import *
+base64_something = &quot;RmhDVEZ7SDNsMW8gPC0tIHBhcnQgMS8y&quot;
+crypt_value_hex = &quot;192b741219293d0209041200000000000000000000030000&quot;
+xorkey = base64.b64decode(base64_something)
+crypt_value = bytes.fromhex(crypt_value_hex)
+print(xor(xorkey, crypt_value))
+</code></pre>
+<p>出來了第二段：<code>b&#39;_C7F_Ru1e5&#125; &lt;-- part 2/2&#39;</code></p>
+<blockquote>
+<p>FLAG:<code>FhCTF&#123;H3l1ob&#39;_C7F_Ru1e5&#125;</code></p>
+</blockquote>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

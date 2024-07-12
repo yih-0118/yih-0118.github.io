@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>一日資訊體驗營writeup | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/lioshi.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>載入過慢請開啟快取 瀏覽器預設開啟</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '淺色模式' : '深色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '淺色模式' : '深色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>一日資訊體驗營writeup</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/6/3
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/writeup/" style="color: #ffa2c4">
+                    writeup
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="welcome-0x1"><a href="#welcome-0x1" class="headerlink" title="welcome 0x1"></a>welcome 0x1</h2><h3 id="今日簡報"><a href="#今日簡報" class="headerlink" title="[今日簡報]"></a>[今日簡報]</h3><p>會發現有給你一個pdf檔案<br>那就是<br><del>其實是講師跑錯分部<br>破大房(ＰＤＦ)</del><br>FLAG：<code>PDF</code></p>
+<h3 id="welcome"><a href="#welcome" class="headerlink" title="[welcome]"></a>[welcome]</h3><h2 id="就是welcomeFLAG-TILEA-h3lLo-w0r1D"><a href="#就是welcomeFLAG-TILEA-h3lLo-w0r1D" class="headerlink" title="就是welcomeFLAG:TILEA{h3lLo_w0r1D}"></a>就是welcome<br><img src="https://hackmd.io/_uploads/S1oGypcEC.png" alt="image"><br>FLAG:<code>TILEA&#123;h3lLo_w0r1D&#125;</code><br><span id="more"></span></h2><h2 id="Linux-0x1"><a href="#Linux-0x1" class="headerlink" title="Linux 0x1"></a>Linux 0x1</h2><h3 id="knock-knock"><a href="#knock-knock" class="headerlink" title="[knock knock]"></a>[knock knock]</h3><p>進去看到目錄下面就可以了<br>Linux指令：<code>ls</code><br><img src="https://hackmd.io/_uploads/BJvhkpcN0.png" alt="image"><br>FLAG:<code>TILEA&#123;l5&#125;</code></p>
+<h3 id="meow-meow"><a href="#meow-meow" class="headerlink" title="[meow meow]"></a>[meow meow]</h3><p>Linux指令中cat就是把檔案的東東文字之類的輸出出來<br>Linux指令：<code>cat flag</code><br><img src="https://hackmd.io/_uploads/SJ2-epcNC.png" alt="image"><br>FLAG:<code>TILEA&#123;w3lc0Me_CtF_w0r1D&#125;</code></p>
+<h3 id="ninja-file"><a href="#ninja-file" class="headerlink" title="[ninja file!]"></a>[ninja file!]</h3><p>題目說有一個隱藏的檔案，一般的<code>ls</code>指令是無法完全顯示出來的<br>要用<code>ls -al</code>所有東東都可以出來<br><img src="https://hackmd.io/_uploads/HJaFeTqER.png" alt="image"><br>FLAG:<code>TILEA&#123;shhhh......&#125;</code></p>
+<h3 id="時空跳躍"><a href="#時空跳躍" class="headerlink" title="[時空跳躍]"></a>[時空跳躍]</h3><pre><code>../../../../../../../../../../../
+
+請問這樣往前跳幾的目錄？
+</code></pre>
+<p>會發現有11個<code>/</code><br>所以<br>FLAG:<code>11</code></p>
+<h3 id="權限遊戲"><a href="#權限遊戲" class="headerlink" title="[權限遊戲]"></a>[權限遊戲]</h3><p>用wget [網址] -O [你想要的檔案名稱]<br>要提升權限的話<br><code>chmod +x [檔案名稱]</code><br><code>./執行檔案的檔案</code><br><img src="https://hackmd.io/_uploads/H1UuWpcE0.png" alt="image"><br>FLAG:<code>TILEA&#123;th1s_1s_6_f169&#125;</code></p>
+<h3 id="考古學家"><a href="#考古學家" class="headerlink" title="[考古學家]"></a>[考古學家]</h3><p>要找到一大篇文章中的幾個特定字<br>可以此用grep指令<br>用法：<code>gerp [關鍵字]</code><br><img src="https://hackmd.io/_uploads/HkOlfac4R.png" alt="image"><br>FLAG:<code>TILEA&#123;g00g1e.c0M3&#125;</code></p>
+<h3 id="h1de-4nD-s33k"><a href="#h1de-4nD-s33k" class="headerlink" title="[h1de_4nD_s33k]"></a>[h1de_4nD_s33k]</h3><p>題目告訴你opt之中有一個檔案叫做secret<br>Linux指令：<code>find /opt secret</code><br>知道路徑後直接cat出來<br><img src="https://hackmd.io/_uploads/SyDqG69VR.png" alt="image"><br>FLAG:<code>TILEA&#123;U...c4Nt!f1nDm3!!!&#125;</code></p>
+<h3 id="永遠不會放棄！"><a href="#永遠不會放棄！" class="headerlink" title="[永遠不會放棄！]"></a>[永遠不會放棄！]</h3><p>nc指令：可以連線至該伺服器之類的<br>在連線之後<br>會有never gonna give you up 的動畫<br>跑完之後就有了<br><img src="https://hackmd.io/_uploads/BJdQXacV0.png" alt="image"><br>FLAG:<code>111tttft11TILEA&#123;n3v3r_g0nn6_g1v3_y0u_up&#125;</code></p>
+<h3 id="SUS-service"><a href="#SUS-service" class="headerlink" title="[SUS service]"></a>[SUS service]</h3><p>用<code>netstat -an</code>去看那個有什麼服務在開<br><img src="https://hackmd.io/_uploads/Sy7Km6940.png" alt="image"><br>會發現有一個:80<br>就代表底下有一個網頁在跑<br>然後就有了<br><img src="https://hackmd.io/_uploads/SyPCmTq4C.png" alt="image"><br>FLAG:<code>TILEA&#123;Am0n9_5uS&#125;</code></p>
+<h3 id="鎖匠"><a href="#鎖匠" class="headerlink" title="[鎖匠]"></a>[鎖匠]</h3><p><img src="https://hackmd.io/_uploads/rkxb4a5VC.png" alt="image"><br>其實我們只要<code>strings</code>一下就出來了<br><img src="https://hackmd.io/_uploads/H1HEN69N0.png" alt="image"><br>FLAG:<code>TILEA&#123;t0d6y_w3ath3r_g00d&#125;</code></p>
+<hr>
+<h2 id="Crypto-0x1"><a href="#Crypto-0x1" class="headerlink" title="Crypto 0x1"></a>Crypto 0x1</h2><h3 id="Binary-to-ASCII"><a href="#Binary-to-ASCII" class="headerlink" title="[Binary to ASCII]"></a>[Binary to ASCII]</h3><p><img src="https://hackmd.io/_uploads/S19vVa94A.png" alt="image"><br>丟到這個網頁就可以轉換了<br><a target="_blank" rel="noopener" href="https://www.rapidtables.com/convert/number/binary-to-ascii.html">https://www.rapidtables.com/convert/number/binary-to-ascii.html</a><br><img src="https://hackmd.io/_uploads/SJ5q46cNR.png" alt="image"><br>FLAG:<code>TILEA&#123;th1s1sb1n6ry&#125;</code></p>
+<h3 id="Hex-to-ASCII"><a href="#Hex-to-ASCII" class="headerlink" title="[Hex to ASCII]"></a>[Hex to ASCII]</h3><p>丟到這個網頁就可以了<br><a target="_blank" rel="noopener" href="https://www.rapidtables.com/convert/number/hex-to-ascii.html">https://www.rapidtables.com/convert/number/hex-to-ascii.html</a><br><img src="https://hackmd.io/_uploads/ryYRV694A.png" alt="image"><br>FLAG:<code>TILEA&#123;hect_or_tex&#125;</code></p>
+<h3 id="Base64"><a href="#Base64" class="headerlink" title="[Base64]"></a>[Base64]</h3><p>&#x3D;&#x3D;Base64是一種格式&#x3D;&#x3D;<br><a target="_blank" rel="noopener" href="https://www.base64decode.org/">用這個網頁解</a><br><img src="https://hackmd.io/_uploads/SJizBT94A.png" alt="image"></p>
+<h3 id="凱薩沙拉"><a href="#凱薩沙拉" class="headerlink" title="[凱薩沙拉]"></a>[凱薩沙拉]</h3><p>這是凱薩密碼<br>&#x3D;&#x3D;這就是加密了&#x3D;&#x3D;<br><a target="_blank" rel="noopener" href="https://www.dcode.fr/caesar-cipher">https://www.dcode.fr/caesar-cipher</a><br><img src="https://hackmd.io/_uploads/r1cPrTqE0.png" alt="image"><br>FLAG:<code>TILAE&#123;caesar_salad_is_good_to_eat&#125;</code></p>
+<hr>
+<h2 id="web-0x1"><a href="#web-0x1" class="headerlink" title="web 0x1"></a>web 0x1</h2><h3 id="機器人點踢叉踢"><a href="#機器人點踢叉踢" class="headerlink" title="[機器人點踢叉踢]"></a>[機器人點踢叉踢]</h3><p>可以去看下面有什麼<br>進到<code>/robots.txt</code><br><img src="https://hackmd.io/_uploads/BJyTBp54R.png" alt="image"><br>就有了<br>FLAG:<code>Disallow: /search/TILEA&#123;r0b0ts_d0t_txt&#125;</code></p>
+<h3 id="Admin-Panel"><a href="#Admin-Panel" class="headerlink" title="[Admin Panel]"></a>[Admin Panel]</h3><p>打開magic看一下<br>正常的sql injection無法<br>目標是把password註釋掉<br><img src="https://hackmd.io/_uploads/H1A7Lp940.png" alt="image"><br>這樣就可以了<br>FLAG:<code>TILEA&#123;OsGa&#39; OR 1=1; -- #&#125;</code></p>
+<h3 id="貓咪商店"><a href="#貓咪商店" class="headerlink" title="[貓咪商店]"></a>[貓咪商店]</h3><p>我們需要購買<code>FLAG</code>但是錢又不夠多<br>而且沒有按鈕<br><img src="https://hackmd.io/_uploads/Sk0OL69EA.png" alt="image"><br>可知evil cat是5431<br>那FLAG就是在5430的地方<br>在購買的時候找到input<br>修改vaule就好<br><img src="https://hackmd.io/_uploads/r1DRLpq4R.png" alt="image"><br>FLAG:<code>TILEA&#123;c4T_m30w_m30W&#125;</code></p>
+<h3 id="DNS-Lookup-Tool-🔍"><a href="#DNS-Lookup-Tool-🔍" class="headerlink" title="[DNS Lookup Tool 🔍]"></a>[DNS Lookup Tool 🔍]</h3><p>我是先去看原始碼發現</p>
+<pre><code class="php!原始碼">&lt;?php
+isset($_GET[&#39;source&#39;]) and die(show_source(__FILE__, true));
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;DNS Lookup Tool | Baby&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;section class=&quot;section&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;column is-6 is-offset-3 has-text-centered&quot;&gt;
+                &lt;div class=&quot;box&quot;&gt;
+                    &lt;h1 class=&quot;title&quot;&gt;DNS Lookup Tool 🔍&lt;/h1&gt;
+                    &lt;form method=&quot;POST&quot;&gt;
+                        &lt;div class=&quot;field&quot;&gt;
+                            &lt;div class=&quot;control&quot;&gt;
+                                &lt;input class=&quot;input&quot; type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;example.com&quot; id=&quot;hostname&quot; value=&quot;&lt;?= $_POST[&#39;name&#39;] ?? &#39;&#39; ?&gt;&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;button class=&quot;button is-block is-info is-fullwidth&quot;&gt;
+                            Lookup!
+                        &lt;/button&gt;
+                    &lt;/form&gt;
+                    &lt;br&gt;
+                    &lt;?php if (isset($_POST[&#39;name&#39;])) : ?&gt;
+                        &lt;section class=&quot;has-text-left&quot;&gt;
+                            &lt;p&gt;Lookup result:&lt;/p&gt;
+                            &lt;pre&gt;&lt;?= shell_exec(&quot;host &#39;&quot; . $_POST[&#39;name&#39;] . &quot;&#39;;&quot;) ?&gt;&lt;/pre&gt;
+                        &lt;/section&gt;
+                    &lt;?php endif; ?&gt;
+                    &lt;hr&gt;
+                    &lt;a id=&quot;magic&quot;&gt;Magic&lt;/a&gt; | &lt;a href=&quot;/?source&quot;&gt;Source Code&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;article class=&quot;message is-link is-hidden is-size-4&quot; id=&quot;hint&quot;&gt;
+                    &lt;div class=&quot;message-body is-family-monospace&quot;&gt;
+                        host &#39;&lt;span class=&quot;has-text-danger&quot; id=&quot;command&quot;&gt;&lt;/span&gt;&#39;;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;script&gt;
+        magic.onclick = () =&gt; hint.classList.toggle(&quot;is-hidden&quot;);
+        window.onload = hostname.oninput = () =&gt; command.textContent = hostname.value;
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>可以用$<br>然後導到有FLAG的東東就可以了<br>在用cat輸出出來<br>輸入:<code>&#39;$(cat /flag*)&#39;</code><br><img src="https://hackmd.io/_uploads/SJjDv65E0.png" alt="image"><br>FlAG:<code>TILEA&#123;h4ck3R!c0mm3D!!&#125;</code></p>
+<h3 id="cookie-master"><a href="#cookie-master" class="headerlink" title="[cookie master]"></a>[cookie master]</h3><p>先在Inspect找到帳密<br><img src="https://hackmd.io/_uploads/HJV3DpcNA.png" alt="image"><br>登入後發現我被騙了<br><img src="https://hackmd.io/_uploads/rysTPTc4A.png" alt="image"><br>我們進入到application中把cookie的auth_method改成空值<br><img src="https://hackmd.io/_uploads/SJXZ_p9NC.png" alt="image"><br>然後刷新一下就好了<br>然後就出來了<br><img src="https://hackmd.io/_uploads/B1y7KpqE0.png" alt="image"><br>FLAG:<code>TILEA&#123;c00K1e_M4St3R&#125;</code></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

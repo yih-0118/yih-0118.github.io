@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>化學探究高二 | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/lioshi.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>載入過慢請開啟快取 瀏覽器預設開啟</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '淺色模式' : '深色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '淺色模式' : '深色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>化學探究高二</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/6/10
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="color: #03a9f4">
+                    不知道
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <hr>
+<h1 id="高二化學探究"><a href="#高二化學探究" class="headerlink" title="高二化學探究"></a>高二化學探究</h1><span id="more"></span>
+
+<p>&#x3D;&#x3D;電解硫酸銅析出奈米銅&#x3D;&#x3D;</p>
+<p>210第二組<br>2, 4, 5, 14, 23, 34</p>
+<hr>
+<hr>
+<h2 id="奈米銅顏色"><a href="#奈米銅顏色" class="headerlink" title="奈米銅顏色"></a>奈米銅顏色</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>粒徑（nm）</th>
+<th>純度（%）</th>
+<th>晶型</th>
+<th>顏色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>奈米級</td>
+<td>60</td>
+<td>&gt;99.9</td>
+<td>球形</td>
+<td>黑紅色</td>
+</tr>
+<tr>
+<td>亞微米級</td>
+<td>500</td>
+<td>&gt;99.5</td>
+<td>球形</td>
+<td>紅色</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="我們收集到的"><a href="#我們收集到的" class="headerlink" title="我們收集到的"></a>我們收集到的</h3><table>
+<thead>
+<tr>
+<th>黑紅色</th>
+<th>紅色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://hackmd.io/_uploads/rJSgO8VSA.png" alt="image"></td>
+<td><img src="https://hackmd.io/_uploads/HyyQOIVBA.png" alt="image"></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="電解硫酸銅"><a href="#電解硫酸銅" class="headerlink" title="電解硫酸銅"></a>電解硫酸銅</h2><hr>
+<h3 id="兩側都是放銅片"><a href="#兩側都是放銅片" class="headerlink" title="兩側都是放銅片"></a>兩側都是放銅片</h3><hr>
+<p><strong>正極反應</strong>  $$Cu\longrightarrow Cu^{2+}+2e^{-}$$</p>
+<hr>
+<p><strong>負極反應</strong> $$Cu^{2+}+2e^{-}\longrightarrow Cu^{}$$ </p>
+<hr>
+<p><strong>水溶液解離</strong>  $$CuSO_4\longrightarrow Cu^{2+}+SO_4^{2-}$$$$H_2O\longrightarrow 2H^{+}+O^{2-}$$</p>
+<hr>
+<h4 id="探討電壓對奈米銅的析出重"><a href="#探討電壓對奈米銅的析出重" class="headerlink" title="探討電壓對奈米銅的析出重"></a>探討電壓對奈米銅的析出重</h4><hr>
+<h3 id="控制變因-CuSO-4的濃度"><a href="#控制變因-CuSO-4的濃度" class="headerlink" title="控制變因$$ CuSO_4的濃度 $$"></a>控制變因$$ CuSO_4的濃度 $$</h3><hr>
+<h3 id="操作變因"><a href="#操作變因" class="headerlink" title="操作變因"></a>操作變因</h3><p>電解時的電壓</p>
+<hr>
+<h3 id="應變變因"><a href="#應變變因" class="headerlink" title="應變變因"></a>應變變因</h3><p>在固定時間內奈米銅的析出重量</p>
+<hr>
+<h2 id="設計實驗"><a href="#設計實驗" class="headerlink" title="設計實驗"></a>設計實驗</h2><ol>
+<li>$$準備0.5M \ CuSO_4水溶液 100 \ mL$$</li>
+<li>插入正負電極並通電</li>
+<li>紀時120秒後並擷取數據</li>
+</ol>
+<hr>
+<h2 id="實驗數據"><a href="#實驗數據" class="headerlink" title="實驗數據"></a>實驗數據</h2><hr>
+<h3 id="重量與電壓關係"><a href="#重量與電壓關係" class="headerlink" title="重量與電壓關係"></a>重量與電壓關係</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>5v</th>
+<th>10v</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>前正</td>
+<td>4.35</td>
+<td>4.38</td>
+</tr>
+<tr>
+<td>前負</td>
+<td>4.48</td>
+<td>4.45</td>
+</tr>
+<tr>
+<td>後正</td>
+<td>4.32</td>
+<td>4.31</td>
+</tr>
+<tr>
+<td>後負</td>
+<td>4.51</td>
+<td>4.52</td>
+</tr>
+<tr>
+<td>正極減重</td>
+<td>&#x3D;&#x3D;0.03&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;0.07&#x3D;&#x3D;</td>
+</tr>
+<tr>
+<td>負極增重</td>
+<td>&#x3D;&#x3D;0.03&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;0.07&#x3D;&#x3D;</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="時間與電流紀錄"><a href="#時間與電流紀錄" class="headerlink" title="時間與電流紀錄"></a>時間與電流紀錄</h3><table>
+<thead>
+<tr>
+<th>sec</th>
+<th>5v</th>
+<th>10v</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>30</td>
+<td>0.5</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>60</td>
+<td>0.51</td>
+<td>0.87</td>
+</tr>
+<tr>
+<td>90</td>
+<td>0.53</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>120</td>
+<td>0.54</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>150</td>
+<td>0.55</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>180</td>
+<td>0.57</td>
+<td>0.97</td>
+</tr>
+</tbody></table>
+<ul>
+<li>單位(A)</li>
+</ul>
+<hr>
+<h3 id="時間與pH紀錄"><a href="#時間與pH紀錄" class="headerlink" title="時間與pH紀錄"></a>時間與pH紀錄</h3><table>
+<thead>
+<tr>
+<th>sec</th>
+<th>5v</th>
+<th>10v</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>3.08</td>
+<td>5.37</td>
+</tr>
+<tr>
+<td>30</td>
+<td>2.99</td>
+<td>4.97</td>
+</tr>
+<tr>
+<td>60</td>
+<td>2.89</td>
+<td>4.45</td>
+</tr>
+<tr>
+<td>90</td>
+<td>2.79</td>
+<td>4.16</td>
+</tr>
+<tr>
+<td>120</td>
+<td>2.70</td>
+<td>3.79</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="公式證明"><a href="#公式證明" class="headerlink" title="公式證明"></a>公式證明</h4><hr>
+<h3 id="用法拉第電解定律"><a href="#用法拉第電解定律" class="headerlink" title="用法拉第電解定律"></a>用法拉第電解定律</h3><hr>
+<h4 id="第一電解定律"><a href="#第一電解定律" class="headerlink" title="第一電解定律"></a>第一電解定律</h4><p>第一電解定律說明了產生或消耗的物質的質量與通過溶液的電荷量之間的關係</p>
+<hr>
+<p>$$Z &#x3D; \frac{M}{Q}$$</p>
+<p>其中：<br>M  是產生或消耗的物質的質量<br>Z  是電解當量<br>Q  是通過溶液的電荷量</p>
+<hr>
+<p><img src="https://hackmd.io/_uploads/ryuIOVHSC.png" alt="image"></p>
+<hr>
+<p><img src="https://hackmd.io/_uploads/SkRDd4BrA.png" alt="image"></p>
+<hr>
+<h3 id="計算與論證"><a href="#計算與論證" class="headerlink" title="計算與論證"></a>計算與論證</h3><hr>
+<h4 id="實驗數據-1"><a href="#實驗數據-1" class="headerlink" title="實驗數據"></a>實驗數據</h4><table>
+<thead>
+<tr>
+<th>電壓</th>
+<th>前正極 (g)</th>
+<th>前負極 (g)</th>
+<th>後正極 (g)</th>
+<th>後負極 (g)</th>
+<th>正極減重 (g)</th>
+<th>負極增重 (g)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5V</td>
+<td>4.35</td>
+<td>4.48</td>
+<td>4.32</td>
+<td>4.51</td>
+<td>0.03</td>
+<td>0.03</td>
+</tr>
+<tr>
+<td>10V</td>
+<td>4.38</td>
+<td>4.45</td>
+<td>4.31</td>
+<td>4.52</td>
+<td>0.07</td>
+<td>0.07</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="計算過程"><a href="#計算過程" class="headerlink" title="計算過程"></a>計算過程</h4><hr>
+<p><strong>計算電荷量 Q</strong></p>
+<p>$$Q &#x3D; I \cdot t$$</p>
+<hr>
+<h3 id="5V-條件下的計算"><a href="#5V-條件下的計算" class="headerlink" title="5V 條件下的計算"></a>5V 條件下的計算</h3><p><strong>電流隨時間變化</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>sec</th>
+<th>5v</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>30</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>60</td>
+<td>0.51</td>
+</tr>
+<tr>
+<td>90</td>
+<td>0.53</td>
+</tr>
+<tr>
+<td>120</td>
+<td>0.54</td>
+</tr>
+<tr>
+<td>150</td>
+<td>0.55</td>
+</tr>
+<tr>
+<td>180</td>
+<td>0.57</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>計算每個時間段的電荷</strong>：<br>$$		<br>30s:  Q_{30} &#x3D; 0.5\times 30 &#x3D; 15<br>$$$$60s:  Q_{60} &#x3D; 0.51 \times 30 &#x3D; 15.3 $$$$90s:  Q_{90} &#x3D; 0.53 \times 30 &#x3D; 15.9 $$$$120s:  Q_{120} &#x3D; 0.54 \times 30 &#x3D; 16.2 $$$$150s:  Q_{150} &#x3D; 0.55 \times 30 &#x3D; 16.5 $$$$180s:  Q_{180} &#x3D; 0.57 \times 30 &#x3D; 17.1 $$</p>
+<hr>
+<p><strong>總電荷</strong>：</p>
+<p>$$ Q_{total} &#x3D;  96\text{ C} $$</p>
+<hr>
+<p><strong>計算析出銅的質量</strong>：</p>
+<p>$$ m &#x3D; \frac{Q \cdot M}{n \cdot F} &#x3D; \frac{96 \times 63.5}{2 \times 96500} \approx 0.0315 \text{ g} $$</p>
+<hr>
+<h3 id="10V-條件下的計算"><a href="#10V-條件下的計算" class="headerlink" title="10V 條件下的計算"></a>10V 條件下的計算</h3><p><strong>電流隨時間變化</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>sec</th>
+<th>10v</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>30</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>60</td>
+<td>0.867</td>
+</tr>
+<tr>
+<td>90</td>
+<td>0.901</td>
+</tr>
+<tr>
+<td>120</td>
+<td>0.918</td>
+</tr>
+<tr>
+<td>150</td>
+<td>0.935</td>
+</tr>
+<tr>
+<td>180</td>
+<td>0.969</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>計算每個時間段的電荷</strong>：</p>
+<p>$$30s:  Q_{30} &#x3D; 0.85 \times 30 &#x3D; 25.5$$$$60s:  Q_{60} &#x3D; 0.87 \times 30 &#x3D; 26.01$$$$90s:  Q_{90} &#x3D; 0.90 \times 30 &#x3D; 27.03$$$$120s:  Q_{120} &#x3D; 0.92 \times 30 &#x3D; 27.54$$$$150s:  Q_{150} &#x3D; 0.94 \times 30 &#x3D; 28.05$$$$180s:  Q_{180} &#x3D; 0.97 \times 30 &#x3D; 29.07$$  </p>
+<hr>
+<p><strong>總電荷</strong>：</p>
+<p>$$ Q_{total} &#x3D; 163.2<br> \text{ C}$$</p>
+<hr>
+<p><strong>計算析出銅的質量</strong>：</p>
+<p>$$ m &#x3D; \frac{Q \cdot M}{n \cdot F} &#x3D; \frac{163.2 \times 63.5}{2 \times 96500} \approx 0.0537 \text{ g} $$</p>
+<hr>
+<p><strong>對比實驗記錄</strong></p>
+<table>
+<thead>
+<tr>
+<th>電壓</th>
+<th>計算值</th>
+<th>實際值</th>
+<th>相對誤差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5V</td>
+<td>0.0315</td>
+<td>&#x3D;&#x3D;0.03&#x3D;&#x3D;</td>
+<td>$$\approx 5.3%$$</td>
+</tr>
+<tr>
+<td>10V</td>
+<td>0.0537</td>
+<td>&#x3D;&#x3D;0.07&#x3D;&#x3D;</td>
+<td>$$\approx 23.2%$$</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><hr>
+<p>在數據中確實提高電壓後會隊產量有相關性<br>但在計算之後<br>考量到電解後會有水分殘留造成誤差</p>
+<hr>
+<h3 id="實驗照片"><a href="#實驗照片" class="headerlink" title="實驗照片"></a>實驗照片</h3><p><img src="https://hackmd.io/_uploads/HkWYWnVr0.png" alt="image"></p>
+<hr>
+<p><img src="https://hackmd.io/_uploads/S1hFZhNSA.png" alt="image"></p>
+<hr>
+<p><img src="https://hackmd.io/_uploads/S1Tq-hNrR.png" alt="image"></p>
+<hr>
+<h2 id="分工表"><a href="#分工表" class="headerlink" title="分工表"></a>分工表</h2><table>
+<thead>
+<tr>
+<th>座號</th>
+<th>2</th>
+<th>4</th>
+<th>5</th>
+<th>14</th>
+<th>23</th>
+<th>34</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>事項</td>
+<td>實驗</td>
+<td>記錄，操縱，設計實驗，簡報製作</td>
+<td>實驗</td>
+<td>拍照，實驗</td>
+<td>實驗</td>
+<td>紀錄</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="The-End"><a href="#The-End" class="headerlink" title="The End"></a>The End</h2>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

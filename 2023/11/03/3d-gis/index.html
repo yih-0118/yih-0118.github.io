@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>tags | 此情吳計可消除</title>
+    <title>How to export a 3D population density map using QGIS and Aerialo | 此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -168,45 +172,63 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                測試
-            </a>
+            <div class="article">
+    <div>
+        <h1>How to export a 3D population density map using QGIS and Aerialo</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/3
         </span>
         
-        
-        
-        <span>
-            <a href="/tags/writeup/" style="background: #00a596">
+        <span class="category">
+            <a href="/categories/GIS/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                writeup
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                不知道
+                GIS
             </a>
         </span>
         
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>🤏</p>
+<span id="more"></span>
+
+<h2 id="How-to-export-a-3D-population-density-map-using-QGIS-and-Aerialod"><a href="#How-to-export-a-3D-population-density-map-using-QGIS-and-Aerialod" class="headerlink" title="How to export a 3D population density map using QGIS and Aerialod"></a>How to export a 3D population density map using QGIS and Aerialod</h2><ol>
+<li>Start by visiting <a target="_blank" rel="noopener" href="https://hub.worldpop.org/geodata/listing?id=76">https://hub.worldpop.org/geodata/listing?id=76</a> and download the target country’s TIFF file.<br><img src="https://hackmd.io/_uploads/rkdpIzM7T.png" alt="image.png"></li>
+</ol>
+<ul>
+<li><code>Let&#39;s use Taiwan as an example.</code></li>
+</ul>
+<ol start="2">
+<li><p>Import one of the downloaded TIFF files into QGIS.<br><img src="https://hackmd.io/_uploads/Bkc_DfMXa.jpg" alt="圖片 1.jpg"></p>
+</li>
+<li><p>Export from QGIS:<br><img src="https://hackmd.io/_uploads/HyqlOGf7T.jpg" alt="2.jpg"><br><img src="https://hackmd.io/_uploads/By1ZOzGQa.jpg" alt="3.jpg"></p>
+</li>
+</ol>
+<p>:::warning<br>Set the Output mode to “Rendered Image.”<br>:::</p>
+<ol start="4">
+<li><p>After exporting, move the resulting file into Aerialod.<br><img src="https://hackmd.io/_uploads/SyHU_fzQT.jpg" alt="4.jpg"></p>
+</li>
+<li><p>Configure the settings in Aerialod as needed.<br><img src="https://hackmd.io/_uploads/BJo__Gf76.jpg" alt="5.jpg"></p>
+</li>
+<li><p>Achieve the desired results.</p>
+<img src="https://onedrive.live.com/embed?resid=1B1509F6502EDD6F%2121343&authkey=%21AKq90pD4aKipI1U&width=660" width="660" height="auto" /></li>
+</ol>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -238,6 +260,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

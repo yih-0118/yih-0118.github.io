@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>tags | 此情吳計可消除</title>
+    <title>人生第一篇 writeup | 此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -168,45 +172,83 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>人生第一篇 writeup</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/17
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/AIS3/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                測試
+                AIS3
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/writeup/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                writeup
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/writeup/" style="color: #00a596">
+                    writeup
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                不知道
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <ul>
+<li>2023 AIS3 JUNIOR Homework<span id="more"></span></li>
+</ul>
+<h2 id="一、-作業內容與目標-打一號靶機，取得-Flag。"><a href="#一、-作業內容與目標-打一號靶機，取得-Flag。" class="headerlink" title="一、 作業內容與目標 打一號靶機，取得 Flag。"></a>一、 作業內容與目標 打一號靶機，取得 Flag。</h2><h2 id="二、步驟"><a href="#二、步驟" class="headerlink" title="二、步驟"></a>二、步驟</h2><ol>
+<li><p>先確認是否有連上網。<br><code>ping 10.17.1.9</code><br><img src="https://hackmd.io/_uploads/r19bnRCwC.png" alt="image"></p>
+</li>
+<li><p>drib 該網站發現 backend 可以登入的地⽅。<br><code>dirb http://10.17.1.9:80</code></p>
+</li>
+<li><p>到 GitHack 資料夾，後用 GitHack 把網站抓下來。<br><code>cd GitHack </code><br><code>python GitHack.py http://10.17.1.9/backend/.git/</code><br><img src="https://hackmd.io/_uploads/SJ1OhRADR.png" alt="image"><br><img src="https://hackmd.io/_uploads/B1HthA0wC.png" alt="image"></p>
+</li>
+<li><p>cat index.php 後，發現 password，由於下面程式套用 if($username&#x3D;&#x3D;’admin’~~~)，故得知 admin 為 username。<br><img src="https://hackmd.io/_uploads/HkV3nC0PR.png" alt="image"></p>
+</li>
+<li><p>將上圖反白處的亂碼製成 md5 檔，方可進行後續的爆破。<br><code>cd echo &#39;eb0a191797624dd3a48fa681d3061212&#39; &gt; admin.md5</code><br><img src="https://hackmd.io/_uploads/S1qypCAwC.png" alt="image"></p>
+</li>
+<li><p>為後續爆破便利，欲將 wordlist 字典中的 rockyou.txt 檔案複製至上圖語 admin.md5 檔案同一資料夾內。<br><img src="https://hackmd.io/_uploads/BJv-TRADC.png" alt="image"></p>
+</li>
+<li><p>由於爆破未果，而用線上工具解決 password 亂碼。最終得出密碼是 master。<br><img src="https://hackmd.io/_uploads/r13GaARwR.png" alt="image"><br><img src="https://hackmd.io/_uploads/SyrmaA0DC.png" alt="image"></p>
+</li>
+<li><p>登入成功後，將上方網址中的 hosts 更為 passwd,於下方反白處，發現 red 使用者名稱登入現象與眾不同。<br><img src="https://hackmd.io/_uploads/HyANaC0vA.png" alt="image"></p>
+</li>
+</ol>
+<hr>
+<p><img src="https://hackmd.io/_uploads/ryjrTACPA.png" alt="image"><br>9. 將 red 使用者名稱進行爆破1，密碼在下方綠字處，為 victor。<br><code>hydra -l red -P rockyou.txt -t 64 -I ssh://10.17.1.9</code><br><img src="https://hackmd.io/_uploads/rJUspRCD0.png" alt="image"><br>10. 欲使用 red 進行登入，輸入密碼後，如圖所示。<br><code>ssh red@10.17.1.9</code><br><img src="https://hackmd.io/_uploads/HyVaTR0DC.png" alt="image"><br>11. 確認 red 的權限，為ALL<br><code>sudo -i</code></p>
+<ol start="12">
+<li><p>ls 後發現 local.txt，cat local.txt 之後，發現 flag 為 AIS3_Junior{YouAreBruteForcer:D:D:D:D:D}<br><img src="https://hackmd.io/_uploads/r1U-RCRvC.png" alt="image"></p>
+</li>
+<li><p>終了，然，非也。仍有 flag 尚未尋獲，變身為管理員身份後，發現還有一個 flag 為: AIS3_Junior{First_PenTestXDDDDDDD}<br><img src="https://hackmd.io/_uploads/SJSmRC0wA.png" alt="image"></p>
+</li>
+</ol>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -238,6 +280,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
