@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>此情吳計可消除</title>
+    <title>categories | 此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -46,8 +46,6 @@
 
 
 
-
-<script src="/js/lib/home.js"></script>
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -170,42 +168,14 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>此情吳計可消除</h1>
-                <h3>Android app/ Web3/ CTF</h3>
-                <h5></h5>
-            </div>
-        </span>
-    </div>
-</div>
-<div
-    id="home-posts-wrap"
-    ref="homePostsWrap"
-    true
->
-    <div id="home-posts">
+            <div id="archives">
+    
+    <div class="categories-tags">
         
-
-<div class="post">
-    <a href="/2023/06/24/%E9%9E%8B%E6%8B%8B%E7%B6%B2%E9%A0%81%E8%A3%BD%E4%BD%9C/">
-        <h2 class="post-title">鞋拋網頁製作</h2>
-    </a>
-    <div class="category-and-date">
         
-        <span class="category">
-            <a href="/categories/web%E5%89%8D%E7%AB%AF/">
+        
+        <span>
+            <a href="/categories/web%E5%89%8D%E7%AB%AF/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -213,123 +183,7 @@
             </a>
         </span>
         
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/6/24
-        </span>
         
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><a target="_blank" rel="noopener" href="https://github.com/yih-0118/physic.github.io">Github連結</a></p>
-<ul>
-<li>斜拋實驗模擬<ul>
-<li><a href="https://yih-0118.github.io/physic.github.io/Projectile%20Motion%20Simulation%20pr1/">part1</a></li>
-<li><a href="https://yih-0118.github.io/physic.github.io/Projectile%20Motion%20Simulation%20pr2/">part2</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="Part-1-不考慮空氣阻力"><a href="#Part-1-不考慮空氣阻力" class="headerlink" title="Part 1. 不考慮空氣阻力"></a>Part 1. 不考慮空氣阻力</h1><h2 id="初始物理量"><a href="#初始物理量" class="headerlink" title="初始物理量"></a>初始物理量</h2><ul>
-<li>重力加速度$(g)$ </li>
-<li>初速度 ($v_0$)</li>
-<li>投擲角度 ($\theta$)</li>
-<li>起始位置 ($x_0$, $y_0$)
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/06/24/%E9%9E%8B%E6%8B%8B%E7%B6%B2%E9%A0%81%E8%A3%BD%E4%BD%9C/" class="go-post">展開</a>
-</div>
-
-<div class="post">
-    <a href="/2023/05/12/%E6%B8%AC%E8%A9%A6/">
-        <h2 class="post-title">測試</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/12
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>這只是一個測試哈哈</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="color: #03a9f4">測試</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/12/%E6%B8%AC%E8%A9%A6/" class="go-post">展開</a>
-</div>
-
-
-        <div class="page-current">
-    
-    <span class="current">1</span>
-    
-    
-    
-    
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">yih-0118</div>
-        <div class="description">
-            <p>我什麼都不會</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://mlsh-vocabulary.web.app/">明倫單字卡</a>
-            </div>
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.MLCP.MLCP_31st&pcampaignid=web_share">MLCP APP</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
     </div>
     
 </div>

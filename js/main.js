@@ -8,6 +8,7 @@ const app = Vue.createApp({
             menuColor: false,
             scrollTop: 0,
             renderers: [],
+            darkMode: false, // 新增：用於跟踪深色模式狀態
         };
     },
     created() {
@@ -18,6 +19,7 @@ const app = Vue.createApp({
     mounted() {
         window.addEventListener("scroll", this.handleScroll, true);
         this.render();
+        this.initDarkMode(); // 新增：初始化深色模式
     },
     methods: {
         render() {
@@ -38,6 +40,45 @@ const app = Vue.createApp({
             }
             this.scrollTop = newScrollTop;
         },
+        // 新增：切換深色模式的方法
+        toggleDarkMode() {
+            this.darkMode = !this.darkMode;
+            document.body.classList.toggle('dark-mode', this.darkMode);
+            localStorage.setItem('darkMode', this.darkMode ? 'enabled' : 'disabled');
+        },
+        // 新增：初始化深色模式的方法
+        initDarkMode() {
+            const savedMode = localStorage.getItem('darkMode');
+            if (savedMode === 'enabled') {
+                this.darkMode = true;
+                document.body.classList.add('dark-mode');
+            }
+        },
     },
 });
+
+
+// 深色模式切換
+document.addEventListener('DOMContentLoaded', (event) => {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    
+    // 檢查本地存儲中的深色模式設置
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+    }
+  
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      // 更新本地存儲中的設置
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        localStorage.setItem('darkMode', null);
+      }
+    });
+  });
+
+  
 app.mount("#layout");

@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>鞋拋網頁製作 | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/lioshi.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>載入過慢請開啟快取 瀏覽器預設開啟</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '淺色模式' : '深色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '淺色模式' : '深色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>鞋拋網頁製作</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/6/24
+        </span>
+        
+        <span class="category">
+            <a href="/categories/web%E5%89%8D%E7%AB%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                web前端
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p><a target="_blank" rel="noopener" href="https://github.com/yih-0118/physic.github.io">Github連結</a></p>
+<ul>
+<li>斜拋實驗模擬<ul>
+<li><a href="https://yih-0118.github.io/physic.github.io/Projectile%20Motion%20Simulation%20pr1/">part1</a></li>
+<li><a href="https://yih-0118.github.io/physic.github.io/Projectile%20Motion%20Simulation%20pr2/">part2</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="Part-1-不考慮空氣阻力"><a href="#Part-1-不考慮空氣阻力" class="headerlink" title="Part 1. 不考慮空氣阻力"></a>Part 1. 不考慮空氣阻力</h1><h2 id="初始物理量"><a href="#初始物理量" class="headerlink" title="初始物理量"></a>初始物理量</h2><ul>
+<li>重力加速度$(g)$ </li>
+<li>初速度 ($v_0$)</li>
+<li>投擲角度 ($\theta$)</li>
+<li>起始位置 ($x_0$, $y_0$)<span id="more"></span></li>
+</ul>
+<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><ol>
+<li>水平方向速度： $v_x$$_0$$&#x3D;v_0$ $\cos\theta$</li>
+<li>垂直方向速度： $v_y$$_0$$&#x3D;v_0$ $\sin\theta$</li>
+<li>飛行時間： $\frac{2  vy_0}{g}$ $&#x3D;$ $\frac{2  v_0\sin\theta}{g}$ </li>
+<li>水平位置隨時間的變化：$\ x$$&#x3D;$$x_0+v_x$$_0$$\times$$t$</li>
+<li>鉛直位置隨時間的變化：</li>
+</ol>
+<ul>
+<li>當投擲角度介於0~90度時：$\ y$$&#x3D;$$y_0$ $+v_y$$_0 \times t$$-$ $\cfrac{1}{2}$$gt^2$</li>
+<li>當投擲角度介於0~-90度時：$\ y$$&#x3D;$$y_0$ $+v_y$$_0 \times t$$+$ $\cfrac{1}{2}$$gt^2$</li>
+</ul>
+<h2 id="HTML-Javascript-雛形"><a href="#HTML-Javascript-雛形" class="headerlink" title="HTML &amp; Javascript 雛形"></a>HTML &amp; Javascript 雛形</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><h4 id="輸入值："><a href="#輸入值：" class="headerlink" title="輸入值："></a><strong>輸入值：</strong></h4><ul>
+<li>重力加速度$(g)$</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+        &lt;label for=&quot;Gravity&quot;&gt;Gravity :&lt;/label&gt;
+        &lt;input type=&quot;number&quot; id=&quot;Gravity&quot; step=&quot;9.8&quot; min=&quot;0&quot;&gt;
+      &lt;/div&gt;
+&lt;div&gt;
+</code></pre>
+<ul>
+<li>初速度 ($v_0$)</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+      &lt;label for=&quot;initial-velocity&quot;&gt;Initial Velocity:   &lt;select id=&quot;velocity-unit&quot;&gt;
+        &lt;option value=&quot;m/s&quot;&gt; m/s&lt;/option&gt;
+        &lt;option value=&quot;km/h&quot;&gt; km/h&lt;/option&gt;
+        &lt;option value=&quot;mph&quot;&gt; mph&lt;/option&gt;&lt;/label&gt;//便於切換單位
+      &lt;input type=&quot;number&quot; id=&quot;initial-velocity&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>投擲角度 ($\theta$)</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+      &lt;label for=&quot;launch-angle&quot;&gt;Launch Angle (deg):&lt;/label&gt;
+      &lt;input type=&quot;number&quot; id=&quot;launch-angle&quot; step=&quot;1&quot; min=&quot;0&quot; max=&quot;360&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>起始位置 ($x_0$, $y_0$)</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+      &lt;label for=&quot;initial-position&quot;&gt;Initial Position (x0):&lt;/label&gt;
+      &lt;input type=&quot;number&quot; id=&quot;initial-position&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+      &lt;label for=&quot;initial-height&quot;&gt;Initial Height (y0):&lt;/label&gt;
+      &lt;input type=&quot;number&quot; id=&quot;initial-height&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="目前效果："><a href="#目前效果：" class="headerlink" title="目前效果："></a>目前效果：</h4><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://hackmd.io/_uploads/HJwYueVfT.png"></h2><h3 id="Javacript"><a href="#Javacript" class="headerlink" title="Javacript"></a>Javacript</h3><ul>
+<li>尋找元素值 (getElementById)，與背景計算設定</li>
+</ul>
+<pre><code class="javascript">document.getElementById(&#39;plot-button&#39;).addEventListener(&#39;click&#39;, function() &#123;
+      var v0 = parseFloat(document.getElementById(&#39;initial-velocity&#39;).value);
+      const gravity = parseFloat(document.getElementById(&#39;Gravity&#39;).value);//因為重力所以用const
+      var pi = 3.14159265359;//問就是js內建是用rad
+...等等等等～
+</code></pre>
+<ul>
+<li>deg轉rad</li>
+</ul>
+<pre><code class="javascript">var ?? = ?? * Math.cos(theta * pi / 180.0);~~~
+...等等等等～
+</code></pre>
+<ul>
+<li>帶入物理公式～～～</li>
+<li>推入每個時間點～～～</li>
+</ul>
+<h2 id="plotly-js"><a href="#plotly-js" class="headerlink" title="plotly.js"></a>plotly.js</h2><ul>
+<li>我覺得很像 python的matplotlib as plt？？</li>
+<li>推入資料</li>
+</ul>
+<pre><code class="javascript">var x_data = [];
+var y_data = [];
+x_data.push(x);
+y_data.push(y);
+    //帶入導完後的物理公式。要push對東西
+    //其實中間省略一大堆ㄡ
+</code></pre>
+<h4 id="目前效果：-1"><a href="#目前效果：-1" class="headerlink" title="目前效果："></a>目前效果：</h4><p><img src="https://hackmd.io/_uploads/BJNTEbNGT.png"></p>
+<h2 id="CSS美化後"><a href="#CSS美化後" class="headerlink" title="CSS美化後"></a>CSS美化後</h2><p><img src="https://hackmd.io/_uploads/HJbNIWNG6.png"></p>
+<h2 id="Poltly-js-vs-Python-Matplotlib"><a href="#Poltly-js-vs-Python-Matplotlib" class="headerlink" title="Poltly.js vs Python Matplotlib"></a>Poltly.js vs Python Matplotlib</h2><p>參數值：</p>
+<ul>
+<li>initial_velocity &#x3D; 50</li>
+<li>velocity_unit &#x3D; ‘m&#x2F;s’</li>
+<li>launch_angle &#x3D; 39</li>
+<li>gravity &#x3D; 9.8</li>
+<li>initial_position &#x3D; 20</li>
+<li>initial_height &#x3D; 10</li>
+</ul>
+<p><strong>1. Plotly.js</strong><br><img src="https://hackmd.io/_uploads/rJvzObNf6.png"><br><strong>2. Python Matplotlib</strong><br><img src="https://hackmd.io/_uploads/BJq7uZ4fT.png"></p>
+<h1 id="Part-2-考慮空氣阻力，但不探究物體旋轉"><a href="#Part-2-考慮空氣阻力，但不探究物體旋轉" class="headerlink" title="Part 2. 考慮空氣阻力，但不探究物體旋轉"></a>Part 2. 考慮空氣阻力，但不探究物體旋轉</h1><h2 id="初始物理量-1"><a href="#初始物理量-1" class="headerlink" title="初始物理量"></a>初始物理量</h2><ul>
+<li>重力加速度$(g)$</li>
+<li>初速度 ($v_0$)</li>
+<li>投擲角度 ($\theta$)</li>
+<li>起始位置 ($x_0$, $y_0$)</li>
+<li>質量 $(kg)$</li>
+<li>受阻面積 $(m^2)$</li>
+<li>空氣密度 $(\frac{kg}{m^3})$</li>
+<li>阻力係數 $(C_d,C_x)$</li>
+</ul>
+<h2 id="公式-1"><a href="#公式-1" class="headerlink" title="公式"></a>公式</h2><ol>
+<li>水平方向速度： $v_x$$_0$$&#x3D;v_0$ $\cos\theta$</li>
+<li>垂直方向速度： $v_y$$_0$$&#x3D;v_0$ $\sin\theta$</li>
+<li>飛行時間： $\frac{2  vy_0}{g}$ $&#x3D;$ $\frac{2  v_0\sin\theta}{g}$ $,$ $\frac{2 \cdot vy_0 + \sqrt{4 \cdot vy_0^2 + 8 \cdot g \cdot y_0}}{2 \cdot g}$ </li>
+<li>水平位置隨時間的變化：$\Delta x$$&#x3D;$$x_0+v_x$$_0$$\times$$t$</li>
+<li>鉛直位置隨時間的變化：</li>
+</ol>
+<ul>
+<li>當投擲角度介於0~90度時：$\Delta y$$&#x3D;$$y_0$ $+v_y$$_0 \times t$$-$ $\cfrac{1}{2}$$gt^2$</li>
+<li>當投擲角度介於0~-90度時：$\Delta y$$&#x3D;$$y_0$ $+v_y$$_0 \times t$$+$ $\cfrac{1}{2}$$gt^2$</li>
+</ul>
+<ol start="6">
+<li>阻力公式：$F_D&#x3D;$$\frac{1}{2}$$pv^2C_dA$</li>
+</ol>
+<ul>
+<li>$p:$ 空氣密度($\frac{kg}{m^3}$)</li>
+<li>$A:$ 接觸面積($m^2$)</li>
+<li>$C_d:$ 阻力係數</li>
+</ul>
+<ol start="7">
+<li>水平方向阻力：$Fx &#x3D; \frac{F_D  v_x0}{\sqrt{vx0^2 + vy0^2}}$</li>
+<li>垂直方向阻力：$Fy &#x3D; \frac{F_D  v_y0}{\sqrt{vx0^2 + vy0^2}}$</li>
+<li>水平方向阻力加速度：$a_x&#x3D;$$\frac{F_x}{m}$$&#x3D;$$\frac{\frac{F_D  v_x0}{\sqrt{vx0^2 + vy0^2}}}{m}$</li>
+<li>垂直方向阻力加速度：$a_y&#x3D;$$\frac{F_y}{m}-g$ $&#x3D;$$\frac{\frac{F_D  v_y0}{\sqrt{vx0^2 + vy0^2}}}{m}-g$</li>
+</ol>
+<h2 id="HTML-Javascript-雛形-1"><a href="#HTML-Javascript-雛形-1" class="headerlink" title="HTML &amp; Javascript 雛形"></a>HTML &amp; Javascript 雛形</h2><h3 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h3><h4 id="輸入值：-1"><a href="#輸入值：-1" class="headerlink" title="輸入值："></a><strong>輸入值：</strong></h4><ul>
+<li>重力加速度$(g)$</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+        &lt;label for=&quot;Gravity&quot;&gt;Gravity :&lt;/label&gt;
+        &lt;input type=&quot;number&quot; id=&quot;Gravity&quot; step=&quot;9.8&quot; min=&quot;0&quot;&gt;
+      &lt;/div&gt;
+&lt;div&gt;
+</code></pre>
+<ul>
+<li>初速度 ($v_0$)</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+      &lt;label for=&quot;initial-velocity&quot;&gt;Initial Velocity:   &lt;select id=&quot;velocity-unit&quot;&gt;
+        &lt;option value=&quot;m/s&quot;&gt; m/s&lt;/option&gt;
+        &lt;option value=&quot;km/h&quot;&gt; km/h&lt;/option&gt;
+        &lt;option value=&quot;mph&quot;&gt; mph&lt;/option&gt;&lt;/label&gt;//便於切換單位
+      &lt;input type=&quot;number&quot; id=&quot;initial-velocity&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>投擲角度 ($\theta$)</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+      &lt;label for=&quot;launch-angle&quot;&gt;Launch Angle (deg):&lt;/label&gt;
+      &lt;input type=&quot;number&quot; id=&quot;launch-angle&quot; step=&quot;1&quot; min=&quot;0&quot; max=&quot;360&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>起始位置 ($x_0$, $y_0$)</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+      &lt;label for=&quot;initial-position&quot;&gt;Initial Position (x0):&lt;/label&gt;
+      &lt;input type=&quot;number&quot; id=&quot;initial-position&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+      &lt;label for=&quot;initial-height&quot;&gt;Initial Height (y0):&lt;/label&gt;
+      &lt;input type=&quot;number&quot; id=&quot;initial-height&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>質量 $(kg)$</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+  &lt;label for=&quot;mass&quot;&gt;Object Mass (kg):&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;mass&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>受阻面積 $(m^2)$</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+  &lt;label for=&quot;cross-sectional-area&quot;&gt;Contact area (m^2):&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;cross-sectional-area&quot; step=&quot;0.01&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>空氣密度 $(\frac{kg}{m^3})$</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+  &lt;label for=&quot;air-density&quot;&gt;Air Density (kg/m^3):&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;air-density&quot; step=&quot;0.001&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>阻力係數 $(C_d,C_x)$</li>
+</ul>
+<pre><code class="xml">&lt;div&gt;
+  &lt;label for=&quot;drag-coefficient&quot;&gt;Drag Coefficient (Cd):&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;drag-coefficient&quot; step=&quot;0.01&quot; min=&quot;0&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="目前效果：-2"><a href="#目前效果：-2" class="headerlink" title="目前效果："></a>目前效果：</h4><p><img src="https://hackmd.io/_uploads/SJxpQoNMa.png"></p>
+<h3 id="Javacript-1"><a href="#Javacript-1" class="headerlink" title="Javacript"></a>Javacript</h3><ul>
+<li>尋找元素值 (getElementById)，與背景計算設定</li>
+</ul>
+<pre><code class="javascript">document.getElementById(&#39;plot-button&#39;).addEventListener(&#39;click&#39;, function() &#123;
+      var v0 = parseFloat(document.getElementById(&#39;initial-velocity&#39;).value);
+      const gravity = parseFloat(document.getElementById(&#39;Gravity&#39;).value);//因為重力所以用const
+      var pi = 3.14159265359;//問就是js內建是用rad
+...等等等等～
+</code></pre>
+<ul>
+<li>deg轉rad</li>
+</ul>
+<pre><code class="javascript">var ?? = ?? * Math.cos(theta * pi / 180.0);~~~
+...等等等等～
+</code></pre>
+<ul>
+<li>帶入更多物理公式～～～</li>
+<li>推入每個時間點～～～</li>
+</ul>
+<p><code>其他都跟上面的一樣</code>~~~~</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
