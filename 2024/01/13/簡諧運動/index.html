@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>How to export a 3D population density map using QGIS and Aerialo | 此情吳計可消除</title>
+    <title>簡諧運動 | 此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="我很弱" />
     <meta name="keywords" content="" />
@@ -174,53 +174,122 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>How to export a 3D population density map using QGIS and Aerialo</h1>
+        <h1>簡諧運動</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/3
+            2024/1/13
         </span>
         
-        <span class="category">
-            <a href="/categories/GIS/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                GIS
-            </a>
-        </span>
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="color: #00a596">
+                    不知道
+                </a>
+            </span>
+            
+        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p>🤏</p>
+        <h1 id="撿鞋運動"><a href="#撿鞋運動" class="headerlink" title="撿鞋運動"></a>撿鞋運動</h1><p><img src="https://hackmd.io/_uploads/rkKsWklYa.png" alt="image"></p>
 <span id="more"></span>
-
-<h2 id="How-to-export-a-3D-population-density-map-using-QGIS-and-Aerialod"><a href="#How-to-export-a-3D-population-density-map-using-QGIS-and-Aerialod" class="headerlink" title="How to export a 3D population density map using QGIS and Aerialod"></a>How to export a 3D population density map using QGIS and Aerialod</h2><ol>
-<li>Start by visiting <a target="_blank" rel="noopener" href="https://hub.worldpop.org/geodata/listing?id=76">https://hub.worldpop.org/geodata/listing?id=76</a> and download the target country’s TIFF file.<br><img src="https://hackmd.io/_uploads/rkdpIzM7T.png" alt="image.png"></li>
-</ol>
-<ul>
-<li><code>Let&#39;s use Taiwan as an example.</code></li>
-</ul>
-<ol start="2">
-<li><p>Import one of the downloaded TIFF files into QGIS.<br><img src="https://hackmd.io/_uploads/Bkc_DfMXa.jpg" alt="圖片 1.jpg"></p>
-</li>
-<li><p>Export from QGIS:<br><img src="https://hackmd.io/_uploads/HyqlOGf7T.jpg" alt="2.jpg"><br><img src="https://hackmd.io/_uploads/By1ZOzGQa.jpg" alt="3.jpg"></p>
-</li>
-</ol>
-<p>:::warning<br>Set the Output mode to “Rendered Image.”<br>:::</p>
-<ol start="4">
-<li><p>After exporting, move the resulting file into Aerialod.<br><img src="https://hackmd.io/_uploads/SyHU_fzQT.jpg" alt="4.jpg"></p>
-</li>
-<li><p>Configure the settings in Aerialod as needed.<br><img src="https://hackmd.io/_uploads/BJo__Gf76.jpg" alt="5.jpg"></p>
-</li>
-<li><p>Achieve the desired results.</p>
-<img src="https://onedrive.live.com/embed?resid=1B1509F6502EDD6F%2121343&authkey=%21AKq90pD4aKipI1U&width=660" width="660" height="auto" /></li>
-</ol>
+<p>:::spoiler code</p>
+<pre><code class="py=">import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib.font_manager import fontManager
+plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;] 
+plt.rcParams[&#39;axes.unicode_minus&#39;] = False  
+fig = plt.figure(figsize=(7,7))
+ax1 = fig.add_subplot(1,1,1)
+ax2 = fig.add_subplot(2,1,1)
+ax3 = fig.add_subplot(3,1,1)
+fig.subplots_adjust(hspace=.45)
+k = 100
+m = 20
+w = np.sqrt(k/m)
+phi = 2
+A = 2
+p = 2*np.pi/w
+f = 1/p
+print(&quot;Period:&quot;,p,&quot;seconds&quot;,sep=&quot; &quot;)
+print(&quot;f:&quot;,f,&quot;Hz&quot;,sep=&quot; &quot;)
+print(&quot;k: &quot;,k,&quot;N/m&quot;,sep=&quot; &quot;)
+def fun(t):
+    global w,phi,A
+    return A*np.sin(w*t+phi)
+def vel(t):
+    global w,phi,A
+    return A*w*np.cos(w*t+phi)
+def acceleration(t):
+    global w,phi,A
+    return -A*w**2*np.sin(w*t+phi)
+def position(x):
+    x1 = x-1
+    x2 = x+1
+    y1 = 1 
+    y2 = -1
+    p1 = [x1,y2]
+    p2 = [x2,y2]
+    p3 = [x2,y1]
+    p4 = [x1,y1]
+    return [p1,p2,p3,p4]
+cnt = 0
+xt = [0]
+yt = [0]
+vy = [0]
+acy = [0]
+def animate(i):
+    global cnt, xt,yt,A,vy,acy
+    ax3.clear()
+    plt.subplot(311)
+    plt.xlim(-3.5,3.5)
+    plt.ylim(-2,2)
+    plt.xlabel(&quot;x&quot;)
+    plt.ylabel(&quot;y&quot;)
+    plt.title(&quot;撿鞋運動&quot;)   
+    p1 = [position(fun(cnt))[0][0],position(fun(cnt))[0][1]]
+    p2 = [position(fun(cnt))[1][0],position(fun(cnt))[1][1]]
+    p3 = [position(fun(cnt))[2][0],position(fun(cnt))[2][1]]
+    p4 = [position(fun(cnt))[3][0],position(fun(cnt))[3][1]]
+    x = [p1[0],p2[0],p3[0],p4[0],p1[0]]
+    y = [p1[1],p2[1],p3[1],p4[1],p1[1]]
+    linex = [-4,p1[0]]
+    liney = [0,0]   
+    plt.plot(x,y,lw=3,color=&quot;blue&quot;)
+    plt.plot(linex,liney,color=&quot;red&quot;,ls=&quot;:&quot;,lw=3)
+    plt.subplot(312)
+    xt.append(cnt)
+    vy.append(vel(cnt))
+    plt.title(&quot;速度&quot;)
+    plt.xlim(0,15)
+    plt.ylim(-A*w-0.5,A*w+0.5)
+    plt.plot(xt,vy,lw=1,color=&quot;gray&quot;)
+    plt.plot([0,15],[0,0],lw=0.5,color=&quot;black&quot;)
+    plt.subplot(313)
+    acy.append(acceleration(cnt))
+    plt.title(&quot;加速度&quot;)
+    plt.xlim(0,15)
+    plt.ylim(-A*w**2-0.5,A*w**2+0.5)
+    plt.plot(xt,acy,lw=1,color=&quot;gray&quot;)
+    plt.plot([0,15],[0,0],lw=0.5,color=&quot;black&quot;)   
+    cnt += 0.1  
+ani = animation.FuncAnimation(fig,animate,interval=2)
+plt.show()
+</code></pre>
+<p>:::</p>
 
     </div>
     

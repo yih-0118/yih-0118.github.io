@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>code煙火 | 此情吳計可消除</title>
+    <meta name="author" content="yih-0118" />
+    <meta name="description" content="我很弱" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加載中，請稍候</p>
+                    <img src="/images/load.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>此情吳計可消除</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首頁</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;關於我</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;檔案</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分類</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;標籤</span>
+        </a>
+        
+        <!-- 添加深色模式切換按鈕 -->
+        <a href="javascript:void(0);" id="dark-mode-toggle-desktop" @click="toggleDarkMode">
+            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+            <span>&ensp;{{ darkMode ? '深色模式' : '淺色模式' }}</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;此情吳計可消除</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首頁</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">關於我</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">檔案</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分類</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">標籤</div>
+                    </div>
+                </a>
+                
+                <!-- 添加深色模式切換按鈕 -->
+                <a href="javascript:void(0);" id="dark-mode-toggle-mobile" @click="toggleDarkMode">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i :class="['fa-solid', darkMode ? 'fa-sun' : 'fa-moon', 'fa-fw']"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ darkMode ? '深色模式' : '淺色模式' }}</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>code煙火</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/3/31
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="color: #00a596">
+                    不知道
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <ul>
+<li>只是個煙火<span id="more"></span></li>
+<li>python版本</li>
+</ul>
+<pre><code class="python">import pygame
+import random
+import math
+
+vector = pygame.math.Vector2
+
+gravity = vector(0, 0.3)
+DISPLAY_WIDTH = DISPLAY_HEIGHT = 800
+
+trail_colours = [(45, 45, 45), (60, 60, 60), (75, 75, 75), (125, 125, 125), (150, 150, 150)]
+dynamic_offset = 1
+static_offset = 3
+
+MAX_FIREWORKS = 200
+MAX_PARTICLES = 5000
+
+class Firework:
+    def __init__(self):
+        self.colour = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        self.colours = (
+            (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)),
+            (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)),
+            (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
+        self.firework = Particle(random.randint(0, DISPLAY_WIDTH), DISPLAY_HEIGHT, True,
+                                 self.colour)
+        self.exploded = False
+        self.particles = []
+        self.min_max_particles = (100, 225)
+
+    def update(self, win):
+        if not self.exploded:
+            self.firework.apply_force(gravity)
+            self.firework.move()
+            for tf in self.firework.trails:
+                tf.show(win)
+
+            self.show(win)
+
+            if self.firework.vel.y &gt;= 0:
+                self.exploded = True
+                self.explode()
+        else:
+            for particle in self.particles:
+                particle.apply_force(vector(gravity.x + random.uniform(-1, 1) / 20, gravity.y / 2 + (random.randint(1, 8) / 100)))
+                particle.move()
+                for t in particle.trails:
+                    t.show(win)
+                particle.show(win)
+
+    def explode(self):
+        amount = random.randint(*self.min_max_particles)
+        for i in range(amount):
+            self.particles.append(Particle(self.firework.pos.x, self.firework.pos.y, False, self.colours))
+
+    def show(self, win):
+        pygame.draw.circle(win, self.colour, (int(self.firework.pos.x), int(self.firework.pos.y)), self.firework.size)
+
+    def remove(self):
+        if self.exploded:
+            for p in self.particles:
+                if p.remove is True:
+                    self.particles.remove(p)
+
+            if len(self.particles) == 0:
+                return True
+            else:
+                return False
+
+class Particle:
+    def __init__(self, x, y, firework, colour):
+        self.firework = firework
+        self.pos = vector(x, y)
+        self.origin = vector(x, y)
+        self.radius = 20
+        self.remove = False
+        self.explosion_radius = random.randint(5, 18)
+        self.life = 0
+        self.acc = vector(0, 0)
+        self.trails = []
+        self.prev_posx = [-10] * 10
+        self.prev_posy = [-10] * 10
+
+        if self.firework:
+            self.vel = vector(0, -random.randint(17, 20))
+            self.size = 5
+            self.colour = colour
+            for i in range(5):
+                self.trails.append(Trail(i, self.size, True))
+        else:
+            self.vel = vector(random.uniform(-1, 1), random.uniform(-1, 1))
+            self.vel.x *= random.randint(3, self.explosion_radius)
+            self.vel.y *= random.randint(3, self.explosion_radius)
+            self.size = random.randint(2, 4)
+            self.colour = random.choice(colour)
+            for i in range(5):
+                self.trails.append(Trail(i, self.size, False))
+
+    def apply_force(self, force):
+        self.acc += force
+
+    def move(self):
+        if not self.firework:
+            self.vel.x *= 0.9
+            self.vel.y *= 0.9
+        self.vel += self.acc
+        self.pos += self.vel
+        self.acc *= 0
+
+        if self.life == 0 and not self.firework:
+            distance = math.sqrt((self.pos.x - self.origin.x) ** 2 + (self.pos.y - self.origin.y) ** 2)
+            if distance &gt; self.explosion_radius:
+                self.remove = True
+
+        if self.vel.length() &lt; 0.5:
+            self.remove = True
+
+        self.decay()
+
+        self.trail_update()
+
+        self.life += 1
+
+    def show(self, win):
+        pygame.draw.circle(win, (self.colour[0], self.colour[1], self.colour[2], 0), (int(self.pos.x), int(self.pos.y)),
+                           self.size)
+
+    def decay(self):
+        if 50 &gt; self.life &gt; 10:
+            ran = random.randint(0, 30)
+            if ran == 0:
+                self.remove = True
+        elif self.life &gt; 50:
+            ran = random.randint(0, 5)
+            if ran == 0:
+                self.remove = True
+
+    def trail_update(self):
+        self.prev_posx.pop()
+        self.prev_posx.insert(0, int(self.pos.x))
+        self.prev_posy.pop()
+        self.prev_posy.insert(0, int(self.pos.y))
+
+        for n, t in enumerate(self.trails):
+            if t.dynamic:
+                t.get_pos(self.prev_posx[n + dynamic_offset], self.prev_posy[n + dynamic_offset])
+            else:
+                t.get_pos(self.prev_posx[n + static_offset], self.prev_posy[n + static_offset])
+
+class Trail:
+    def __init__(self, n, size, dynamic):
+        self.pos_in_line = n
+        self.pos = vector(-10, -10)
+        self.dynamic = dynamic
+
+        if self.dynamic:
+            self.colour = trail_colours[n]
+            self.size = int(size - n / 2)
+        else:
+            self.colour = (255, 255, 200)
+            self.size = size - 2
+            if self.size &lt; 0:
+                self.size = 0
+
+    def get_pos(self, x, y):
+        self.pos = vector(x, y)
+
+    def show(self, win):
+        pygame.draw.circle(win, self.colour, (int(self.pos.x), int(self.pos.y)), self.size)
+
+def update(win, fireworks):
+    to_remove = []
+    for fw in fireworks:
+        fw.update(win)
+        if fw.remove():
+            to_remove.append(fw)
+
+    for fw in to_remove:
+        fireworks.remove(fw)
+
+    pygame.display.update()
+
+def main():
+    pygame.init()
+    pygame.font.init()
+    pygame.display.set_caption(&quot;HI&quot;)
+
+    win = pygame.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT))
+    clock = pygame.time.Clock()
+
+    fireworks = [Firework() for i in range(2)]
+    running = True
+
+    while running:
+        clock.tick(60)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_1:
+                    if len(fireworks) &lt; MAX_FIREWORKS:
+                        fireworks.append(Firework())
+                if event.key == pygame.K_2:
+                    for i in range(10):
+                        if len(fireworks) &lt; MAX_FIREWORKS:
+                            fireworks.append(Firework())
+                if event.key == pygame.K_3:
+                    for i in range(100):
+                        if len(fireworks) &lt; MAX_FIREWORKS:
+                            fireworks.append(Firework())
+        win.fill((20, 20, 30))
+
+        if random.randint(0, 20) == 1 and len(fireworks) &lt; MAX_FIREWORKS:
+            fireworks.append(Firework())
+
+        total_particles = sum(len(fw.particles) for fw in fireworks)
+        if total_particles &gt; MAX_PARTICLES:
+            for fw in fireworks:
+                fw.particles = fw.particles[:MAX_PARTICLES // len(fireworks)]
+
+        update(win, fireworks)
+
+    pygame.quit()
+    quit()
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<ul>
+<li>javascript版本</li>
+</ul>
+<pre><code class="javascript">const canvas = document.createElement(&#39;canvas&#39;);
+const ctx = canvas.getContext(&#39;2d&#39;);
+document.body.appendChild(canvas);
+
+const gravity = &#123; x: 0, y: 0.3 &#125;;
+const DISPLAY_WIDTH = 800;
+const DISPLAY_HEIGHT = 800;
+
+const trail_colours = [
+    [45, 45, 45],
+    [60, 60, 60],
+    [75, 75, 75],
+    [125, 125, 125],
+    [150, 150, 150]
+];
+const dynamic_offset = 1;
+const static_offset = 3;
+
+const MAX_FIREWORKS = 200;
+const MAX_PARTICLES = 5000;
+
+class Firework &#123;
+    constructor() &#123;
+        this.colour = [
+            Math.floor(Math.random() * 256),
+            Math.floor(Math.random() * 256),
+            Math.floor(Math.random() * 256)
+        ];
+        this.colours = [
+            [
+                Math.floor(Math.random() * 256),
+                Math.floor(Math.random() * 256),
+                Math.floor(Math.random() * 256)
+            ],
+            [
+                Math.floor(Math.random() * 256),
+                Math.floor(Math.random() * 256),
+                Math.floor(Math.random() * 256)
+            ],
+            [
+                Math.floor(Math.random() * 256),
+                Math.floor(Math.random() * 256),
+                Math.floor(Math.random() * 256)
+            ]
+        ];
+        this.firework = new Particle(
+            Math.floor(Math.random() * DISPLAY_WIDTH),
+            DISPLAY_HEIGHT,
+            true,
+            this.colour
+        );
+        this.exploded = false;
+        this.particles = [];
+        this.min_max_particles = [100, 225];
+    &#125;
+
+    update() &#123;
+        if (!this.exploded) &#123;
+            this.firework.apply_force(gravity);
+            this.firework.move();
+            this.firework.show();
+            if (this.firework.vel.y &gt;= 0) &#123;
+                this.exploded = true;
+                this.explode();
+            &#125;
+        &#125; else &#123;
+            for (const particle of this.particles) &#123;
+                particle.apply_force(&#123;
+                    x: gravity.x + (Math.random() - 0.5) / 20,
+                    y: gravity.y / 2 + (Math.floor(Math.random() * 8) + 1) / 100
+                &#125;);
+                particle.move();
+                particle.show();
+            &#125;
+        &#125;
+    &#125;
+
+    explode() &#123;
+        const amount = Math.floor(
+            Math.random() * (this.min_max_particles[1] - this.min_max_particles[0] + 1) +
+            this.min_max_particles[0]
+        );
+        for (let i = 0; i &lt; amount; i++) &#123;
+            this.particles.push(
+                new Particle(this.firework.pos.x, this.firework.pos.y, false, this.colours)
+            );
+        &#125;
+    &#125;
+
+    remove() &#123;
+        if (this.exploded) &#123;
+            this.particles = this.particles.filter((p) =&gt; !p.remove);
+            return this.particles.length === 0;
+        &#125;
+        return false;
+    &#125;
+&#125;
+
+class Particle &#123;
+    constructor(x, y, firework, colour) &#123;
+        this.firework = firework;
+        this.pos = &#123; x, y &#125;;
+        this.origin = &#123; x, y &#125;;
+        this.radius = 20;
+        this.remove = false;
+        this.explosion_radius = Math.floor(Math.random() * 14) + 5;
+        this.life = 0;
+        this.acc = &#123; x: 0, y: 0 &#125;;
+        this.trails = [];
+        this.prev_posx = Array(10).fill(-10);
+        this.prev_posy = Array(10).fill(-10);
+
+        if (this.firework) &#123;
+            this.vel = &#123; x: 0, y: -Math.floor(Math.random() * 4) - 17 &#125;;
+            this.size = 5;
+            this.colour = colour;
+            for (let i = 0; i &lt; 5; i++) &#123;
+                this.trails.push(new Trail(i, this.size, true));
+            &#125;
+        &#125; else &#123;
+            this.vel = &#123;
+                x: (Math.random() - 0.5) * 2 * Math.floor(Math.random() * this.explosion_radius),
+                y: (Math.random() - 0.5) * 2 * Math.floor(Math.random() * this.explosion_radius)
+            &#125;;
+            this.size = Math.floor(Math.random() * 3) + 2;
+            this.colour = colour[Math.floor(Math.random() * colour.length)];
+            for (let i = 0; i &lt; 5; i++) &#123;
+                this.trails.push(new Trail(i, this.size, false));
+            &#125;
+        &#125;
+    &#125;
+
+    apply_force(force) &#123;
+        this.acc.x += force.x;
+        this.acc.y += force.y;
+    &#125;
+
+    move() &#123;
+        if (!this.firework) &#123;
+            this.vel.x *= 0.9;
+            this.vel.y *= 0.9;
+        &#125;
+        this.vel.x += this.acc.x;
+        this.vel.y += this.acc.y;
+        this.pos.x += this.vel.x;
+        this.pos.y += this.vel.y;
+        this.acc.x = 0;
+        this.acc.y = 0;
+
+        if (this.life === 0 &amp;&amp; !this.firework) &#123;
+            const distance = Math.sqrt(
+                (this.pos.x - this.origin.x) ** 2 + (this.pos.y - this.origin.y) ** 2
+            );
+            if (distance &gt; this.explosion_radius) &#123;
+                this.remove = true;
+            &#125;
+        &#125;
+
+        if (Math.abs(this.vel.x) &lt; 0.5 &amp;&amp; Math.abs(this.vel.y) &lt; 0.5) &#123;
+            this.remove = true;
+        &#125;
+
+        this.decay();
+        this.trail_update();
+        this.life++;
+    &#125;
+
+    show() &#123;
+        ctx.beginPath();
+        ctx.arc(this.pos.x, this.pos.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba($&#123;this.colour[0]&#125;, $&#123;this.colour[1]&#125;, $&#123;this.colour[2]&#125;, 1)`;
+        ctx.fill();
+    &#125;
+
+    decay() &#123;
+        if (this.life &gt; 10 &amp;&amp; this.life &lt; 50 &amp;&amp; Math.random() &lt; 0.03) &#123;
+            this.remove = true;
+        &#125; else if (this.life &gt;= 50 &amp;&amp; Math.random() &lt; 0.2) &#123;
+            this.remove = true;
+        &#125;
+    &#125;
+
+    trail_update() &#123;
+        this.prev_posx.pop();
+        this.prev_posx.unshift(this.pos.x);
+        this.prev_posy.pop();
+        this.prev_posy.unshift(this.pos.y);
+
+        for (let n = 0; n &lt; this.trails.length; n++) &#123;
+            const t = this.trails[n];
+            if (t.dynamic) &#123;
+                t.get_pos(this.prev_posx[n + dynamic_offset], this.prev_posy[n + dynamic_offset]);
+            &#125; else &#123;
+                t.get_pos(this.prev_posx[n + static_offset], this.prev_posy[n + static_offset]);
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+class Trail &#123;
+    constructor(n, size, dynamic) &#123;
+        this.pos_in_line = n;
+        this.pos = &#123; x: -10, y: -10 &#125;;
+        this.dynamic = dynamic;
+
+        if (this.dynamic) &#123;
+            this.colour = `rgb($&#123;trail_colours[n][0]&#125;, $&#123;trail_colours[n][1]&#125;, $&#123;trail_colours[n][2]&#125;)`;
+            this.size = size - n / 2;
+        &#125; else &#123;
+            this.colour = &#39;rgb(255, 255, 200)&#39;;
+            this.size = size - 2;
+            if (this.size &lt; 0) &#123;
+                this.size = 0;
+            &#125;
+        &#125;
+    &#125;
+
+    get_pos(x, y) &#123;
+        this.pos = &#123; x, y &#125;;
+    &#125;
+
+    show() &#123;
+        ctx.beginPath();
+        ctx.arc(this.pos.x, this.pos.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.colour;
+        ctx.fill();
+    &#125;
+&#125;
+
+function update(fireworks) &#123;
+    const to_remove = [];
+    fireworks.forEach((fw) =&gt; &#123;
+        fw.update();
+        if (fw.remove()) &#123;
+            to_remove.push(fw);
+        &#125;
+    &#125;);
+
+    to_remove.forEach((fw) =&gt; &#123;
+        const index = fireworks.indexOf(fw);
+        fireworks.splice(index, 1);
+    &#125;);
+&#125;
+
+function main() &#123;
+    canvas.width = DISPLAY_WIDTH;
+    canvas.height = DISPLAY_HEIGHT;
+
+    const fireworks = Array.from(&#123; length: 2 &#125;, () =&gt; new Firework());
+
+    setInterval(() =&gt; &#123;
+        if (fireworks.length &lt; MAX_FIREWORKS &amp;&amp; Math.random() &lt; 0.05) &#123;
+            fireworks.push(new Firework());
+        &#125;
+    &#125;, 100);
+
+    setInterval(() =&gt; &#123;
+        if (fireworks.length &lt; MAX_FIREWORKS &amp;&amp; Math.random() &lt; 0.1) &#123;
+            for (let i = 0; i &lt; 10; i++) &#123;
+                if (fireworks.length &lt; MAX_FIREWORKS) &#123;
+                    fireworks.push(new Firework());
+                &#125;
+            &#125;
+        &#125;
+    &#125;, 500);
+
+    setInterval(() =&gt; &#123;
+        if (fireworks.length &lt; MAX_FIREWORKS &amp;&amp; Math.random() &lt; 0.2) &#123;
+            for (let i = 0; i &lt; 100; i++) &#123;
+                if (fireworks.length &lt; MAX_FIREWORKS) &#123;
+                    fireworks.push(new Firework());
+                &#125;
+            &#125;
+        &#125;
+    &#125;, 1000);
+
+    function animate() &#123;
+        ctx.fillStyle = &#39;rgba(20, 20, 30, 0.2)&#39;;
+        ctx.fillRect(0, 0, DISPLAY_WIDTH, DISPLAY_HEIGHT);
+        update(fireworks);
+        requestAnimationFrame(animate);
+    &#125;
+
+    animate();
+&#125;
+
+main();
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 此情吳計可消除
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;yih-0118
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

@@ -20,6 +20,7 @@ const app = Vue.createApp({
         window.addEventListener("scroll", this.handleScroll, true);
         this.render();
         this.initDarkMode(); // 新增：初始化深色模式
+        
     },
     methods: {
         render() {
@@ -45,6 +46,14 @@ const app = Vue.createApp({
             this.darkMode = !this.darkMode;
             document.body.classList.toggle('dark-mode', this.darkMode);
             localStorage.setItem('darkMode', this.darkMode ? 'enabled' : 'disabled');
+            this.updateHighlightStyle(); // 新增：更新 highlight.js 樣式
+        },
+        updateHighlightStyle() {
+            const linkElement = document.getElementById('highlight-css');
+            if (linkElement) {
+                const theme = this.darkMode ? '<%- theme.highlight.dark_style %>' : '<%- theme.highlight.light_style %>';
+                linkElement.href = `https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/${theme}.min.css`;
+            }
         },
         // 新增：初始化深色模式的方法
         initDarkMode() {
@@ -53,6 +62,7 @@ const app = Vue.createApp({
                 this.darkMode = true;
                 document.body.classList.add('dark-mode');
             }
+            this.updateHighlightStyle(); // 新增：初始化時更新 highlight.js 樣式
         },
     },
 });
@@ -81,4 +91,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   
+
+
+
 app.mount("#layout");
+
+

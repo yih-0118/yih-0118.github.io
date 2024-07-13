@@ -353,7 +353,7 @@
 }
 #loading-circle {
     align-items: center;
-    border: 10px solid #a3ddfb;
+    border: 10px solid #c8f5e3;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -483,6 +483,8 @@
     margin-right: 10px;
 }
 .code-content {
+    color: white;
+
     font-size: 13px;
     line-height: 2;
     overflow: auto;
@@ -1108,4 +1110,29 @@ body.dark-mode .timeline-content {
 body.dark-mode #home-posts .post-title {
     color: #f0fefe;
     text-align: center;
+}
+
+
+body.dark-mode .code-content {
+    color: white;
+    background-color: #313131;
+    font-size: 13px;
+    line-height: 2;
+    overflow: auto;
+    padding: 50px 30px 20px;
+    white-space: pre;
+}
+body.dark-mode #loading {
+    align-items: center;
+    background: #4b4b4b;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    word-break: keep-all;
+    z-index: 2147483647;
 }

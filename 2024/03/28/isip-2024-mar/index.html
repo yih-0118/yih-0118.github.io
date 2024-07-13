@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>How to export a 3D population density map using QGIS and Aerialo | 此情吳計可消除</title>
+    <title>Programming Security March Homework | 此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="我很弱" />
     <meta name="keywords" content="" />
@@ -174,53 +174,80 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>How to export a 3D population density map using QGIS and Aerialo</h1>
+        <h1>Programming Security March Homework</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/3
+            2024/3/28
         </span>
         
         <span class="category">
-            <a href="/categories/GIS/">
+            <a href="/categories/ISIP/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                GIS
+                ISIP
             </a>
         </span>
         
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/writeup/" style="color: #ffa2c4">
+                    writeup
+                </a>
+            </span>
+            
+        </span>
+        
     </div>
     
     <div class="content" v-pre>
-        <p>🤏</p>
+        <p><img src="https://hackmd.io/_uploads/BJvnFpJO0.png" alt="image"></p>
 <span id="more"></span>
-
-<h2 id="How-to-export-a-3D-population-density-map-using-QGIS-and-Aerialod"><a href="#How-to-export-a-3D-population-density-map-using-QGIS-and-Aerialod" class="headerlink" title="How to export a 3D population density map using QGIS and Aerialod"></a>How to export a 3D population density map using QGIS and Aerialod</h2><ol>
-<li>Start by visiting <a target="_blank" rel="noopener" href="https://hub.worldpop.org/geodata/listing?id=76">https://hub.worldpop.org/geodata/listing?id=76</a> and download the target country’s TIFF file.<br><img src="https://hackmd.io/_uploads/rkdpIzM7T.png" alt="image.png"></li>
-</ol>
+<h2 id="作業1-C-語言開發"><a href="#作業1-C-語言開發" class="headerlink" title="作業1- C 語言開發"></a>作業1- C 語言開發</h2><ul>
+<li><code>printf(&quot;%d\\n&quot;, a &amp; b);</code><br>這一行執行了AND運算。a和b的二進位表示分別是1001和1101，進行位元AND運算後，得到結果1001，對應的十進位數字為9。</li>
+<li><code>printf(&quot;%d\\n&quot;, a || b);</code><br>這一行執行了OR運算。a和b都是非零值，因此表達式a || b的結果為真（1）。所以輸出將是1。</li>
+<li><code>printf(&quot;%d\\n&quot;, a ^ b);</code><br>這一行執行了位元XOR運算。a和b的二進位表示分別是1001和1101，進行位元XOR運算後，得到結果0100，對應的十進位數字為4。</li>
+<li><code>printf(&quot;%d\\n&quot;, !a);</code><br>這一行執行了邏輯NOT運算。a的值是非零，所以邏輯NOT運算後為0。所以輸出將是0。<br><img src="https://hackmd.io/_uploads/ByMlc61d0.png" alt="image"><br><img src="https://hackmd.io/_uploads/Hyvlc6yuA.png" alt="image"></li>
+</ul>
+<h2 id="作業2-Linux執行檔分析"><a href="#作業2-Linux執行檔分析" class="headerlink" title="作業2- Linux執行檔分析"></a>作業2- Linux執行檔分析</h2><p>C原程式<br>猜題目作者的生日<br><img src="https://hackmd.io/_uploads/Hy8X56J_R.png" alt="image"><br>執行過程：<br><img src="https://hackmd.io/_uploads/ry5456yOC.png" alt="image"><br>總不可能剛好通靈到別人的生日<br>到main   function中尋找：<br><img src="https://hackmd.io/_uploads/Hkw85p1uA.png" alt="image"><br>比較過程(1)：</p>
+<p><img src="https://hackmd.io/_uploads/HyEwcTk_0.png" alt="image"><br>比較過程(2)：<br><img src="https://hackmd.io/_uploads/HJodcTJ_A.png" alt="image"><br><img src="https://hackmd.io/_uploads/SkKKq61_A.png" alt="image"><br>其實好像進到VV後就看到flag了</p>
+<h1 id="作業3-組合語言"><a href="#作業3-組合語言" class="headerlink" title="作業3- 組合語言"></a>作業3- 組合語言</h1><p>這題要找到能跳paradise的值<br><img src="https://hackmd.io/_uploads/rkjq5TkuA.png" alt="image"></p>
 <ul>
-<li><code>Let&#39;s use Taiwan as an example.</code></li>
+<li>過程：</li>
+<li><ol>
+<li>初始的賦值: eax&#x3D;0x03, ebx&#x3D;???(不知道是多少), ecx&#x3D;0x3eb3ac03, edx&#x3D;0x3eb3ac03。</li>
+</ol>
+</li>
 </ul>
 <ol start="2">
-<li><p>Import one of the downloaded TIFF files into QGIS.<br><img src="https://hackmd.io/_uploads/Bkc_DfMXa.jpg" alt="圖片 1.jpg"></p>
-</li>
-<li><p>Export from QGIS:<br><img src="https://hackmd.io/_uploads/HyqlOGf7T.jpg" alt="2.jpg"><br><img src="https://hackmd.io/_uploads/By1ZOzGQa.jpg" alt="3.jpg"></p>
-</li>
+<li>進入loop,瘋狂執行下去。</li>
+<li>在循環中,首先檢查eax是否＝0,如果則跳轉到check。</li>
+<li>如果eax不為零,則將ecx+edx,然後將eax-1。</li>
+<li>循環重複執行,直到eax變為零。</li>
+<li>當eax為零時,跳到check,比較ebx和ecx的值。</li>
+<li>如果ebx等於ecx,則跳轉到paradise,將eax設置為1。否則,將eax設置為0。</li>
 </ol>
-<p>:::warning<br>Set the Output mode to “Rendered Image.”<br>:::</p>
-<ol start="4">
-<li><p>After exporting, move the resulting file into Aerialod.<br><img src="https://hackmd.io/_uploads/SyHU_fzQT.jpg" alt="4.jpg"></p>
-</li>
-<li><p>Configure the settings in Aerialod as needed.<br><img src="https://hackmd.io/_uploads/BJo__Gf76.jpg" alt="5.jpg"></p>
-</li>
-<li><p>Achieve the desired results.</p>
-<img src="https://onedrive.live.com/embed?resid=1B1509F6502EDD6F%2121343&authkey=%21AKq90pD4aKipI1U&width=660" width="660" height="auto" /></li>
-</ol>
+<ul>
+<li>要跳轉到paradise,需要滿足ebx等於ecx的條件。由於ecx的初始值為0x3eb3ac03,我們可以追蹤循環的執行過程來計算出最終ecx的值。<br>在循環中,ecx的值會被不斷加上edx的值(0x3eb3ac03)。<br>由於eax的初始值為3,因此循環會執行3次。每次循環,ecx的值會增加0x3eb3ac03。</li>
+</ul>
+<p>結果：<br><code>要計算出以下： ecx = 0x3eb3ac03 + 3 * 0x3eb3ac03 </code><br><img src="https://hackmd.io/_uploads/rJFC9TyOR.png" alt="image"></p>
+<h1 id="作業4-pwntools解題"><a href="#作業4-pwntools解題" class="headerlink" title="作業4- pwntools解題"></a>作業4- pwntools解題</h1><p>C原程式<br>猜題目作者的生日<br><img src="https://hackmd.io/_uploads/BkFgi6k_R.png" alt="image"><br>pwn解題程式<br><img src="https://hackmd.io/_uploads/SJMWiayOR.png" alt="image"><br>結果：<br>Flag就噴出來了<br><img src="https://hackmd.io/_uploads/SycGspy_C.png" alt="image"></p>
+<ul>
+<li>加分題 main 2<br><img src="https://hackmd.io/_uploads/rkXVipkdR.png" alt="image"><br><img src="https://hackmd.io/_uploads/HkaEi61O0.png" alt="image"></li>
+<li>加分題 main 3<br><img src="https://hackmd.io/_uploads/SkiHj6ydA.png" alt="image"><br>進入到visual模式後<br>也可看到<br>0x4012f6<br>是main的地址<br><img src="https://hackmd.io/_uploads/S1FIs61_0.png" alt="image"></li>
+<li>加分題 main 6<br><img src="https://hackmd.io/_uploads/By_vi6JuA.png" alt="image"><br>進入到visual模式後還是<br>可以看到main的地址是0x40121c<br><img src="https://hackmd.io/_uploads/H1w_spJuR.png" alt="image"></li>
+</ul>
 
     </div>
     

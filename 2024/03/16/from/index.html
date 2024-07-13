@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>How to export a 3D population density map using QGIS and Aerialo | 此情吳計可消除</title>
+    <title>臺灣高中職生活網賽python | 此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="我很弱" />
     <meta name="keywords" content="" />
@@ -174,54 +174,163 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>How to export a 3D population density map using QGIS and Aerialo</h1>
+        <h1>臺灣高中職生活網賽python</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/3
+            2024/3/16
         </span>
         
-        <span class="category">
-            <a href="/categories/GIS/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                GIS
-            </a>
-        </span>
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="color: #03a9f4">
+                    不知道
+                </a>
+            </span>
+            
+        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p>🤏</p>
-<span id="more"></span>
+        <h1 id="不要惡意去刷別人的表單進而去影響別人"><a href="#不要惡意去刷別人的表單進而去影響別人" class="headerlink" title="不要惡意去刷別人的表單進而去影響別人"></a><strong>不要惡意去刷別人的表單進而去影響別人</strong></h1><span id="more"></span>
+<p>👎 不要殘害別人小論文</p>
+<pre><code class="python">import re
+import time
+import random
+import numpy as np
+import requests as rq
 
-<h2 id="How-to-export-a-3D-population-density-map-using-QGIS-and-Aerialod"><a href="#How-to-export-a-3D-population-density-map-using-QGIS-and-Aerialod" class="headerlink" title="How to export a 3D population density map using QGIS and Aerialod"></a>How to export a 3D population density map using QGIS and Aerialod</h2><ol>
-<li>Start by visiting <a target="_blank" rel="noopener" href="https://hub.worldpop.org/geodata/listing?id=76">https://hub.worldpop.org/geodata/listing?id=76</a> and download the target country’s TIFF file.<br><img src="https://hackmd.io/_uploads/rkdpIzM7T.png" alt="image.png"></li>
-</ol>
-<ul>
-<li><code>Let&#39;s use Taiwan as an example.</code></li>
-</ul>
-<ol start="2">
-<li><p>Import one of the downloaded TIFF files into QGIS.<br><img src="https://hackmd.io/_uploads/Bkc_DfMXa.jpg" alt="圖片 1.jpg"></p>
-</li>
-<li><p>Export from QGIS:<br><img src="https://hackmd.io/_uploads/HyqlOGf7T.jpg" alt="2.jpg"><br><img src="https://hackmd.io/_uploads/By1ZOzGQa.jpg" alt="3.jpg"></p>
-</li>
-</ol>
-<p>:::warning<br>Set the Output mode to “Rendered Image.”<br>:::</p>
-<ol start="4">
-<li><p>After exporting, move the resulting file into Aerialod.<br><img src="https://hackmd.io/_uploads/SyHU_fzQT.jpg" alt="4.jpg"></p>
-</li>
-<li><p>Configure the settings in Aerialod as needed.<br><img src="https://hackmd.io/_uploads/BJo__Gf76.jpg" alt="5.jpg"></p>
-</li>
-<li><p>Achieve the desired results.</p>
-<img src="https://onedrive.live.com/embed?resid=1B1509F6502EDD6F%2121343&authkey=%21AKq90pD4aKipI1U&width=660" width="660" height="auto" /></li>
-</ol>
+url = &#39;填入表單連結&#39;
+params = [&#39;這邊填欄位名稱&#39;]
+payload = &#123;
+    &#39;entry.361687657&#39; : &#39;&#39;,
+    &#39;fvv&#39; : &#39;1&#39;,
+    &#39;draftResponse&#39; : &#39;[]&#39;,
+    &#39;pageHistory&#39; : &#39;0&#39;,
+    &#39;fbzx&#39; : &#39;1140157478353573082&#39;
+&#125;
 
+num = 1000
+period = np.arange(0.5, 5.0, 0.1)
+delay = 0.1
+while num &gt; 0:
+    try:
+        payload[&#39;entry.361687657&#39;] = random.choice(params)
+        res = rq.post(url, data=payload)
+        res.raise_for_status()
+        if res.status_code == 200 :
+            delay = round(random.choice(period), 2)
+            print(&#39;Fill Out : &#39; &#39;f&#123;num&#125;&#39; + payload[&#39;entry.361687657&#39;] + &#39; delay : &#39; + str(delay) + &#39; sec&#39;)
+            time.sleep(delay)
+    except rq.HTTPError:
+        print(&#39;HTTP Error!&#39;)
+    
+    num -= 1
+</code></pre>
+<!-- 
+- 速度快
+```python
+import re
+import time
+import random
+import numpy as np
+import requests as rq
+from concurrent.futures import ThreadPoolExecutor
+
+url = 'https://docs.google.com/forms/d/e/1FAIpQLSd3haC7-79blroBOJT5hY_9zRmZT13Qvgs8iMcKRjbIFaUIcg/formResponse'
+params = ['這邊填欄位名稱']
+payload = {
+    'entry.361687657' : '',
+    'fvv' : '1',
+    'draftResponse' : '[]',
+    'pageHistory' : '0',
+    'fbzx' : '1140157478353573082'
+}
+
+num = 1000
+period = np.arange(0.5, 1.0, 0.1)
+
+def make_request(payload):
+    try:
+        payload['entry.361687657'] = random.choice(params)
+        res = rq.post(url, data=payload)
+        res.raise_for_status()
+        if res.status_code == 200:
+            delay = round(random.choice(period), 2)
+            print(f'Fill Out : {num} {payload["entry.361687657"]} delay : {delay} sec')
+            time.sleep(delay)
+    except rq.HTTPError:
+        print('HTTP Error!')
+
+with ThreadPoolExecutor() as executor:
+    for _ in range(num):
+        executor.submit(make_request, payload.copy())
+
+```
+
+
+```python
+url = 'https://docs.google.com/forms/d/e/1FAIpQLSd1BcPflVqXHe2nRgIpBz5tjICiQAOB9hkRrNOauB6IaSacaw/formResponse'
+params = ['1']
+payload = {
+    'entry.2088200504' : '',
+    'fvv' : '1',
+    'draftResponse' : '[]',
+    'pageHistory' : '0',
+    'fbzx' : '-5200713035074991835'
+}
+```
+![image](https://hackmd.io/_uploads/Bk_FCRfC6.png)
+
+
+```python=
+import re
+import time
+import random
+import numpy as np
+import requests as rq
+
+url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSd1BcPflVqXHe2nRgIpBz5tjICiQAOB9hkRrNOauB6IaSacaw/formResponse'
+params = ['1']
+payload = {
+    'entry.2088200504' : '',
+    'fvv' : '1',
+    'draftResponse' : '[]',
+    'pageHistory' : '0',
+    'fbzx' : '-4375217380663786269'
+}
+
+num = 1000
+n= 1
+period = np.arange(0.1, 0.2, 0.1)
+delay = 0.1
+while num > 0:
+    try:
+        payload['entry.2088200504'] = random.choice(params)
+        res = rq.post(url, data=payload)
+        res.raise_for_status()
+        if res.status_code == 200 :
+            delay = round(random.choice(period), 2)
+            print(f'Fill Out : {n} {payload["entry.2088200504"]} delay : {delay} sec')
+            n=n+1
+            time.sleep(delay)
+    except rq.HTTPError:
+        print('HTTP Error!')
+    
+    num -= 1
+
+``` -->
     </div>
     
     
