@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>tags | 此情吳計可消除</title>
+    <title>310收支表 | 此情吳計可消除</title>
     <meta name="author" content="yih-0118" />
     <meta name="description" content="我很弱" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -168,45 +172,313 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/tags/writeup/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                writeup
-            </a>
+            <div class="article">
+    <div>
+        <h1>310收支表</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/7/13
         </span>
         
         
-        
-        <span>
-            <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                不知道
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%B8%8D%E7%9F%A5%E9%81%93/" style="color: #00a596">
+                    不知道
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                測試
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <ul>
+<li>310班費<span id="more"></span></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>品項</th>
+<th>單價</th>
+<th>數量</th>
+<th>金額</th>
+<th>收支類別</th>
+<th>結餘</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2023&#x2F;9&#x2F;1</td>
+<td>班費</td>
+<td>1000</td>
+<td>28</td>
+<td>28000</td>
+<td>收入</td>
+<td>28,000</td>
+</tr>
+<tr>
+<td>2023&#x2F;9&#x2F;4</td>
+<td>班費</td>
+<td>1000</td>
+<td>6</td>
+<td>6000</td>
+<td>收入</td>
+<td>34,000</td>
+</tr>
+<tr>
+<td>2023&#x2F;9&#x2F;5</td>
+<td>班費</td>
+<td>1000</td>
+<td>1</td>
+<td>1000</td>
+<td>收入</td>
+<td>35,000</td>
+</tr>
+<tr>
+<td>2023&#x2F;9&#x2F;5</td>
+<td>25支工藝木片</td>
+<td>-30</td>
+<td>2</td>
+<td>-60</td>
+<td>支出</td>
+<td>34,940</td>
+</tr>
+<tr>
+<td>2023&#x2F;9&#x2F;6</td>
+<td>班費</td>
+<td>1000</td>
+<td>2</td>
+<td>2000</td>
+<td>收入</td>
+<td>36,940</td>
+</tr>
+<tr>
+<td>2023&#x2F;9&#x2F;8</td>
+<td>冷氣費、開學預儲冷氣費</td>
+<td>-2000</td>
+<td>1</td>
+<td>-2000</td>
+<td>支出</td>
+<td>34,940</td>
+</tr>
+<tr>
+<td>2023&#x2F;9&#x2F;18</td>
+<td>冷氣費</td>
+<td>-2000</td>
+<td>1</td>
+<td>-2000</td>
+<td>支出</td>
+<td>32,940</td>
+</tr>
+<tr>
+<td>2023&#x2F;9&#x2F;26</td>
+<td>康寧</td>
+<td>-243</td>
+<td>37</td>
+<td>-8991</td>
+<td>支出</td>
+<td>23,949</td>
+</tr>
+<tr>
+<td>2023&#x2F;9&#x2F;26</td>
+<td>雜誌</td>
+<td>-600</td>
+<td>37</td>
+<td>-22200</td>
+<td>支出</td>
+<td>1,749</td>
+</tr>
+<tr>
+<td>2023&#x2F;10&#x2F;2</td>
+<td>3號電池四入</td>
+<td>-89</td>
+<td>1</td>
+<td>-89</td>
+<td>支出</td>
+<td>1,660</td>
+</tr>
+<tr>
+<td>2023&#x2F;10&#x2F;5</td>
+<td>冷氣費</td>
+<td>-1000</td>
+<td>1</td>
+<td>-1000</td>
+<td>支出</td>
+<td>660</td>
+</tr>
+<tr>
+<td>2023&#x2F;10&#x2F;30</td>
+<td>冷氣費</td>
+<td>-500</td>
+<td>1</td>
+<td>-500</td>
+<td>支出</td>
+<td>160</td>
+</tr>
+<tr>
+<td>2024&#x2F;2&#x2F;19</td>
+<td>班費</td>
+<td>1000</td>
+<td>23</td>
+<td>23000</td>
+<td>收入</td>
+<td>23,160</td>
+</tr>
+<tr>
+<td>2024&#x2F;2&#x2F;20</td>
+<td>班費</td>
+<td>1000</td>
+<td>3</td>
+<td>3000</td>
+<td>收入</td>
+<td>26,160</td>
+</tr>
+<tr>
+<td>2024&#x2F;2&#x2F;22</td>
+<td>班費</td>
+<td>1000</td>
+<td>9</td>
+<td>9000</td>
+<td>收入</td>
+<td>35,160</td>
+</tr>
+<tr>
+<td>2024&#x2F;2&#x2F;22</td>
+<td>冷氣費</td>
+<td>-1000</td>
+<td>1</td>
+<td>1000</td>
+<td>支出</td>
+<td>34,160</td>
+</tr>
+<tr>
+<td>2024&#x2F;2&#x2F;24</td>
+<td>班費</td>
+<td>1000</td>
+<td>1</td>
+<td>1000</td>
+<td>收入</td>
+<td>35,160</td>
+</tr>
+<tr>
+<td>2024&#x2F;3&#x2F;6</td>
+<td>雜誌</td>
+<td>-480</td>
+<td>37</td>
+<td>-17760</td>
+<td>支出</td>
+<td>17,400</td>
+</tr>
+<tr>
+<td>2024&#x2F;3&#x2F;7</td>
+<td>班費</td>
+<td>1000</td>
+<td>1</td>
+<td>1000</td>
+<td>收入</td>
+<td>18,400</td>
+</tr>
+<tr>
+<td>2024&#x2F;??&#x2F;??</td>
+<td>考卷費</td>
+<td>-435</td>
+<td>37</td>
+<td>-16095</td>
+<td>支出</td>
+<td>2,305</td>
+</tr>
+<tr>
+<td>2024&#x2F;5&#x2F;6</td>
+<td>冷氣費</td>
+<td>-1000</td>
+<td>1</td>
+<td>-1000</td>
+<td>支出</td>
+<td>1,305</td>
+</tr>
+<tr>
+<td>2024&#x2F;5&#x2F;28</td>
+<td>冷氣費</td>
+<td>-1000</td>
+<td>1</td>
+<td>-1000</td>
+<td>支出</td>
+<td>305</td>
+</tr>
+<tr>
+<td>2024&#x2F;6&#x2F;3</td>
+<td>收冷氣費</td>
+<td>100</td>
+<td>23</td>
+<td>2300</td>
+<td>收入</td>
+<td>2605</td>
+</tr>
+<tr>
+<td>2024&#x2F;6&#x2F;4</td>
+<td>收冷氣費</td>
+<td>100</td>
+<td>6</td>
+<td>600</td>
+<td>收入</td>
+<td>3205</td>
+</tr>
+<tr>
+<td>2024&#x2F;6&#x2F;14</td>
+<td>冷氣費</td>
+<td>-1000</td>
+<td>1</td>
+<td>-1000</td>
+<td>支出</td>
+<td>2205</td>
+</tr>
+<tr>
+<td>2024&#x2F;6&#x2F;18</td>
+<td>收冷氣費</td>
+<td>100</td>
+<td>2</td>
+<td>200</td>
+<td>收入</td>
+<td>2405</td>
+</tr>
+<tr>
+<td>2024&#x2F;6&#x2F;20</td>
+<td>收8月雜誌費</td>
+<td>100</td>
+<td>34</td>
+<td>3400</td>
+<td>收入</td>
+<td>5805</td>
+</tr>
+<tr>
+<td>2024&#x2F;6&#x2F;21</td>
+<td>冷氣費</td>
+<td>1000</td>
+<td>1</td>
+<td>-1000</td>
+<td>支出</td>
+<td><strong>4805</strong></td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -238,6 +510,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

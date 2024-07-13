@@ -792,7 +792,7 @@ table:not(.hljs-ln) td:nth-child(odd) {
     background: #d9e8ff4d;
 }
 table:not(.hljs-ln) th {
-    background: #a3ddfb;
+    background: #B3D9D9;
 }
 table:not(.hljs-ln) tr th,
 table:not(.hljs-ln) tr td {
@@ -1135,4 +1135,7 @@ body.dark-mode #loading {
     width: 100vw;
     word-break: keep-all;
     z-index: 2147483647;
+}
+body.dark-mode table:not(.hljs-ln) th {
+    background: #364646;
 }
