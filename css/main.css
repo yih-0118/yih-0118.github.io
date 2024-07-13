@@ -662,7 +662,7 @@ body::-webkit-scrollbar-track {
     color: unset;
 }
 a {
-    color: #4F9D9D;
+    color: #8a9d4f;
     text-decoration: none;
 }
 a:hover,
@@ -1005,7 +1005,7 @@ body.dark-mode {
   body.dark-mode #home-card #card-div .description,
   body.dark-mode #home-card #card-div .friend-links a,
   body.dark-mode #home-card #card-div .icon-links a {
-    color: #B0B0B0;
+    color: #dbdbdb;
   }
   
   body.dark-mode #footer #footer-wrap {
@@ -1018,14 +1018,46 @@ body.dark-mode {
     text-align: center;
 }
 
-body.dark-mode h1 {
+/* body.dark-mode h1 {
     color: #bcd1d1;
     
-}
+} */
 
-body.dark-mode h2,h3,h4,h5,h6 {
-    color: #A3D1D1;
-    
+body.dark-mode h1{
+    color: #f0f0f0;
+    font-weight: bold;
+    margin: 15px 0;
+    word-break: keep-all;
+}
+body.dark-mode h2{
+    color: #f0f0f0;
+    font-weight: bold;
+    margin: 15px 0;
+    word-break: keep-all;
+}
+body.dark-mode h3{
+    color: #f0f0f0;
+    font-weight: bold;
+    margin: 15px 0;
+    word-break: keep-all;
+}
+body.dark-mode h4{
+    color: #f0f0f0;
+    font-weight: bold;
+    margin: 15px 0;
+    word-break: keep-all;
+}
+body.dark-mode h5{
+    color: #f0f0f0;
+    font-weight: bold;
+    margin: 15px 0;
+    word-break: keep-all;
+}
+body.dark-mode h6 {
+    color: #f0f0f0;
+    font-weight: bold;
+    margin: 15px 0;
+    word-break: keep-all;
 }
 
 body.dark-mode #menu #desktop-menu .title {
@@ -1042,28 +1074,28 @@ body.dark-mode #menu #desktop-menu a {
 
 body.dark-mode #home-head #home-info .loop:nth-child(1) {
     animation: loop1 10s linear infinite;
-    background: #aca9a9;
+    background: #2e2e2e;
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
     opacity: 0.3;
     transform: rotate(30deg);
 }
 body.dark-mode #home-head #home-info .loop:nth-child(2) {
     animation: loop2 15s linear infinite;
-    background: #504e4e;
+    background: #2e2e2e;
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
     opacity: 0.45;
     transform: rotate(60deg);
 }
 body.dark-mode #home-head #home-info .loop:nth-child(3) {
     animation: loop3 10s linear infinite;
-    background: #504e4e;
+    background: #2e2e2e;
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
     opacity: 0.3;
     transform: rotate(90deg);
 }
 body.dark-mode #home-head #home-info .loop:nth-child(4) {
     animation: loop4 15s linear infinite;
-    background: #504e4e;
+    background: #2e2e2e;
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
     opacity: 0.45;
     transform: rotate(120deg);
@@ -1072,4 +1104,8 @@ body.dark-mode .timeline-content {
     background-color: #282828;
     margin-bottom: 30px;
     transition: margin-top 0.5s, opacity 0.3s, visibility 0.3s;
+}
+body.dark-mode #home-posts .post-title {
+    color: #f0fefe;
+    text-align: center;
 }

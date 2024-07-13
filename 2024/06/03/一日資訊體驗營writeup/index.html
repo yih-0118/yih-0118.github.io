@@ -228,7 +228,7 @@
 <h3 id="Admin-Panel"><a href="#Admin-Panel" class="headerlink" title="[Admin Panel]"></a>[Admin Panel]</h3><p>打開magic看一下<br>正常的sql injection無法<br>目標是把password註釋掉<br><img src="https://hackmd.io/_uploads/H1A7Lp940.png" alt="image"><br>這樣就可以了<br>FLAG:<code>TILEA&#123;OsGa&#39; OR 1=1; -- #&#125;</code></p>
 <h3 id="貓咪商店"><a href="#貓咪商店" class="headerlink" title="[貓咪商店]"></a>[貓咪商店]</h3><p>我們需要購買<code>FLAG</code>但是錢又不夠多<br>而且沒有按鈕<br><img src="https://hackmd.io/_uploads/Sk0OL69EA.png" alt="image"><br>可知evil cat是5431<br>那FLAG就是在5430的地方<br>在購買的時候找到input<br>修改vaule就好<br><img src="https://hackmd.io/_uploads/r1DRLpq4R.png" alt="image"><br>FLAG:<code>TILEA&#123;c4T_m30w_m30W&#125;</code></p>
 <h3 id="DNS-Lookup-Tool-🔍"><a href="#DNS-Lookup-Tool-🔍" class="headerlink" title="[DNS Lookup Tool 🔍]"></a>[DNS Lookup Tool 🔍]</h3><p>我是先去看原始碼發現</p>
-<pre><code class="php!原始碼">&lt;?php
+<pre><code class="php">&lt;?php
 isset($_GET[&#39;source&#39;]) and die(show_source(__FILE__, true));
 ?&gt;
 
