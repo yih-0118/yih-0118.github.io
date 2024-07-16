@@ -1001,7 +1001,7 @@ ol li {
 
 
 body.dark-mode {
-    background-color: #121212;
+    background-color: #151515;
     color: #ffffff;
   }
   
@@ -1021,8 +1021,10 @@ body.dark-mode {
   body.dark-mode #home-posts .post,
   body.dark-mode #home-card #card-style,
   body.dark-mode .article {
-    background: #1E1E1E;
-    box-shadow: 0 0 20px #000000;
+    background: #151515;
+    box-shadow: 0 2px 12px 0 #6a6a6a3b;
+
+
   }
   
   body.dark-mode #home-posts .post .category-and-date,
