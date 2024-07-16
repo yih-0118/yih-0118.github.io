@@ -1199,7 +1199,7 @@ body.dark-mode #menu .title {
 }
 
 body.dark-mode #home-posts .post,
-.article {
+body.dark-mode .article {
     background: #121212;
     box-shadow: 0 0 20px #000000;
 }
