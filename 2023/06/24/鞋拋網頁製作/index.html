@@ -228,7 +228,7 @@
 <h2 id="HTML-Javascript-雛形"><a href="#HTML-Javascript-雛形" class="headerlink" title="HTML &amp; Javascript 雛形"></a>HTML &amp; Javascript 雛形</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><h4 id="輸入值："><a href="#輸入值：" class="headerlink" title="輸入值："></a><strong>輸入值：</strong></h4><ul>
 <li>重力加速度$(g)$</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
         &lt;label for=&quot;Gravity&quot;&gt;Gravity :&lt;/label&gt;
         &lt;input type=&quot;number&quot; id=&quot;Gravity&quot; step=&quot;9.8&quot; min=&quot;0&quot;&gt;
       &lt;/div&gt;
@@ -237,7 +237,7 @@
 <ul>
 <li>初速度 ($v_0$)</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
       &lt;label for=&quot;initial-velocity&quot;&gt;Initial Velocity:   &lt;select id=&quot;velocity-unit&quot;&gt;
         &lt;option value=&quot;m/s&quot;&gt; m/s&lt;/option&gt;
         &lt;option value=&quot;km/h&quot;&gt; km/h&lt;/option&gt;
@@ -248,7 +248,7 @@
 <ul>
 <li>投擲角度 ($\theta$)</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
       &lt;label for=&quot;launch-angle&quot;&gt;Launch Angle (deg):&lt;/label&gt;
       &lt;input type=&quot;number&quot; id=&quot;launch-angle&quot; step=&quot;1&quot; min=&quot;0&quot; max=&quot;360&quot;&gt;
 &lt;/div&gt;
@@ -256,7 +256,7 @@
 <ul>
 <li>起始位置 ($x_0$, $y_0$)</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
       &lt;label for=&quot;initial-position&quot;&gt;Initial Position (x0):&lt;/label&gt;
       &lt;input type=&quot;number&quot; id=&quot;initial-position&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
 &lt;/div&gt;
@@ -345,7 +345,7 @@ y_data.push(y);
 <h2 id="HTML-Javascript-雛形-1"><a href="#HTML-Javascript-雛形-1" class="headerlink" title="HTML &amp; Javascript 雛形"></a>HTML &amp; Javascript 雛形</h2><h3 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h3><h4 id="輸入值：-1"><a href="#輸入值：-1" class="headerlink" title="輸入值："></a><strong>輸入值：</strong></h4><ul>
 <li>重力加速度$(g)$</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
         &lt;label for=&quot;Gravity&quot;&gt;Gravity :&lt;/label&gt;
         &lt;input type=&quot;number&quot; id=&quot;Gravity&quot; step=&quot;9.8&quot; min=&quot;0&quot;&gt;
       &lt;/div&gt;
@@ -354,7 +354,7 @@ y_data.push(y);
 <ul>
 <li>初速度 ($v_0$)</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
       &lt;label for=&quot;initial-velocity&quot;&gt;Initial Velocity:   &lt;select id=&quot;velocity-unit&quot;&gt;
         &lt;option value=&quot;m/s&quot;&gt; m/s&lt;/option&gt;
         &lt;option value=&quot;km/h&quot;&gt; km/h&lt;/option&gt;
@@ -365,7 +365,7 @@ y_data.push(y);
 <ul>
 <li>投擲角度 ($\theta$)</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
       &lt;label for=&quot;launch-angle&quot;&gt;Launch Angle (deg):&lt;/label&gt;
       &lt;input type=&quot;number&quot; id=&quot;launch-angle&quot; step=&quot;1&quot; min=&quot;0&quot; max=&quot;360&quot;&gt;
 &lt;/div&gt;
@@ -373,7 +373,7 @@ y_data.push(y);
 <ul>
 <li>起始位置 ($x_0$, $y_0$)</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
       &lt;label for=&quot;initial-position&quot;&gt;Initial Position (x0):&lt;/label&gt;
       &lt;input type=&quot;number&quot; id=&quot;initial-position&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
 &lt;/div&gt;
@@ -385,7 +385,7 @@ y_data.push(y);
 <ul>
 <li>質量 $(kg)$</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
   &lt;label for=&quot;mass&quot;&gt;Object Mass (kg):&lt;/label&gt;
   &lt;input type=&quot;number&quot; id=&quot;mass&quot; step=&quot;0.1&quot; min=&quot;0&quot;&gt;
 &lt;/div&gt;
@@ -393,7 +393,7 @@ y_data.push(y);
 <ul>
 <li>受阻面積 $(m^2)$</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
   &lt;label for=&quot;cross-sectional-area&quot;&gt;Contact area (m^2):&lt;/label&gt;
   &lt;input type=&quot;number&quot; id=&quot;cross-sectional-area&quot; step=&quot;0.01&quot; min=&quot;0&quot;&gt;
 &lt;/div&gt;
@@ -401,7 +401,7 @@ y_data.push(y);
 <ul>
 <li>空氣密度 $(\frac{kg}{m^3})$</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
   &lt;label for=&quot;air-density&quot;&gt;Air Density (kg/m^3):&lt;/label&gt;
   &lt;input type=&quot;number&quot; id=&quot;air-density&quot; step=&quot;0.001&quot; min=&quot;0&quot;&gt;
 &lt;/div&gt;
@@ -409,7 +409,7 @@ y_data.push(y);
 <ul>
 <li>阻力係數 $(C_d,C_x)$</li>
 </ul>
-<pre><code class="xml">&lt;div&gt;
+<pre><code class="html">&lt;div&gt;
   &lt;label for=&quot;drag-coefficient&quot;&gt;Drag Coefficient (Cd):&lt;/label&gt;
   &lt;input type=&quot;number&quot; id=&quot;drag-coefficient&quot; step=&quot;0.01&quot; min=&quot;0&quot;&gt;
 &lt;/div&gt;
