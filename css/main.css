@@ -784,6 +784,8 @@ code,
 }
 table:not(.hljs-ln) {
     margin: 15px 0;
+    /* width: 100%; /* 確保表格寬度為100% 
+    border-collapse: collapse; 合併邊框 */
 }
 table:not(.hljs-ln) td:nth-child(even) {
     background: #c7e0fb4d;
@@ -798,6 +800,8 @@ table:not(.hljs-ln) tr th,
 table:not(.hljs-ln) tr td {
     border-radius: 3px;
     padding: 10px 20px;
+    /* border: 1px solid #ddd; 添加邊框 */
+
 }
 ul li,
 ol li {
@@ -908,7 +912,25 @@ ol li {
         width: 800px;
     }
 }
+@media (max-width: 500px) {
+    table:not(.hljs-ln) {
+        font-size: 12px; /* 減小字體大小 */
+      }
+      
+      table:not(.hljs-ln) tr th,
+      table:not(.hljs-ln) tr td {
+        padding: 2px 5px; /* 減小內邊距 */
+      }
+      
+      /* 如果還是無法完整顯示,可以考慮使用橫向滾動 */
+      .table-container {
+        overflow-x: auto;
+      }
+    }
+
 @media (max-width: 900px) {
+
+    
     #home-head #home-info {
         height: 350px;
         width: 350px;
@@ -988,7 +1010,7 @@ body.dark-mode {
   }
   
   body.dark-mode #menu {
-    background: #1E1E1E;
+    background: #364646;
   }
   
   body.dark-mode #menu a, 
@@ -1138,4 +1160,35 @@ body.dark-mode #loading {
 }
 body.dark-mode table:not(.hljs-ln) th {
     background: #364646;
+}
+body.dark-mode .article .info .date {
+    color: #a9c4d0;
+    display: inline-block;
+    margin-right: 10px;
+}
+body.dark-mode #menu #mobile-menu .title {
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 1003;
+}
+body.dark-mode #menu #mobile-menu .items a {
+    color: #ffffff;
+}
+@media (max-width: 900px) {
+    #home-head #home-info {
+        height: 350px;
+        width: 350px;
+    }
+    body.dark-mode #home-head #home-info .info {
+        align-items: center;
+        background: #2e2e2ec0;
+        display: flex;
+        height: 350px;
+        justify-content: center;
+        margin: auto;
+        width: 350px;
+    }
+}
+body.dark-mode #menu.menu-color {
+    background: rgba(34, 34, 34, 0.5);
 }
