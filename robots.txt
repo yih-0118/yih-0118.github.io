@@ -1,0 +1,4 @@
+
+User-agent: *
+Disallow: /
+Sitemap: https://yih-0118.github.io/sitemap-index.xml
