@@ -18,7 +18,26 @@ const { title, url, pubDate, badge, categories = [], tags = [], word, time } = A
 
 const socialLinks = [
   {
-    name: "X (Twitter)",
+    name: "Line",
+    icon: "ri:line-line",
+    class: "bg-green-500 hover:bg-green-600",
+    url: `https://social-plugins.line.me/lineit/share?url=${url}`,
+  },
+  {
+    name: "Instagram",
+    icon: "ri:instagram-line",
+    class: "bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90",
+    // Instagram 不支援直接分享，這裡僅提供導向 Instagram 首頁的連結，請根據需求做調整
+    url: "https://www.instagram.com/",
+  },
+  {
+    name: "Facebook",
+    icon: "ri:facebook-circle-line",
+    class: "bg-[#0866ff] hover:bg-[#0755d6]",
+    url: `https://facebook.com/sharer/sharer.php?u=${url}`,
+  },
+  {
+    name: "X",
     icon: "ri:twitter-x-line",
     class: "bg-black hover:bg-gray-800",
     url: `https://twitter.com/intent/tweet/?text=${title}&url=${url}`,
@@ -30,24 +49,13 @@ const socialLinks = [
     url: `https://telegram.me/share/url?text=${title}&url=${url}`,
   },
   {
-    name: "Reddit",
-    icon: "ri:reddit-line",
-    class: "bg-[#ff4500] hover:bg-[#e63e00]",
-    url: `https://reddit.com/submit/?url=${url}&title=${title}`,
-  },
-  {
-    name: "Facebook",
-    icon: "ri:facebook-circle-line",
-    class: "bg-[#0866ff] hover:bg-[#0755d6]",
-    url: `https://facebook.com/sharer/sharer.php?u=${url}`,
-  },
-  {
     name: "Email",
     icon: "ri:mail-line",
     class: "bg-gray-600 hover:bg-gray-700",
     url: `mailto:?subject=${title}&body=${url}`,
   },
 ];
+
 ---
 
 <div class="container p-0">

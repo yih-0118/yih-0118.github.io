@@ -4,7 +4,7 @@
 // Site title and description
 export const SITE_LANG = "tw";
 export const SITE_TAB = "Yi-Hung Wu";
-export const SITE_TITLE = "Blog";
+export const SITE_TITLE = "My Blog";
 export const SITE_DESCRIPTION = "嗨";
 export const DATE_FORMAT = "YYYY MMM DD ddd";
 // User profile informationYi-Hung Wu
@@ -13,7 +13,7 @@ export const USER_SITE = "https://yih-0118.github.io/"; // At the same time, thi
 export const USER_AVATAR = "/69842.jpg";
 
 // Server and transition settings
-export const SERVER_URL = "https://demo.saroprock.com";
+export const SERVER_URL = "https://yih-0118.github.io/";
 
 // Theme settings
 export const DAISYUI_THEME = {
@@ -22,7 +22,7 @@ export const DAISYUI_THEME = {
 };
 export const CODE_THEME = {
   light: "github-light",
-  dark: "github-dark",
+  dark: "github-dark-dimmed",
 };
 
 // Menu items for navigation

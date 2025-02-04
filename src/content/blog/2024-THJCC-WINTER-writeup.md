@@ -6,6 +6,7 @@ tags:
   -  writeup
 categories:
     - Daily
+image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMdHnKyoWMjFsuOqjEmVIDDr-AsbtAMdCK8g&s
 ---
 
 ## 前言
