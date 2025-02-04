@@ -8,7 +8,7 @@ export const SITE_TITLE = "My Blog";
 export const SITE_DESCRIPTION = "嗨";
 export const DATE_FORMAT = "YYYY MMM DD ddd";
 // User profile informationYi-Hung Wu
-export const USER_NAME = "";
+export const USER_NAME = "Yi-Hung Wu";
 export const USER_SITE = "https://yih-0118.github.io/"; // At the same time, this is also the site retrieved by the i18n configuration.
 export const USER_AVATAR = "/69842.jpg";
 
