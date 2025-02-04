@@ -4,11 +4,11 @@
 // Site title and description
 export const SITE_LANG = "tw";
 export const SITE_TAB = "Yi-Hung Wu";
-export const SITE_TITLE = "";
+export const SITE_TITLE = "Blog";
 export const SITE_DESCRIPTION = "嗨";
 export const DATE_FORMAT = "YYYY MMM DD ddd";
-// User profile information
-export const USER_NAME = "Yi-Hung Wu";
+// User profile informationYi-Hung Wu
+export const USER_NAME = "";
 export const USER_SITE = "https://yih-0118.github.io/"; // At the same time, this is also the site retrieved by the i18n configuration.
 export const USER_AVATAR = "/69842.jpg";
 
@@ -35,29 +35,29 @@ export const menuItems = [
     href: "/blog",
     svg: "material-symbols:book-2-outline-rounded",
     target: "_self",
-    // subItems: [
-    //   {
-    //     id: "all",
-    //     text: "All blogs",
-    //     href: "/blog",
-    //     svg: "material-symbols:ink-pen-outline-rounded",
-    //     target: "_self",
-    //   }, // All blog
-    //   {
-    //     id: "Daily",
-    //     text: "Daily",
-    //     href: "/blog/categories/Daily",
-    //     svg: "material-symbols:ad-group",
-    //     target: "_self",
-    //   }, // Life category
-    //   {
-    //     id: "特殊選才",
-    //     text: "特殊選才",
-    //     href: "/blog/categories/特殊選才",
-    //     svg: "material-symbols:star-rounded",
-    //     target: "_self",
-    //   }, // Life category
-    // ],
+    subItems: [
+      {
+        id: "all",
+        text: "All blogs",
+        href: "/blog",
+        svg: "material-symbols:ink-pen-outline-rounded",
+        target: "_self",
+      }, // All blog
+      {
+        id: "Daily",
+        text: "Daily",
+        href: "/blog/categories/Daily",
+        svg: "material-symbols:ad-group",
+        target: "_self",
+      }, // Life category
+      {
+        id: "特殊選才",
+        text: "特殊選才",
+        href: "/blog/categories/特殊選才",
+        svg: "material-symbols:star-rounded",
+        target: "_self",
+      }, // Life category
+    ],
   }, // Blog page with sub-items
   {
     id: "project",
