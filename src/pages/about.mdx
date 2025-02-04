@@ -1,0 +1,69 @@
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseCard from "../components/BaseCard.astro";
+import Collapse from "../components/mdx/Collapse.astro";
+import Diff from "../components/mdx/Diff.astro";
+import Error from "../components/mdx/Error.astro";
+import Info from "../components/mdx/Info.astro";
+import Kbd from "../components/mdx/Kbd.astro";
+import Success from "../components/mdx/Success.astro";
+import Warning from "../components/mdx/Warning.astro";
+import TimeLine from "../components/mdx/TimeLine.astro";
+import LinkCard from "../components/mdx/LinkCard.astro";
+
+<BaseLayout title="About">
+  <BaseCard title="About">
+# About me
+
+---
+
+## Introduction
+
+I am a 2023 Geography Olympiad awardee. Initially, I focused on geographical research, including traffic flow analysis, GIS mapping, and applications. Later, I expanded my expertise to APP and web development. Currently, my primary focus is on cybersecurity, exploring its various technologies and challenges.
+## TimeLine
+
+    <TimeLine
+
+items={[
+{ year: "Apr. 2021", event: "Started learning Python" },
+{ year: "Sep. 2022", event: "Start of High School" },
+{ year: "Oct. 2022", event: "Started learning C++" },
+{ year: "6 Nov. 2022", event: "Physic Olympiad" },
+{ year: "Mar. 2023", event: "Started learning web development at NCU"},
+{ year: "12 Mar. 2023", event: "MlshCTF Contestants"},
+{ year: "Jul. 2023", event: "NTNU APCS course" },
+{ year: "Aug. 2023", event: "AIS3 Junior" },
+{ year: "Sep. 2023", event: "Geography Olympiad Final" },
+{ year: "Oct. 2023", event: "Short Essay Competition" },
+{ year: "Feb. 2024", event: "Developed mlsh-vocabulary with Vue.js" },
+{ year: "Feb. 2024", event: "SCIST Winter Camp" },
+{ year: "3 Mar. 2024", event: "Released an app on the Google Play" },
+{ year: "4 May 2024", event: "g0v summit - Attendee" },
+{ year: "15 May 2024", event: "Cybersec 2024 - Attendee" },
+{ year: "25 May 2024", event: "AIS3 MyFirstCTF & Pre Exam" },
+{ year: "1 Jun. 2024", event: "TILEA 助教" },
+{ year: "6 Jun. 2024", event: "FhCTF" },
+{ year: "10 Juy. 2024", event: "CTF 種子教練分享會 ft. NCKU CTF" },
+{ year: "27 Jul. 2024", event: "YTP Preliminary Round" },
+{ year: "28 Jul. 2024", event: "AIS3 最佳專題" },
+{ year: "3 Aug. 2024", event: "YTP Final" },
+{ year: "14 Aug. 2024", event: "AIS3 Junior 助教" },
+{ year: "21 Aug. 2024", event: "AIS3 Club" },
+{ year: "24 Aug. 2024", event: "HITCON CMT - Attendee" },
+{ year: "31 Aug. 2024", event: "TAIWAN Holy High 9th 高階培訓" },
+{ year: "12 Oct. 2024", event: "金盾獎初賽💀" },
+{ year: "2 Nov. 2024", event: "CGGC" },
+{ year: "3 Nov. 2024", event: "臺北市資訊學科能力競賽" },
+{ year: "Dec. 2024", event: "Developed mlsh-vocabulary with React.js" },
+{ year: "24 Jan. 2025", event: "SCIST Winter Camp 助教" },
+{ year: "7 Feb. 2025", event: "AIS3 EOF Final" },
+]}
+/>
+## Community & Club Experience
+ - SCIST 資安助教
+ - SCAICT 資訊組
+ - 臺科大資安社
+ - 明倫程式設計社 副社長&教學
+ - MlshCTF 出題者
+ - THJCC 出題者
+  </BaseCard>
+</BaseLayout>
