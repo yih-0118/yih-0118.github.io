@@ -1,0 +1,104 @@
+---
+import { Icon } from "astro-icon/components";
+import MainCard from "@/components/MainCard.astro";
+import GitHubStats from "@/components/mdx/GitHubStats.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Home">
+  <MainCard
+    title="Home"
+    description="Yi-Hung Wu · Cybersecurity / Web / App / CP"
+    textOverlay="HOME"
+    infoIcon="lucide:home"
+  >
+    <div class="space-y-10 mb-8">
+      <!-- HI -->
+      <section class="space-y-4">
+        <h1 class="text-center text-3xl md:text-4xl font-mono font-bold tracking-wide text-base-content/80">
+          HI 👋
+        </h1>
+
+        <div class="divider opacity-40 my-2"></div>
+
+        <div class="space-y-4 max-w-3xl mx-auto">
+          <p class="font-mono text-base-content/75 leading-relaxed text-center md:text-left">
+            I am <span class="font-semibold">I-Hung Wu</span>, commonly known by the nickname
+            <span class="font-semibold">“此情吳計可消除”</span>.
+          </p>
+
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <a href="/about" class="btn btn-sm btn-outline gap-2">
+              <Icon name="lucide:user" class="w-4 h-4" />
+              <span class="font-mono">About</span>
+            </a>
+
+            <a href="/blog" class="btn btn-sm btn-outline gap-2">
+              <Icon name="lucide:book-open" class="w-4 h-4" />
+              <span class="font-mono">Blog</span>
+            </a>
+
+            <a href="https://github.com/yih-0118" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline gap-2">
+              <Icon name="lucide:github" class="w-4 h-4" />
+              <span class="font-mono">GitHub</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brief Introduction -->
+      <section class="space-y-4">
+        <h2 class="text-center text-2xl md:text-3xl font-mono font-bold tracking-wide text-base-content/80">
+          Brief Introduction
+        </h2>
+        <div class="divider opacity-40 my-2"></div>
+
+        <ul class="space-y-3 max-w-3xl mx-auto">
+          <li class="flex gap-4">
+            <div class="w-1 rounded-full bg-primary/70 mt-1"></div>
+            <div class="flex-1 flex items-center justify-between gap-6">
+              <p class="font-mono font-semibold text-lg">Cybersecurity</p>
+              <p class="font-mono text-base-content/60 whitespace-nowrap">Learning</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4">
+            <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
+            <div class="flex-1 flex items-center justify-between gap-6">
+              <p class="font-mono font-semibold text-lg">Web Development</p>
+              <p class="font-mono text-base-content/60 whitespace-nowrap">Learning</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4">
+            <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
+            <div class="flex-1 flex items-center justify-between gap-6">
+              <p class="font-mono font-semibold text-lg">App Development</p>
+              <p class="font-mono text-base-content/60 whitespace-nowrap">Learning</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4">
+            <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
+            <div class="flex-1 flex items-center justify-between gap-6">
+              <p class="font-mono font-semibold text-lg">Competitive Programming</p>
+              <p class="font-mono text-base-content/60 whitespace-nowrap">Learning</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Optional: GitHub Stats (keep simple) -->
+      <section class="space-y-4">
+        <h2 class="text-center text-2xl md:text-3xl font-mono font-bold tracking-wide text-base-content/80">
+          GitHub
+        </h2>
+        <div class="divider opacity-40 my-2"></div>
+
+        <div class="max-w-4xl mx-auto rounded-2xl border border-base-300 bg-base-200/40 p-4 md:p-6">
+          <GitHubStats username="yih-0118" />
+        </div>
+      </section>
+    </div>
+  </MainCard>
+</BaseLayout>

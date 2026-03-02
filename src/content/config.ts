@@ -9,15 +9,16 @@ const blog = defineCollection({
     updated: z.coerce.date().optional(),
     image: z.string().optional(),
     badge: z.string().optional(),
+    draft: z.boolean().default(false),
     categories: z
       .array(z.string())
-      .refine((items) => new Set(items).size === items.length, {
+      .refine((items: string[]) => new Set(items).size === items.length, {
         message: "categories must be unique",
       })
       .optional(),
     tags: z
       .array(z.string())
-      .refine((items) => new Set(items).size === items.length, {
+      .refine((items: string[]) => new Set(items).size === items.length, {
         message: "tags must be unique",
       })
       .optional(),

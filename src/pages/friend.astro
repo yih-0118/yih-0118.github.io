@@ -1,0 +1,119 @@
+---
+import { Icon } from "astro-icon/components";
+import MainCard from "@/components/MainCard.astro";
+import FriendCard from "@/components/mdx/FriendCard.astro";
+import LinkCard from "@/components/mdx/LinkCard.astro";
+import Showcase from "@/components/mdx/Showcase.astro";
+import Card from "@/components/temple/Card.astro";
+import CardGroup from "@/components/temple/CardGroup.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+
+const friends = [
+  {
+    name: "Soar",
+    avatar: "https://github.com/tusoar.png",
+    description: "",
+    url: "https://solarfish.me/",
+    type: "friend",
+  },
+  {
+    name: "Chao28661",
+    avatar: "https://cdn.discordapp.com/avatars/539412061294166037/a67afcb3732f65c3f08e9e208497a7d6.webp?size=300",
+    description: "",
+    url: "https://chaontc.tw/",
+    type: "friend",
+  },
+  {
+    name: "OsGa",
+    avatar: "https://www.osga.dev/_next/image?url=%2Favatar.png&w=1080&q=75",
+    description: "",
+    url: "https://www.osga.dev/",
+    type: "friend",
+  },
+  {
+    name: "ShiYu",
+    avatar: "https://4yu.dev/img/avatar.webp",
+    description: "",
+    url: "https://4yu.dev/",
+    type: "friend",
+  },
+];
+---
+
+<BaseLayout title="Friends">
+  <CardGroup cols="1">
+    <MainCard
+      textOverlay="FRIENDS"
+      infoIcon="lucide:link"
+    >
+      <div class="space-y-10">
+        <!-- Friends -->
+        <section>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {friends.map((f) => (
+              <FriendCard
+                name={f.name}
+                avatar={f.avatar}
+                description={f.description}
+                url={f.url}
+                type={f.type}
+              />
+            ))}
+          </div>
+        </section>
+
+        <!-- <div class="divider my-8">
+          <Icon name="lucide:heart" class="w-10 h-10 text-primary" />
+        </div> -->
+
+
+        <!-- <div class="text-center">
+          <p class="text-base-content/80 mb-4">
+            Want to be featured on this page? Feel free to reach out.
+          </p>
+          <a
+            href="mailto:evesunmaple@outlook.com"
+            class="btn btn-primary gap-2"
+          >
+            <Icon name="lucide:mail" class="w-5 h-5" />
+            <span>Email Me</span>
+          </a>
+        </div> -->
+      </div>
+    </MainCard>
+
+    <!-- Sites using Frosti -->
+    <!-- <Card>
+      <div class="p-4 sm:p-6">
+        <section>
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-2">
+            <h2 class="text-2xl font-bold flex items-center gap-2">
+              <Icon name="lucide:layout-template" class="w-6 h-6 text-primary" />
+              <span>Sites Using Frosti</span>
+            </h2>
+
+            <a
+              href="https://github.com/EveSunMaple/Frosti/edit/main/src/pages/friend.astro"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-outline btn-primary gap-2"
+            >
+              <Icon name="lucide:plus-circle" class="w-4 h-4" />
+              Add Your Site
+            </a>
+          </div>
+
+          <p class="text-base-content/70 mb-6">
+            A list of sites built with Frosti. Want to get listed? Click “Add Your Site” and submit a Pull Request.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3">
+            {sites.map((site) => <Showcase name={site.name} url={site.url} />)}
+          </div>
+        </section>
+      </div>
+    </Card> -->
+  </CardGroup>
+</BaseLayout>
