@@ -13,118 +13,120 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     infoIcon="lucide:user"
   >
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap');
 
-      .about-wrapper { font-family: 'Syne', sans-serif; }
-      .mono { font-family: 'Space Mono', monospace; }
+  .about-wrapper { font-family: 'Space Mono', sans-serif; }
+  .mono { font-family: 'Space Mono', monospace; }
 
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(16px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-      .fade-up { opacity: 0; animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-      .d1 { animation-delay: 0.08s; }
-      .d2 { animation-delay: 0.18s; }
-      .d3 { animation-delay: 0.28s; }
-      .d4 { animation-delay: 0.38s; }
-      .d5 { animation-delay: 0.48s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { opacity: 0; animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .d1 { animation-delay: 0.08s; }
+  .d2 { animation-delay: 0.18s; }
+  .d3 { animation-delay: 0.28s; }
+  .d4 { animation-delay: 0.38s; }
+  .d5 { animation-delay: 0.48s; }
 
-      .sep-line {
-        height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-      }
+  .sep-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, oklch(var(--bc) / 0.12), transparent);
+  }
 
-      .section-label {
-        font-family: 'Space Mono', monospace;
-        font-size: 0.65rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: rgba(255,255,255,0.3);
-        white-space: nowrap;
-      }
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: oklch(var(--bc) / 0.38);
+    white-space: nowrap;
+  }
 
-      /* Avatar ring */
-      .avatar-ring {
-        border-radius: 18px;
-        padding: 3px;
-        background: linear-gradient(135deg, rgba(var(--p, 99, 102, 241), 0.6), rgba(255,255,255,0.08));
-        display: inline-block;
-      }
-      .avatar-ring img {
-        border-radius: 14px;
-        display: block;
-      }
+  .avatar-ring {
+    border-radius: 18px;
+    padding: 3px;
+    background: linear-gradient(
+      135deg,
+      oklch(var(--p) / 0.55),
+      oklch(var(--bc) / 0.08)
+    );
+    display: inline-block;
+  }
+  .avatar-ring img {
+    border-radius: 14px;
+    display: block;
+  }
 
-      /* Tech badges */
-      .tech-badge {
-        font-family: 'Space Mono', monospace;
-        font-size: 0.7rem;
-        padding: 3px 10px;
-        border-radius: 6px;
-        border: 1px solid rgba(255,255,255,0.1);
-        background: rgba(255,255,255,0.04);
-        color: rgba(255,255,255,0.55);
-        transition: all 0.2s;
-      }
-      .tech-badge:hover {
-        border-color: rgba(255,255,255,0.22);
-        color: rgba(255,255,255,0.85);
-        background: rgba(255,255,255,0.07);
-      }
+  .tech-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1px solid oklch(var(--bc) / 0.16);
+    background: oklch(var(--b1) / 0.55);
+    color: oklch(var(--bc) / 0.6);
+    transition: all 0.2s;
+  }
+  .tech-badge:hover {
+    border-color: oklch(var(--bc) / 0.26);
+    color: oklch(var(--bc) / 0.88);
+    background: oklch(var(--b2) / 0.65);
+  }
 
-      /* Timeline */
-      .timeline-item {
-        display: flex;
-        gap: 1.25rem;
-        padding: 1rem 0.75rem;
-        border-radius: 10px;
-        transition: background 0.2s;
-      }
-      .timeline-item:hover { background: rgba(255,255,255,0.025); }
+  /* Timeline */
+  .timeline-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1rem 0.75rem;
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+  .timeline-item:hover { background: oklch(var(--b2) / 0.6); }
 
-      .timeline-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        margin-top: 6px;
-        flex-shrink: 0;
-      }
-      .dot-primary { background: oklch(var(--p) / 0.8); }
-      .dot-muted   { background: rgba(255,255,255,0.18); }
+  .timeline-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .dot-primary { background: oklch(var(--p) / 0.85); }
+  .dot-muted   { background: oklch(var(--bc) / 0.22); }
 
-      .timeline-line {
-        width: 1px;
-        background: rgba(255,255,255,0.07);
-        margin: 0 auto;
-      }
+  .timeline-line {
+    width: 1px;
+    background: oklch(var(--bc) / 0.12);
+    margin: 0 auto;
+  }
 
-      /* Competition highlight */
-      .comp-highlight {
-        font-family: 'Space Mono', monospace;
-        font-size: 0.67rem;
-        padding: 2px 8px;
-        border-radius: 999px;
-        background: oklch(var(--p) / 0.12);
-        border: 1px solid oklch(var(--p) / 0.3);
-        color: oklch(var(--p) / 0.9);
-        white-space: nowrap;
-      }
+  /* Competition highlight */
+  .comp-highlight {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.67rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: oklch(var(--p) / 0.14);
+    border: 1px solid oklch(var(--p) / 0.28);
+    color: oklch(var(--p) / 0.92);
+    white-space: nowrap;
+  }
 
-      .year-tag {
-        font-family: 'Space Mono', monospace;
-        font-size: 0.72rem;
-        color: rgba(255,255,255,0.3);
-        white-space: nowrap;
-      }
+  .year-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: oklch(var(--bc) / 0.38);
+    white-space: nowrap;
+  }
 
-      /* Bio block */
-      .bio-text {
-        font-size: 0.95rem;
-        line-height: 1.75;
-        color: rgba(255,255,255,0.55);
-      }
-      .bio-text strong { color: rgba(255,255,255,0.8); font-weight: 600; }
-    </style>
+  /* Bio block */
+  .bio-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: oklch(var(--bc) / 0.62);
+  }
+  .bio-text strong { color: oklch(var(--bc) / 0.88); font-weight: 700; }
+</style>
 
     <div class="about-wrapper space-y-14 mb-10">
 
