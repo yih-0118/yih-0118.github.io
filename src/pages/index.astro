@@ -227,10 +227,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
         <div class="space-y-1">
           {[
-            { name: "Cybersecurity",           status: "Active",    active: true },
+            { name: "Cybersecurity",           status: "Learning",    active: true },
             { name: "Web Development",         status: "Learning",  active: false },
-            { name: "App Development",         status: "Learning",  active: false },
-            { name: "Competitive Programming", status: "Learning",  active: false },
+            { name: "App Development",         status: "Learning",  active: false }
+            // { name: "Competitive Programming", status: "Learning",  active: false },
           ].map(({ name, status, active }, i) => (
             <div class={`skill-row flex items-center justify-between px-4 py-3.5 delay-${i + 2}`}>
               <div class="flex items-center gap-4">
