@@ -12,252 +12,253 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     textOverlay="ABOUT"
     infoIcon="lucide:user"
   >
-    <div class="space-y-10 mb-8">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap');
+
+      .about-wrapper { font-family: 'Syne', sans-serif; }
+      .mono { font-family: 'Space Mono', monospace; }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .fade-up { opacity: 0; animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+      .d1 { animation-delay: 0.08s; }
+      .d2 { animation-delay: 0.18s; }
+      .d3 { animation-delay: 0.28s; }
+      .d4 { animation-delay: 0.38s; }
+      .d5 { animation-delay: 0.48s; }
+
+      .sep-line {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      }
+
+      .section-label {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.3);
+        white-space: nowrap;
+      }
+
+      /* Avatar ring */
+      .avatar-ring {
+        border-radius: 18px;
+        padding: 3px;
+        background: linear-gradient(135deg, rgba(var(--p, 99, 102, 241), 0.6), rgba(255,255,255,0.08));
+        display: inline-block;
+      }
+      .avatar-ring img {
+        border-radius: 14px;
+        display: block;
+      }
+
+      /* Tech badges */
+      .tech-badge {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.7rem;
+        padding: 3px 10px;
+        border-radius: 6px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.04);
+        color: rgba(255,255,255,0.55);
+        transition: all 0.2s;
+      }
+      .tech-badge:hover {
+        border-color: rgba(255,255,255,0.22);
+        color: rgba(255,255,255,0.85);
+        background: rgba(255,255,255,0.07);
+      }
+
+      /* Timeline */
+      .timeline-item {
+        display: flex;
+        gap: 1.25rem;
+        padding: 1rem 0.75rem;
+        border-radius: 10px;
+        transition: background 0.2s;
+      }
+      .timeline-item:hover { background: rgba(255,255,255,0.025); }
+
+      .timeline-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-top: 6px;
+        flex-shrink: 0;
+      }
+      .dot-primary { background: oklch(var(--p) / 0.8); }
+      .dot-muted   { background: rgba(255,255,255,0.18); }
+
+      .timeline-line {
+        width: 1px;
+        background: rgba(255,255,255,0.07);
+        margin: 0 auto;
+      }
+
+      /* Competition highlight */
+      .comp-highlight {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.67rem;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: oklch(var(--p) / 0.12);
+        border: 1px solid oklch(var(--p) / 0.3);
+        color: oklch(var(--p) / 0.9);
+        white-space: nowrap;
+      }
+
+      .year-tag {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.72rem;
+        color: rgba(255,255,255,0.3);
+        white-space: nowrap;
+      }
+
+      /* Bio block */
+      .bio-text {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: rgba(255,255,255,0.55);
+      }
+      .bio-text strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+    </style>
+
+    <div class="about-wrapper space-y-14 mb-10">
+
       <!-- Profile -->
-      <section class="flex flex-col md:flex-row gap-8 items-center md:items-start">
-        <div class="avatar">
-          <div
-            class="w-32 h-32 md:w-40 md:h-40 rounded-2xl ring ring-primary/60 ring-offset-base-100 ring-offset-2 overflow-hidden"
-          >
-            <img
-              src="https://avatars.githubusercontent.com/u/123066919?v=4"
-              alt=""
-              width="160"
-              height="160"
-              loading="eager"
-            />
-          </div>
+      <section class="fade-up d1 flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start">
+        <div class="avatar-ring flex-shrink-0">
+          <img
+            src="https://avatars.githubusercontent.com/u/123066919?v=4"
+            alt="I-Hung Wu"
+            width="140"
+            height="140"
+          />
         </div>
 
-        <div class="flex-1 text-center md:text-left">
-          <h1 class="text-3xl md:text-4xl font-mono font-bold tracking-tight mb-2">I-Hung Wu</h1>
-          <p class="font-mono text-base-content/70 mb-5">
-            Developer & Geomatics Technician <br>
-            Member of teams ICEDTEA & OhYeahSeC
-          </p>
-          <p class="text-base-content/75 leading-relaxed">
-            I am a 2023 Geography Olympiad awardee. Initially, I focused on geographical research, including traffic flow analysis, GIS mapping, and applications. Later, I expanded my expertise to APP and web development. Currently, my primary focus is on cybersecurity, exploring its various technologies and challenges.
+        <div class="flex-1 text-center md:text-left space-y-4">
+          <div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-base-content/90">
+              I-Hung Wu
+            </h1>
+            <p class="mono text-sm text-base-content/40 mt-1">// 此情吳計可消除</p>
+          </div>
+
+          <p class="bio-text max-w-xl">
+            <strong>Geography Olympiad</strong> awardee turned security researcher. Started with GIS mapping and traffic flow analysis, expanded into web & app development, now deep in <strong>cybersecurity</strong>. Member of CTF teams <strong>ICEDTEA</strong> &amp; <strong>OhYeahSeC</strong>.
           </p>
 
-          <div class="mt-5 flex flex-wrap gap-2 justify-center md:justify-start">
-            <span class="badge badge-outline font-mono">Python</span>
-            <span class="badge badge-outline font-mono">React</span>
-            <span class="badge badge-outline font-mono">Node.js</span>
-            <span class="badge badge-outline font-mono">GIS</span>
-            <span class="badge badge-outline font-mono">Cybersecurity</span>
+          <div class="flex flex-wrap gap-2 justify-center md:justify-start pt-1">
+            {["Python", "Node.js", "React", "GIS", "Cybersecurity"].map(t => (
+              <span class="tech-badge">{t}</span>
+            ))}
           </div>
         </div>
       </section>
 
-      <!-- <div class="divider opacity-40 my-2"></div> -->
-
-      <!-- Simple sections like screenshot -->
-      <section class="space-y-12">
-        <!-- Education -->
-        <div>
-          <h2 class="text-center text-3xl md:text-3xl font-mono font-bold tracking-wide text-base-content/80">
-            Education
-          </h2>
-          <div class="divider opacity-40 my-4"></div>
-
-          <ul class="space-y-5">
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-primary/70 mt-1"></div>
-              <div class="flex-1 flex items-start justify-between gap-6">
-                <div>
-                  <p class="font-mono font-semibold text-base md:text-lg">
-                    National Cheng Kung University
-                  </p>
-                  <p class="font-mono text-base-content/60">
-                    Department of Computer Science and Information Engineering
-                  </p>
-                </div>
-                <div class="font-mono text-base-content/60 whitespace-nowrap">
-                  2026 ~
-                </div>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-start justify-between gap-6">
-                <div>
-                  <p class="font-mono font-semibold text-base md:text-lg">
-                    National Taiwan Ocean University
-                  </p>
-                  <p class="font-mono text-base-content/60">
-                    Department of Computer Science and Engineering
-                  </p>
-                </div>
-                <div class="font-mono text-base-content/60 whitespace-nowrap">
-                  2025 ~ 2026
-                </div>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-start justify-between gap-6">
-                <div>
-                  <p class="font-mono font-semibold text-base md:text-lg">
-                    National Taiwan University
-                  </p>
-                  <p class="font-mono text-base-content/60">
-                    Department of Geography
-                  </p>
-                </div>
-                <div class="font-mono text-base-content/60 whitespace-nowrap">
-                  2025 ~ 2026
-                </div>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-start justify-between gap-6">
-                <div>
-                  <p class="font-mono font-semibold text-base md:text-lg">
-                    Taipei Municipal Minglun High School
-                  </p>
-                </div>
-                <div class="font-mono text-base-content/60 whitespace-nowrap">
-                  2022 ~ 2025
-                </div>
-              </div>
-            </li>
-          </ul>
+      <!-- Education -->
+      <section class="fade-up d2 space-y-5">
+        <div class="flex items-center gap-3">
+          <span class="section-label">education</span>
+          <div class="flex-1 sep-line"></div>
         </div>
 
-        <!-- Competitions -->
-        <div>
-          <h2 class="text-center text-3xl md:text-3xl font-mono font-bold tracking-wide text-base-content/80">
-            Competitions & Experience
-          </h2>
-          <div class="divider opacity-40 my-4"></div>
-
-          <ul class="space-y-3">
-            <!-- strong/highlighted -->
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-primary/70 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">AIS3 EOF FINAL 1st</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2026</p>
+        <div class="space-y-0">
+          {[
+            {
+              school: "National Cheng Kung University",
+              dept: "Department of Computer Science and Information Engineering",
+              period: "2026 Aug ~",
+              active: false
+            },
+            {
+              school: "National Taiwan Ocean University",
+              dept: "Department of Computer Science and Engineering",
+              period: "2025 Sep – 2026 Jun",
+              active: true
+            },
+            {
+              school: "National Taiwan University",
+              dept: "Department of Geography",
+              period: "2025 Sep ~",
+              active: true
+            },
+            {
+              school: "Taipei Municipal Minglun High School",
+              dept: null,
+              period: "2022 – 2025",
+              active: false
+            },
+          ].map(({ school, dept, period, active }) => (
+            <div class="timeline-item">
+              <div class="flex flex-col items-center">
+                <div class={`timeline-dot ${active ? "dot-primary" : "dot-muted"}`}></div>
+                <div class="timeline-line flex-1 mt-2"></div>
               </div>
-            </li>
-
-            <li class="flex gap-4">
-                            <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">HITCON CTF Exhibition 2nd</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2025</p>
+              <div class="flex-1 flex items-start justify-between gap-4 pb-2">
+                <div>
+                  <p class={`font-semibold text-base ${active ? "text-base-content/90" : "text-base-content/70"}`}>
+                    {school}
+                  </p>
+                  {dept && <p class="mono text-xs text-base-content/40 mt-0.5">{dept}</p>}
+                </div>
+                <span class="year-tag mt-0.5">{period}</span>
               </div>
-            </li>
-
-             <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">全國技能競賽 55 網路安全 佳作</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2025</p>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-                            <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">AIS3 pre-exam 19th</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2025</p>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-                            <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">AIS3 EOF Final 5th</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2025</p>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-                            <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">北區技能競賽 55 網路安全 5th</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2025</p>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">成大程式邀請賽 決賽</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2025</p>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">Geography Olympiad Final</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2023</p>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">Physic Olympiad</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2023</p>
-              </div>
-            </li>
-
-
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">HITCON CMT · Attendee</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2024</p>
-              </div>
-            </li>
-
-
-            <!-- CTF/teams/camps -->
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">YTP Final</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2025</p>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">AIS3 最佳專題</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2024</p>
-              </div>
-            </li>
-
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">AIS3 Junior 助教</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2024, 2025</p>
-              </div>
-            </li>
-            
-            <li class="flex gap-4">
-              <div class="w-1 rounded-full bg-base-content/20 mt-1"></div>
-              <div class="flex-1 flex items-center justify-between gap-6">
-                <p class="font-mono font-semibold text-lg">AIS3 Junior</p>
-                <p class="font-mono text-base-content/60 whitespace-nowrap">2023</p>
-              </div>
-            </li>
-          </ul>
+            </div>
+          ))}
         </div>
       </section>
+
+      <!-- Competitions -->
+      <section class="fade-up d3 space-y-5">
+        <div class="flex items-center gap-3">
+          <span class="section-label">competitions &amp; experience</span>
+          <div class="flex-1 sep-line"></div>
+        </div>
+
+        <div class="space-y-0">
+          {[
+            { name: "AIS3 EOF FINAL",             result: "1st",  year: "2026", highlight: true  },
+            { name: "HITCON CTF Exhibition",       result: "2nd",     year: "2025", highlight: false },
+            { name: "全國技能競賽 55 網路安全",        result: "佳作",    year: "2025", highlight: false },
+            { name: "AIS3 pre-exam",               result: "19th",    year: "2025", highlight: false },
+            { name: "AIS3 EOF Final",              result: "5th",     year: "2025", highlight: false },
+            { name: "北區技能競賽 55 網路安全",        result: "5th",     year: "2025", highlight: false },
+            { name: "成大程式邀請賽",                 result: "決賽",    year: "2025", highlight: false },
+            { name: "YTP Final",                   result: null,      year: "2025", highlight: false },
+            { name: "AIS3 最佳專題",                 result: null,      year: "2024", highlight: false },
+            { name: "HITCON CMT",                  result: "Attendee",year: "2024", highlight: false },
+            { name: "AIS3 Junior 助教",             result: null,      year: "2024, 2025", highlight: false },
+            { name: "Geography Olympiad Final",    result: "Awardee", year: "2023", highlight: false },
+            { name: "Physic Olympiad",             result: null,      year: "2023", highlight: false },
+            { name: "AIS3 Junior",                 result: null,      year: "2023", highlight: false },
+          ].map(({ name, result, year, highlight }) => (
+            <div class="timeline-item">
+              <div class="flex flex-col items-center">
+                <div class={`timeline-dot ${highlight ? "dot-primary" : "dot-muted"}`}></div>
+                <div class="timeline-line flex-1 mt-2"></div>
+              </div>
+              <div class="flex-1 flex items-center justify-between gap-4 pb-1">
+                <div class="flex items-center gap-3 flex-wrap">
+                  <p class={`font-semibold text-sm md:text-base ${highlight ? "text-base-content/90" : "text-base-content/65"}`}>
+                    {name}
+                  </p>
+                  {result && (
+                    highlight
+                      ? <span class="comp-highlight">{result}</span>
+                      : <span class="mono text-xs text-base-content/40">{result}</span>
+                  )}
+                </div>
+                <span class="year-tag">{year}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
     </div>
   </MainCard>
 </BaseLayout>
